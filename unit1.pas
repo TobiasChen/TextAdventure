@@ -104,6 +104,19 @@ begin
  Randomize;
  Eingabe := Edit1.text;
 
+ //Befehlsauflistung: help//
+
+ if (uppercase(Eingabe) = 'HELP') or (uppercase(Eingabe) = 'HILFE') or (uppercase(Eingabe) = 'BEFEHLE')
+ then
+   begin
+     Memo1.lines.add('help/Hilfe/Befehle: Befehlsauflistung');
+     Memo1.lines.add('[Raumname]: Raumbeschreibung anzeigen');
+     Memo1.lines.add('Norden/Osten/Sueden/Westen: In diese Richtung gehen');
+     Memo1.lines.add('Zurueck: In die vorherige Richtung gehen');
+     Memo1.lines.add('Angreifen: Im Kampf einen Gegner attackieren');
+     Memo1.lines.add('Fliehen: Im Kampf zum vorherigen Raum fliehen');
+   end;
+
  //Raumbeschreibungen//
 
  if uppercase(Eingabe) = 'SCHWIMMBAD'
