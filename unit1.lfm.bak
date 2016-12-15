@@ -1,11 +1,11 @@
 object Form1: TForm1
-  Left = 961
-  Height = 286
-  Top = 428
-  Width = 290
+  Left = 643
+  Height = 362
+  Top = 431
+  Width = 562
   Caption = 'Form1'
-  ClientHeight = 286
-  ClientWidth = 290
+  ClientHeight = 362
+  ClientWidth = 562
   OnCreate = FormCreate
   LCLVersion = '1.6.0.4'
   object Memo1: TMemo
@@ -20,7 +20,7 @@ object Form1: TForm1
     Height = 25
     Top = 166
     Width = 75
-    Caption = 'Button1'
+    Caption = 'Eingabe'
     OnClick = Button1Click
     TabOrder = 1
   end
@@ -31,22 +31,156 @@ object Form1: TForm1
     Width = 104
     TabOrder = 2
   end
-  object Label1: TLabel
+  object Labeleingabeunverwendet: TLabel
     Left = 12
-    Height = 15
-    Top = 171
+    Height = 21
+    Top = 168
     Width = 59
-    Caption = 'Gehe nach:'
+    Caption = 'Eingabe'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = '@Arial Unicode MS'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
     ParentColor = False
+    ParentFont = False
   end
-  object Label2: TLabel
+  object LabelRaum: TLabel
     Left = 12
     Height = 42
     Top = 216
-    Width = 86
-    Caption = 'Label2'
+    Width = 147
+    Caption = 'LabelRaum'
     Font.CharSet = ANSI_CHARSET
     Font.Height = -35
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object LabelHPunverwendet: TLabel
+    Left = 288
+    Height = 28
+    Top = 16
+    Width = 35
+    Caption = 'HP:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -21
+    Font.Name = '@Arial Unicode MS'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object LabelHP: TLabel
+    Left = 344
+    Height = 28
+    Top = 16
+    Width = 7
+    Caption = '-'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -21
+    Font.Name = '@Arial Unicode MS'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object LabelRKunverwendet: TLabel
+    Left = 288
+    Height = 28
+    Top = 56
+    Width = 35
+    Caption = 'RK:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -21
+    Font.Name = '@Arial Unicode MS'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object LabelRK: TLabel
+    Left = 344
+    Height = 28
+    Top = 56
+    Width = 7
+    Caption = '-'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -21
+    Font.Name = '@Arial Unicode MS'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object LabelATKunverwendet: TLabel
+    Left = 288
+    Height = 28
+    Top = 96
+    Width = 47
+    Caption = 'ATK:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -21
+    Font.Name = '@Arial Unicode MS'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object LabelATK: TLabel
+    Left = 344
+    Height = 28
+    Top = 96
+    Width = 7
+    Caption = '-'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -21
+    Font.Name = '@Arial Unicode MS'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object LabelGegner: TLabel
+    Left = 288
+    Height = 46
+    Top = 143
+    Width = 199
+    Caption = 'LabelGegner'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -35
+    Font.Name = '@Arial Unicode MS'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object LabelGegnerHPunverwendet: TLabel
+    Left = 288
+    Height = 25
+    Top = 216
+    Width = 23
+    Caption = 'HP'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clMaroon
+    Font.Height = -21
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object LabelGegnerHP: TLabel
+    Left = 344
+    Height = 25
+    Top = 216
+    Width = 6
+    Caption = '-'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clMaroon
+    Font.Height = -21
     Font.Name = 'Arial Narrow'
     Font.Pitch = fpVariable
     Font.Quality = fqDraft

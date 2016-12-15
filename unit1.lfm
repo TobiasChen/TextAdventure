@@ -1,13 +1,13 @@
 object Form1: TForm1
-  Left = 1534
-  Height = 286
-  Top = 720
-  Width = 376
+  Left = 643
+  Height = 362
+  Top = 431
+  Width = 562
   Caption = 'Form1'
-  ClientHeight = 286
-  ClientWidth = 376
+  ClientHeight = 362
+  ClientWidth = 562
   OnCreate = FormCreate
-  LCLVersion = '1.4.4.0'
+  LCLVersion = '1.6.0.4'
   object Memo1: TMemo
     Left = 8
     Height = 131
@@ -20,7 +20,7 @@ object Form1: TForm1
     Height = 25
     Top = 166
     Width = 75
-    Caption = 'Button1'
+    Caption = 'Eingabe'
     OnClick = Button1Click
     TabOrder = 1
   end
@@ -138,6 +138,50 @@ object Form1: TForm1
     Font.CharSet = ANSI_CHARSET
     Font.Height = -21
     Font.Name = '@Arial Unicode MS'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object LabelGegner: TLabel
+    Left = 288
+    Height = 46
+    Top = 143
+    Width = 199
+    Caption = 'LabelGegner'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -35
+    Font.Name = '@Arial Unicode MS'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object LabelGegnerHPunverwendet: TLabel
+    Left = 288
+    Height = 25
+    Top = 216
+    Width = 23
+    Caption = 'HP'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clMaroon
+    Font.Height = -21
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object LabelGegnerHP: TLabel
+    Left = 344
+    Height = 25
+    Top = 216
+    Width = 6
+    Caption = '-'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clMaroon
+    Font.Height = -21
+    Font.Name = 'Arial Narrow'
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
     ParentColor = False

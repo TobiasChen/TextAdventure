@@ -4,8 +4,7 @@ interface
 
 //--------------------  ggf Uses-Liste einfügen !  --------------------
 //uses ....;
-uses
-  MTRaum;
+
 type
   TEnemy = class
 
@@ -15,10 +14,9 @@ type
     HP : Integer;
     RK : Integer;
     ATK : Integer;
-    Raum : TRaum;
 
   public //Methoden
-    constructor create (EnemyN : String; Beschr: String; Health: Integer; RKlasse: Integer; Atck: Integer; Room: TRaum);
+    constructor create (EnemyN : String; Beschr: String; Health: Integer; RKlasse: Integer; Atck: Integer);
    end;
 implementation
 
@@ -27,7 +25,7 @@ implementation
 //+---------------------------------------------------------------------
 
 //-------- create (public) ---------------------------------------------
-constructor TEnemy.create (EnemyN : String; Beschr: String; Health: Integer; RKlasse: Integer; Atck: Integer; Room: TRaum);
+constructor TEnemy.create (EnemyN : String; Beschr: String; Health: Integer; RKlasse: Integer; Atck: Integer);
 begin
   inherited create;
   Enemyname := EnemyN;
@@ -35,7 +33,6 @@ begin
   HP := Health;
   RK := RKlasse;
   ATK := ATck;
-  Raum := Room;
 end;
 
 end.

@@ -4,6 +4,8 @@ interface
 
 //--------------------  ggf Uses-Liste einfügen !  --------------------
 //uses ....;
+uses
+  mTEnemy;
 
 type
   TRaum = class
@@ -15,9 +17,10 @@ type
     Osten : TRaum;
     Sueden : TRaum;
     Westen : TRaum;
+    Enemy : TEnemy;
 
   public //Methoden
-    constructor create (RaumN : String; Beschr: String; N: TRaum; O: TRaum; S: TRaum; W: TRaum);
+    constructor create (RaumN : String; Beschr: String; N: TRaum; O: TRaum; S: TRaum; W: TRaum; Gegner: TEnemy);
    end;
 implementation
 
@@ -26,7 +29,7 @@ implementation
 //+---------------------------------------------------------------------
 
 //-------- create (public) ---------------------------------------------
-constructor TRaum.create (RaumN : String; Beschr: String; N: TRaum; O: TRaum; S: TRaum; W: TRaum);
+constructor TRaum.create (RaumN : String; Beschr: String; N: TRaum; O: TRaum; S: TRaum; W: TRaum; Gegner: TEnemy);
 begin
   inherited create;
   Raumname := RaumN;
@@ -35,6 +38,7 @@ begin
   Osten := O;
   Sueden := S;
   Westen := W;
+  Enemy := Gegner;
 end;
 
 end.

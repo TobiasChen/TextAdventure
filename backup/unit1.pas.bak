@@ -15,6 +15,7 @@ type
   TForm1 = class(TForm)
     Button1: TButton;
     Edit1: TEdit;
+    LabelGegner: TLabel;
     Labeleingabeunverwendet: TLabel;
     LabelHPunverwendet: TLabel;
     LabelHP: TLabel;
@@ -72,13 +73,15 @@ begin
 
    //Gegner//
 
+   LabelGegner.Caption := 'Kein Gegner';
    Mieses_Essen := TEnemy.create ('Mieses Essen', 'Entspricht der Norm... von der Schule', 5, 5, 1, Mensa);
 
-   //Startraum//
+   //Startwerte//
 
-   aktuellerRaum := Mensa;
+   aktuellerRaum := Schwimmbad;
    vorherigerRaum := aktuellerRaum;
    LabelRaum.caption := AktuellerRaum.Raumname;
+   Kampf := False;
 
    //Spieler-start-stats//
 
@@ -94,7 +97,7 @@ end;
 //--------------------------------Heilige Button---------------------------------//
 
 procedure TForm1.Button1Click(Sender: TObject);
-var Eingabe : String; Wurf, Wurfgegner : Integer;
+var Eingabe : String; Wurf, Wurfgegner, Initiative : Integer;
 begin
  Randomize;
  Eingabe := Edit1.text;
@@ -120,6 +123,11 @@ begin
       vorherigerRaum := aktuellerRaum;
       aktuellerRaum := AktuellerRaum.Norden;
       LabelRaum.caption := AktuellerRaum.Raumname;
+  //    if aktuellerRaum =                           //
+  //    then                                         //
+  //      begin                                      //
+  //        Kampf := True;                           //
+  //      end;                                       //
      end;
  end;
 
@@ -162,29 +170,98 @@ begin
      end;
  end;
 
+ if Eingabe = 'Zurueck'
+ then
+ begin
+   aktuellerRaum := VorherigerRaum;
+   LabelRaum.caption := AktuellerRaum.Raumname;
+ end;
+
  //------Kampf------//    //Angelehnt an das Pen&Paper-Kampfsystem//
+
+ //Angreifen//
+
+ if (Eingabe = 'Angreifen') and (Kampf = true)
+ then
+ begin
+   Initiative := random(2);
+   if Initiative = 0                                                //Bei In=0: Gegner
+   then                                                             //fängt an
+     begin
+       Wurf := random(20) + 1 + SpielerATK;                         //Wurf des Spielers
+       Wurfgegner := random(20) + 1 + aktuellerGegner.ATK;          //Wurf des Gegners
+       if SpielerRK < Wurfgegner                                    //Trifft Gegner?
+       then
+         begin
+           SpielerHP := SpielerHP - aktuellerGegner.ATK;
+           Memo1.lines.add('Der Gegner hat dich getroffen');
+           LabelHP.Caption := InttoStr(SpielerHP);
+         end
+       else
+         begin
+           Memo1.lines.add('Der Gegner hat dich verfehlt!');
+         end;
+       sleep(3000);
+       if aktuellerGegner.RK < Wurf                                 //Trifft Spieler?
+       then
+         begin
+           aktuellerGegner.HP := aktuellerGegner.HP - SpielerATK;
+           Memo1.lines.add('Du hast den Gegner getroffen!');
+         end
+       else
+         begin
+           Memo1.lines.add('Du hast den Gegner verfehlt!');
+         end;
+     end
+   else                                                             //Bei In=1: Spieler
+     begin                                                          //fängt an
+       Wurf := random(20) + 1 + SpielerATK;
+       Wurfgegner := random(20) + 1 + aktuellerGegner.ATK;
+       if aktuellerGegner.RK < Wurf
+       then
+         begin
+           aktuellerGegner.HP := aktuellerGegner.HP - SpielerATK;
+           Memo1.lines.add('Du hast den Gegner getroffen!');
+         end
+       else
+         begin
+           Memo1.lines.add('Du hast den Gegner verfehlt!');
+         end;
+       sleep(3000);
+       if SpielerRK < Wurfgegner
+       then
+         begin
+           SpielerHP := SpielerHP - aktuellerGegner.ATK;
+           Memo1.lines.add('Der Gegner hat dich getroffen');
+           LabelHP.Caption := InttoStr(SpielerHP);
+         end
+       else
+         begin
+           Memo1.lines.add('Der Gegner hat dich verfehlt!');
+         end;
+     end;
+ end;
 
  //Flucht//
 
- // if Eingabe = 'Fliehen' and Kampf = true
- // then
- // begin
- //   Wurf := random(20) + 1 + SpielerRK;
- //   Wurfgegner := random(20) + 1 + aktuellerGegner.ATK;
- //   if Wurf < Wurfgegner
- //   then
- //     begin
- //      SpielerHP := SpielerHP - round(aktuellerGegner.ATK div 2);
- //      LabelHP.Caption := InttoStr(SpielerHP);
- //      aktuellerRaum := VorherigerRaum;
- //      LabelRaum.caption := AktuellerRaum.Raumname;
- //    end
- //   else
- //     begin
- //       aktuellerRaum := VorherigerRaum;
- //       LabelRaum.caption := AktuellerRaum.Raumname;
- //     end;
- // end;
+ if (Eingabe = 'Fliehen') and (Kampf = true)
+ then
+ begin
+   Wurfgegner := random(20) + 1 + aktuellerGegner.ATK;
+   if SpielerRK < Wurfgegner
+   then
+     begin
+      SpielerHP := SpielerHP - round(aktuellerGegner.ATK div 2);
+      LabelHP.Caption := InttoStr(SpielerHP);
+      aktuellerRaum := VorherigerRaum;
+      LabelRaum.caption := AktuellerRaum.Raumname;
+    end
+   else
+      begin
+       aktuellerRaum := VorherigerRaum;
+       LabelRaum.caption := AktuellerRaum.Raumname;
+      end;
+ end;
 end;
 
 end.
