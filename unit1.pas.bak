@@ -1,0 +1,127 @@
+unit Unit1;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
+  mTRaum, MTEnemy;
+
+type
+
+  { TForm1 }
+
+  TForm1 = class(TForm)
+    Button1: TButton;
+    Edit1: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Memo1: TMemo;
+    procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  Schwimmbad: TRaum;
+  Mensa: TRaum;
+  Bleises_Folterkeller: TRaum;
+  aktuellerRaum: TRaum;
+
+implementation
+
+{$R *.lfm}
+
+{ TForm1 }
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+   Memo1.Lines.Add ('Hallo, willkommen im Textadventure');
+
+   //Räume//
+
+   Mensa := TRaum.create ('Mensa', 'Hier koennen kleine Kinder Pampe fressen!', nil, Bleises_Folterkeller, Schwimmbad, nil);
+   Schwimmbad := TRaum.create ('Schwimmbad', 'Hier koennen kleine Kinder in ihrer Pisse schwimmen!', Mensa, nil, nil, nil);
+   Bleises_Folterkeller := TRaum.create ('Bleises Folterkeller', 'Hier koennen kleine Kinder "gut" behandelt werden!', nil, nil, nil, Mensa);
+
+   //Ausgänge//
+
+   Mensa.Osten := Bleises_Folterkeller;
+   Mensa.Sueden := Schwimmbad;
+   Schwimmbad.Norden := Mensa;
+   Bleises_Folterkeller.Westen := Mensa;
+
+   //Gegner//
+
+   Mieses_Essen := TEnemy.create ('Mieses Essen', 'Entspricht der Norm... von der Schule', 5, 5, 1, Mensa);
+
+   //Startraum//
+
+   aktuellerRaum := Mensa;
+   label2.caption := AktuellerRaum.Raumname;
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+var Eingabe : String;
+begin
+ Eingabe := Edit1.text;
+ if Eingabe = 'Schwimmbad'
+ then Memo1.lines.add(Schwimmbad.beschreibung);
+ if Eingabe = 'Mensa'
+ then Memo1.lines.add(Mensa.beschreibung);
+ if Eingabe = 'Bleises_Folterkeller'
+ then Memo1.lines.add(Bleises_Folterkeller.beschreibung);
+ if Eingabe = 'Norden'
+ then
+ begin
+   if AktuellerRaum.Norden = nil
+   then Memo1.lines.add('Da ist kein Raum!')
+   else
+     begin
+      aktuellerRaum := AktuellerRaum.Norden;
+      label2.caption := AktuellerRaum.Raumname;
+     end;
+ end;
+ if Eingabe = 'Osten'
+ then
+ begin
+   if AktuellerRaum.Osten = nil
+   then Memo1.lines.add('Da ist kein Raum!')
+   else
+     begin
+      aktuellerRaum := AktuellerRaum.Osten;
+      label2.caption := AktuellerRaum.Raumname;
+     end;
+ end;
+ if Eingabe = 'Sueden'
+ then
+ begin
+   if AktuellerRaum.Sueden = nil
+   then Memo1.lines.add('Da ist kein Raum!')
+   else
+     begin
+      aktuellerRaum := AktuellerRaum.Sueden;
+      label2.caption := AktuellerRaum.Raumname;
+     end;
+ end;
+ if Eingabe = 'Westen'
+ then
+ begin
+   if AktuellerRaum.Westen = nil
+   then Memo1.lines.add('Da ist kein Raum!')
+   else
+     begin
+      aktuellerRaum := AktuellerRaum.Westen;
+      label2.caption := AktuellerRaum.Raumname;
+     end;
+
+ end;
+end;
+
+end.
+
