@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  mTRaum, MTEnemy;
+  mTRaum, MTEnemy,Kampfprozedure,ProzedureRaumWechsel;
 
 type
 
@@ -15,6 +15,7 @@ type
   TForm1 = class(TForm)
     Button1: TButton;
     Edit1: TEdit;
+    Memo1: TMemo;
     LabelGegnerHPunverwendet: TLabel;
     LabelGegnerHP: TLabel;
     LabelGegner: TLabel;
@@ -26,7 +27,6 @@ type
     LabelATKunverwendet: TLabel;
     LabelATK: TLabel;
     LabelRaum: TLabel;
-    Memo1: TMemo;
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
@@ -37,19 +37,16 @@ type
 
 var
   Form1: TForm1;
+  Memo1: TMemo;
   //Räume//
   Schwimmbad: TRaum;
   Mensa: TRaum;
   Bleises_Folterkeller: TRaum;
 
-  aktuellerRaum, vorherigerRaum: TRaum;
   //Gegner//
   Mieses_Essen: TEnemy;
   aktuellerGegner: TEnemy;
-
-  SpielerHP, SpielerRK, SpielerATK: Integer;  //Angelehnt an das Pen&Paper-Kampfsystem//
-  Kampf: Boolean;
-
+  Wurf, Wurfgegner, Initiative : Integer;
 implementation
 
 {$R *.lfm}
@@ -67,8 +64,8 @@ begin
 
    //Räume//
 
-   Mensa := TRaum.create ('Mensa', 'Hier koennen kleine Kinder Pampe fressen!', nil, Bleises_Folterkeller, Schwimmbad, nil, Mieses_Essen);
-   Schwimmbad := TRaum.create ('Schwimmbad', 'Hier koennen kleine Kinder in ihrer Pisse schwimmen!', Mensa, nil, nil, nil, nil);
+   Mensa := TRaum.create ('Mensa', 'Hier koennen kleine Kinder Pampe fressen!', nil, Bleises_Folterkeller, Schwimmbad, nil, nil);
+   Schwimmbad := TRaum.create ('Schwimmbad', 'Hier koennen kleine Kinder in ihrer Pisse schwimmen!', nil, nil, Bleises_Folterkeller, nil, nil);
    Bleises_Folterkeller := TRaum.create ('Bleises Folterkeller', 'Hier koennen kleine Kinder "gut" behandelt werden!', nil, nil, nil, Mensa, nil);
 
    //Ausgänge//
@@ -77,13 +74,12 @@ begin
    Mensa.Sueden := Schwimmbad;
    Schwimmbad.Norden := Mensa;
    Bleises_Folterkeller.Westen := Mensa;
-
+   Schwimmbad.Sueden:=Bleises_Folterkeller;
    //Startwerte//
 
    aktuellerRaum := Schwimmbad;
-   vorherigerRaum := aktuellerRaum;
    LabelRaum.caption := AktuellerRaum.Raumname;
-   Kampf := False;
+   KampfProzedure.IstInKampf := False;
 
    //Spieler-start-stats//
 
@@ -99,13 +95,17 @@ end;
 //--------------------------------Heilige Button---------------------------------//
 
 procedure TForm1.Button1Click(Sender: TObject);
-var Eingabe : String; Wurf, Wurfgegner, Initiative : Integer;
+var Eingabe : String;
 begin
  Randomize;
  Eingabe := Edit1.text;
 
  //Befehlsauflistung: help//
-
+ if (uppercase(Eingabe) = 'MIAU')
+ then
+     begin
+      KampfProzedure.Kampf();
+     end;
  if (uppercase(Eingabe) = 'HELP') or (uppercase(Eingabe) = 'HILFE') or (uppercase(Eingabe) = 'BEFEHLE')
  then
    begin
@@ -130,112 +130,31 @@ begin
 
  if uppercase(Eingabe) = 'NORDEN'
  then
- begin
-   if AktuellerRaum.Norden = nil                                    //Geht es dort lang?
-   then Memo1.lines.add('Da ist kein Raum!')
-   else
-     begin
-      vorherigerRaum := aktuellerRaum;
-      aktuellerRaum := AktuellerRaum.Norden;
-      LabelRaum.caption := AktuellerRaum.Raumname;
-      if aktuellerRaum.Enemy = nil                                  //Ist dort ein Gegner?
-      then
-        begin
-          Kampf := False;
-        end
-      else
-        begin
-          Kampf := True;
-          aktuellerGegner := aktuellerRaum.Enemy;
-          LabelGegner.Caption := aktuellerRaum.Enemy.Enemyname;
-          LabelGegnerHP.Caption := InttoStr(aktuellerGegner.HP);
-          Initiative := random(2);
-        end;
-     end;
+   begin
+   RaumWechsel(AktuellerRaum.Norden);
  end;
 
  if uppercase(Eingabe) = 'OSTEN'
  then
  begin
-   if AktuellerRaum.Osten = nil
-   then Memo1.lines.add('Da ist kein Raum!')
-   else
-     begin
-      vorherigerRaum := aktuellerRaum;
-      aktuellerRaum := AktuellerRaum.Osten;
-      LabelRaum.caption := AktuellerRaum.Raumname;
-      if aktuellerRaum.Enemy = nil                                  //Ist dort ein Gegner?
-      then
-        begin
-          Kampf := False;
-        end
-      else
-        begin
-          Kampf := True;
-          aktuellerGegner := aktuellerRaum.Enemy;
-          LabelGegner.Caption := aktuellerRaum.Enemy.Enemyname;
-          LabelGegnerHP.Caption := InttoStr(aktuellerGegner.HP);
-          Initiative := random(2);
-        end;
-     end;
+     RaumWechsel(AktuellerRaum.Osten);
  end;
 
  if uppercase(Eingabe) = 'SUEDEN'
  then
  begin
-   if AktuellerRaum.Sueden = nil
-   then Memo1.lines.add('Da ist kein Raum!')
-   else
-     begin
-      vorherigerRaum := aktuellerRaum;
-      aktuellerRaum := AktuellerRaum.Sueden;
-      LabelRaum.caption := AktuellerRaum.Raumname;
-      if aktuellerRaum.Enemy = nil                                  //Ist dort ein Gegner?
-      then
-        begin
-          Kampf := False;
-        end
-      else
-        begin
-          Kampf := True;
-          aktuellerGegner := aktuellerRaum.Enemy;
-          LabelGegner.Caption := aktuellerRaum.Enemy.Enemyname;
-          LabelGegnerHP.Caption := InttoStr(aktuellerGegner.HP);
-          Initiative := random(2);
-        end;
-     end;
+    RaumWechsel(AktuellerRaum.Sueden);
  end;
 
  if uppercase(Eingabe) = 'WESTEN'
  then
  begin
-   if AktuellerRaum.Westen = nil
-   then Memo1.lines.add('Da ist kein Raum!')
-   else
-     begin
-      vorherigerRaum := aktuellerRaum;
-      aktuellerRaum := AktuellerRaum.Westen;
-      LabelRaum.caption := AktuellerRaum.Raumname;
-      if aktuellerRaum.Enemy = nil                                  //Ist dort ein Gegner?
-      then
-        begin
-          Kampf := False;
-        end
-      else
-        begin
-          Kampf := True;
-          aktuellerGegner := aktuellerRaum.Enemy;
-          LabelGegner.Caption := aktuellerRaum.Enemy.Enemyname;
-          LabelGegnerHP.Caption := InttoStr(aktuellerGegner.HP);
-          Initiative := random(2);
-        end;
-     end;
+    RaumWechsel(AktuellerRaum.Westen);
  end;
 
  if uppercase(Eingabe) = 'ZURUECK'
  then
  begin
-   aktuellerRaum := VorherigerRaum;
    LabelRaum.caption := AktuellerRaum.Raumname;
  end;
 
@@ -243,71 +162,14 @@ begin
 
  //Angreifen//
 
- if (uppercase(Eingabe) = 'ANGREIFEN') and (Kampf = true)
+ if (uppercase(Eingabe) = 'ANGREIFEN') and (IstInKampf = true)
  then
  begin
-   if Initiative = 0                                                //Bei In=0: Gegner
-   then                                                             //fängt an
-     begin
-       Wurf := random(20) + 1 + SpielerATK;                         //Wurf des Spielers
-       Wurfgegner := random(20) + 1 + aktuellerGegner.ATK;          //Wurf des Gegners
-       if SpielerRK < Wurfgegner                                    //Trifft Gegner?
-       then
-         begin
-           SpielerHP := SpielerHP - aktuellerGegner.ATK;
-           Memo1.lines.add('Der Gegner hat dich getroffen');
-           LabelHP.Caption := InttoStr(SpielerHP);
-         end
-       else
-         begin
-           Memo1.lines.add('Der Gegner hat dich verfehlt!');
-         end;
-       sleep(2000);
-       if aktuellerGegner.RK < Wurf                                 //Trifft Spieler?
-       then
-         begin
-           aktuellerGegner.HP := aktuellerGegner.HP - SpielerATK;
-           Memo1.lines.add('Du hast den Gegner getroffen!');
-           LabelGegnerHP.Caption := InttoStr(aktuellerGegner.ATK);
-         end
-       else
-         begin
-           Memo1.lines.add('Du hast den Gegner verfehlt!');
-         end;
-     end
-   else                                                             //Bei In=1: Spieler
-     begin                                                          //fängt an
-       Wurf := random(20) + 1 + SpielerATK;                         //(Wie oben, aber um-
-       Wurfgegner := random(20) + 1 + aktuellerGegner.ATK;          //gekehrt)
-       if aktuellerGegner.RK < Wurf
-       then
-         begin
-           aktuellerGegner.HP := aktuellerGegner.HP - SpielerATK;
-           Memo1.lines.add('Du hast den Gegner getroffen!');
-           LabelGegnerHP.Caption := InttoStr(aktuellerGegner.ATK);
-         end
-       else
-         begin
-           Memo1.lines.add('Du hast den Gegner verfehlt!');
-         end;
-       sleep(3000);
-       if SpielerRK < Wurfgegner
-       then
-         begin
-           SpielerHP := SpielerHP - aktuellerGegner.ATK;
-           Memo1.lines.add('Der Gegner hat dich getroffen');
-           LabelHP.Caption := InttoStr(SpielerHP);
-         end
-       else
-         begin
-           Memo1.lines.add('Der Gegner hat dich verfehlt!');
-         end;
-     end;
  end;
 
  //Flucht//
 
- if (uppercase(Eingabe) = 'FLIEHEN') and (Kampf = true)
+ if (uppercase(Eingabe) = 'FLIEHEN') and (IstInKampf = true)
  then
  begin
    Wurfgegner := random(20) + 1 + aktuellerGegner.ATK;              //Wurf des Gegners
@@ -315,17 +177,16 @@ begin
    then
      begin
       SpielerHP := SpielerHP - round(aktuellerGegner.ATK div 2);    //Halber Schaden
-      LabelHP.Caption := InttoStr(SpielerHP);
-      aktuellerRaum := VorherigerRaum;                              //Flucht geht in
+      LabelHP.Caption := InttoStr(SpielerHP);                             //Flucht geht in
       LabelRaum.caption := AktuellerRaum.Raumname;                  //vorherigen Raum
     end
    else
       begin
-       aktuellerRaum := VorherigerRaum;
        LabelRaum.caption := AktuellerRaum.Raumname;
       end;
  end;
-
+//RefresUI
+LabelHP.Caption := InttoStr(SpielerHP);
 //function TForm1.Angriff
 end;
 
