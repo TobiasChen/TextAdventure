@@ -42,11 +42,12 @@ var
   Schwimmbad: TRaum;
   Mensa: TRaum;
   Bleises_Folterkeller: TRaum;
-
+  //AnfangsVariablen für Setback nach Tod
+  AnfangsRaum: TRaum;
+  AnfangsHP:Integer;
   //Gegner//
   Mieses_Essen: TEnemy;
   aktuellerGegner: TEnemy;
-  Wurf, Wurfgegner, Initiative : Integer;
 implementation
 
 {$R *.lfm}
@@ -58,14 +59,12 @@ begin
    Memo1.Lines.Add ('Hallo, willkommen im Textadventure');
 
    //Gegner//
-
-   LabelGegner.Caption := 'Kein Gegner';
    Mieses_Essen := TEnemy.create ('Mieses Essen', 'Entspricht der Norm... von der Schule', 5, 5, 1);
 
    //Räume//
 
    Mensa := TRaum.create ('Mensa', 'Hier koennen kleine Kinder Pampe fressen!', nil, Bleises_Folterkeller, Schwimmbad, nil, nil);
-   Schwimmbad := TRaum.create ('Schwimmbad', 'Hier koennen kleine Kinder in ihrer Pisse schwimmen!', nil, nil, Bleises_Folterkeller, nil, nil);
+   Schwimmbad := TRaum.create ('Schwimmbad', 'Hier koennen kleine Kinder in ihrer Pisse schwimmen!', nil, nil, Bleises_Folterkeller, nil,Mieses_Essen );
    Bleises_Folterkeller := TRaum.create ('Bleises Folterkeller', 'Hier koennen kleine Kinder "gut" behandelt werden!', nil, nil, nil, Mensa, nil);
 
    //Ausgänge//
@@ -75,17 +74,20 @@ begin
    Schwimmbad.Norden := Mensa;
    Bleises_Folterkeller.Westen := Mensa;
    Schwimmbad.Sueden:=Bleises_Folterkeller;
-   //Startwerte//
 
-   aktuellerRaum := Schwimmbad;
+   //Startwerte//
+   AnfangsRaum:=Schwimmbad;
+   aktuellerRaum := AnfangsRaum;
    LabelRaum.caption := AktuellerRaum.Raumname;
    KampfProzedure.IstInKampf := False;
-
+   //Spieler-Start-StatsNR2//
+   AnfangsHP:=10;
    //Spieler-start-stats//
 
-   SpielerHP := 10;
+   SpielerHP := AnfangsHP;
    SpielerRK := 10;
    SpielerATK := 3;
+
    UIRefresh.UiRefresh();
 end;
 
@@ -99,74 +101,78 @@ begin
  Eingabe := Edit1.text;
 
  //Befehlsauflistung: help//
- if (uppercase(Eingabe) = 'MIAU')
- then
+
+ if (uppercase(Eingabe) = 'MIAU') then
      begin
-      KampfProzedure.Kampf();
-     end;
- if (uppercase(Eingabe) = 'HELP') or (uppercase(Eingabe) = 'HILFE') or (uppercase(Eingabe) = 'BEFEHLE')
- then
+      Kampf();
+     end
+ else if (uppercase(Eingabe) = 'HELP') or (uppercase(Eingabe) = 'HILFE') or (uppercase(Eingabe) = 'BEFEHLE')  or (Eingabe='?') then
    begin
      Memo1.lines.add('help/Hilfe/Befehle: Befehlsauflistung');
      Memo1.lines.add('[Raumname]: Raumbeschreibung anzeigen');
-     Memo1.lines.add('Norden/Osten/Sueden/Westen: In diese Richtung gehen');
+     Memo1.lines.add('Norden/Osten/Sueden/Westen: In diese Richtung gehen');  //HIlfe Stellung
      Memo1.lines.add('Zurueck: In die vorherige Richtung gehen');
      Memo1.lines.add('Angreifen: Im Kampf einen Gegner attackieren');
      Memo1.lines.add('Fliehen: Im Kampf zum vorherigen Raum fliehen');
-   end;
+   end
 
  //Raumbeschreibungen//
 
- if uppercase(Eingabe) = 'SCHWIMMBAD'
- then Memo1.lines.add(Schwimmbad.beschreibung);
- if uppercase(Eingabe) = 'MENSA'
- then Memo1.lines.add(Mensa.beschreibung);
- if uppercase(Eingabe) = 'BLEISES_FOLTERKELLER'
- then Memo1.lines.add(Bleises_Folterkeller.beschreibung);
+ else if (uppercase(Eingabe) = 'SCHWIMMBAD') then
+ Memo1.lines.add(Schwimmbad.beschreibung)
+ else if (uppercase(Eingabe) = 'MENSA') then
+ Memo1.lines.add(Mensa.beschreibung)
+ else if (uppercase(Eingabe) = 'BLEISES_FOLTERKELLER') then
+ Memo1.lines.add(Bleises_Folterkeller.beschreibung)
 
  //Raumwechsel//
 
- if uppercase(Eingabe) = 'NORDEN'        //Anstat den ganzen Code in jeder Eingabe zu haben wird nur noch eine Funktion "Raumwechsel" aufgerufen
+ else if uppercase(Eingabe) = 'NORDEN'        //Anstat den ganzen Code in jeder Eingabe zu haben wird nur noch eine Funktion "Raumwechsel" aufgerufen
  then
    begin
    RaumWechsel(AktuellerRaum.Norden);
- end;
+ end
 
- if uppercase(Eingabe) = 'OSTEN'
+ else if uppercase(Eingabe) = 'OSTEN'
  then
  begin
      RaumWechsel(AktuellerRaum.Osten);
- end;
+ end
 
- if uppercase(Eingabe) = 'SUEDEN'
+ else if uppercase(Eingabe) = 'SUEDEN'
  then
  begin
     RaumWechsel(AktuellerRaum.Sueden);
- end;
+ end
 
- if uppercase(Eingabe) = 'WESTEN'
+ else if uppercase(Eingabe) = 'WESTEN'
  then
  begin
     RaumWechsel(AktuellerRaum.Westen);
- end;
+ end
 
- if uppercase(Eingabe) = 'ZURUECK'
+ else if uppercase(Eingabe) = 'ZURUECK'
  then
  begin
    LabelRaum.caption := AktuellerRaum.Raumname;
- end;
+ end
 
  //------Kampf------//    //Angelehnt an das Pen&Paper-Kampfsystem//
 
  //Angreifen//
 
- if (uppercase(Eingabe) = 'ANGREIFEN') and (IstInKampf = true)
+ else if (uppercase(Eingabe) = 'ANGREIFEN')
  then
  begin
- end;
+ Kampf(aktuellerGegner)
+ end
+ else
+ Memo1.lines.add('Unbekannte Eingabe');
+ Memo1.lines.add('Liste der Befehle mit : ?');//Hilfe Ausgabe bei unerkannter Eingabe
 
 //RefresUI
-UIRefresh()
+
+UIRefresh.UiRefresh()
 end;
 
 end.

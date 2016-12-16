@@ -4,13 +4,13 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="8">
+    <Units Count="9">
       <Unit0>
         <Filename Value="project1.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="40" Y="10"/>
-        <UsageCount Value="39"/>
+        <UsageCount Value="42"/>
       </Unit0>
       <Unit1>
         <Filename Value="unit1.pas"/>
@@ -20,9 +20,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="59"/>
-        <CursorPos X="31" Y="78"/>
-        <UsageCount Value="39"/>
+        <TopLine Value="120"/>
+        <CursorPos X="8" Y="167"/>
+        <UsageCount Value="42"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -30,171 +30,185 @@
         <Filename Value="mtenemy.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="mTEnemy"/>
-        <EditorIndex Value="3"/>
-        <CursorPos X="2"/>
-        <UsageCount Value="36"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="10" Y="4"/>
+        <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
-        <Filename Value="mTRaum.pas"/>
+        <Filename Value="kampfprozedure.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="KampfProzedure"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <CursorPos X="43" Y="5"/>
-        <UsageCount Value="19"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="14"/>
+        <CursorPos X="52" Y="54"/>
+        <UsageCount Value="27"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
+        <Filename Value="mTRaum.pas"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="10" Y="2"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit4>
+      <Unit5>
         <Filename Value="..\..\Lichtspiel mit Canvas\mTTaschenlampe.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="16" Y="16"/>
         <UsageCount Value="11"/>
-      </Unit4>
-      <Unit5>
-        <Filename Value="kampfprozedure.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="KampfProzedure"/>
-        <EditorIndex Value="1"/>
-        <CursorPos X="14" Y="16"/>
-        <UsageCount Value="24"/>
-        <Loaded Value="True"/>
       </Unit5>
       <Unit6>
         <Filename Value="prozedureraumwechsel.pas"/>
         <UnitName Value="ProzedureRaumwechsel"/>
+        <EditorIndex Value="1"/>
         <WindowIndex Value="1"/>
-        <CursorPos X="32" Y="21"/>
-        <UsageCount Value="11"/>
+        <CursorPos X="13" Y="25"/>
+        <UsageCount Value="13"/>
         <Loaded Value="True"/>
       </Unit6>
       <Unit7>
         <Filename Value="UIRefresh.pas"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="3"/>
         <WindowIndex Value="1"/>
-        <CursorPos X="44" Y="12"/>
-        <UsageCount Value="10"/>
+        <CursorPos X="35" Y="22"/>
+        <UsageCount Value="12"/>
         <Loaded Value="True"/>
       </Unit7>
+      <Unit8>
+        <Filename Value="sterben.pas"/>
+        <IsPartOfProject Value="True"/>
+        <WindowIndex Value="1"/>
+        <CursorPos X="15"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit8>
     </Units>
+    <General>
+      <ActiveWindowIndexAtStart Value="1"/>
+    </General>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="155" Column="20" TopLine="116"/>
+        <Filename Value="sterben.pas"/>
+        <Caret Line="19" Column="22"/>
       </Position1>
       <Position2>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="177" Column="21" TopLine="138"/>
+        <Filename Value="kampfprozedure.pas"/>
+        <Caret Line="39" Column="33" TopLine="5"/>
       </Position2>
       <Position3>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="181" Column="21" TopLine="142"/>
+        <Filename Value="kampfprozedure.pas"/>
+        <Caret Line="26" Column="29" TopLine="4"/>
       </Position3>
       <Position4>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="203" Column="21" TopLine="164"/>
+        <Filename Value="kampfprozedure.pas"/>
+        <Caret Line="29" Column="15" TopLine="3"/>
       </Position4>
       <Position5>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="207" Column="21" TopLine="168"/>
+        <Filename Value="UIRefresh.pas"/>
+        <Caret Line="21" Column="65"/>
       </Position5>
       <Position6>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="229" Column="7" TopLine="180"/>
+        <Filename Value="UIRefresh.pas"/>
+        <Caret Line="22" Column="64"/>
       </Position6>
       <Position7>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="228" Column="3" TopLine="181"/>
+        <Filename Value="UIRefresh.pas"/>
+        <Caret Line="21" Column="65"/>
       </Position7>
       <Position8>
-        <Filename Value="prozedureraumwechsel.pas"/>
-        <Caret Line="14" Column="12"/>
+        <Filename Value="UIRefresh.pas"/>
+        <Caret Line="22" Column="61"/>
       </Position8>
       <Position9>
-        <Filename Value="prozedureraumwechsel.pas"/>
-        <Caret Line="19" Column="15"/>
+        <Filename Value="kampfprozedure.pas"/>
+        <Caret Line="20" Column="46" TopLine="7"/>
       </Position9>
       <Position10>
-        <Filename Value="prozedureraumwechsel.pas"/>
-        <Caret Line="24" Column="13"/>
+        <Filename Value="kampfprozedure.pas"/>
+        <Caret Line="22" Column="6"/>
       </Position10>
       <Position11>
-        <Filename Value="prozedureraumwechsel.pas"/>
-        <Caret Line="8" Column="42"/>
+        <Filename Value="kampfprozedure.pas"/>
+        <Caret Line="20" Column="47"/>
       </Position11>
       <Position12>
-        <Filename Value="prozedureraumwechsel.pas"/>
-        <Caret Line="32" Column="21"/>
+        <Filename Value="kampfprozedure.pas"/>
+        <Caret Line="59" Column="10" TopLine="12"/>
       </Position12>
       <Position13>
-        <Filename Value="prozedureraumwechsel.pas"/>
-        <Caret Line="35" Column="17"/>
+        <Filename Value="kampfprozedure.pas"/>
+        <Caret Line="21" Column="39" TopLine="2"/>
       </Position13>
       <Position14>
-        <Filename Value="prozedureraumwechsel.pas"/>
-        <Caret Line="39" Column="7"/>
+        <Filename Value="kampfprozedure.pas"/>
+        <Caret Line="22" Column="40"/>
       </Position14>
       <Position15>
-        <Filename Value="prozedureraumwechsel.pas"/>
-        <Caret Line="12" Column="11"/>
+        <Filename Value="kampfprozedure.pas"/>
+        <Caret Line="21" Column="48"/>
       </Position15>
       <Position16>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="31" Column="5"/>
+        <Filename Value="kampfprozedure.pas"/>
+        <Caret Line="22" Column="39"/>
       </Position16>
       <Position17>
         <Filename Value="prozedureraumwechsel.pas"/>
-        <Caret Line="15" Column="57"/>
+        <Caret Line="25" Column="34"/>
       </Position17>
       <Position18>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="36" Column="5"/>
+        <Filename Value="kampfprozedure.pas"/>
+        <Caret Line="19" Column="4"/>
       </Position18>
       <Position19>
-        <Filename Value="prozedureraumwechsel.pas"/>
-        <Caret Line="23" Column="46"/>
+        <Filename Value="kampfprozedure.pas"/>
+        <Caret Line="13" Column="23"/>
       </Position19>
       <Position20>
         <Filename Value="unit1.pas"/>
-        <Caret Line="135" Column="51" TopLine="113"/>
+        <Caret Line="167" Column="24" TopLine="120"/>
       </Position20>
       <Position21>
-        <Filename Value="prozedureraumwechsel.pas"/>
-        <Caret Line="24" Column="46"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="107" Column="7" TopLine="77"/>
       </Position21>
       <Position22>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="78" Column="38" TopLine="52"/>
+        <Filename Value="prozedureraumwechsel.pas"/>
+        <Caret Line="25" Column="34"/>
       </Position22>
       <Position23>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="68" Column="105" TopLine="40"/>
+        <Filename Value="kampfprozedure.pas"/>
+        <Caret Line="13" Column="17" TopLine="3"/>
       </Position23>
       <Position24>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="194" Column="11" TopLine="138"/>
+        <Filename Value="kampfprozedure.pas"/>
+        <Caret Line="19" Column="8" TopLine="3"/>
       </Position24>
       <Position25>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="215" Column="7" TopLine="178"/>
+        <Filename Value="kampfprozedure.pas"/>
+        <Caret Line="13" Column="16"/>
       </Position25>
       <Position26>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="238" Column="46" TopLine="178"/>
+        <Filename Value="kampfprozedure.pas"/>
+        <Caret Line="22" Column="35"/>
       </Position26>
       <Position27>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="135" Column="16" TopLine="97"/>
+        <Filename Value="kampfprozedure.pas"/>
+        <Caret Line="25" Column="48"/>
       </Position27>
       <Position28>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="95" Column="5" TopLine="97"/>
+        <Filename Value="kampfprozedure.pas"/>
+        <Caret Line="24" Column="47"/>
       </Position28>
       <Position29>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="89" Column="23" TopLine="51"/>
+        <Filename Value="kampfprozedure.pas"/>
+        <Caret Line="43" Column="18" TopLine="2"/>
       </Position29>
       <Position30>
-        <Filename Value="UIRefresh.pas"/>
-        <Caret Line="12" Column="9"/>
+        <Filename Value="kampfprozedure.pas"/>
+        <Caret Line="53" Column="31" TopLine="14"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>

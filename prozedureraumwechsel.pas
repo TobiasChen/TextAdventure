@@ -12,7 +12,6 @@ procedure RaumWechsel(Eingabe:Traum);
 implementation
 uses Unit1;
 procedure RaumWechsel(Eingabe:Traum);
-begin
    begin
    if Eingabe = nil        //Prozeduer wird mit Eingabe als Nördlicher Raum übergeben
    then Form1.Memo1.lines.add('Da ist kein Raum!')
@@ -20,7 +19,11 @@ begin
      begin
       aktuellerRaum := Eingabe;
       Form1.Memo1.lines.add(Eingabe.Raumname);
-     end;
+      if AktuellerRaum.Enemy <> nil then
+      begin
+      AktuellerGegner:=AktuellerRaum.Enemy;
+      Kampf();
+      end;
   end;
 end;
 
