@@ -19,7 +19,6 @@ procedure RaumWechsel(Eingabe:Traum);
      if IstInKampf = true  then
      begin
      Form1.Memo1.lines.add('Du bist in einem Kampf und kannst nur flüchten oder Angreifen')
-     end;
      end
      else
      begin
