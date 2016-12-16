@@ -1,0 +1,26 @@
+UNIT mTRaum;
+
+interface
+
+//--------------------  ggf Uses-Liste einfügen !  --------------------
+//uses ....;
+
+type
+  TRaum = class
+
+  public //Attribute
+    Beschreibung : String;
+    Norden : TRaum;
+    Osten : TRaum;
+    Sueden : TRaum;
+    Westen : TRaum;
+
+   end;
+
+implementation
+
+//+---------------------------------------------------------------------
+//|         TRaum: Methodendefinition 
+//+---------------------------------------------------------------------
+
+end.
