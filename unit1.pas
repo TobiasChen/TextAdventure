@@ -45,6 +45,7 @@ var
   //AnfangsVariablen für Setback nach Tod
   AnfangsRaum: TRaum;
   AnfangsHP:Integer;
+  AnfangsRK:Integer;
   //Gegner//
   Mieses_Essen: TEnemy;
   aktuellerGegner: TEnemy;
@@ -63,9 +64,9 @@ begin
 
    //Räume//
 
-   Mensa := TRaum.create ('Mensa', 'Hier koennen kleine Kinder Pampe fressen!', nil, Bleises_Folterkeller, Schwimmbad, nil, nil);
-   Schwimmbad := TRaum.create ('Schwimmbad', 'Hier koennen kleine Kinder in ihrer Pisse schwimmen!', nil, nil, Bleises_Folterkeller, nil,Mieses_Essen );
-   Bleises_Folterkeller := TRaum.create ('Bleises Folterkeller', 'Hier koennen kleine Kinder "gut" behandelt werden!', nil, nil, nil, Mensa, nil);
+   Mensa := TRaum.create ('Mensa', 'Hier koennen kleine Kinder Pampe fressen!', nil, Bleises_Folterkeller, Schwimmbad, nil, Mieses_Essen);
+   Schwimmbad := TRaum.create ('Schwimmbad', 'Hier koennen kleine Kinder in ihrer Pisse schwimmen!', Mensa, nil, Bleises_Folterkeller, nil,Mieses_Essen);
+   Bleises_Folterkeller := TRaum.create ('Bleises Folterkeller', 'Hier koennen kleine Kinder "gut" behandelt werden!', Schwimmbad, nil, nil, Mensa, nil);
 
    //Ausgänge//
 
@@ -76,16 +77,17 @@ begin
    Schwimmbad.Sueden:=Bleises_Folterkeller;
 
    //Startwerte//
-   AnfangsRaum:=Schwimmbad;
+   AnfangsRaum:=Bleises_Folterkeller;
    aktuellerRaum := AnfangsRaum;
    LabelRaum.caption := AktuellerRaum.Raumname;
    KampfProzedure.IstInKampf := False;
    //Spieler-Start-StatsNR2//
    AnfangsHP:=10;
+   AnfangsRK:=10;
    //Spieler-start-stats//
 
    SpielerHP := AnfangsHP;
-   SpielerRK := 10;
+   SpielerRK := AnfangsRK;
    SpielerATK := 3;
 
    UIRefresh.UiRefresh();
@@ -100,14 +102,10 @@ begin
  Randomize;
  Eingabe := Edit1.text;
 
- //Befehlsauflistung: help//
-
- if (uppercase(Eingabe) = 'MIAU') then
-     begin
-      Kampf();
-     end
- else if (uppercase(Eingabe) = 'HELP') or (uppercase(Eingabe) = 'HILFE') or (uppercase(Eingabe) = 'BEFEHLE')  or (Eingabe='?') then
+ //Befehlsauflistung: help //
+ if (uppercase(Eingabe) = 'HELP') or (uppercase(Eingabe) = 'HILFE') or (uppercase(Eingabe) = 'BEFEHLE')  or (Eingabe='?') then
    begin
+     Memo1.lines.add('');
      Memo1.lines.add('help/Hilfe/Befehle: Befehlsauflistung');
      Memo1.lines.add('[Raumname]: Raumbeschreibung anzeigen');
      Memo1.lines.add('Norden/Osten/Sueden/Westen: In diese Richtung gehen');  //HIlfe Stellung
@@ -139,7 +137,7 @@ begin
      RaumWechsel(AktuellerRaum.Osten);
  end
 
- else if uppercase(Eingabe) = 'SUEDEN'
+ else if (uppercase(Eingabe) = 'SÜDEN') or   (uppercase(Eingabe) = 'SUEDEN')
  then
  begin
     RaumWechsel(AktuellerRaum.Sueden);
@@ -157,18 +155,21 @@ begin
    LabelRaum.caption := AktuellerRaum.Raumname;
  end
 
- //------Kampf------//    //Angelehnt an das Pen&Paper-Kampfsystem//
-
  //Angreifen//
 
  else if (uppercase(Eingabe) = 'ANGREIFEN')
  then
- begin
  Kampf()
- end
- else
- Memo1.lines.add('Unbekannte Eingabe');
- Memo1.lines.add('Liste der Befehle mit : ?');//Hilfe Ausgabe bei unerkannter Eingabe
+ else if Eingabe = '' then
+ begin
+ Memo1.lines.add('');
+ Memo1.lines.add('Schreibe etwas in die Box um mit der Welt zu interagieren');
+ Memo1.lines.add('Für Hilfe schreibe ?');
+ end;
+ //ELSE IF Schleife muss gefixt werden, sodaß bei unerkannter Eingabe die Hilfe angezeigt wird //
+ //else
+ //Memo1.lines.add('Unbekannte Eingabe');
+ //Memo1.lines.add('Liste der Befehle mit : ?');//Hilfe Ausgabe bei unerkannter Eingabe
 
 //RefresUI
 

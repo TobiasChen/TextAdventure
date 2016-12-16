@@ -14,7 +14,7 @@ var
 procedure Kampf();
 implementation
 uses Unit1,ProzedureRaumwechsel; //Unit1 muss benutzt werden
-
+//------Kampf------//    //Angelehnt an das Pen&Paper-Kampfsystem//
 procedure Kampf();
 begin
 Gegner:=AktuellerRaum.Enemy;
@@ -54,7 +54,7 @@ begin
            Form1.LabelGegnerHP.Caption:=IntToStr(0);
            end
            else
-           Form1.Memo1.lines.add('Du hast den Gegner um+ '+ inttostr(SpielerATK) +' Schaden  getroffen!');
+           Form1.Memo1.lines.add('Du hast den Gegner mit '+ inttostr(SpielerATK) +' Schaden  getroffen!');
          end
        else
          begin
