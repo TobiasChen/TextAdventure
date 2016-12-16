@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  mTRaum, MTEnemy,Kampfprozedure,ProzedureRaumWechsel;
+  mTRaum, MTEnemy,Kampfprozedure,ProzedureRaumWechsel,UIRefresh;
 
 type
 
@@ -86,9 +86,7 @@ begin
    SpielerHP := 10;
    SpielerRK := 10;
    SpielerATK := 3;
-   LabelHP.Caption := InttoStr(SpielerHP);
-   LabelRK.Caption := InttoStr(SpielerRK);
-   LabelATK.Caption := InttoStr(SpielerATK);
+   UIRefresh.UiRefresh();
 end;
 
 //--------------------------------Der Absolut------------------------------------//
@@ -128,7 +126,7 @@ begin
 
  //Raumwechsel//
 
- if uppercase(Eingabe) = 'NORDEN'
+ if uppercase(Eingabe) = 'NORDEN'        //Anstat den ganzen Code in jeder Eingabe zu haben wird nur noch eine Funktion "Raumwechsel" aufgerufen
  then
    begin
    RaumWechsel(AktuellerRaum.Norden);
@@ -137,76 +135,19 @@ begin
  if uppercase(Eingabe) = 'OSTEN'
  then
  begin
-   if AktuellerRaum.Osten = nil
-   then Memo1.lines.add('Da ist kein Raum!')
-   else
-     begin
-      aktuellerRaum := AktuellerRaum.Osten;
-      LabelRaum.caption := AktuellerRaum.Raumname;
-      if aktuellerRaum.Enemy = nil                                  //Ist dort ein Gegner?
-      then
-        begin
-          IstInKampf := False;
-        end
-      else
-        begin
-         IstInKampf := True;
-          aktuellerGegner := aktuellerRaum.Enemy;
-          LabelGegner.Caption := aktuellerRaum.Enemy.Enemyname;
-          LabelGegnerHP.Caption := InttoStr(aktuellerGegner.HP);
-          Initiative := random(2);
-        end;
-     end;
+     RaumWechsel(AktuellerRaum.Osten);
  end;
 
  if uppercase(Eingabe) = 'SUEDEN'
  then
  begin
-   if AktuellerRaum.Sueden = nil
-   then Memo1.lines.add('Da ist kein Raum!')
-   else
-     begin
-      aktuellerRaum := AktuellerRaum.Sueden;
-      LabelRaum.caption := AktuellerRaum.Raumname;
-      if aktuellerRaum.Enemy = nil                                  //Ist dort ein Gegner?
-      then
-        begin
-          IstInKampf := False;
-        end
-      else
-        begin
-          IstInKampf := True;
-          aktuellerGegner := aktuellerRaum.Enemy;
-          LabelGegner.Caption := aktuellerRaum.Enemy.Enemyname;
-          LabelGegnerHP.Caption := InttoStr(aktuellerGegner.HP);
-          Initiative := random(2);
-        end;
-     end;
+    RaumWechsel(AktuellerRaum.Sueden);
  end;
 
  if uppercase(Eingabe) = 'WESTEN'
  then
  begin
-   if AktuellerRaum.Westen = nil
-   then Memo1.lines.add('Da ist kein Raum!')
-   else
-     begin
-      aktuellerRaum := AktuellerRaum.Westen;
-      LabelRaum.caption := AktuellerRaum.Raumname;
-      if aktuellerRaum.Enemy = nil                                  //Ist dort ein Gegner?
-      then
-        begin
-          IstInKampf := False;
-        end
-      else
-        begin
-          IstInKampf := True;
-          aktuellerGegner := aktuellerRaum.Enemy;
-          LabelGegner.Caption := aktuellerRaum.Enemy.Enemyname;
-          LabelGegnerHP.Caption := InttoStr(aktuellerGegner.HP);
-          Initiative := random(2);
-        end;
-     end;
+    RaumWechsel(AktuellerRaum.Westen);
  end;
 
  if uppercase(Eingabe) = 'ZURUECK'
@@ -224,27 +165,8 @@ begin
  begin
  end;
 
- //Flucht//
-
- if (uppercase(Eingabe) = 'FLIEHEN') and (IstInKampf = true)
- then
- begin
-   Wurfgegner := random(20) + 1 + aktuellerGegner.ATK;              //Wurf des Gegners
-   if SpielerRK < Wurfgegner                                        //Trifft Gegner?
-   then
-     begin
-      SpielerHP := SpielerHP - round(aktuellerGegner.ATK div 2);    //Halber Schaden
-      LabelHP.Caption := InttoStr(SpielerHP);                             //Flucht geht in
-      LabelRaum.caption := AktuellerRaum.Raumname;                  //vorherigen Raum
-    end
-   else
-      begin
-       LabelRaum.caption := AktuellerRaum.Raumname;
-      end;
- end;
 //RefresUI
-LabelHP.Caption := InttoStr(SpielerHP);
-//function TForm1.Angriff
+UIRefresh()
 end;
 
 end.

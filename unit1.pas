@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  mTRaum, MTEnemy,Kampfprozedure,ProzedureRaumWechsel;
+  mTRaum, MTEnemy,Kampfprozedure,ProzedureRaumWechsel,UIRefresh;
 
 type
 
@@ -86,9 +86,7 @@ begin
    SpielerHP := 10;
    SpielerRK := 10;
    SpielerATK := 3;
-   LabelHP.Caption := InttoStr(SpielerHP);
-   LabelRK.Caption := InttoStr(SpielerRK);
-   LabelATK.Caption := InttoStr(SpielerATK);
+   UIRefresh.UiRefresh();
 end;
 
 //--------------------------------Der Absolut------------------------------------//
@@ -128,7 +126,7 @@ begin
 
  //Raumwechsel//
 
- if uppercase(Eingabe) = 'NORDEN'
+ if uppercase(Eingabe) = 'NORDEN'        //Anstat den ganzen Code in jeder Eingabe zu haben wird nur noch eine Funktion "Raumwechsel" aufgerufen
  then
    begin
    RaumWechsel(AktuellerRaum.Norden);
@@ -167,27 +165,8 @@ begin
  begin
  end;
 
- //Flucht//
-
- if (uppercase(Eingabe) = 'FLIEHEN') and (IstInKampf = true)
- then
- begin
-   Wurfgegner := random(20) + 1 + aktuellerGegner.ATK;              //Wurf des Gegners
-   if SpielerRK < Wurfgegner                                        //Trifft Gegner?
-   then
-     begin
-      SpielerHP := SpielerHP - round(aktuellerGegner.ATK div 2);    //Halber Schaden
-      LabelHP.Caption := InttoStr(SpielerHP);                             //Flucht geht in
-      LabelRaum.caption := AktuellerRaum.Raumname;                  //vorherigen Raum
-    end
-   else
-      begin
-       LabelRaum.caption := AktuellerRaum.Raumname;
-      end;
- end;
 //RefresUI
-LabelHP.Caption := InttoStr(SpielerHP);
-//function TForm1.Angriff
+UIRefresh.UiRefresh()
 end;
 
 end.

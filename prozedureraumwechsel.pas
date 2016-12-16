@@ -19,7 +19,6 @@ begin
    else
      begin
       aktuellerRaum := Eingabe;
-      Form1.LabelRaum.caption := AktuellerRaum.Raumname;
       Form1.Memo1.lines.add(Eingabe.Raumname);
      end;
   end;
