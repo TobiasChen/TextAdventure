@@ -5,19 +5,18 @@ unit RaumUpdate;
 interface
 
 uses
-  Classes, SysUtils;
-procedure RaumUpdate(Raumhier:Traum,Nord:Traum,Ost:TRaum,Sued:TRaum,West:TRaum,Enemy:TEnemy);
+  Classes, SysUtils,mTraum,MTenemy;
+procedure RaumUpdate(EigenerRaum:TRAum;Nord:TRAum;Sued:TRAum;West:TRAum;Ost:TRAum;Gegner:TRAum);
 
 implementation
-
-uses mTRaum;   //Benötigte Units zum Funktioniern
-procedure RaumUpdate(Raumhier:Traum,Nord:Traum,Ost:TRaum,Sued:TRaum,West:TRaum,Enemy:TEnemy);
+   //Benötigte Units zum Funktioniern
+procedure RaumUpdate(EigenerRaum:TRAum;Nord:TRAum;Sued:TRAum;West:TRAum;Ost:TRAum;Gegner:TRAum);
  begin
-      Raumhier.Norden:=Nord;
-      Raumhier.Osten:=Ost;
-      Raumhier.Sueden:=Sued;
-      Raumhier.Westen:=West;
-      Raumhier.Gegner:=Enemy;
+EigenerRaum.Norden:=Nord;
+EigenerRaum.Osten:=Ost;
+EigenerRaum.Sueden:=Sued;
+EigenerRaum.Westen:=West;
+EigenerRaum.Enemy:=Gegner;
   end;
 end.
 

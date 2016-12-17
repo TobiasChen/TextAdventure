@@ -15,6 +15,7 @@ type
   TForm1 = class(TForm)
     Button1: TButton;
     Edit1: TEdit;
+    LabelRaumBeschreibung: TLabel;
     Memo1: TMemo;
     LabelGegnerHPunverwendet: TLabel;
     LabelGegnerHP: TLabel;
@@ -37,7 +38,6 @@ type
 
 var
   Form1: TForm1;
-  Memo1: TMemo;
   //Räume//
   Schwimmbad: TRaum;
   Mensa: TRaum;
@@ -70,8 +70,8 @@ begin
    Bleises_Folterkeller := TRaum.create ('Bleises Folterkeller', 'Hier koennen kleine Kinder "gut" behandelt werden!',nil,nil,nil,nil,nil);
 
    //RaumUpdate//
-   //Die Prozedure braucht 6 Pointer,den Raum der zu ändern ist
-   //die Räume die in den HimmelsRichtungen um ihn herum liegen
+   //Die Prozedure RaumUpdate() braucht 6 Pointer und zwar den Raum der zu
+   //ändern ist die Räume die in den HimmelsRichtungen um ihn herum liegen
    //und immoment den Gegner im Raum
    RaumUpdate.RaumUpdate(Mensa,nil,Schwimmbad,Bleises_Folterkeller,nil,nil);
    RaumUpdate.RaumUpdate(Schwimmbad,nil,nil,nil,Mensa,nil);

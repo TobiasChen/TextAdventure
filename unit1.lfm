@@ -1,34 +1,34 @@
 object Form1: TForm1
-  Left = 1120
-  Height = 363
-  Top = 425
-  Width = 562
+  Left = -848
+  Height = 423
+  Top = 356
+  Width = 603
   Caption = 'Form1'
-  ClientHeight = 363
-  ClientWidth = 562
+  ClientHeight = 423
+  ClientWidth = 603
   OnCreate = FormCreate
-  LCLVersion = '1.4.4.0'
+  LCLVersion = '1.6.2.0'
   object Button1: TButton
-    Left = 204
+    Left = 208
     Height = 25
-    Top = 166
+    Top = 200
     Width = 75
     Caption = 'Eingabe'
     OnClick = Button1Click
     TabOrder = 0
   end
   object Edit1: TEdit
-    Left = 84
+    Left = 88
     Height = 23
-    Top = 168
+    Top = 200
     Width = 104
     TabOrder = 1
   end
   object Labeleingabeunverwendet: TLabel
-    Left = 12
+    Left = 16
     Height = 21
-    Top = 168
-    Width = 59
+    Top = 200
+    Width = 58
     Caption = 'Eingabe'
     Font.CharSet = ANSI_CHARSET
     Font.Height = -16
@@ -40,9 +40,9 @@ object Form1: TForm1
   end
   object LabelRaum: TLabel
     Left = 12
-    Height = 42
-    Top = 216
-    Width = 147
+    Height = 40
+    Top = 240
+    Width = 172
     Caption = 'LabelRaum'
     Font.CharSet = ANSI_CHARSET
     Font.Height = -35
@@ -53,10 +53,10 @@ object Form1: TForm1
     ParentFont = False
   end
   object LabelHPunverwendet: TLabel
-    Left = 288
-    Height = 28
+    Left = 395
+    Height = 30
     Top = 16
-    Width = 35
+    Width = 32
     Caption = 'HP:'
     Font.CharSet = ANSI_CHARSET
     Font.Height = -21
@@ -67,10 +67,10 @@ object Form1: TForm1
     ParentFont = False
   end
   object LabelHP: TLabel
-    Left = 344
-    Height = 28
+    Left = 440
+    Height = 30
     Top = 16
-    Width = 7
+    Width = 9
     Caption = '-'
     Font.CharSet = ANSI_CHARSET
     Font.Height = -21
@@ -81,10 +81,10 @@ object Form1: TForm1
     ParentFont = False
   end
   object LabelRKunverwendet: TLabel
-    Left = 288
-    Height = 28
-    Top = 56
-    Width = 35
+    Left = 395
+    Height = 30
+    Top = 64
+    Width = 30
     Caption = 'RK:'
     Font.CharSet = ANSI_CHARSET
     Font.Height = -21
@@ -95,10 +95,10 @@ object Form1: TForm1
     ParentFont = False
   end
   object LabelRK: TLabel
-    Left = 344
-    Height = 28
-    Top = 56
-    Width = 7
+    Left = 440
+    Height = 30
+    Top = 64
+    Width = 9
     Caption = '-'
     Font.CharSet = ANSI_CHARSET
     Font.Height = -21
@@ -109,10 +109,10 @@ object Form1: TForm1
     ParentFont = False
   end
   object LabelATKunverwendet: TLabel
-    Left = 288
-    Height = 28
-    Top = 96
-    Width = 47
+    Left = 395
+    Height = 30
+    Top = 112
+    Width = 42
     Caption = 'ATK:'
     Font.CharSet = ANSI_CHARSET
     Font.Height = -21
@@ -123,10 +123,10 @@ object Form1: TForm1
     ParentFont = False
   end
   object LabelATK: TLabel
-    Left = 344
-    Height = 28
-    Top = 96
-    Width = 7
+    Left = 440
+    Height = 30
+    Top = 112
+    Width = 9
     Caption = '-'
     Font.CharSet = ANSI_CHARSET
     Font.Height = -21
@@ -137,10 +137,10 @@ object Form1: TForm1
     ParentFont = False
   end
   object LabelGegner: TLabel
-    Left = 288
-    Height = 46
-    Top = 143
-    Width = 199
+    Left = 392
+    Height = 47
+    Top = 176
+    Width = 200
     Caption = 'LabelGegner'
     Font.CharSet = ANSI_CHARSET
     Font.Height = -35
@@ -151,10 +151,10 @@ object Form1: TForm1
     ParentFont = False
   end
   object LabelGegnerHPunverwendet: TLabel
-    Left = 288
-    Height = 25
-    Top = 216
-    Width = 23
+    Left = 400
+    Height = 24
+    Top = 240
+    Width = 28
     Caption = 'HP'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clMaroon
@@ -166,10 +166,10 @@ object Form1: TForm1
     ParentFont = False
   end
   object LabelGegnerHP: TLabel
-    Left = 344
-    Height = 25
-    Top = 216
-    Width = 6
+    Left = 442
+    Height = 24
+    Top = 240
+    Width = 7
     Caption = '-'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clMaroon
@@ -182,9 +182,19 @@ object Form1: TForm1
   end
   object Memo1: TMemo
     Left = 8
-    Height = 131
+    Height = 182
     Top = 8
-    Width = 272
+    Width = 344
     TabOrder = 2
+  end
+  object LabelRaumBeschreibung: TLabel
+    Left = 12
+    Height = 28
+    Top = 296
+    Width = 167
+    Caption = 'RaumBeschreibung'
+    Font.Height = -20
+    ParentColor = False
+    ParentFont = False
   end
 end

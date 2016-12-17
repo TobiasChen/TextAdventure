@@ -15,6 +15,7 @@ type
   TForm1 = class(TForm)
     Button1: TButton;
     Edit1: TEdit;
+    LabelRaumBeschreibung: TLabel;
     Memo1: TMemo;
     LabelGegnerHPunverwendet: TLabel;
     LabelGegnerHP: TLabel;
@@ -37,7 +38,6 @@ type
 
 var
   Form1: TForm1;
-  Memo1: TMemo;
   //Räume//
   Schwimmbad: TRaum;
   Mensa: TRaum;
@@ -63,11 +63,16 @@ begin
    //Gegner//
    Mieses_Essen := TEnemy.create ('Mieses Essen', 'Entspricht der Norm... von der Schule', 5, 5, 1);
 
-   //Räume//
+   //Räume//Hier am Besten nur lere Presetes erstellen und sie mit der Funktion RaumUpdate ändern
    EmptyPreset:=TRaum.create('An Empty Preset','to quickly create Rooms',nil,nil,nil,nil,nil);
    Mensa := TRaum.create ('Mensa', 'Hier koennen kleine Kinder Pampe fressen!',nil,nil,nil,nil,nil);
    Schwimmbad := TRaum.create ('Schwimmbad', 'Hier koennen kleine Kinder in ihrer Pisse schwimmen!',nil,nil,nil,nil,nil);
    Bleises_Folterkeller := TRaum.create ('Bleises Folterkeller', 'Hier koennen kleine Kinder "gut" behandelt werden!',nil,nil,nil,nil,nil);
+
+   //RaumUpdate//
+   //Die Prozedure RaumUpdate() braucht 6 Pointer und zwar den Raum der zu
+   //ändern ist die Räume die in den HimmelsRichtungen um ihn herum liegen
+   //und immoment den Gegner im Raum
    RaumUpdate.RaumUpdate(Mensa,nil,Schwimmbad,Bleises_Folterkeller,nil,nil);
    RaumUpdate.RaumUpdate(Schwimmbad,nil,nil,nil,Mensa,nil);
    RaumUpdate.RaumUpdate(Bleises_Folterkeller,Mensa,nil,nil,nil,nil);
@@ -123,7 +128,7 @@ begin
  else if uppercase(Eingabe) = 'NORDEN'        //Anstat den ganzen Code in jeder Eingabe zu haben wird nur noch eine Funktion "Raumwechsel" aufgerufen
  then
    begin
-   RaumWechseli(AktuellerRaum.Norden);
+   RaumWechsel(AktuellerRaum.Norden);
  end
 
  else if uppercase(Eingabe) = 'OSTEN'

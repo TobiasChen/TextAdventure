@@ -16,6 +16,7 @@ begin
   Form1.LabelRK.Caption := InttoStr(SpielerRK);
   Form1.LabelATK.Caption := InttoStr(SpielerATK);
   Form1.LabelRaum.caption := AktuellerRaum.Raumname;
+  Form1.LabelRaumBeschreibung:=AktuellerRaum.Beschreibung;
   If AktuellerRaum.Enemy <> nil then  // <> = is not
      begin
      Form1.LabelGegner.Caption := AktuellerRaum.Enemy.Enemyname;
