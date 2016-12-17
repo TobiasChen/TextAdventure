@@ -8,6 +8,7 @@ uses
   Classes, SysUtils,mTRaum,KampfProzedure;
 var
  aktuellerRaum: TRaum;
+ vorherigerRaum: TRaum;
 procedure RaumWechsel(Eingabe:Traum);
 implementation
 uses Unit1,UIRefresh;
@@ -22,8 +23,18 @@ procedure RaumWechsel(Eingabe:Traum);
      end
      else
      begin
-      aktuellerRaum := Eingabe;
-      Form1.Memo1.lines.add(Eingabe.Raumname);
+      if uppercase(Unit1.Eingabe) = 'NORDEN' then
+      Form1.Memo1.lines.add(aktuellerRaum.NORDENLeave)
+      else if uppercase(Unit1.Eingabe) = 'OSTEN' then
+      Form1.Memo1.lines.add(aktuellerRaum.OSTENLeave)
+      else if (uppercase(Unit1.Eingabe) = 'SÜDEN') or   (uppercase(Unit1.Eingabe) = 'SUEDEN') then
+      Form1.Memo1.lines.add(aktuellerRaum.SUEDENLeave)
+      else if uppercase(Unit1.Eingabe) = 'WESTEN' then
+      Form1.Memo1.lines.add(aktuellerRaum.WESTENLeave);
+      vorherigerRaum:=aktuellerRaum;
+      aktuellerRaum:=Eingabe;
+      Form1.Memo1.lines.add('Du betritts: '+Eingabe.Raumname);
+
       if AktuellerRaum.Enemy <> nil then
       begin
       IstInKampf:=true;

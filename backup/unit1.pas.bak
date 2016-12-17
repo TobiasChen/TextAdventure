@@ -6,7 +6,8 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  mTRaum, MTEnemy,Kampfprozedure,ProzedureRaumWechsel,UIRefresh,RaumUpdate;
+  RichMemo, mTRaum, MTEnemy, Kampfprozedure, ProzedureRaumWechsel, UIRefresh,
+  RaumUpdate;
 
 type
 
@@ -16,7 +17,7 @@ type
     Button1: TButton;
     Edit1: TEdit;
     LabelRaumBeschreibung: TLabel;
-    Memo1: TMemo;
+    NotRichMemo1: TMemo;
     LabelGegnerHPunverwendet: TLabel;
     LabelGegnerHP: TLabel;
     LabelGegner: TLabel;
@@ -28,6 +29,7 @@ type
     LabelATKunverwendet: TLabel;
     LabelATK: TLabel;
     LabelRaum: TLabel;
+    Memo1: TRichMemo;
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
@@ -50,6 +52,7 @@ var
   //Gegner//
   Mieses_Essen: TEnemy;
   aktuellerGegner: TEnemy;
+  Eingabe : String;
 implementation
 
 {$R *.lfm}
@@ -58,16 +61,17 @@ implementation
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
+   Memo1.Lines.Clear;
    Memo1.Lines.Add ('Hallo, willkommen im Textadventure');
 
    //Gegner//
    Mieses_Essen := TEnemy.create ('Mieses Essen', 'Entspricht der Norm... von der Schule', 5, 5, 1);
 
    //Räume//Hier am Besten nur lere Presetes erstellen und sie mit der Funktion RaumUpdate ändern
-   EmptyPreset:=TRaum.create('An Empty Preset','to quickly create Rooms',nil,nil,nil,nil,nil);
-   Mensa := TRaum.create ('Mensa', 'Hier koennen kleine Kinder Pampe fressen!',nil,nil,nil,nil,nil);
-   Schwimmbad := TRaum.create ('Schwimmbad', 'Hier koennen kleine Kinder in ihrer Pisse schwimmen!',nil,nil,nil,nil,nil);
-   Bleises_Folterkeller := TRaum.create ('Bleises Folterkeller', 'Hier koennen kleine Kinder "gut" behandelt werden!',nil,nil,nil,nil,nil);
+   EmptyPreset:=TRaum.create('An Empty Preset','to quickly create Rooms',nil,nil,nil,nil,nil,'','','','');
+   Mensa := TRaum.create ('Mensa', 'Hier koennen kleine Kinder Pampe fressen!',nil,nil,nil,nil,nil,'','','','');
+   Schwimmbad := TRaum.create ('Schwimmbad', 'Hier koennen kleine Kinder in ihrer Pisse schwimmen!',nil,nil,nil,nil,nil,'','','','');
+   Bleises_Folterkeller := TRaum.create ('Bleises Folterkeller', 'Hier koennen kleine Kinder "gut" behandelt werden!',nil,nil,nil,nil,nil,'','','','');
 
    //RaumUpdate//
    //Die Prozedure RaumUpdate() braucht 6 Pointer und zwar den Raum der zu
@@ -76,6 +80,10 @@ begin
    RaumUpdate.RaumUpdate(Mensa,nil,Schwimmbad,Bleises_Folterkeller,nil,nil);
    RaumUpdate.RaumUpdate(Schwimmbad,nil,nil,nil,Mensa,nil);
    RaumUpdate.RaumUpdate(Bleises_Folterkeller,Mensa,nil,nil,nil,nil);
+   //RaumUpdate AusgangsBeschreibungen
+   RaumNamenUpdate(Mensa,'','Du tritts durch eine große Tür in einen Raum voller hießer Dämpfe','Durch die Trepper gelangst du in ein dunkles Verlies','');
+   RaumNamenUpdate(Schwimmbad,'','','','Beim Öffnen der Türen schlägt dir ein übeleregender Gestank entgegnen');
+   RaumNamenUpdate(Bleises_Folterkeller,'Beim Öffnen der Türen schlägt dir ein übeleregender Gestank entgegnen','','','');
    //Startwerte//
    AnfangsRaum:=Bleises_Folterkeller;
    aktuellerRaum := AnfangsRaum;
@@ -97,7 +105,6 @@ end;
 //--------------------------------Heilige Button---------------------------------//
 
 procedure TForm1.Button1Click(Sender: TObject);
-var Eingabe : String;
 begin
  Randomize;
  Eingabe := Edit1.text;

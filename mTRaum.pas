@@ -18,9 +18,13 @@ type
     Sueden : TRaum;
     Westen : TRaum;
     Enemy : TEnemy;
-
+    NORDENLeave:String;
+    OSTENLeave:String;
+    SUEDENLeave:String;
+    WESTENLeave:String;
   public //Methoden
-    constructor create (RaumN : String; Beschr: String; N: TRaum; O: TRaum; S: TRaum; W: TRaum; Gegner: TEnemy);
+    constructor create (RaumN : String; Beschr: String; N: TRaum; O: TRaum; S: TRaum; W: TRaum; Gegner: TEnemy;
+    NordLeave:String; EastLeave:String; SuedLeave:String; WestLeave:String);
    end;
 implementation
 
@@ -29,7 +33,8 @@ implementation
 //+---------------------------------------------------------------------
 
 //-------- create (public) ---------------------------------------------
-constructor TRaum.create (RaumN : String; Beschr: String; N: TRaum; O: TRaum; S: TRaum; W: TRaum; Gegner: TEnemy);
+constructor TRaum.create (RaumN : String; Beschr: String; N: TRaum; O: TRaum; S: TRaum; W: TRaum; Gegner: TEnemy;
+                         NordLeave:String; EastLeave:String; SuedLeave:String; WestLeave:String);
 begin
   inherited create;
   Raumname := RaumN;
@@ -39,6 +44,10 @@ begin
   Sueden := S;
   Westen := W;
   Enemy := Gegner;
+  NORDENLeave:=NordLeave;
+  OSTENLeave:=EastLeave;
+  SUEDENLeave:=SuedLeave;
+  WESTENLeave:=Westleave;
 end;
 
 end.
