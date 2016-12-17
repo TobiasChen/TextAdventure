@@ -160,7 +160,7 @@ begin
  else if (uppercase(Eingabe) = 'ANGREIFEN')
  then
  Kampf()
- else if Eingabe = '' then
+ else
  begin
  Memo1.lines.add('');
  Memo1.lines.add('Schreibe etwas in die Box um mit der Welt zu interagieren');

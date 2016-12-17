@@ -20,7 +20,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="49"/>
+        <TopLine Value="10"/>
         <CursorPos X="68" Y="64"/>
         <UsageCount Value="46"/>
         <Loaded Value="True"/>
@@ -41,6 +41,7 @@
         <UnitName Value="KampfProzedure"/>
         <EditorIndex Value="3"/>
         <WindowIndex Value="1"/>
+        <TopLine Value="14"/>
         <CursorPos X="38" Y="51"/>
         <UsageCount Value="31"/>
         <Loaded Value="True"/>
@@ -59,8 +60,8 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="5"/>
         <WindowIndex Value="1"/>
-        <CursorPos X="55" Y="13"/>
-        <UsageCount Value="22"/>
+        <CursorPos X="6" Y="13"/>
+        <UsageCount Value="23"/>
         <Loaded Value="True"/>
       </Unit5>
       <Unit6>
@@ -74,8 +75,8 @@
         <UnitName Value="ProzedureRaumwechsel"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="1"/>
-        <CursorPos X="70" Y="26"/>
-        <UsageCount Value="14"/>
+        <CursorPos X="64" Y="12"/>
+        <UsageCount Value="15"/>
         <Loaded Value="True"/>
       </Unit7>
       <Unit8>
@@ -83,20 +84,22 @@
         <EditorIndex Value="4"/>
         <WindowIndex Value="1"/>
         <CursorPos X="43" Y="19"/>
-        <UsageCount Value="13"/>
+        <UsageCount Value="14"/>
         <Loaded Value="True"/>
       </Unit8>
       <Unit9>
         <Filename Value="raumupdate.pas"/>
         <UnitName Value="RaumUpdate"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <CursorPos X="31" Y="9"/>
         <UsageCount Value="10"/>
       </Unit9>
       <Unit10>
         <Filename Value="mTRaum.pas"/>
         <EditorIndex Value="1"/>
         <CursorPos X="79" Y="12"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="11"/>
         <Loaded Value="True"/>
       </Unit10>
     </Units>

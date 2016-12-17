@@ -8,12 +8,12 @@ uses
   Classes, SysUtils, mTEnemy, sterben;
 var
   SpielerHP, SpielerRK, SpielerATK: Integer;
-  WurfSpieler, WurfGegner : Integer; //Angelehnt an das Pen&Paper-Kampfsystem//
+  WurfSpieler, WurfGegner : Integer;                             //Angelehnt an das Pen&Paper-Kampfsystem//
   IstInKampf: Boolean;
   Gegner:TEnemy;
 procedure Kampf();
 implementation
-uses Unit1,ProzedureRaumwechsel; //Unit1 muss benutzt werden
+uses Unit1,ProzedureRaumwechsel;                                 //Unit1 muss benutzt werden
 //------Kampf------//    //Angelehnt an das Pen&Paper-Kampfsystem//
 procedure Kampf();
 begin
@@ -24,8 +24,8 @@ if AktuellerRaum.Enemy = nil then
 Form1.Memo1.lines.add('Kein Gegner Vorhanden')
 else
 begin
-    WurfSpieler := random(20) + 1 + SpielerATK;  //Wurf des Spielers
-    WurfGegner:= random(20) + 1 + Gegner.ATK;//Wurf des Gegners
+    WurfSpieler := random(20) + 1 + SpielerATK;                  //Wurf des Spielers
+    WurfGegner:= random(20) + 1 + Gegner.ATK;                    //Wurf des Gegners
     if SpielerRK < Wurfgegner                                    //Trifft Gegner?
        then
          begin
@@ -42,7 +42,7 @@ begin
          begin
            Form1.Memo1.lines.add('Der Gegner hat dich verfehlt!');
          end;
-    if Gegner.RK < WurfSpieler                                 //Trifft Spieler?
+    if Gegner.RK < WurfSpieler                                   //Trifft Spieler?
        then
          begin
            Gegner.HP := Gegner.HP - SpielerATK;

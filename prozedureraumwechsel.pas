@@ -13,7 +13,7 @@ implementation
 uses Unit1,UIRefresh;
 procedure RaumWechsel(Eingabe:Traum);
    begin
-   if Eingabe = nil        //Prozeduer wird mit Eingabe als Nördlicher Raum übergeben
+   if Eingabe = nil        //Prozedur wird mit Eingabe als Nördlicher Raum übergeben
    then Form1.Memo1.lines.add('Da ist kein Raum!')
    else
      if IstInKampf = true  then

@@ -68,9 +68,6 @@ begin
    Mensa := TRaum.create ('Mensa', 'Hier koennen kleine Kinder Pampe fressen!',nil,nil,nil,nil,nil);
    Schwimmbad := TRaum.create ('Schwimmbad', 'Hier koennen kleine Kinder in ihrer Pisse schwimmen!',nil,nil,nil,nil,nil);
    Bleises_Folterkeller := TRaum.create ('Bleises Folterkeller', 'Hier koennen kleine Kinder "gut" behandelt werden!',nil,nil,nil,nil,nil);
-
-   //RaumUpdate//
-
    RaumUpdate.RaumUpdate(Mensa,nil,Schwimmbad,Bleises_Folterkeller,nil,nil);
    RaumUpdate.RaumUpdate(Schwimmbad,nil,nil,nil,Mensa,nil);
    RaumUpdate.RaumUpdate(Bleises_Folterkeller,Mensa,nil,nil,nil,nil);
@@ -126,7 +123,7 @@ begin
  else if uppercase(Eingabe) = 'NORDEN'        //Anstat den ganzen Code in jeder Eingabe zu haben wird nur noch eine Funktion "Raumwechsel" aufgerufen
  then
    begin
-   RaumWechsel(AktuellerRaum.Norden);
+   RaumWechseli(AktuellerRaum.Norden);
  end
 
  else if uppercase(Eingabe) = 'OSTEN'
@@ -158,7 +155,7 @@ begin
  else if (uppercase(Eingabe) = 'ANGREIFEN')
  then
  Kampf()
- else if Eingabe = '' then
+ else
  begin
  Memo1.lines.add('');
  Memo1.lines.add('Schreibe etwas in die Box um mit der Welt zu interagieren');
