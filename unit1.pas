@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  mTRaum, MTEnemy,Kampfprozedure,ProzedureRaumWechsel,UIRefresh;
+  mTRaum, MTEnemy,Kampfprozedure,ProzedureRaumWechsel,UIRefresh,RaumUpdate;
 
 type
 
@@ -42,6 +42,7 @@ var
   Schwimmbad: TRaum;
   Mensa: TRaum;
   Bleises_Folterkeller: TRaum;
+  EmptyPreset:TRaum;
   //AnfangsVariablen für Setback nach Tod
   AnfangsRaum: TRaum;
   AnfangsHP:Integer;
@@ -62,20 +63,19 @@ begin
    //Gegner//
    Mieses_Essen := TEnemy.create ('Mieses Essen', 'Entspricht der Norm... von der Schule', 5, 5, 1);
 
-   //Räume//
+   //Räume//Hier am Besten nur lere Presetes erstellen und sie mit der Funktion RaumUpdate ändern
+   EmptyPreset:=TRaum.create('An Empty Preset','to quickly create Rooms',nil,nil,nil,nil,nil);
+   Mensa := TRaum.create ('Mensa', 'Hier koennen kleine Kinder Pampe fressen!',nil,nil,nil,nil,nil);
+   Schwimmbad := TRaum.create ('Schwimmbad', 'Hier koennen kleine Kinder in ihrer Pisse schwimmen!',nil,nil,nil,nil,nil);
+   Bleises_Folterkeller := TRaum.create ('Bleises Folterkeller', 'Hier koennen kleine Kinder "gut" behandelt werden!',nil,nil,nil,nil,nil);
 
-   Mensa := TRaum.create ('Mensa', 'Hier koennen kleine Kinder Pampe fressen!', nil, Bleises_Folterkeller, Schwimmbad, nil, Mieses_Essen);
-   Schwimmbad := TRaum.create ('Schwimmbad', 'Hier koennen kleine Kinder in ihrer Pisse schwimmen!', Mensa, nil, Bleises_Folterkeller, nil,Mieses_Essen);
-   Bleises_Folterkeller := TRaum.create ('Bleises Folterkeller', 'Hier koennen kleine Kinder "gut" behandelt werden!', Schwimmbad, nil, nil, Mensa, nil);
-
-   //Ausgänge//
-
-   Mensa.Osten := Bleises_Folterkeller;
-   Mensa.Sueden := Schwimmbad;
-   Schwimmbad.Norden := Mensa;
-   Bleises_Folterkeller.Westen := Mensa;
-   Schwimmbad.Sueden:=Bleises_Folterkeller;
-
+   //RaumUpdate//
+   //Die Prozedure braucht 6 Pointer,den Raum der zu ändern ist
+   //die Räume die in den HimmelsRichtungen um ihn herum liegen
+   //und immoment den Gegner im Raum
+   RaumUpdate.RaumUpdate(Mensa,nil,Schwimmbad,Bleises_Folterkeller,nil,nil);
+   RaumUpdate.RaumUpdate(Schwimmbad,nil,nil,nil,Mensa,nil);
+   RaumUpdate.RaumUpdate(Bleises_Folterkeller,Mensa,nil,nil,nil,nil);
    //Startwerte//
    AnfangsRaum:=Bleises_Folterkeller;
    aktuellerRaum := AnfangsRaum;
