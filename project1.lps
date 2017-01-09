@@ -23,8 +23,8 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="64"/>
-        <CursorPos X="46" Y="100"/>
+        <TopLine Value="142"/>
+        <CursorPos X="54" Y="142"/>
         <UsageCount Value="59"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -42,81 +42,22 @@
         <Filename Value="kampfprozedure.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="KampfProzedure"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="8"/>
-        <CursorPos X="40" Y="8"/>
+        <TopLine Value="7"/>
+        <CursorPos Y="27"/>
         <UsageCount Value="44"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="sterben.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <CursorPos X="30" Y="20"/>
         <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
-        <Filename Value="raumupdate.pas"/>
-        <UnitName Value="RaumUpdate"/>
-        <CursorPos X="119" Y="11"/>
-        <UsageCount Value="17"/>
-        <Loaded Value="True"/>
-      </Unit5>
-      <Unit6>
-        <Filename Value="..\..\Lichtspiel mit Canvas\mTTaschenlampe.pas"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="16" Y="16"/>
-        <UsageCount Value="8"/>
-      </Unit6>
-      <Unit7>
-        <Filename Value="prozedureraumwechsel.pas"/>
-        <UnitName Value="ProzedureRaumwechsel"/>
-        <WindowIndex Value="1"/>
-        <TopLine Value="9"/>
-        <CursorPos X="37" Y="42"/>
-        <UsageCount Value="19"/>
-        <Loaded Value="True"/>
-      </Unit7>
-      <Unit8>
-        <Filename Value="UIRefresh.pas"/>
-        <EditorIndex Value="2"/>
-        <CursorPos X="53" Y="12"/>
-        <UsageCount Value="18"/>
-        <Loaded Value="True"/>
-      </Unit8>
-      <Unit9>
-        <Filename Value="mTRaum.pas"/>
-        <EditorIndex Value="1"/>
-        <WindowIndex Value="1"/>
-        <CursorPos X="5" Y="28"/>
-        <UsageCount Value="18"/>
-        <Loaded Value="True"/>
-      </Unit9>
-      <Unit10>
-        <Filename Value="D:\Lazarus\components\ideintf\maskpropedit.pas"/>
-        <UnitName Value="MaskPropEdit"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="103"/>
-        <CursorPos X="22" Y="21"/>
-        <UsageCount Value="9"/>
-      </Unit10>
-      <Unit11>
-        <Filename Value="..\Rip\richmemo\richmemoutils.pas"/>
-        <UnitName Value="RichMemoUtils"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="69"/>
-        <CursorPos X="3" Y="90"/>
-        <UsageCount Value="9"/>
-      </Unit11>
-      <Unit12>
-        <Filename Value="..\TextAdventure\unit1.pas"/>
-        <UnitName Value="Unit1"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="9"/>
-      </Unit12>
-      <Unit13>
         <Filename Value="monsterspawn.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="2"/>
@@ -125,6 +66,65 @@
         <CursorPos X="37" Y="37"/>
         <UsageCount Value="22"/>
         <Loaded Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="raumupdate.pas"/>
+        <UnitName Value="RaumUpdate"/>
+        <CursorPos X="119" Y="11"/>
+        <UsageCount Value="17"/>
+        <Loaded Value="True"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="..\..\Lichtspiel mit Canvas\mTTaschenlampe.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="16" Y="16"/>
+        <UsageCount Value="8"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="prozedureraumwechsel.pas"/>
+        <UnitName Value="ProzedureRaumwechsel"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="9"/>
+        <CursorPos X="37" Y="42"/>
+        <UsageCount Value="19"/>
+        <Loaded Value="True"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="UIRefresh.pas"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="53" Y="12"/>
+        <UsageCount Value="18"/>
+        <Loaded Value="True"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="mTRaum.pas"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="1"/>
+        <CursorPos X="5" Y="28"/>
+        <UsageCount Value="18"/>
+        <Loaded Value="True"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="D:\Lazarus\components\ideintf\maskpropedit.pas"/>
+        <UnitName Value="MaskPropEdit"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="103"/>
+        <CursorPos X="22" Y="21"/>
+        <UsageCount Value="9"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="..\Rip\richmemo\richmemoutils.pas"/>
+        <UnitName Value="RichMemoUtils"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="69"/>
+        <CursorPos X="3" Y="90"/>
+        <UsageCount Value="9"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="..\TextAdventure\unit1.pas"/>
+        <UnitName Value="Unit1"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="9"/>
       </Unit13>
     </Units>
     <General>
