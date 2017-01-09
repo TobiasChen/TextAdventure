@@ -11,8 +11,10 @@ var
  vorherigerRaum: TRaum;
 procedure RaumWechsel(Eingabe:Traum);
 implementation
-uses Unit1,UIRefresh;
+uses Unit1,UIRefresh,Monsterspawn;
 procedure RaumWechsel(Eingabe:Traum);
+var
+WuerfelErgebnis:Integer;
    begin
    if Eingabe = nil        //Prozedur wird mit Eingabe als Nördlicher Raum übergeben
    then Form1.Memo1.lines.add('Da ist kein Raum!')
@@ -34,7 +36,10 @@ procedure RaumWechsel(Eingabe:Traum);
       vorherigerRaum:=aktuellerRaum;
       aktuellerRaum:=Eingabe;
       Form1.Memo1.lines.add('Du betritts: '+Eingabe.Raumname);
-
+      AktuellerRaum.MD:=AktuellerRaum.MD+ AktuellerRaum.Schrittweite*AktuellerRaum.MDA;
+      Wuerfelergebnis:= 1+random(100);
+      if WuerfelErgebnis-aktuellerRaum.MD<=0 then
+         Monsterspawn.Monsterspawn();
       if AktuellerRaum.Enemy <> nil then
       begin
       IstInKampf:=true;
@@ -45,6 +50,10 @@ procedure RaumWechsel(Eingabe:Traum);
       SpielerATK:=SPielerATK +2;    //Bei Betreten eines Raumes mit einem Gegner
       SpielerRK:=SpielerRK +2;      //Wird dem Spieler 2 RK abgezogen
       UIRefresh.UIRefresh();
+
+      //Raum1.Schriitweite:=Raum1.Schrittweite +1
+      //Raum2.Schriitweite:=Raum2.Schrittweite +1  Entsprechend fortührend
+     //                                            Muss hard coded werden
       end;
   end;
 end;

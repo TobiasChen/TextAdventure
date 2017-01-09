@@ -17,6 +17,8 @@ begin
   Form1.LabelATK.Caption := InttoStr(SpielerATK);
   Form1.LabelRaum.caption := AktuellerRaum.Raumname;
   Form1.LabelRaumBeschreibung.caption:=AktuellerRaum.Beschreibung;
+  Form1.MD.caption:=inttostr(aktuellerRaum.MD);
+  Form1.Schwierigkeit.caption:=aktuellerRaum.Difficulty;
   If AktuellerRaum.Enemy <> nil then  // <> = is not
      begin
      Form1.LabelGegner.Caption := AktuellerRaum.Enemy.Enemyname;

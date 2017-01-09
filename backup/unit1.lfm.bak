@@ -1,11 +1,11 @@
 object Form1: TForm1
-  Left = -1438
-  Height = 431
-  Top = 415
-  Width = 1103
+  Left = -740
+  Height = 393
+  Top = 263
+  Width = 605
   Caption = 'Form1'
-  ClientHeight = 431
-  ClientWidth = 1103
+  ClientHeight = 393
+  ClientWidth = 605
   OnCreate = FormCreate
   LCLVersion = '1.6.2.0'
   object Button1: TButton
@@ -205,5 +205,21 @@ object Form1: TForm1
     ParentFont = False
     TabOrder = 2
     ZoomFactor = 1
+  end
+  object MD: TLabel
+    Left = 16
+    Height = 15
+    Top = 360
+    Width = 83
+    Caption = 'MonsterDensity'
+    ParentColor = False
+  end
+  object Schwierigkeit: TLabel
+    Left = 16
+    Height = 15
+    Top = 336
+    Width = 48
+    Caption = 'Difficulty'
+    ParentColor = False
   end
 end

@@ -22,9 +22,18 @@ type
     OSTENLeave:String;
     SUEDENLeave:String;
     WESTENLeave:String;
+    Schrittweite:Integer;
+    Difficulty:String;
+    MD:integer;       //Monster Density
+    MDA:Integer;          //Monster Density Subtraction
+    MDS:integer;          //MOnster Density Addition
+    Camp:boolean;
+    Camp_possible:boolean;
   public //Methoden
-    constructor create (RaumN : String; Beschr: String; N: TRaum; O: TRaum; S: TRaum; W: TRaum; Gegner: TEnemy;
-    NordLeave:String; EastLeave:String; SuedLeave:String; WestLeave:String);
+    constructor create (RaumN : String; Beschr: String; N: TRaum; O: TRaum; S: TRaum; W: TRaum;
+    Gegner: TEnemy;NordLeave:String; EastLeave:String; SuedLeave:String; WestLeave:String;
+    Weg:Integer;Schwierigkeit:String;Monster_Density:Integer;MOnster_Density_Addition:Integer;
+    Monster_Density_Subtraction:Integer;Camp_Active:boolean;Camp_pos:boolean);
    end;
 implementation
 
@@ -33,8 +42,10 @@ implementation
 //+---------------------------------------------------------------------
 
 //-------- create (public) ---------------------------------------------
-constructor TRaum.create (RaumN : String; Beschr: String; N: TRaum; O: TRaum; S: TRaum; W: TRaum; Gegner: TEnemy;
-                         NordLeave:String; EastLeave:String; SuedLeave:String; WestLeave:String);
+constructor TRaum.create(RaumN : String; Beschr: String; N: TRaum; O: TRaum; S: TRaum; W: TRaum;
+    Gegner: TEnemy;NordLeave:String; EastLeave:String; SuedLeave:String; WestLeave:String;
+    Weg:Integer;Schwierigkeit:String;Monster_Density:Integer;MOnster_Density_Addition:Integer;
+    Monster_Density_Subtraction:Integer;Camp_Active:boolean;Camp_pos:boolean);
 begin
   inherited create;
   Raumname := RaumN;
@@ -44,10 +55,17 @@ begin
   Sueden := S;
   Westen := W;
   Enemy := Gegner;
-  NordenLeave:=NordLeave;
-  OstennLeave:=EastLeave;
-  SuedenLeave:=SuedLeave;
-  WestenLeave:=Westleave;
+  NORDENLeave:=NordLeave;
+  OSTENLeave:=EastLeave;
+  SUEDENLeave:=SuedLeave;
+  WESTENLeave:=Westleave;
+  Schrittweite:=Weg;
+  Difficulty:=Schwierigkeit;
+  MD:=Monster_Density;
+  MDA:=Monster_Density_Addition;
+  MDS:=Monster_Density_Subtraction;
+  Camp:=Camp_Active;
+  Camp_possible:=Camp_pos;
 end;
 
 end.
