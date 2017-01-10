@@ -87,6 +87,7 @@
       </Unit8>
       <Unit9>
         <Filename Value="UIRefresh.pas"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <CursorPos X="53" Y="20"/>
         <UsageCount Value="25"/>
@@ -94,6 +95,7 @@
       </Unit9>
       <Unit10>
         <Filename Value="mTRaum.pas"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="1"/>
         <CursorPos X="88" Y="41"/>
@@ -134,7 +136,6 @@
       <Unit15>
         <Filename Value="lootdrop.pas"/>
         <UnitName Value="LootDrop"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
         <WindowIndex Value="1"/>
         <TopLine Value="51"/>

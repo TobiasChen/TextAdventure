@@ -20,7 +20,7 @@ type
     Button4: TButton;
     Button5: TButton;
     Edit1: TEdit;
-    Label1: TLabel;
+    LabelMDUnverwendet: TLabel;
     Schwierigkeit: TLabel;
     MD: TLabel;
     LabelRaumBeschreibung: TLabel;
@@ -213,30 +213,30 @@ begin
 
  //Raumwechsel//
 
- else if uppercase(Eingabe) = 'NORDEN'        //Anstatt den ganzen Code in jeder Eingabe zu haben wird nur noch eine Funktion "Raumwechsel" aufgerufen
+ else if (uppercase(Eingabe) = 'NORDEN') or (uppercase(Eingabe)='NORD') or (uppercase(Eingabe)='N')       //Anstatt den ganzen Code in jeder Eingabe zu haben wird nur noch eine Funktion "Raumwechsel" aufgerufen
  then
    begin
    RaumWechsel(AktuellerRaum.Norden);
  end
 
- else if uppercase(Eingabe) = 'OSTEN'
+ else if (uppercase(Eingabe) = 'OSTEN') or (uppercase(Eingabe)='OST') or (uppercase(Eingabe)='O')
  then
  begin
      RaumWechsel(AktuellerRaum.Osten);
  end
 
- else if (uppercase(Eingabe) = 'SÜDEN') or   (uppercase(Eingabe) = 'SUEDEN')
+ else if (uppercase(Eingabe) = 'SUEDEN') or (uppercase(Eingabe)='SUED') or (uppercase(Eingabe)='S')
  then
  begin
     RaumWechsel(AktuellerRaum.Sueden);
  end
 
- else if uppercase(Eingabe) = 'WESTEN'
+ else if (uppercase(Eingabe) = 'WESTEN') or (uppercase(Eingabe)='WEST') or (uppercase(Eingabe)='W')
  then
  begin
     RaumWechsel(AktuellerRaum.Westen);
  end
- else if uppercase(Eingabe) = 'PICKUP'
+ else if uppercase(Eingabe) = 'PICK'
  then
  begin
     LootDrop.Pickup();
