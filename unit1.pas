@@ -20,7 +20,7 @@ type
     Button4: TButton;
     Button5: TButton;
     Edit1: TEdit;
-    LabelMDUnverwendet: TLabel;
+    Label1: TLabel;
     Schwierigkeit: TLabel;
     MD: TLabel;
     LabelRaumBeschreibung: TLabel;
@@ -69,13 +69,28 @@ var
   aktuellerGegner: TEnemy;
   //Helm//
   Kappe:Tloot;
-  Bessere_Kappe:TLoot;
+  Lederhelm:TLoot;
+  Eisenhelm:TLoot;
+  Gnorignums_Schaedelplatte:TLoot;
   //Rüstung//
-  Tunika:Tloot;
+  Gewand:Tloot;
+  Kettenhemd:Tloot;
+  Stahlruestung:Tloot;
+  Granitebrows_Stachelpanzer:Tloot;
   //Stiefel//
-  Robuste_Stiefel:Tloot;
+  Alte_Latscher:Tloot;
+  Lederschuhe:Tloot;
+  Eisenstiefel:Tloot;
+  Bodenmalmer:Tloot;
   //Waffen//
-  Dolch:TLoot;
+  Verroteter_Klumpen:TLoot;
+  Eisenstreitkolben:Tloot;
+  Orkischer_Hammerzahn:Tloot;
+  Gigantischer_Knochenmürber:Tloot;
+  Muerbes_Holzschwert:Tloot;
+  Eisenschwert:Tloot;
+  Geschmuecktes_Silberschwert:Tloot;
+  Drachenzahn:Tloot;
   //Spieler Items
   SpielerHelm:Tloot;
   SpielerRuestung:Tloot;
@@ -95,14 +110,29 @@ begin
    Memo1.Lines.Add ('Hallo, willkommen im Textadventure');
    //Typen sind Helm,Ruestung,Schuhe,Waffe
    //Helm-Loot//
-   Kappe:=TLoot.create('Kappe','Helm','eine leichte Lederkappe','Starter',0,0,0);
-   Bessere_Kappe:=TLoot.create('Bessere Kappe','Helm','eine verstärkte Lederkappe','normal',60,60,60);
+   Kappe:=TLoot.create('Kappe','Helm','eine leichte Lederkappe','verschlissen',0,0,0);
+   Lederhelm:=TLoot.create('Lederhelm','Helm','einen Lederhelm, der etwas Schutz bieten sollte,','normal',0,1,0);
+   Eisenhelm:=TLoot.create('Eisenhelm','Helm','einen gut gebauten Eisenhelm','erlesen',0,3,0);
+   Gnorignums_Schaedelplatte:=TLoot.create('gnorignums schädelplatte','Helm','gnorignums sagenhaften kopfschutz','magisch',5,5,0);
    //Rüstungs-Loot//
-   Tunika:=TLoot.create('Tunika','Ruestung','ein einfaches Gewand','Starter',0,0,0);
+   Gewand:=TLoot.create('Gewand','Ruestung','ein einfaches Gewand','verschlissen',0,1,0);
+   Kettenhemd:=TLoot.create('Kettenhemd','Ruestung','ein leichtes Kettenhemd','normal',0,3,0);
+   Stahlruestung:=TLoot.create('Stahlrüstung','Ruestung','eine äußerst widerstandsfähgige Stahlrüstung','erlesen',2,5,0);
+   Granitebrows_Stachelpanzer:=TLoot.create('Granitebrows Stachelpanzer','Ruestung','den legendären Stachelpanzer Granitebrows','magisch',5,10,1);
    //Stiefel-Loot//
-   Robuste_Stiefel:=TLoot.create('Robuste Stiefel','Schuhe','ein paar abgewetzter und vielgetragene Schuhe','Starter',0,0,0);
+   Alte_Latscher:=TLoot.create('Alte_Latscher','Schuhe','ein Paar abgewetzter und vielgetragene Schuhe','verschlissen',0,0,0);
+   Lederschuhe:=TLoot.create('Lederschuhe','Schuhe','ein Paar guter Lederschuhe','normal',0,1,0);
+   Eisenstiefel:=TLoot.create('Eisenstiefel','Schuhe','ein Paar dicker Eisenstiefel','magisch',0,3,0);
+   Bodenmalmer:=TLoot.create('Bodenmalmer','Schuhe','die dir aus Geschichten bekannten Bodenmalmer','erlesen',5,5,0);
    //Waffen-Loot//
-   Dolch:=TLoot.create('Dolch','Waffe','Ein stumpfer Dolch','Starter',0,0,0);
+   Verroteter_Klumpen:=TLoot.create('Verroteter Klumpen','Waffe','einen modrigen Klumpen, den man zum Zuschlagen verwenden könnte,','verschlissen',0,1,4);
+   Eisenstreitkolben:=TLoot.create('Eisenstreitkolben','Waffe','einen benutzten Eisenstreitkolben','normal',0,2,7);
+   Orkischer_Hammerzahn:=TLoot.create('Orkischer Hammerzahn','Waffe','einen für Kriege verwendeten orkischen Hammerzahn','erlesen',0,3,11);
+   Gigantischer_Knochenmürber:=TLoot.create('Gigantischer Knochenmürber','Waffe','einen der mächtigsten Streitkolben, den Gigantischen Knochenmürber,','magisch',0,4,22);
+   Muerbes_Holzschwert:=TLoot.create('Mürbes Holzschwert','Waffe','ein mürbes Holzschwert, welches vielleicht etwas besser als die Faust ist,','verschlissen',1,0,4);
+   Eisenschwert:=TLoot.create('Eisenschwert','Waffe','ein stumpfes Eisenschwert','normal',2,0,7;
+   Geschmuecktes_Silberschwert:=TLoot.create('Geschmücktes Silberschwert','Waffe','ein hochwertiges Silberschwert voller Verzierungen','erlesen',3,0,11);
+   Drachenzahn:=TLoot.create('Drachenzahn','Waffe','einen mächtigen Drachenzahn','magisch',4,0,22);
    //Gegner//
    Mieses_Essen := TEnemy.create ('Mieses Essen', 'Entspricht der Norm... von der Schule', 5, 5, 1,'zerfetzt');
    Goblin := TEnemy.create ('Goblin', 'Kleine,Flinke Wesen die dir Wriklich den Tag verderben können',1, 1, 1,'zerfetzt');
@@ -183,30 +213,30 @@ begin
 
  //Raumwechsel//
 
- else if (uppercase(Eingabe) = 'NORDEN') or (uppercase(Eingabe)='NORD') or (uppercase(Eingabe)='N')       //Anstatt den ganzen Code in jeder Eingabe zu haben wird nur noch eine Funktion "Raumwechsel" aufgerufen
+ else if uppercase(Eingabe) = 'NORDEN'        //Anstatt den ganzen Code in jeder Eingabe zu haben wird nur noch eine Funktion "Raumwechsel" aufgerufen
  then
    begin
    RaumWechsel(AktuellerRaum.Norden);
  end
 
- else if (uppercase(Eingabe) = 'OSTEN') or (uppercase(Eingabe)='OST') or (uppercase(Eingabe)='O')
+ else if uppercase(Eingabe) = 'OSTEN'
  then
  begin
      RaumWechsel(AktuellerRaum.Osten);
  end
 
- else if (uppercase(Eingabe) = 'SUEDEN') or (uppercase(Eingabe)='SUED') or (uppercase(Eingabe)='S')
+ else if (uppercase(Eingabe) = 'SÜDEN') or   (uppercase(Eingabe) = 'SUEDEN')
  then
  begin
     RaumWechsel(AktuellerRaum.Sueden);
  end
 
- else if (uppercase(Eingabe) = 'WESTEN') or (uppercase(Eingabe)='WEST') or (uppercase(Eingabe)='W')
+ else if uppercase(Eingabe) = 'WESTEN'
  then
  begin
     RaumWechsel(AktuellerRaum.Westen);
  end
- else if uppercase(Eingabe) = 'PICK'
+ else if uppercase(Eingabe) = 'PICKUP'
  then
  begin
     LootDrop.Pickup();
