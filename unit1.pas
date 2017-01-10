@@ -51,16 +51,46 @@ type
 var
   Form1: TForm1;
   //Räume//
-  Schwimmbad: TRaum;
-  Mensa: TRaum;
-  Bleises_Folterkeller: TRaum;
-  EmptyPreset:TRaum;
+  Spinnennest:TRaum;
+  Spinnenkammer:TRaum;
+  Waldlichtung:TRaum;
+  Hoehle:TRaum;
+  Tautropfdwald:TRaum;
+  Weggabelung:TRaum;
+  Hoehleneingang:TRaum;
+  Lagerhalle:TRaum;
+  Feuerschlot:TRaum;
+  Abgrund_des_brennenden_Steins:TRaum;
+  Waldweg:TRaum;
+  Grosse_Blumenwiese:TRaum;
+  Kaserne:TRaum;
+  Schlafgemach:TRaum;
+  Einsame_Herberge:TRaum;
+  Graumoor:TRaum;
+  Schattenweiden:TRaum;
+  Westweg:TRaum;
+  Bruecke:TRaum;
+  Augvea:TRaum;
+  Ostweg:TRaum;
+  Oestliche_Huegel:TRaum;
+  Verlassene_Burg:TRaum;
+  Wachturm:TRaum;
+  Kleiner_See:TRaum;
+  Strasse_in_den_Sueden:TRaum;
+  Tal:TRaum;
+  Goblinstamm:TRaum;
+  Karawane:TRaum;
+  Am_schnellen_Bach:TRaum;
+  Traenenwald:TRaum;
+  Baerenhoehle:TRaum;
+  Spitzdorf:TRaum;
+  Der_grosse_Heuler:TRaum;
+  Der_Sonnenstich:TRaum;
   //AnfangsVariablen für Setback nach Tod
   AnfangsRaum: TRaum;
   AnfangsHP:Integer;
   AnfangsRK:Integer;
   AnfangsAtk:Integer;
-  MaxHP:Integer ;
   //Gegner//
   Mieses_Essen: TEnemy;
   Goblin: TEnemy;
@@ -78,7 +108,7 @@ var
   Stahlruestung:Tloot;
   Granitebrows_Stachelpanzer:Tloot;
   //Stiefel//
-  Alte_Latschen:Tloot;
+  Alte_Latscher:Tloot;
   Lederschuhe:Tloot;
   Eisenstiefel:Tloot;
   Bodenmalmer:Tloot;
@@ -86,7 +116,7 @@ var
   Verroteter_Klumpen:TLoot;
   Eisenstreitkolben:Tloot;
   Orkischer_Hammerzahn:Tloot;
-  Gigantischer_Knochenmuerber:Tloot;
+  Gigantischer_Knochenmürber:Tloot;
   Muerbes_Holzschwert:Tloot;
   Eisenschwert:Tloot;
   Geschmuecktes_Silberschwert:Tloot;
@@ -120,31 +150,63 @@ begin
    Stahlruestung:=TLoot.create('Stahlrüstung','Ruestung','eine äußerst widerstandsfähgige Stahlrüstung','erlesen',2,5,0);
    Granitebrows_Stachelpanzer:=TLoot.create('Granitebrows Stachelpanzer','Ruestung','den legendären Stachelpanzer Granitebrows','magisch',5,10,1);
    //Stiefel-Loot//
-   Alte_Latschen:=TLoot.create('Alte Latschen','Schuhe','ein Paar abgewetzter und vielgetragene Schuhe','verschlissen',0,0,0);
+   Alte_Latscher:=TLoot.create('Alte_Latscher','Schuhe','ein Paar abgewetzter und vielgetragene Schuhe','verschlissen',0,0,0);
    Lederschuhe:=TLoot.create('Lederschuhe','Schuhe','ein Paar guter Lederschuhe','normal',0,1,0);
-   Eisenstiefel:=TLoot.create('Eisenstiefel','Schuhe','ein Paar dicker Eisenstiefel','erlesen',0,3,0);
-   Bodenmalmer:=TLoot.create('Bodenmalmer','Schuhe','die dir aus Geschichten bekannten Bodenmalmer','magisch',5,5,0);
+   Eisenstiefel:=TLoot.create('Eisenstiefel','Schuhe','ein Paar dicker Eisenstiefel','magisch',0,3,0);
+   Bodenmalmer:=TLoot.create('Bodenmalmer','Schuhe','die dir aus Geschichten bekannten Bodenmalmer','erlesen',5,5,0);
    //Waffen-Loot//
    Verroteter_Klumpen:=TLoot.create('Verroteter Klumpen','Waffe','einen modrigen Klumpen, den man zum Zuschlagen verwenden könnte,','verschlissen',0,1,4);
    Eisenstreitkolben:=TLoot.create('Eisenstreitkolben','Waffe','einen benutzten Eisenstreitkolben','normal',0,2,7);
    Orkischer_Hammerzahn:=TLoot.create('Orkischer Hammerzahn','Waffe','einen für Kriege verwendeten orkischen Hammerzahn','erlesen',0,3,11);
-   Gigantischer_Knochenmuerber:=TLoot.create('Gigantischer Knochenmürber','Waffe','einen der mächtigsten Streitkolben, den Gigantischen Knochenmürber,','magisch',0,4,22);
+   Gigantischer_Knochenmürber:=TLoot.create('Gigantischer Knochenmürber','Waffe','einen der mächtigsten Streitkolben, den Gigantischen Knochenmürber,','magisch',0,4,22);
    Muerbes_Holzschwert:=TLoot.create('Mürbes Holzschwert','Waffe','ein mürbes Holzschwert, welches vielleicht etwas besser als die Faust ist,','verschlissen',1,0,4);
-   Eisenschwert:=TLoot.create('Eisenschwert','Waffe','ein stumpfes Eisenschwert','normal',2,0,7);
+   Eisenschwert:=TLoot.create('Eisenschwert','Waffe','ein stumpfes Eisenschwert','normal',2,0,7;
    Geschmuecktes_Silberschwert:=TLoot.create('Geschmücktes Silberschwert','Waffe','ein hochwertiges Silberschwert voller Verzierungen','erlesen',3,0,11);
    Drachenzahn:=TLoot.create('Drachenzahn','Waffe','einen mächtigen Drachenzahn','magisch',4,0,22);
    //Gegner//
    Mieses_Essen := TEnemy.create ('Mieses Essen', 'Entspricht der Norm... von der Schule', 5, 5, 1,'zerfetzt');
-   Goblin := TEnemy.create ('Goblin', 'einem kleinen flinken Wesen mit spitzen Zähnen',1, 1, 1,'zerfetzt');
-   Ork := TEnemy.create ('Ork', 'einem grobschlächtigem Krieger mit blut unterlaufenen Augen ',15, 10, 1,'zerfetzt');
+   Goblin := TEnemy.create ('Goblin', 'Kleine,Flinke Wesen die dir Wriklich den Tag verderben können',1, 1, 1,'zerfetzt');
+   Ork := TEnemy.create ('Ork', 'Nicht zu klug aber furchterregnd im Kampf', 1, 1, 1,'zerfertzt');
    Oger := TEnemy.create ('Oger', 'Abkömlinge der Riesen die dich mit gewaltigen Hieben erledigen können', 1,1, 1,'zerfetzt');
 
    //Räume//Hier am Besten nur lere Presetes erstellen und sie mit der Funktion RaumUpdate ändern
    //Räume müssen hier deklariert werden, aber zusätzlich in der RaumWechselProzedure eingetragen werden
-   EmptyPreset:=TRaum.create('An Empty Preset','to quickly create Rooms',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Mensa := TRaum.create ('Mensa', 'Hier koennen kleine Kinder Pampe fressen!',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Schwimmbad := TRaum.create ('Schwimmbad', 'Hier koennen kleine Kinder in ihrer Pisse schwimmen!',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Bleises_Folterkeller := TRaum.create ('Bleises Folterkeller', 'Hier koennen kleine Kinder "gut" behandelt werden!',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   EmptyPreset					:=TRaum.create('An Empty Preset','to quickly create Rooms',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Spinnennest					:=TRaum.create('Spinnennest','An der gesamten Höhlenwand sind Kokons zu sehen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Spinnenkammer				:=TRaum.create('Spinnenkammer','In dieser Höhle wimmelt es von Spinnen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Waldlichtung					:=TRaum.create('Waldlichtung','Die Sonne auf dem Gesicht tut dir gut',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Hoehle						:=TRaum.create('Höhle','Ein modriger Geruch kommt von weiter Innen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Tautropfwald					:=TRaum.create('Tautropfwald','Überall hörst du Wasser von den Bäumen tropfen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Weggabelung					:=TRaum.create('Weggabelung','Der Weg gabelt sich hier nach West und Ost',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Hoehleneingang				:=TRaum.create('Höhleneingang','Beim Anblick dieser dunklen Höhle wird dir etwas mulmig',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Lagerhalle					:=TRaum.create('Lagerhalle','Hier gibt es viele Sachen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Feuerschlot					:=TRaum.create('Feuerschlot','Der heiße Gestank von Schwefel und Asche umgibt dich',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Abgrund_des_brennenden_Steins:=TRaum.create('Abgrund des brennenden Steins','Im inneren des Abgrunds fließt der brennende Stein',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Waldweg						:=TRaum.create('Waldweg','Du siehst den Wald und auf der anderen Seite Augvea',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Grosse_Blumenwiese			:=TRaum.create('Große Blumenwiese','Deine Nase wird von verschiedensten Gerüchen betört',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Kaserne						:=TRaum.create('Kaserne','Der Ruheort der Soldaten und Wächter - doch sie fehlen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Schlafgemach					:=TRaum.create('Schlafgemach','Der Besitzer der Burg besaß ein wirklich großes Bett',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Einsame_Herberge				:=TRaum.create('Einsame Herberge','Diese Herberge ist einsam, verlassen, verstaubt und dreckig',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Graumoor						:=TRaum.create('Graumoor','Dir fröstelt es etwas in diesem Morast',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Schattenweiden				:=TRaum.create('Schattenweiden','Die Schattenweiden des Graumoors scheinen überall hinzugreifen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Westweg						:=TRaum.create('Westweg','Auf diesem gut befestigten Weg kommst du gut voran',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Bruecke						:=TRaum.create('Brücke','Unter dir rauscht der Fluss',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Augvea						:=TRaum.create('Augvea','Das rege Treiben der Stadt zeugt von Zivilisation',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Ostweg						:=TRaum.create('Ostweg','Der Weg ist Umgeben von schönem Gelände',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Oestliche_Huegel				:=TRaum.create('Östliche Hügel','Die sanften Hügel machen das Vorankommen beschwerlicher',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Verlassene_Burg				:=TRaum.create('Verlassene Burg','Diese Burg ist mysteriöserweise verlassen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Wachturm						:=TRaum.create('Wachturm','Hier wacht keiner mehr',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Kleiner_See					:=TRaum.create('Kleiner See','to quickly create Rooms',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Strasse_in_den_Sueden		:=TRaum.create('Straße in den Süden','to quickly create Rooms',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Tal							:=TRaum.create('Tal','to quickly create Rooms',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Goblinstamm					:=TRaum.create('Goblinstamm','to quickly create Rooms',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Karawane						:=TRaum.create('Karawane','to quickly create Rooms',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Am_schnellen_Bach			:=TRaum.create('Am schnellen Bach','to quickly create Rooms',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Traenenwald					:=TRaum.create('Tränenwald','to quickly create Rooms',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Baerenhoehle					:=TRaum.create('Bärenhöhle','to quickly create Rooms',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Spitzdorf					:=TRaum.create('Spitzdorf','to quickly create Rooms',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Der_Grosse_Heuler			:=TRaum.create('Der Große Heuler','to quickly create Rooms',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Der_Sonnenstich				:=TRaum.create('Der Sonnenstich','to quickly create Rooms',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
 
    //RaumUpdate//
    //Die Prozedure RaumUpdate() braucht 6 Pointer und zwar den Raum der zu
@@ -162,7 +224,7 @@ begin
    ZusaetzlicheUpdates(Schwimmbad,'hard',100,1,70,false);      //Density von Hundert spawnt beim ersten Betreten
    ZusaetzlicheUpdates(Bleises_Folterkeller,'hard',100,20,25,false);      //Immer ein Monster
    //Startwerte//
-   AnfangsRaum:=Bleises_Folterkeller;
+   AnfangsRaum:= Augvea;
    aktuellerRaum := AnfangsRaum;
    LabelRaum.caption := AktuellerRaum.Raumname;
    KampfProzedure.IstInKampf := False;
@@ -176,9 +238,9 @@ begin
    SpielerRK := AnfangsRK;
    SpielerATK := AnfangsAtk;
    SpielerHelm:=Kappe;
-   SpielerRuestung:=Gewand;
-   SpielerSchuhe:=Alte_Latschen;
-   SpielerWaffe:=Muerbes_Holzschwert;
+   SpielerRuestung:=Tunika;
+   SpielerSchuhe:=Robuste_Stiefel;
+   SpielerWaffe:=Dolch;
    UIRefresh.UiRefresh();
 end;
 
@@ -241,15 +303,18 @@ begin
  begin
     LootDrop.Pickup();
  end
+<<<<<<< HEAD
  //else if uppercase(Eingabe) = 'HUNT' then
  //begin
  //     RaumWechsel(aktuellerRaum)
  //end
+=======
+
+>>>>>>> 462255122e9f44ffb11c6fc7b7815293c85e165d
  else if uppercase(Eingabe) = 'ZURUECK'
  then
  begin
-   LabelRaum.caption := vorherigerRaum.Raumname;          //NOch nicht korrekt
-   aktuellerRaum:=vorherigerRaum;
+   LabelRaum.caption := AktuellerRaum.Raumname;          //NOch nicht korrekt
  end
  //Angreifen//
 
@@ -271,7 +336,7 @@ begin
 
 UIRefresh.UiRefresh()
 end;
- //Inventar Knöpfe
+
 procedure TForm1.Button2Click(Sender: TObject);
 begin
    Memo1.lines.add(SpielerHelm.Beschreibung)
