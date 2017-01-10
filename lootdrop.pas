@@ -17,33 +17,28 @@ procedure LootDrop();
 var
   Wuerfel:Integer;
  begin
-  tempLoot:=Bessere_Kappe;
- { Wuerfel:=1+Random(100);//Normales Random 100 wäre 0...99
-  if Gegner.LootType='zerfetzt'
-     then begin                                         //Wäre Optimaler mit einer
-     tempLoot:=Kappe;
-     end;
-  if Gegner.LootType='zerfetzt'
+ Wuerfel:=1+Random(100);//Normales Random 100 wäre 0...99
+  if Gegner.LootType='Goblin_zerfetzt'
       then begin
-        if Wuerfel <= 30 then
+        if Wuerfel <= 50 then
             TempLoot:=nil
-        else if (Wuerfel > 30) and (Wuerfel <=65) then
-            TempLoot:=Goblin
+        else if (Wuerfel > 50) and (Wuerfel <=75) then
+            TempLoot:=Eisenstreitkolben
         else if (Wuerfel > 65) and (Wuerfel <=100) then
-             TempLoot:=Ork;
+             TempLoot:=Lederschuhe;
       end;
-   if Gegner.LootType='zerfetzt'                  //Nur Beispiel Werte
+   if Gegner.LootType='Oger_Boss'                  //Nur Beispiel Werte
       then begin                                           //zur Demonstration
         if Wuerfel = 1 then
             TempLoot:=nil
-        else if Wuerfel <= 2 then
-            TempLoot:=Goblin
-        else if (Wuerfel > 50) and (Wuerfel <=85) then
-            TempLoot:=Ork
-        else if (Wuerfel > 85) and (Wuerfel <=100) then
-              TempLoot:=Oger;
+        else if (Wuerfel > 1) and (Wuerfel <=30) then
+            TempLoot:=Eisenstiefel
+        else if (Wuerfel > 30) and (Wuerfel <=75) then
+            TempLoot:=Orkischer_Hammerzahn
+        else if (Wuerfel > 75) and (Wuerfel <=100) then
+              TempLoot:=Bodenmalmer;
       end;
-      }
+
       if Gegner.LootType = ('')  then       //Error Überprüfung
          TempLoot:=nil;
    if Gegner.LootType= 'empty'  then

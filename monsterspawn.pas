@@ -38,7 +38,7 @@ var
       then begin                                           //zur Demonstration
         if Wuerfel = 1 then
            aktuellerRaum.Enemy:=Goblin
-        else if Wuerfel <= 2 then
+        else if (Wuerfel > 1) and (Wuerfel <=50) then
            aktuellerRaum.Enemy:=Goblin
         else if (Wuerfel > 50) and (Wuerfel <=85) then
            aktuellerRaum.Enemy:=Ork

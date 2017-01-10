@@ -78,7 +78,7 @@ var
   Stahlruestung:Tloot;
   Granitebrows_Stachelpanzer:Tloot;
   //Stiefel//
-  Alte_Latscher:Tloot;
+  Alte_Latschen:Tloot;
   Lederschuhe:Tloot;
   Eisenstiefel:Tloot;
   Bodenmalmer:Tloot;
@@ -86,7 +86,7 @@ var
   Verroteter_Klumpen:TLoot;
   Eisenstreitkolben:Tloot;
   Orkischer_Hammerzahn:Tloot;
-  Gigantischer_Knochenmürber:Tloot;
+  Gigantischer_Knochenmuerber:Tloot;
   Muerbes_Holzschwert:Tloot;
   Eisenschwert:Tloot;
   Geschmuecktes_Silberschwert:Tloot;
@@ -120,17 +120,17 @@ begin
    Stahlruestung:=TLoot.create('Stahlrüstung','Ruestung','eine äußerst widerstandsfähgige Stahlrüstung','erlesen',2,5,0);
    Granitebrows_Stachelpanzer:=TLoot.create('Granitebrows Stachelpanzer','Ruestung','den legendären Stachelpanzer Granitebrows','magisch',5,10,1);
    //Stiefel-Loot//
-   Alte_Latscher:=TLoot.create('Alte_Latscher','Schuhe','ein Paar abgewetzter und vielgetragene Schuhe','verschlissen',0,0,0);
+   Alte_Latschen:=TLoot.create('Alte_Latschen','Schuhe','ein Paar abgewetzter und vielgetragene Schuhe','verschlissen',0,0,0);
    Lederschuhe:=TLoot.create('Lederschuhe','Schuhe','ein Paar guter Lederschuhe','normal',0,1,0);
-   Eisenstiefel:=TLoot.create('Eisenstiefel','Schuhe','ein Paar dicker Eisenstiefel','magisch',0,3,0);
-   Bodenmalmer:=TLoot.create('Bodenmalmer','Schuhe','die dir aus Geschichten bekannten Bodenmalmer','erlesen',5,5,0);
+   Eisenstiefel:=TLoot.create('Eisenstiefel','Schuhe','ein Paar dicker Eisenstiefel','erlesen',0,3,0);
+   Bodenmalmer:=TLoot.create('Bodenmalmer','Schuhe','die dir aus Geschichten bekannten Bodenmalmer','magisch',5,5,0);
    //Waffen-Loot//
    Verroteter_Klumpen:=TLoot.create('Verroteter Klumpen','Waffe','einen modrigen Klumpen, den man zum Zuschlagen verwenden könnte,','verschlissen',0,1,4);
    Eisenstreitkolben:=TLoot.create('Eisenstreitkolben','Waffe','einen benutzten Eisenstreitkolben','normal',0,2,7);
    Orkischer_Hammerzahn:=TLoot.create('Orkischer Hammerzahn','Waffe','einen für Kriege verwendeten orkischen Hammerzahn','erlesen',0,3,11);
-   Gigantischer_Knochenmürber:=TLoot.create('Gigantischer Knochenmürber','Waffe','einen der mächtigsten Streitkolben, den Gigantischen Knochenmürber,','magisch',0,4,22);
+   Gigantischer_Knochenmuerber:=TLoot.create('Gigantischer Knochenmürber','Waffe','einen der mächtigsten Streitkolben, den Gigantischen Knochenmürber,','magisch',0,4,22);
    Muerbes_Holzschwert:=TLoot.create('Mürbes Holzschwert','Waffe','ein mürbes Holzschwert, welches vielleicht etwas besser als die Faust ist,','verschlissen',1,0,4);
-   Eisenschwert:=TLoot.create('Eisenschwert','Waffe','ein stumpfes Eisenschwert','normal',2,0,7;
+   Eisenschwert:=TLoot.create('Eisenschwert','Waffe','ein stumpfes Eisenschwert','normal',2,0,7);
    Geschmuecktes_Silberschwert:=TLoot.create('Geschmücktes Silberschwert','Waffe','ein hochwertiges Silberschwert voller Verzierungen','erlesen',3,0,11);
    Drachenzahn:=TLoot.create('Drachenzahn','Waffe','einen mächtigen Drachenzahn','magisch',4,0,22);
    //Gegner//
@@ -176,9 +176,9 @@ begin
    SpielerRK := AnfangsRK;
    SpielerATK := AnfangsAtk;
    SpielerHelm:=Kappe;
-   SpielerRuestung:=Tunika;
-   SpielerSchuhe:=Robuste_Stiefel;
-   SpielerWaffe:=Dolch;
+   SpielerRuestung:=Gewand;
+   SpielerSchuhe:=Alte_Latschen;
+   SpielerWaffe:=Muerbes_Holzschwert;
    UIRefresh.UiRefresh();
 end;
 
@@ -245,7 +245,8 @@ begin
  else if uppercase(Eingabe) = 'ZURUECK'
  then
  begin
-   LabelRaum.caption := AktuellerRaum.Raumname;          //NOch nicht korrekt
+   LabelRaum.caption := vorherigerRaum.Raumname;          //NOch nicht korrekt
+   aktuellerRaum:=vorherigerRaum;
  end
  else if uppercase(Eingabe)='UI' then
  UiRefresh.UiRefresh()
@@ -269,7 +270,7 @@ begin
 
 UIRefresh.UiRefresh()
 end;
-
+ //Inventar Knöpfe
 procedure TForm1.Button2Click(Sender: TObject);
 begin
    Memo1.lines.add(SpielerHelm.Beschreibung)
