@@ -11,7 +11,7 @@
         <EditorIndex Value="-1"/>
         <WindowIndex Value="1"/>
         <CursorPos X="63" Y="10"/>
-        <UsageCount Value="69"/>
+        <UsageCount Value="70"/>
       </Unit0>
       <Unit1>
         <Filename Value="unit1.pas"/>
@@ -23,7 +23,7 @@
         <EditorIndex Value="6"/>
         <TopLine Value="10"/>
         <CursorPos X="22" Y="63"/>
-        <UsageCount Value="69"/>
+        <UsageCount Value="70"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -33,7 +33,7 @@
         <UnitName Value="mTEnemy"/>
         <EditorIndex Value="5"/>
         <CursorPos X="22" Y="17"/>
-        <UsageCount Value="66"/>
+        <UsageCount Value="67"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
@@ -41,9 +41,9 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="KampfProzedure"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="9"/>
+        <TopLine Value="15"/>
         <CursorPos X="4" Y="21"/>
-        <UsageCount Value="54"/>
+        <UsageCount Value="55"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
@@ -51,7 +51,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="1"/>
         <CursorPos X="26" Y="20"/>
-        <UsageCount Value="48"/>
+        <UsageCount Value="49"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
@@ -61,7 +61,7 @@
         <WindowIndex Value="1"/>
         <TopLine Value="3"/>
         <CursorPos X="37" Y="51"/>
-        <UsageCount Value="32"/>
+        <UsageCount Value="33"/>
         <Loaded Value="True"/>
       </Unit5>
       <Unit6>
@@ -80,16 +80,14 @@
       <Unit8>
         <Filename Value="prozedureraumwechsel.pas"/>
         <UnitName Value="ProzedureRaumwechsel"/>
-        <IsVisibleTab Value="True"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="12"/>
-        <CursorPos X="54" Y="55"/>
+        <TopLine Value="9"/>
+        <CursorPos X="70" Y="51"/>
         <UsageCount Value="24"/>
         <Loaded Value="True"/>
       </Unit8>
       <Unit9>
         <Filename Value="UIRefresh.pas"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <CursorPos X="38" Y="25"/>
         <UsageCount Value="23"/>
@@ -129,18 +127,20 @@
         <Filename Value="mtloot.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="mTLoot"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
         <CursorPos X="23" Y="23"/>
-        <UsageCount Value="30"/>
+        <UsageCount Value="31"/>
         <Loaded Value="True"/>
       </Unit14>
       <Unit15>
         <Filename Value="lootdrop.pas"/>
         <UnitName Value="LootDrop"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="23"/>
-        <CursorPos X="3" Y="21"/>
+        <TopLine Value="44"/>
+        <CursorPos X="6" Y="96"/>
         <UsageCount Value="15"/>
         <Loaded Value="True"/>
       </Unit15>

@@ -19,6 +19,10 @@ begin
   Form1.LabelRaumBeschreibung.caption:=AktuellerRaum.Beschreibung;
   Form1.MD.caption:=inttostr(aktuellerRaum.MD);
   Form1.Schwierigkeit.caption:=aktuellerRaum.Difficulty;
+  Form1.Button2.Caption:=SpielerHelm.Name;
+  Form1.Button3.Caption:=SpielerRuestung.Name;
+  Form1.Button4.Caption:=SpielerSchuhe.Name;
+  Form1.Button5.Caption:=SpielerWaffe.Name;
   If AktuellerRaum.Enemy <> nil then  // <> = is not
      begin
      Form1.LabelGegner.Caption := AktuellerRaum.Enemy.Enemyname;

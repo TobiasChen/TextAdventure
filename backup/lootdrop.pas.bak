@@ -91,7 +91,9 @@ begin
          Form1.Memo1.lines.add('Du hast '+SpielerWaffe.Beschreibung+'aufgenommen');
          tempLoot:=nil;
      end;
-
+     SpielerAtk:=AnfangsATK+SpielerHelm.Atk+SpielerRuestung.ATK+SpielerSchuhe.Atk+SpielerWaffe.Atk;
+     SpielerRK:=AnfangsRK+SpielerHelm.RK+SpielerRuestung.RK+SpielerSchuhe.RK+SpielerWaffe.RK;
+     SpielerHP:=AnfangsHP+SpielerHelm.HP+SpielerRuestung.HP+SpielerSchuhe.HP+SpielerWaffe.HP;
   end;
 end.
 

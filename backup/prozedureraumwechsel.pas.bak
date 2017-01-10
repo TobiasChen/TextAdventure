@@ -49,10 +49,6 @@ WuerfelErgebnis:Integer;
       Kampf();                      //Ersatz für das Initative System
       SpielerATK:=SPielerATK +2;    //Bei Betreten eines Raumes mit einem Gegner
       SpielerRK:=SpielerRK +2;      //Wird dem Spieler 2 RK abgezogen
-      SpielerAtk:=AnfangsATK+SpielerHelm.Atk+SpielerRuestung.ATK+SpielerSchuhe.Atk+SpielerWaffe.Atk;
-      SpielerRK:=AnfangsRK+SpielerHelm.RK+SpielerRuestung.RK+SpielerSchuhe.RK+SpielerWaffe.RK;
-      SpielerHP:=AnfangsHP+SpielerHelm.HP+SpielerRuestung.HP+SpielerSchuhe.HP+SpielerWaffe.HP;
-      Form1.Label1.caption:=inttostr(SpielerHelm.Atk);
       UIRefresh.UIRefresh();
 
       //Raum1.Schrittweite:=Raum1.Schrittweite +1

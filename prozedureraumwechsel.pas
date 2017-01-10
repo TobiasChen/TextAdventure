@@ -35,7 +35,7 @@ WuerfelErgebnis:Integer;
       Form1.Memo1.lines.add(aktuellerRaum.WESTENLeave);
       vorherigerRaum:=aktuellerRaum;
       aktuellerRaum:=Eingabe;
-      Form1.Memo1.lines.add('Du betritts: '+Eingabe.Raumname);
+      //Wahrscheinlichkeit ein Monster zu spawnen
       AktuellerRaum.MD:=AktuellerRaum.MD+ AktuellerRaum.Schrittweite*AktuellerRaum.MDA;
       Wuerfelergebnis:= 1+random(100);
       if WuerfelErgebnis-aktuellerRaum.MD<=0 then
