@@ -18,7 +18,7 @@ var
   Wuerfel:Integer;
  begin
  Wuerfel:=1+Random(100);//Normales Random 100 wäre 0...99
-  if Gegner.LootType='Goblin_zerfetzt'
+  if Gegner.LootType='zerfetzt'
       then begin
         if Wuerfel <= 50 then
             TempLoot:=nil
@@ -46,6 +46,10 @@ var
 
   //Aus mir momentan unerfindlichen Gründen funktionierte ein einfaches or Statment
   //hier nicht, zudem ist es unnötig und dient nur dem Programier Komfort.
+  if tempLoot = nil then
+        Form1.Memo1.lines.add('Der '+ LetzterGegner.Enemyname +' hatte nichts Wertvolles mit sich')
+  else if tempLoot <> nil then //Überflüssig
+  begin
   Form1.Memo1.lines.add('Du hast '+ tempLoot.Beschreibung+' gefunden');
   Form1.Memo1.lines.add('Stats:  '+' RK:'+inttostr(tempLoot.RK)+' HP:'+inttostr(tempLoot.HP)+' ATK:'+ inttostr(tempLoot.atk));
   if tempLoot.Typ='Helm' then
@@ -69,6 +73,7 @@ var
         Form1.Memo1.lines.add('Stats:  '+' RK:'+inttostr(SpielerSchuhe.RK)+' HP:'+inttostr(SpielerSchuhe.HP)+' ATK:'+ inttostr(SpielerSchuhe.atk));
         end;
   Form1.Memo1.lines.add('Zum austauschen schreibe "pick"');
+  end
   end;
 procedure Pickup();
 begin
@@ -100,7 +105,7 @@ begin
      end;
      SpielerAtk:=AnfangsATK+SpielerHelm.Atk+SpielerRuestung.ATK+SpielerSchuhe.Atk+SpielerWaffe.Atk;
      SpielerRK:=AnfangsRK+SpielerHelm.RK+SpielerRuestung.RK+SpielerSchuhe.RK+SpielerWaffe.RK;
-     SpielerHP:=AnfangsHP+SpielerHelm.HP+SpielerRuestung.HP+SpielerSchuhe.HP+SpielerWaffe.HP;
+     MaxHP:=AnfangsHP+SpielerHelm.HP+SpielerRuestung.HP+SpielerSchuhe.HP+SpielerWaffe.HP;
   end;
 end.
 

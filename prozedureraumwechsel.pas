@@ -10,6 +10,7 @@ var
  aktuellerRaum: TRaum;
  vorherigerRaum: TRaum;
 procedure RaumWechsel(Eingabe:Traum);
+procedure Hunt();
 implementation
 uses Unit1,UIRefresh,Monsterspawn;
 procedure RaumWechsel(Eingabe:Traum);
@@ -44,6 +45,7 @@ WuerfelErgebnis:Integer;
       begin
       IstInKampf:=true;
       AktuellerGegner:=AktuellerRaum.Enemy;
+      Form1.Memo1.lines.add('Du wirst von '+aktuellerGegner.Beschreibung+' angegriffen!');
       SpielerRK:=SPielerRK -2;
       SpielerATK:=SPielerATK -2;
       Kampf();                      //Ersatz für das Initative System
@@ -57,6 +59,25 @@ WuerfelErgebnis:Integer;
       end;
   end;
 end;
-
+procedure Hunt();
+ if IstInKampf = true  then
+     begin
+          Form1.Memo1.lines.add('Du bist in einem Kampf und kannst nur flüchten oder Angreifen')
+     end
+     else
+     begin
+     AktuellerRaum.MD:=AktuellerRaum.MD+ AktuellerRaum.Schrittweite*AktuellerRaum.MDA;
+     Wuerfelergebnis:= 1+random(100);
+     if WuerfelErgebnis-aktuellerRaum.MD<=0 then
+         Monsterspawn.Monsterspawn();
+     if AktuellerRaum.Enemy <> nil then
+      begin
+      IstInKampf:=true;
+      AktuellerGegner:=AktuellerRaum.Enemy;
+      Form1.Memo1.lines.add('Du wirst von '+aktuellerGegner.Beschreibung+' angegriffen!');
+      Kampf();
+      UIRefresh.UIRefresh();
+      end;
+     end;
 end.
 

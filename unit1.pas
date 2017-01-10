@@ -61,6 +61,7 @@ var
   AnfangsHP:Integer;
   AnfangsRK:Integer;
   AnfangsAtk:Integer;
+  MaxHP:Integer ;
   //Gegner//
   Mieses_Essen: TEnemy;
   Goblin: TEnemy;
@@ -120,7 +121,7 @@ begin
    Stahlruestung:=TLoot.create('Stahlrüstung','Ruestung','eine äußerst widerstandsfähgige Stahlrüstung','erlesen',2,5,0);
    Granitebrows_Stachelpanzer:=TLoot.create('Granitebrows Stachelpanzer','Ruestung','den legendären Stachelpanzer Granitebrows','magisch',5,10,1);
    //Stiefel-Loot//
-   Alte_Latschen:=TLoot.create('Alte_Latschen','Schuhe','ein Paar abgewetzter und vielgetragene Schuhe','verschlissen',0,0,0);
+   Alte_Latschen:=TLoot.create('Alte Latschen','Schuhe','ein Paar abgewetzter und vielgetragene Schuhe','verschlissen',0,0,0);
    Lederschuhe:=TLoot.create('Lederschuhe','Schuhe','ein Paar guter Lederschuhe','normal',0,1,0);
    Eisenstiefel:=TLoot.create('Eisenstiefel','Schuhe','ein Paar dicker Eisenstiefel','erlesen',0,3,0);
    Bodenmalmer:=TLoot.create('Bodenmalmer','Schuhe','die dir aus Geschichten bekannten Bodenmalmer','magisch',5,5,0);
@@ -135,8 +136,8 @@ begin
    Drachenzahn:=TLoot.create('Drachenzahn','Waffe','einen mächtigen Drachenzahn','magisch',4,0,22);
    //Gegner//
    Mieses_Essen := TEnemy.create ('Mieses Essen', 'Entspricht der Norm... von der Schule', 5, 5, 1,'zerfetzt');
-   Goblin := TEnemy.create ('Goblin', 'Kleine,Flinke Wesen die dir Wriklich den Tag verderben können',1, 1, 1,'zerfetzt');
-   Ork := TEnemy.create ('Ork', 'Nicht zu klug aber furchterregnd im Kampf', 1, 1, 1,'zerfertzt');
+   Goblin := TEnemy.create ('Goblin', 'einem kleinen flinken Wesen mit spitzen Zähnen',1, 1, 1,'zerfetzt');
+   Ork := TEnemy.create ('Ork', 'einem grobschlächtigem Krieger mit blut unterlaufenen Augen ',15, 10, 1,'zerfetzt');
    Oger := TEnemy.create ('Oger', 'Abkömlinge der Riesen die dich mit gewaltigen Hieben erledigen können', 1,1, 1,'zerfetzt');
 
    //Räume//Hier am Besten nur lere Presetes erstellen und sie mit der Funktion RaumUpdate ändern
@@ -241,7 +242,10 @@ begin
  begin
     LootDrop.Pickup();
  end
-
+ else if uppercase(Eingabe) = 'HUNT' then
+ begin
+      RaumWechsel(aktuellerRaum)
+ end
  else if uppercase(Eingabe) = 'ZURUECK'
  then
  begin

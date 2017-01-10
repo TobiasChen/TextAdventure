@@ -37,13 +37,13 @@ var
    if aktuellerRaum.Difficulty='hard'                 //Nur Beispiel Werte
       then begin                                           //zur Demonstration
         if Wuerfel = 1 then
-           aktuellerRaum.Enemy:=Goblin
+           aktuellerRaum.Enemy:=Ork
         else if (Wuerfel > 1) and (Wuerfel <=50) then
-           aktuellerRaum.Enemy:=Goblin
+           aktuellerRaum.Enemy:=Ork
         else if (Wuerfel > 50) and (Wuerfel <=85) then
            aktuellerRaum.Enemy:=Ork
         else if (Wuerfel > 85) and (Wuerfel <=100) then
-             aktuellerRaum.Enemy:=Oger;
+             aktuellerRaum.Enemy:=Ork;
       end;
    if aktuellerRaum.Difficulty= ('')  then       //Error Überprüfung
          aktuellerRaum.Enemy:=Goblin;

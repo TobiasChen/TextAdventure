@@ -11,6 +11,7 @@ var
   WurfSpieler, WurfGegner : Integer;                             //Angelehnt an das Pen&Paper-Kampfsystem//
   IstInKampf: Boolean;
   Gegner:TEnemy;
+  LetzterGegner:TEnemy;
 procedure Kampf();
 implementation
 uses Unit1,ProzedureRaumwechsel,LootDrop;                                 //Unit1 muss benutzt werden
@@ -48,6 +49,7 @@ begin
            Gegner.HP := Gegner.HP - SpielerATK;
            if Gegner.Hp < 1 then
            begin
+           LetzterGegner:=aktuellerRaum.Enemy;
            aktuellerRaum.Enemy:= nil;
            Form1.Memo1.lines.add('Du hast den Gegner mit '+ inttostr(SpielerATK) + ' Schaden  getroffen und ihn getötet');
            IstInKampf:= false;

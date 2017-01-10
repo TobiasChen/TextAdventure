@@ -29,6 +29,7 @@ else if  (aktuellerRaum.camp=true) then
   end;
 procedure Sleep();
 begin
+   SpielerHP:=MaxHP;
   end;
 end.
 

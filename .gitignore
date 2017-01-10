@@ -26,3 +26,5 @@
 backup/
 *.bak
 lib/
+
+.~lock.Textadventuremap.xlsx#
