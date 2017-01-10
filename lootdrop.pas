@@ -46,9 +46,9 @@ var
 
   //Aus mir momentan unerfindlichen Gründen funktionierte ein einfaches or Statment
   //hier nicht, zudem ist es unnötig und dient nur dem Programier Komfort.
-  if tempLoot = nil then
+  if (tempLoot = nil) or (tempLoot=SpielerHelm) or (tempLoot=SpielerRuestung) or (tempLoot=SpielerSchuhe) or (tempLoot=SpielerWaffe) then
         Form1.Memo1.lines.add('Der '+ LetzterGegner.Enemyname +' hatte nichts Wertvolles mit sich')
-  else if tempLoot <> nil then //Überflüssig
+  else if tempLoot <> nil then
   begin
   Form1.Memo1.lines.add('Du hast '+ tempLoot.Beschreibung+' gefunden');
   Form1.Memo1.lines.add('Stats:  '+' RK:'+inttostr(tempLoot.RK)+' HP:'+inttostr(tempLoot.HP)+' ATK:'+ inttostr(tempLoot.atk));
@@ -70,7 +70,7 @@ var
   else if tempLoot.Typ='Waffe' then
         begin
         Form1.Memo1.lines.add('Momentan trägst du '+ SpielerWaffe.Beschreibung);
-        Form1.Memo1.lines.add('Stats:  '+' RK:'+inttostr(SpielerSchuhe.RK)+' HP:'+inttostr(SpielerSchuhe.HP)+' ATK:'+ inttostr(SpielerSchuhe.atk));
+        Form1.Memo1.lines.add('Stats:  '+' RK:'+inttostr(SpielerWaffe.RK)+' HP:'+inttostr(SpielerWaffe.HP)+' ATK:'+ inttostr(SpielerWaffe.atk));
         end;
   Form1.Memo1.lines.add('Zum austauschen schreibe "pick"');
   end

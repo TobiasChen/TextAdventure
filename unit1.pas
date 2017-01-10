@@ -21,7 +21,6 @@ type
     Button5: TButton;
     Edit1: TEdit;
     LabelMDUnverwendet: TLabel;
-    Schwierigkeit: TLabel;
     MD: TLabel;
     LabelRaumBeschreibung: TLabel;
     NotRichMemo1: TMemo;
@@ -195,9 +194,9 @@ begin
  if (uppercase(Eingabe) = 'HELP') or (uppercase(Eingabe) = 'HILFE') or (uppercase(Eingabe) = 'BEFEHLE')  or (Eingabe='?') then
    begin
      Memo1.lines.add('');
-     Memo1.lines.add('help/Hilfe/Befehle: Befehlsauflistung');
+     Memo1.lines.add('Help/Hilfe/Befehle: Befehlsauflistung');
      Memo1.lines.add('[Raumname]: Raumbeschreibung anzeigen');
-     Memo1.lines.add('Norden/Osten/Sueden/Westen: In diese Richtung gehen');  //HIlfe Stellung
+     Memo1.lines.add('[Norden/Osten/Sueden/Westen]/[N/O/S/W]: In diese Richtung gehen');  //HIlfe Stellung
      Memo1.lines.add('Zurueck: In die vorherige Richtung gehen');
      Memo1.lines.add('Angreifen: Im Kampf einen Gegner attackieren');
      Memo1.lines.add('Fliehen: Im Kampf zum vorherigen Raum fliehen');
@@ -242,18 +241,16 @@ begin
  begin
     LootDrop.Pickup();
  end
- else if uppercase(Eingabe) = 'HUNT' then
- begin
-      RaumWechsel(aktuellerRaum)
- end
+ //else if uppercase(Eingabe) = 'HUNT' then
+ //begin
+ //     RaumWechsel(aktuellerRaum)
+ //end
  else if uppercase(Eingabe) = 'ZURUECK'
  then
  begin
    LabelRaum.caption := vorherigerRaum.Raumname;          //NOch nicht korrekt
    aktuellerRaum:=vorherigerRaum;
  end
- else if uppercase(Eingabe)='UI' then
- UiRefresh.UiRefresh()
  //Angreifen//
 
  else if (uppercase(Eingabe) = 'ANGREIFEN')

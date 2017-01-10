@@ -18,7 +18,6 @@ begin
   Form1.LabelRaum.caption := AktuellerRaum.Raumname;
   Form1.LabelRaumBeschreibung.caption:=AktuellerRaum.Beschreibung;
   Form1.MD.caption:=(inttostr(aktuellerRaum.MD)+'%');
-  Form1.Schwierigkeit.caption:=aktuellerRaum.Difficulty;
   Form1.Button2.Caption:=SpielerHelm.Name;
   Form1.Button3.Caption:=SpielerRuestung.Name;
   Form1.Button4.Caption:=SpielerSchuhe.Name;

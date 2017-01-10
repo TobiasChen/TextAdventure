@@ -12,7 +12,7 @@ var
 procedure RaumWechsel(Eingabe:Traum);
 procedure Hunt();
 implementation
-uses Unit1,UIRefresh,Monsterspawn;
+uses Unit1,UIRefresh,Monsterspawn,LootDrop;
 procedure RaumWechsel(Eingabe:Traum);
 var
 WuerfelErgebnis:Integer;
@@ -36,6 +36,8 @@ WuerfelErgebnis:Integer;
       Form1.Memo1.lines.add(aktuellerRaum.WESTENLeave);
       vorherigerRaum:=aktuellerRaum;
       aktuellerRaum:=Eingabe;
+      //Temporäre Loot aus dem vorherigem Raum wird gelöscht
+      tempLoot:=nil;
       //Wahrscheinlichkeit ein Monster zu spawnen
       AktuellerRaum.MD:=AktuellerRaum.MD+ AktuellerRaum.Schrittweite*AktuellerRaum.MDA;
       Wuerfelergebnis:= 1+random(100);
@@ -60,6 +62,9 @@ WuerfelErgebnis:Integer;
   end;
 end;
 procedure Hunt();
+var
+ WuerfelErgebnis:Integer;
+ Begin
  if IstInKampf = true  then
      begin
           Form1.Memo1.lines.add('Du bist in einem Kampf und kannst nur flüchten oder Angreifen')
@@ -78,6 +83,7 @@ procedure Hunt();
       Kampf();
       UIRefresh.UIRefresh();
       end;
+     end;
      end;
 end.
 

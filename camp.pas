@@ -11,7 +11,7 @@ procedure Sleep();
 
 implementation
 
-uses Unit1,UIRefresh,KampfProzedure,Monsterspawn,ProzedureRaumwechsel;   //Benötigte Units zum Funktioniern
+uses Unit1,KampfProzedure,ProzedureRaumwechsel;   //Benötigte Units zum Funktioniern
 procedure camp();
  begin
 if IstInKampf=True then
