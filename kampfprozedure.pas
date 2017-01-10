@@ -52,6 +52,7 @@ begin
            Form1.Memo1.lines.add('Du hast den Gegner mit '+ inttostr(SpielerATK) + ' Schaden  getroffen und ihn getötet');
            IstInKampf:= false;
            Form1.LabelGegnerHP.Caption:=IntToStr(0);
+           AktuellerRaum.MD:=AktuellerRaum.MD-AktuellerRaum.MDS;
            LootDrop.LootDrop()  //Fukntion für Loot Generation
            end
            else
