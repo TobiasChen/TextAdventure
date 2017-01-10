@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  RichMemo, mTRaum, MTEnemy, Kampfprozedure, ProzedureRaumWechsel, UIRefresh,
+  RichMemo, mTRaum, MTEnemy, Kampfprozedure, ProzedureRaumWechsel, UIRefresh,mTLoot,
   RaumUpdate;
 
 type
@@ -57,7 +57,10 @@ var
   Ork: TEnemy;
   Oger: TEnemy;
   aktuellerGegner: TEnemy;
-
+  //Loot//
+  Schwert:TLoot;
+  Speer:TLoot;
+  //Implementation
   Eingabe : String;
 implementation
 
