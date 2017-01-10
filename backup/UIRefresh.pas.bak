@@ -9,7 +9,7 @@ uses
 procedure UIRefresh();
 implementation
 uses
-  Unit1,ProzedureRaumwechsel,KampfProzedure, mTEnemy,monsterspawn;
+  Unit1,ProzedureRaumwechsel,KampfProzedure, mTEnemy;
 procedure UIRefresh();
 begin
   Form1.LabelHP.Caption := InttoStr(SpielerHP);

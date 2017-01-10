@@ -1,35 +1,35 @@
 object Form1: TForm1
-  Left = -740
-  Height = 393
-  Top = 263
-  Width = 605
+  Left = -1234
+  Height = 625
+  Top = 32
+  Width = 1091
   Caption = 'Form1'
-  ClientHeight = 393
-  ClientWidth = 605
+  ClientHeight = 625
+  ClientWidth = 1091
   OnCreate = FormCreate
   LCLVersion = '1.6.2.0'
   object Button1: TButton
-    Left = 248
+    Left = 560
     Height = 31
-    Top = 200
+    Top = 433
     Width = 107
     Caption = 'Eingabe'
     OnClick = Button1Click
     TabOrder = 0
   end
   object Edit1: TEdit
-    Left = 112
+    Left = 288
     Height = 31
-    Top = 200
-    Width = 128
+    Top = 433
+    Width = 256
     Font.Height = -17
     ParentFont = False
     TabOrder = 1
   end
   object Labeleingabeunverwendet: TLabel
-    Left = 16
+    Left = 192
     Height = 31
-    Top = 200
+    Top = 433
     Width = 83
     Caption = 'Eingabe'
     Font.CharSet = ANSI_CHARSET
@@ -41,9 +41,9 @@ object Form1: TForm1
     ParentFont = False
   end
   object LabelRaum: TLabel
-    Left = 16
+    Left = 776
     Height = 40
-    Top = 248
+    Top = 472
     Width = 172
     Caption = 'LabelRaum'
     Font.CharSet = ANSI_CHARSET
@@ -55,9 +55,9 @@ object Form1: TForm1
     ParentFont = False
   end
   object LabelHPunverwendet: TLabel
-    Left = 395
+    Left = 776
     Height = 30
-    Top = 16
+    Top = 240
     Width = 32
     Caption = 'HP:'
     Font.CharSet = ANSI_CHARSET
@@ -69,9 +69,9 @@ object Form1: TForm1
     ParentFont = False
   end
   object LabelHP: TLabel
-    Left = 440
+    Left = 824
     Height = 30
-    Top = 16
+    Top = 240
     Width = 9
     Caption = '-'
     Font.CharSet = ANSI_CHARSET
@@ -83,9 +83,9 @@ object Form1: TForm1
     ParentFont = False
   end
   object LabelRKunverwendet: TLabel
-    Left = 395
+    Left = 776
     Height = 30
-    Top = 64
+    Top = 280
     Width = 30
     Caption = 'RK:'
     Font.CharSet = ANSI_CHARSET
@@ -97,9 +97,9 @@ object Form1: TForm1
     ParentFont = False
   end
   object LabelRK: TLabel
-    Left = 440
+    Left = 824
     Height = 30
-    Top = 64
+    Top = 280
     Width = 9
     Caption = '-'
     Font.CharSet = ANSI_CHARSET
@@ -111,9 +111,9 @@ object Form1: TForm1
     ParentFont = False
   end
   object LabelATKunverwendet: TLabel
-    Left = 395
+    Left = 776
     Height = 30
-    Top = 112
+    Top = 320
     Width = 42
     Caption = 'ATK:'
     Font.CharSet = ANSI_CHARSET
@@ -125,9 +125,9 @@ object Form1: TForm1
     ParentFont = False
   end
   object LabelATK: TLabel
-    Left = 440
+    Left = 824
     Height = 30
-    Top = 112
+    Top = 320
     Width = 9
     Caption = '-'
     Font.CharSet = ANSI_CHARSET
@@ -139,9 +139,9 @@ object Form1: TForm1
     ParentFont = False
   end
   object LabelGegner: TLabel
-    Left = 392
+    Left = 776
     Height = 47
-    Top = 184
+    Top = 376
     Width = 200
     Caption = 'LabelGegner'
     Font.CharSet = ANSI_CHARSET
@@ -153,9 +153,9 @@ object Form1: TForm1
     ParentFont = False
   end
   object LabelGegnerHPunverwendet: TLabel
-    Left = 400
+    Left = 776
     Height = 24
-    Top = 248
+    Top = 440
     Width = 28
     Caption = 'HP'
     Font.CharSet = ANSI_CHARSET
@@ -168,9 +168,9 @@ object Form1: TForm1
     ParentFont = False
   end
   object LabelGegnerHP: TLabel
-    Left = 442
+    Left = 816
     Height = 24
-    Top = 248
+    Top = 440
     Width = 7
     Caption = '-'
     Font.CharSet = ANSI_CHARSET
@@ -183,9 +183,9 @@ object Form1: TForm1
     ParentFont = False
   end
   object LabelRaumBeschreibung: TLabel
-    Left = 16
+    Left = 8
     Height = 28
-    Top = 296
+    Top = 560
     Width = 167
     Caption = 'RaumBeschreibung'
     Font.Height = -20
@@ -194,9 +194,9 @@ object Form1: TForm1
   end
   object Memo1: TRichMemo
     Left = 8
-    Height = 184
+    Height = 400
     Top = 8
-    Width = 368
+    Width = 752
     Font.Height = -16
     HideSelection = False
     Lines.Strings = (
@@ -207,19 +207,55 @@ object Form1: TForm1
     ZoomFactor = 1
   end
   object MD: TLabel
-    Left = 16
+    Left = 8
     Height = 15
-    Top = 360
+    Top = 528
     Width = 83
     Caption = 'MonsterDensity'
     ParentColor = False
   end
   object Schwierigkeit: TLabel
-    Left = 16
+    Left = 8
     Height = 15
-    Top = 336
+    Top = 504
     Width = 48
     Caption = 'Difficulty'
     ParentColor = False
+  end
+  object Button2: TButton
+    Left = 896
+    Height = 40
+    Top = 40
+    Width = 139
+    Caption = 'Button2'
+    OnClick = Button2Click
+    TabOrder = 3
+  end
+  object Button3: TButton
+    Left = 896
+    Height = 40
+    Top = 88
+    Width = 139
+    Caption = 'Button3'
+    OnClick = Button3Click
+    TabOrder = 4
+  end
+  object Button4: TButton
+    Left = 896
+    Height = 41
+    Top = 136
+    Width = 139
+    Caption = 'Button4'
+    OnClick = Button4Click
+    TabOrder = 5
+  end
+  object Button5: TButton
+    Left = 896
+    Height = 41
+    Top = 184
+    Width = 139
+    Caption = 'Button5'
+    OnClick = Button5Click
+    TabOrder = 6
   end
 end

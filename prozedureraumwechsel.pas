@@ -51,8 +51,8 @@ WuerfelErgebnis:Integer;
       SpielerRK:=SpielerRK +2;      //Wird dem Spieler 2 RK abgezogen
       UIRefresh.UIRefresh();
 
-      //Raum1.Schriitweite:=Raum1.Schrittweite +1
-      //Raum2.Schriitweite:=Raum2.Schrittweite +1  Entsprechend fortührend
+      //Raum1.Schrittweite:=Raum1.Schrittweite +1
+      //Raum2.Schrittweite:=Raum2.Schrittweite +1  Entsprechend fortührend
      //                                            Muss hard coded werden
       end;
   end;

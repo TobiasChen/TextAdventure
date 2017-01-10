@@ -16,6 +16,8 @@ procedure sterben();
   Form1.Memo1.lines.add('Du bist gestorben!');
   aktuellerRaum:=AnfangsRaum;
   SpielerHP:=AnfangsHP;
+  SpielerRK:=AnfangsRK;
+  SpielerAtk:=AnfangsAtk;
   UIRefresh.UIRefresh();
   end;
 end.

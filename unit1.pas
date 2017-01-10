@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  RichMemo, mTRaum, MTEnemy, Kampfprozedure, ProzedureRaumWechsel, UIRefresh,mTLoot,
+  RichMemo, mTRaum, MTEnemy, Kampfprozedure, ProzedureRaumWechsel, UIRefresh,mTLoot,LootDrop,
   RaumUpdate;
 
 type
@@ -15,7 +15,12 @@ type
 
   TForm1 = class(TForm)
     Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    Button5: TButton;
     Edit1: TEdit;
+    Label1: TLabel;
     Schwierigkeit: TLabel;
     MD: TLabel;
     LabelRaumBeschreibung: TLabel;
@@ -33,6 +38,10 @@ type
     LabelRaum: TLabel;
     Memo1: TRichMemo;
     procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
     { private declarations }
@@ -51,15 +60,27 @@ var
   AnfangsRaum: TRaum;
   AnfangsHP:Integer;
   AnfangsRK:Integer;
+  AnfangsAtk:Integer;
   //Gegner//
   Mieses_Essen: TEnemy;
   Goblin: TEnemy;
   Ork: TEnemy;
   Oger: TEnemy;
   aktuellerGegner: TEnemy;
-  //Loot//
-  Schwert:TLoot;
-  Speer:TLoot;
+  //Helm//
+  Kappe:Tloot;
+  Bessere_Kappe:TLoot;
+  //Rüstung//
+  Tunika:Tloot;
+  //Stiefel//
+  Robuste_Stiefel:Tloot;
+  //Waffen//
+  Dolch:TLoot;
+  //Spieler Items
+  SpielerHelm:Tloot;
+  SpielerRuestung:Tloot;
+  SpielerSchuhe:Tloot;
+  SpielerWaffe:Tloot;
   //Implementation
   Eingabe : String;
 implementation
@@ -72,12 +93,21 @@ procedure TForm1.FormCreate(Sender: TObject);
 begin
    Memo1.Lines.Clear;
    Memo1.Lines.Add ('Hallo, willkommen im Textadventure');
-
+   //Typen sind Helm,Ruestung,Schuhe,Waffe
+   //Helm-Loot//
+   Kappe:=TLoot.create('Kappe','Helm','eine leichte Lederkappe','Starter',0,0,0);
+   Bessere_Kappe:=TLoot.create('Bessere Kappe','Helm','eine verstärkte Lederkappe','normal',60,60,60);
+   //Rüstungs-Loot//
+   Tunika:=TLoot.create('Tunika','Ruestung','ein einfaches Gewand','Starter',0,0,0);
+   //Stiefel-Loot//
+   Robuste_Stiefel:=TLoot.create('Robuste Stiefel','Schuhe','ein paar abgewetzter und vielgetragene Schuhe','Starter',0,0,0);
+   //Waffen-Loot//
+   Dolch:=TLoot.create('Dolch','Waffe','Ein stumpfer Dolch','Starter',0,0,0);
    //Gegner//
-   Mieses_Essen := TEnemy.create ('Mieses Essen', 'Entspricht der Norm... von der Schule', 5, 5, 1);
-   Goblin := TEnemy.create ('Goblin', 'Kleine,Flinke Wesen die dir Wriklich den Tag verderben können',3, 6, 1);
-   Ork := TEnemy.create ('Ork', 'Nicht zu klug aber furchterregnd im Kampf', 8, 3, 3);
-   Oger := TEnemy.create ('Oger', 'Abkömlinge der Riesen die dich mit gewaltigen Hieben erledigen können', 15,1, 5);
+   Mieses_Essen := TEnemy.create ('Mieses Essen', 'Entspricht der Norm... von der Schule', 5, 5, 1,'zerfetzt');
+   Goblin := TEnemy.create ('Goblin', 'Kleine,Flinke Wesen die dir Wriklich den Tag verderben können',1, 1, 1,'zerfetzt');
+   Ork := TEnemy.create ('Ork', 'Nicht zu klug aber furchterregnd im Kampf', 1, 1, 1,'zerfertzt');
+   Oger := TEnemy.create ('Oger', 'Abkömlinge der Riesen die dich mit gewaltigen Hieben erledigen können', 1,1, 1,'zerfetzt');
 
    //Räume//Hier am Besten nur lere Presetes erstellen und sie mit der Funktion RaumUpdate ändern
    //Räume müssen hier deklariert werden, aber zusätzlich in der RaumWechselProzedure eingetragen werden
@@ -99,8 +129,8 @@ begin
    RaumNamenUpdate(Bleises_Folterkeller,'Beim Öffnen der Türen schlägt dir ein übeleregender Gestank entgegnen','','','');
    //Zusätzliches Update
    ZusaetzlicheUpdates(Mensa,'hard',100,5,50,false);
-   ZusaetzlicheUpdates(Schwimmbad,'medium',100,1,70,false);      //Density von Hundert spawnt beim ersten Betreten
-   ZusaetzlicheUpdates(Bleises_Folterkeller,'',100,20,25,false);      //Immer ein Monster
+   ZusaetzlicheUpdates(Schwimmbad,'hard',100,1,70,false);      //Density von Hundert spawnt beim ersten Betreten
+   ZusaetzlicheUpdates(Bleises_Folterkeller,'hard',100,20,25,false);      //Immer ein Monster
    //Startwerte//
    AnfangsRaum:=Bleises_Folterkeller;
    aktuellerRaum := AnfangsRaum;
@@ -109,12 +139,16 @@ begin
    //Spieler-Start-StatsNR2//
    AnfangsHP:=10;
    AnfangsRK:=10;
+   AnfangsAtk:=3;
    //Spieler-start-stats//
 
    SpielerHP := AnfangsHP;
    SpielerRK := AnfangsRK;
-   SpielerATK := 3;
-
+   SpielerATK := AnfangsAtk;
+   SpielerHelm:=Kappe;
+   SpielerRuestung:=Tunika;
+   SpielerSchuhe:=Robuste_Stiefel;
+   SpielerWaffe:=Dolch;
    UIRefresh.UiRefresh();
 end;
 
@@ -149,7 +183,7 @@ begin
 
  //Raumwechsel//
 
- else if uppercase(Eingabe) = 'NORDEN'        //Anstat den ganzen Code in jeder Eingabe zu haben wird nur noch eine Funktion "Raumwechsel" aufgerufen
+ else if uppercase(Eingabe) = 'NORDEN'        //Anstatt den ganzen Code in jeder Eingabe zu haben wird nur noch eine Funktion "Raumwechsel" aufgerufen
  then
    begin
    RaumWechsel(AktuellerRaum.Norden);
@@ -172,13 +206,19 @@ begin
  begin
     RaumWechsel(AktuellerRaum.Westen);
  end
+ else if uppercase(Eingabe) = 'PICKUP'
+ then
+ begin
+    LootDrop.Pickup();
+ end
 
  else if uppercase(Eingabe) = 'ZURUECK'
  then
  begin
    LabelRaum.caption := AktuellerRaum.Raumname;          //NOch nicht korrekt
  end
-
+ else if uppercase(Eingabe)='UI' then
+ UiRefresh.UiRefresh()
  //Angreifen//
 
  else if (uppercase(Eingabe) = 'ANGREIFEN')
@@ -198,6 +238,26 @@ begin
 //RefresUI
 
 UIRefresh.UiRefresh()
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+   Memo1.lines.add(SpielerHelm.Beschreibung)
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+    Memo1.lines.add(SpielerRuestung.Beschreibung)
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+begin
+  Memo1.lines.add(SpielerSchuhe.Beschreibung)
+end;
+
+procedure TForm1.Button5Click(Sender: TObject);
+begin
+  Memo1.lines.add(SpielerWaffe.Beschreibung)
 end;
 
 end.

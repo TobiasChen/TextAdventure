@@ -16,7 +16,7 @@ var
   Wuerfel:Integer;
  begin
   Wuerfel:=1+Random(100);//Normales Random 100 wäre 0...99
-  if aktuellerRaum.Difficulty='leicht'
+  if aktuellerRaum.Difficulty='easy'
      then begin                                         //Wäre Optimaler mit einer
        if Wuerfel <= 50  then                           //Case Struktur gelöst worden
           aktuellerRaum.Enemy:=nil
@@ -25,7 +25,7 @@ var
        else if (Wuerfel > 85) and (Wuerfel <=100)   then
             aktuellerRaum.Enemy:=Ork;
      end;
-   if aktuellerRaum.Difficulty='Mittel'
+   if aktuellerRaum.Difficulty='medium'
       then begin
         if Wuerfel <= 30 then
            aktuellerRaum.Enemy:=nil
@@ -34,10 +34,10 @@ var
         else if (Wuerfel > 65) and (Wuerfel <=100) then
              aktuellerRaum.Enemy:=Ork;
       end;
-   if aktuellerRaum.Difficulty='Schwer'                 //Nur Beispiel Werte
+   if aktuellerRaum.Difficulty='hard'                 //Nur Beispiel Werte
       then begin                                           //zur Demonstration
         if Wuerfel = 1 then
-           aktuellerRaum.Enemy:=nil
+           aktuellerRaum.Enemy:=Goblin
         else if Wuerfel <= 2 then
            aktuellerRaum.Enemy:=Goblin
         else if (Wuerfel > 50) and (Wuerfel <=85) then

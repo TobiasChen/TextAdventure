@@ -1,4 +1,4 @@
-UNIT mTEnemy;
+UNIT mTLoot;
 
 interface
 
@@ -6,17 +6,18 @@ interface
 //uses ....;
 
 type
-  TEnemy = class
+  TLoot = class
 
   public //Attribute
-    Enemyname : String;
+    Name : String;
+    Typ:String;
     Beschreibung : String;
+    Tier:String;
     HP : Integer;
     RK : Integer;
     ATK : Integer;
-    LootType: String;
   public //Methoden
-    constructor create (EnemyN : String; Beschr: String; Health: Integer; RKlasse: Integer; Atck: Integer;LT:String);
+    constructor create (LootN : String;Typus:String; Beschr: String;Grad:String; Health: Integer; RKlasse: Integer; Atck: Integer);
    end;
 implementation
 
@@ -25,15 +26,16 @@ implementation
 //+---------------------------------------------------------------------
 
 //-------- create (public) ---------------------------------------------
-constructor TEnemy.create (EnemyN : String; Beschr: String; Health: Integer; RKlasse: Integer; Atck: Integer;LT:String);
+constructor TLoot.create (LootN : String;Typus:String; Beschr: String;Grad:String; Health: Integer; RKlasse: Integer; Atck: Integer);
 begin
   inherited create;
-  Enemyname := EnemyN;
+  Name := LootN;
+  Typ:=Typus;
   Beschreibung := Beschr;
+  Tier:=Grad
   HP := Health;
   RK := RKlasse;
   ATK := ATck;
-  LootType:=LT;
 end;
 
 end.

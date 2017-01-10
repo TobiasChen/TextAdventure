@@ -14,7 +14,7 @@ type
     HP : Integer;
     RK : Integer;
     ATK : Integer;
-    LootType: String;
+    LootType: String:
   public //Methoden
     constructor create (EnemyN : String; Beschr: String; Health: Integer; RKlasse: Integer; Atck: Integer;LT:String);
    end;

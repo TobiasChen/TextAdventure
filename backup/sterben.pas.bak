@@ -18,7 +18,5 @@ procedure sterben();
   SpielerHP:=AnfangsHP;
   UIRefresh.UIRefresh();
   end;
-end;
-
 end.
 

@@ -37,7 +37,7 @@ var
    if aktuellerRaum.Difficulty='hard'                 //Nur Beispiel Werte
       then begin                                           //zur Demonstration
         if Wuerfel = 1 then
-           aktuellerRaum.Enemy:=nil
+           aktuellerRaum.Enemy:=Goblin
         else if Wuerfel <= 2 then
            aktuellerRaum.Enemy:=Goblin
         else if (Wuerfel > 50) and (Wuerfel <=85) then
@@ -46,9 +46,9 @@ var
              aktuellerRaum.Enemy:=Oger;
       end;
    if aktuellerRaum.Difficulty= ('')  then       //Error Überprüfung
-         aktuellerRaum.Enemy:=nil;
+         aktuellerRaum.Enemy:=Goblin;
    if aktuellerRaum.Difficulty= 'empty'  then
-         aktuellerRaum.Enemy:=nil;
+         aktuellerRaum.Enemy:=Goblin;
   //Aus mir momentan unerfindlichen Gründen funktionierte ein einfaches or Statment
   //hier nicht, zudem ist es unnötig und dient nur dem Programier Komfort.
   end;

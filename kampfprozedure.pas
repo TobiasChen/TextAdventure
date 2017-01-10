@@ -13,12 +13,12 @@ var
   Gegner:TEnemy;
 procedure Kampf();
 implementation
-uses Unit1,ProzedureRaumwechsel;                                 //Unit1 muss benutzt werden
+uses Unit1,ProzedureRaumwechsel,LootDrop;                                 //Unit1 muss benutzt werden
 //------Kampf------//    //Angelehnt an das Pen&Paper-Kampfsystem//
 procedure Kampf();
 begin
 Gegner:=AktuellerRaum.Enemy;
-//Sehr faule Implementation,theroetisch könnte man jedes Gegner in dieser Unit
+//Faule Implementation,theroetisch könnte man jedes Gegner in dieser Unit
 //mit AktuellerRaum.Enemy ersetzen
 if AktuellerRaum.Enemy = nil then
 Form1.Memo1.lines.add('Kein Gegner Vorhanden')
@@ -52,6 +52,7 @@ begin
            Form1.Memo1.lines.add('Du hast den Gegner mit '+ inttostr(SpielerATK) + ' Schaden  getroffen und ihn getötet');
            IstInKampf:= false;
            Form1.LabelGegnerHP.Caption:=IntToStr(0);
+           LootDrop.LootDrop()  //Fukntion für Loot Generation
            end
            else
            Form1.Memo1.lines.add('Du hast den Gegner mit '+ inttostr(SpielerATK) +' Schaden  getroffen!');
