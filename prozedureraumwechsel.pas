@@ -10,7 +10,7 @@ var
  aktuellerRaum: TRaum;
  vorherigerRaum: TRaum;
 procedure RaumWechsel(Eingabe:Traum);
-procedure Hunt();
+//procedure Hunt();
 implementation
 uses Unit1,UIRefresh,Monsterspawn,LootDrop;
 procedure RaumWechsel(Eingabe:Traum);
@@ -40,6 +40,8 @@ WuerfelErgebnis:Integer;
       tempLoot:=nil;
       //Wahrscheinlichkeit ein Monster zu spawnen
       AktuellerRaum.MD:=AktuellerRaum.MD+ AktuellerRaum.Schrittweite*AktuellerRaum.MDA;
+      if AktuellerRaum.MD>=100 then
+        AktuellerRaum.MD:=100;
       Wuerfelergebnis:= 1+random(100);
       if WuerfelErgebnis-aktuellerRaum.MD<=0 then
          Monsterspawn.Monsterspawn();
@@ -55,13 +57,14 @@ WuerfelErgebnis:Integer;
       SpielerRK:=SpielerRK +2;      //Wird dem Spieler 2 RK abgezogen
       UIRefresh.UIRefresh();
 
-      //Raum1.Schrittweite:=Raum1.Schrittweite +1
-      //Raum2.Schrittweite:=Raum2.Schrittweite +1  Entsprechend fortührend
-     //                                            Muss hard coded werden
+      Ostweg.Schrittweite:=Ostweg.Schrittweite+1;
+      Westweg.Schrittweite:=Westweg.Schrittweite+1;  //Entsprechend fortührend
+      Graumoor.Schrittweite:=Graumoor.Schrittweite+1;
+     //Muss hard coded werden
       end;
   end;
 end;
-procedure Hunt();
+{procedure Hunt();
 var
  WuerfelErgebnis:Integer;
  Begin
@@ -71,7 +74,10 @@ var
      end
      else
      begin
+
      AktuellerRaum.MD:=AktuellerRaum.MD+ AktuellerRaum.Schrittweite*AktuellerRaum.MDA;
+     if AktuellerRaum.MD>=100 then
+        AktuellerRaum.MD:=100;
      Wuerfelergebnis:= 1+random(100);
      if WuerfelErgebnis-aktuellerRaum.MD<=0 then
          Monsterspawn.Monsterspawn();
@@ -85,5 +91,6 @@ var
       end;
      end;
      end;
+ }
 end.
 

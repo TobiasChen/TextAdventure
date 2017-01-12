@@ -51,11 +51,12 @@ type
 var
   Form1: TForm1;
   //Räume//
+  EmptyPreset:TRaum;
   Spinnennest:TRaum;
   Spinnenkammer:TRaum;
   Waldlichtung:TRaum;
   Hoehle:TRaum;
-  Tautropfdwald:TRaum;
+  Tautropfwald:TRaum;
   Weggabelung:TRaum;
   Hoehleneingang:TRaum;
   Lagerhalle:TRaum;
@@ -91,6 +92,7 @@ var
   AnfangsHP:Integer;
   AnfangsRK:Integer;
   AnfangsAtk:Integer;
+  MaxHP:Integer;
   //Gegner//
   Mieses_Essen: TEnemy;
   Goblin: TEnemy;
@@ -116,7 +118,7 @@ var
   Verroteter_Klumpen:TLoot;
   Eisenstreitkolben:Tloot;
   Orkischer_Hammerzahn:Tloot;
-  Gigantischer_Knochenmürber:Tloot;
+  Gigantischer_Knochenmuerber:Tloot;
   Muerbes_Holzschwert:Tloot;
   Eisenschwert:Tloot;
   Geschmuecktes_Silberschwert:Tloot;
@@ -138,6 +140,9 @@ procedure TForm1.FormCreate(Sender: TObject);
 begin
    Memo1.Lines.Clear;
    Memo1.Lines.Add ('Hallo, willkommen im Textadventure');
+   Memo1.Lines.Add ('Du kannst dich mit dem Namen der Richung[Norden/Nord/N] bewegen');
+      Memo1.Lines.Add ('Hilfe findest du mit ?');
+         Memo1.Lines.Add ('Du kannst mit "camp" schlafen und HP regenrieren');
    //Typen sind Helm,Ruestung,Schuhe,Waffe
    //Helm-Loot//
    Kappe:=TLoot.create('Kappe','Helm','eine leichte Lederkappe','verschlissen',0,0,0);
@@ -158,16 +163,16 @@ begin
    Verroteter_Klumpen:=TLoot.create('Verroteter Klumpen','Waffe','einen modrigen Klumpen, den man zum Zuschlagen verwenden könnte,','verschlissen',0,1,4);
    Eisenstreitkolben:=TLoot.create('Eisenstreitkolben','Waffe','einen benutzten Eisenstreitkolben','normal',0,2,7);
    Orkischer_Hammerzahn:=TLoot.create('Orkischer Hammerzahn','Waffe','einen für Kriege verwendeten orkischen Hammerzahn','erlesen',0,3,11);
-   Gigantischer_Knochenmürber:=TLoot.create('Gigantischer Knochenmürber','Waffe','einen der mächtigsten Streitkolben, den Gigantischen Knochenmürber,','magisch',0,4,22);
+   Gigantischer_Knochenmuerber:=TLoot.create('Gigantischer Knochenmürber','Waffe','einen der mächtigsten Streitkolben, den Gigantischen Knochenmürber,','magisch',0,4,22);
    Muerbes_Holzschwert:=TLoot.create('Mürbes Holzschwert','Waffe','ein mürbes Holzschwert, welches vielleicht etwas besser als die Faust ist,','verschlissen',1,0,4);
-   Eisenschwert:=TLoot.create('Eisenschwert','Waffe','ein stumpfes Eisenschwert','normal',2,0,7;
+   Eisenschwert:=TLoot.create('Eisenschwert','Waffe','ein stumpfes Eisenschwert','normal',2,0,7);
    Geschmuecktes_Silberschwert:=TLoot.create('Geschmücktes Silberschwert','Waffe','ein hochwertiges Silberschwert voller Verzierungen','erlesen',3,0,11);
    Drachenzahn:=TLoot.create('Drachenzahn','Waffe','einen mächtigen Drachenzahn','magisch',4,0,22);
    //Gegner//
    Mieses_Essen := TEnemy.create ('Mieses Essen', 'Entspricht der Norm... von der Schule', 5, 5, 1,'zerfetzt');
-   Goblin := TEnemy.create ('Goblin', 'Kleine,Flinke Wesen die dir Wriklich den Tag verderben können',1, 1, 1,'zerfetzt');
-   Ork := TEnemy.create ('Ork', 'Nicht zu klug aber furchterregnd im Kampf', 1, 1, 1,'zerfertzt');
-   Oger := TEnemy.create ('Oger', 'Abkömlinge der Riesen die dich mit gewaltigen Hieben erledigen können', 1,1, 1,'zerfetzt');
+   Goblin := TEnemy.create ('Goblin', 'einem kleinen Wesen ,dass erstaunlich flink ist',3, 12, 1,'zerfetzt');
+   Ork := TEnemy.create ('Ork', 'einem Krieger mit Blutunerlaufenen Augen', 10,10, 1,'zerfetzt');
+   Oger := TEnemy.create ('Oger', 'Einem Abkömlinge der Riesen mit einer Keule', 15,6, 2,'Oger_Boss');
 
    //Räume//Hier am Besten nur lere Presetes erstellen und sie mit der Funktion RaumUpdate ändern
    //Räume müssen hier deklariert werden, aber zusätzlich in der RaumWechselProzedure eingetragen werden
@@ -212,17 +217,23 @@ begin
    //Die Prozedure RaumUpdate() braucht 6 Pointer und zwar den Raum der zu
    //ändern ist die Räume die in den HimmelsRichtungen um ihn herum liegen
    //und immoment den Gegner im Raum
-   RaumUpdate.RaumUpdate(Mensa,nil,Schwimmbad,Bleises_Folterkeller,nil);
-   RaumUpdate.RaumUpdate(Schwimmbad,nil,nil,nil,Mensa);
-   RaumUpdate.RaumUpdate(Bleises_Folterkeller,Mensa,nil,nil,nil);
-   //RaumUpdate AusgangsBeschreibungen
-   RaumNamenUpdate(Mensa,'','Du tritts durch eine große Tür in einen Raum voller hießer Dämpfe','Durch die Trepper gelangst du in ein dunkles Verlies','');
-   RaumNamenUpdate(Schwimmbad,'','','','Beim Öffnen der Türen schlägt dir ein übeleregender Gestank entgegnen');
-   RaumNamenUpdate(Bleises_Folterkeller,'Beim Öffnen der Türen schlägt dir ein übeleregender Gestank entgegnen','','','');
-   //Zusätzliches Update
-   ZusaetzlicheUpdates(Mensa,'hard',100,5,50,false);
-   ZusaetzlicheUpdates(Schwimmbad,'hard',100,1,70,false);      //Density von Hundert spawnt beim ersten Betreten
-   ZusaetzlicheUpdates(Bleises_Folterkeller,'hard',100,20,25,false);      //Immer ein Monster
+   RaumUpdate.RaumUpdate(Augvea,nil,Ostweg,Schlafgemach,Westweg);
+   RaumUpdate.RaumUpdate(Schlafgemach,Augvea,nil,nil,nil);
+   RaumUpdate.RaumUpdate(Ostweg,nil,Graumoor,nil,Augvea);
+   RaumUpdate.RaumUpdate(Westweg,nil,Augvea,nil,nil);
+   RaumUpdate.RaumUpdate(Graumoor,nil,nil,nil,Ostweg);
+   //RaumUpdate Benötigt RaumPointer+AusgangsBeschreibungen
+   RaumNamenUpdate(Augvea,'','Du tritts durch die Stadttore und siehst die Oststraße vor dir. In der ferne kannst du das Moor erkennen','Du tritts in die Herberge,hier kannst du die erholen','Du tritts durch die Stadttore und siehst den Weg der sich in die Berge schlängelt');
+   RaumNamenUpdate(Schlafgemach,'Du verlässt die Herberge und stehst wieder auf dem Marktplatz','','','');
+   RaumNamenUpdate(Ostweg,'','Deine Stiefel sinken im Morast ein und du hörst die Geräusche seltsamer Kreaturen um dich herum','','Du betritts die Stadt und findest dich auf dem Marktplatz wieder');
+   RaumNamenUpdate(Westweg,'','Du betritts die Stadt und findest dich auf dem Marktplatz wieder','','');
+   RaumNamenUpdate(Graumoor,'','','','Auf dem Weg aus dem Moor verfolgen dich die Albtraumhaften Bilder die du gesehen hast');
+   //Zusätzliches Updates RaumPointer+Schwierigkeit+MD+MDA+MDS(ProzedureRaumwechsel und mTRAum)+Camp+CampPossible
+   ZusaetzlicheUpdates(Augvea,'',0,0,0,false);
+   ZusaetzlicheUpdates(Schlafgemach,'',0,0,0,true);
+   ZusaetzlicheUpdates(Ostweg,'hard',100,5,50,false);       //Density von Hundert spawnt beim ersten Betreten
+   ZusaetzlicheUpdates(Westweg,'hard',100,5,50,false);      //Immer ein Monster
+   ZusaetzlicheUpdates(Graumoor,'SehrHard',100,2,10,false);
    //Startwerte//
    AnfangsRaum:= Augvea;
    aktuellerRaum := AnfangsRaum;
@@ -237,10 +248,11 @@ begin
    SpielerHP := AnfangsHP;
    SpielerRK := AnfangsRK;
    SpielerATK := AnfangsAtk;
+   MaxHP:=AnfangsHP;
    SpielerHelm:=Kappe;
-   SpielerRuestung:=Tunika;
-   SpielerSchuhe:=Robuste_Stiefel;
-   SpielerWaffe:=Dolch;
+   SpielerRuestung:=Gewand;
+   SpielerSchuhe:=Alte_Latscher;
+   SpielerWaffe:=Verroteter_Klumpen;
    UIRefresh.UiRefresh();
 end;
 
@@ -257,21 +269,11 @@ begin
    begin
      Memo1.lines.add('');
      Memo1.lines.add('Help/Hilfe/Befehle: Befehlsauflistung');
-     Memo1.lines.add('[Raumname]: Raumbeschreibung anzeigen');
      Memo1.lines.add('[Norden/Osten/Sueden/Westen]/[N/O/S/W]: In diese Richtung gehen');  //HIlfe Stellung
      Memo1.lines.add('Zurueck: In die vorherige Richtung gehen');
      Memo1.lines.add('Angreifen: Im Kampf einen Gegner attackieren');
      Memo1.lines.add('Fliehen: Im Kampf zum vorherigen Raum fliehen');
    end
-
- //Raumbeschreibungen//
-
- else if (uppercase(Eingabe) = 'SCHWIMMBAD') then
- Memo1.lines.add(Schwimmbad.beschreibung)
- else if (uppercase(Eingabe) = 'MENSA') then
- Memo1.lines.add(Mensa.beschreibung)
- else if (uppercase(Eingabe) = 'BLEISES_FOLTERKELLER') then
- Memo1.lines.add(Bleises_Folterkeller.beschreibung)
 
  //Raumwechsel//
 
@@ -303,18 +305,16 @@ begin
  begin
     LootDrop.Pickup();
  end
-<<<<<<< HEAD
  //else if uppercase(Eingabe) = 'HUNT' then
  //begin
  //     RaumWechsel(aktuellerRaum)
  //end
-=======
 
->>>>>>> 462255122e9f44ffb11c6fc7b7815293c85e165d
  else if uppercase(Eingabe) = 'ZURUECK'
  then
  begin
-   LabelRaum.caption := AktuellerRaum.Raumname;          //NOch nicht korrekt
+   aktuellerRaum:=vorherigerRaum;
+   IstInKampf:=false;
  end
  //Angreifen//
 

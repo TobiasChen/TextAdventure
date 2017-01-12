@@ -44,6 +44,17 @@ var
            aktuellerRaum.Enemy:=Ork
         else if (Wuerfel > 85) and (Wuerfel <=100) then
              aktuellerRaum.Enemy:=Ork;
+
+      end;
+   if aktuellerRaum.Difficulty='SehrHard'                 //Nur Beispiel Werte
+      then begin                                           //zur Demonstration
+        if Wuerfel = 1 then
+           aktuellerRaum.Enemy:=nil
+        else if (Wuerfel > 1) and (Wuerfel <=75) then
+           aktuellerRaum.Enemy:=Ork
+        else if (Wuerfel > 75) and (Wuerfel <=100) then
+             aktuellerRaum.Enemy:=Oger;
+
       end;
    if aktuellerRaum.Difficulty= ('')  then       //Error Überprüfung
          aktuellerRaum.Enemy:=Goblin;
