@@ -58,6 +58,7 @@ type
     procedure Button8Click(Sender: TObject);
     procedure Button9Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure LabelRaumClick(Sender: TObject);
     procedure UpdateProcedure();
   private
     { private declarations }
@@ -406,6 +407,11 @@ begin
    UIRefresh.UiRefresh();
 end;
 
+procedure TForm1.LabelRaumClick(Sender: TObject);
+begin
+
+end;
+
 procedure TForm1.UpdateProcedure;
 begin
 
@@ -550,29 +556,29 @@ begin
 end;
 procedure UpdateProcedure();
 begin//RaumName +4 RichtungsPfeile TShape + RaumButton
-  RaumMapUpdate(Spinnennest,nil,nil,nil,nil,Form2.Spinnennest);
-  RaumMapUpdate(Spinnenkammer,nil,nil,nil,nil,Form2.Spinnenkammer);
-  RaumMapUpdate(Waldlichtung,nil,nil,nil,nil,Form2.Waldlichtung);
-  RaumMapUpdate(Hoehle,nil,nil,nil,nil,Form2.Hoehle);
-  RaumMapUpdate(Abgrund_des_brennenden_Steins,nil,nil,nil,nil,Form2.Abgrund_des_brennenden_Steins);
-  RaumMapUpdate(Tautropfwald,nil,nil,nil,nil,Form2.Tautropfwald);
-  RaumMapUpdate(Weggabelung,nil,nil,nil,nil,Form2.Weggabelung);
-  RaumMapUpdate(Hoehleneingang,nil,nil,nil,nil,Form2.Hoehleneingang);
-  RaumMapUpdate(Lagerhalle,nil,nil,nil,nil,Form2.Lagerhalle);
-  RaumMapUpdate(Feuerschlot,nil,nil,nil,nil,Form2.Feuerschlot);
-  RaumMapUpdate(Oeder_Morast,nil,nil,nil,nil,Form2.Oeder_Morast);
-  RaumMapUpdate(Waldweg,nil,nil,nil,nil,Form2.Waldweg);
-  RaumMapUpdate(Grosse_Blumenwiese,nil,nil,nil,nil,Form2.Grosse_Blumenwiese);
+  RaumMapUpdate(Spinnennest,nil,form2.Spinnenkammer2Spinnennest,nil,nil,Form2.Spinnennest);
+  RaumMapUpdate(Spinnenkammer,nil,nil,Form2.Hoehle2Spinnenkammer,nil,Form2.Spinnenkammer);
+  RaumMapUpdate(Waldlichtung,nil,nil,Form2.Tautrofwald2Waldlichtung,nil,Form2.Waldlichtung);
+  RaumMapUpdate(Hoehle,nil,nil,Form2.Hoehleneingang2Hoehle,nil,Form2.Hoehle);
+  RaumMapUpdate(Abgrund_des_brennenden_Steins,nil,nil,Form2.Feuerschlot2Abgrund_des_brennenden_Steins,nil,Form2.Abgrund_des_brennenden_Steins);
+  RaumMapUpdate(Tautropfwald,nil,Form2.Weggabelung2Tautropfwald,nil,nil,Form2.Tautropfwald);
+  RaumMapUpdate(Weggabelung,nil,nil,Form2.Waldweg2Weggabelung,nil,Form2.Weggabelung);
+  RaumMapUpdate(Hoehleneingang,nil,nil,Form2.Grosse_Blumenwiese2Hoehleneingang,nil,Form2.Hoehleneingang);
+  RaumMapUpdate(Lagerhalle,nil,nil,Form2.Schlafgemach2Lagerhalle,nil,Form2.Lagerhalle);
+  RaumMapUpdate(Feuerschlot,nil,nil,Form2.Schattenweiden2Feuerschlot,nil,Form2.Feuerschlot);
+  RaumMapUpdate(Oeder_Morast,Form2.Schattenweiden2Oeder_Morast,nil,nil,nil,Form2.Oeder_Morast);
+  RaumMapUpdate(Waldweg,nil,nil,Form2.Augvea2Waldweg,nil,Form2.Waldweg);
+  RaumMapUpdate(Grosse_Blumenwiese,nil,nil,nil,Form2.Waldweg2Grosse_Blumenwiese,Form2.Grosse_Blumenwiese);
   RaumMapUpdate(Apfelwiese,nil,nil,nil,nil,Form2.Apfelwiese);
-  RaumMapUpdate(Kaserne,nil,nil,nil,nil,Form2.Kaserne);
-  RaumMapUpdate(Schlafgemach,nil,nil,nil,nil,Form2.Schlafgemach);
-  RaumMapUpdate(Einsame_Herberge,nil,nil,nil,nil,Form2.Einsame_Herberge);
-  RaumMapUpdate(Graumoor,nil,nil,nil,nil,Form2.Graumoor);
-  RaumMapUpdate(Schattenweiden,nil,nil,nil,nil,Form2.Schattenweiden);
-  RaumMapUpdate(Westweg,nil,nil,nil,nil,Form2.Westweg);
-  RaumMapUpdate(Bruecke,nil,nil,nil,nil,Form2.Bruecke);
+  RaumMapUpdate(Kaserne,nil,nil,nil,Form2.Wachturm2Kaserne,Form2.Kaserne);
+  RaumMapUpdate(Schlafgemach,nil,nil,Form2.Kaserne2Schlafgemach,nil,Form2.Schlafgemach);
+  RaumMapUpdate(Einsame_Herberge,nil,nil,nil,Form2.Schattenweiden2Einsame_Herberge,Form2.Einsame_Herberge);
+  RaumMapUpdate(Graumoor,nil,Form2.Oeder_Morast2Graumoor,nil,nil,Form2.Graumoor);
+  RaumMapUpdate(Schattenweiden,nil,Form2.Westweg2Schattenweiden,nil,nil,Form2.Schattenweiden);
+  RaumMapUpdate(Westweg,nil,Form2.Bruecke2Westweg,nil,nil,Form2.Westweg);
+  RaumMapUpdate(Bruecke,nil,Form2.Augvea2Bruecke,nil,nil,Form2.Bruecke);
   RaumMapUpdate(Augvea,nil,nil,nil,nil,Form2.Augvea);
-  RaumMapUpdate(Ostweg,nil,nil,nil,nil,Form2.Ostweg);
+  RaumMapUpdate(Ostweg,nil,nil,nil,Form2.Aug,Form2.Ostweg);
   RaumMapUpdate(Oestliche_Huegel,nil,nil,nil,nil,Form2.Oestliche_Huegel);
   RaumMapUpdate(Verlassene_Burg,nil,nil,nil,nil,Form2.Verlassene_Burg);
   RaumMapUpdate(Wachturm,nil,nil,nil,nil,Form2.Wachturm);

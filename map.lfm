@@ -1,11 +1,12 @@
 object Form2: TForm2
   Left = 4
-  Height = 910
+  Height = 912
   Top = 122
   Width = 1912
   Caption = 'Form2'
-  ClientHeight = 910
+  ClientHeight = 912
   ClientWidth = 1912
+  OnCreate = FormCreate
   LCLVersion = '1.6.2.0'
   object Augvea2Ostweg: TShape
     Left = 1000
@@ -47,7 +48,6 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 0
-    Visible = False
   end
   object Waldweg: TButton
     Left = 856
@@ -70,7 +70,7 @@ object Form2: TForm2
     Pen.Style = psClear
     Visible = False
   end
-  object ShapePreset1: TShape
+  object Waldweg2Grosse_Blumenwiese: TShape
     Left = 1000
     Height = 3
     Top = 392
@@ -144,7 +144,7 @@ object Form2: TForm2
     TabOrder = 6
     Visible = False
   end
-  object ShapePresetSenkrecht1: TShape
+  object Hoehleneingang2Hoehle: TShape
     Left = 1144
     Height = 80
     Top = 208
@@ -154,7 +154,7 @@ object Form2: TForm2
     Pen.Style = psClear
     Visible = False
   end
-  object ShapePresetSenkrecht2: TShape
+  object Tautrofwald2Waldlichtung: TShape
     Left = 720
     Height = 80
     Top = 208
@@ -186,7 +186,7 @@ object Form2: TForm2
     TabOrder = 8
     Visible = False
   end
-  object ShapePresetSenkrecht3: TShape
+  object Hoehle2Spinnenkammer: TShape
     Left = 1144
     Height = 80
     Top = 112
@@ -207,7 +207,7 @@ object Form2: TForm2
     TabOrder = 9
     Visible = False
   end
-  object ShapePreset2: TShape
+  object Spinnenkammer2Spinnennest: TShape
     Left = 1000
     Height = 3
     Top = 104
@@ -228,7 +228,7 @@ object Form2: TForm2
     TabOrder = 10
     Visible = False
   end
-  object ShapePreset3: TShape
+  object Grosse_Blumenwiese2Apfelwiese: TShape
     Left = 1216
     Height = 3
     Top = 392
@@ -249,7 +249,7 @@ object Form2: TForm2
     TabOrder = 11
     Visible = False
   end
-  object ShapePreset4: TShape
+  object Ostweg2Oestliche_Huegel: TShape
     Left = 1216
     Height = 3
     Top = 488
@@ -270,7 +270,7 @@ object Form2: TForm2
     TabOrder = 12
     Visible = False
   end
-  object ShapePreset5: TShape
+  object Oestliche_Huegel2Verlassene_Burg: TShape
     Left = 1432
     Height = 3
     Top = 488
@@ -291,7 +291,7 @@ object Form2: TForm2
     TabOrder = 13
     Visible = False
   end
-  object ShapePreset6: TShape
+  object Wachturm2Kaserne: TShape
     Left = 1648
     Height = 3
     Top = 392
@@ -312,7 +312,7 @@ object Form2: TForm2
     TabOrder = 14
     Visible = False
   end
-  object Wachturm2Kaserne: TShape
+  object Verlassene_Burg2Wachturm: TShape
     Left = 1584
     Height = 80
     Top = 400
@@ -344,7 +344,7 @@ object Form2: TForm2
     TabOrder = 16
     Visible = False
   end
-  object VerticalPreset1: TShape
+  object Kaserne2Schlafgemach: TShape
     Left = 1800
     Height = 80
     Top = 304
@@ -365,7 +365,7 @@ object Form2: TForm2
     TabOrder = 17
     Visible = False
   end
-  object VerticalPreset2: TShape
+  object Schlafgemach2Lagerhalle: TShape
     Left = 1800
     Height = 80
     Top = 208
@@ -375,7 +375,7 @@ object Form2: TForm2
     Pen.Style = psClear
     Visible = False
   end
-  object VerticalPreset3: TShape
+  object Augvea2Strasse_in_den_Sueden: TShape
     Left = 936
     Height = 80
     Top = 496
@@ -396,7 +396,7 @@ object Form2: TForm2
     TabOrder = 18
     Visible = False
   end
-  object VerticalPreset4: TShape
+  object Apfelwiese2Oestliche_Huegel: TShape
     Left = 1368
     Height = 80
     Top = 400
@@ -406,7 +406,7 @@ object Form2: TForm2
     Pen.Style = psClear
     Visible = False
   end
-  object VerticalPreset5: TShape
+  object Strasse_in_den_Sueden2Karawane_Pfad: TShape
     Left = 936
     Height = 80
     Top = 592
@@ -427,7 +427,7 @@ object Form2: TForm2
     TabOrder = 19
     Visible = False
   end
-  object ShapePreset7: TShape
+  object Karawane_Pfad2Am_Schnellen_Bach: TShape
     Left = 1000
     Height = 3
     Top = 680
@@ -459,7 +459,7 @@ object Form2: TForm2
     TabOrder = 21
     Visible = False
   end
-  object VerticalPreset6: TShape
+  object Am_Schnellen_Bach2Spitzdorf: TShape
     Left = 1144
     Height = 80
     Top = 688
@@ -469,7 +469,7 @@ object Form2: TForm2
     Pen.Style = psClear
     Visible = False
   end
-  object ShapePreset8: TShape
+  object Spitzdorf2Der_Grosse_Heuler: TShape
     Left = 1216
     Height = 3
     Top = 776
@@ -490,7 +490,7 @@ object Form2: TForm2
     TabOrder = 22
     Visible = False
   end
-  object ShapePreset9: TShape
+  object Der_grosse_Heuler2Kraehenhort: TShape
     Left = 1432
     Height = 3
     Top = 776
@@ -511,7 +511,7 @@ object Form2: TForm2
     TabOrder = 23
     Visible = False
   end
-  object VerticalPreset7: TShape
+  object Kraenhort2Der_Sonnenstich: TShape
     Left = 1584
     Height = 80
     Top = 784
@@ -532,7 +532,7 @@ object Form2: TForm2
     TabOrder = 24
     Visible = False
   end
-  object ShapePreset10: TShape
+  object Am_Schnellen_Bach2Traenenwald: TShape
     Left = 1216
     Height = 3
     Top = 680
@@ -553,7 +553,7 @@ object Form2: TForm2
     TabOrder = 25
     Visible = False
   end
-  object ShapePreset11: TShape
+  object Traenenwald2Baerenhoehle: TShape
     Left = 1432
     Height = 3
     Top = 680
@@ -574,7 +574,7 @@ object Form2: TForm2
     TabOrder = 26
     Visible = False
   end
-  object ShapePreset12: TShape
+  object Strasse_in_den_Sueden2Tal: TShape
     Left = 1000
     Height = 3
     Top = 584
@@ -595,7 +595,7 @@ object Form2: TForm2
     TabOrder = 27
     Visible = False
   end
-  object VerticalPreset8: TShape
+  object Tal2Am_Schnellen_Bach: TShape
     Left = 1144
     Height = 80
     Top = 592
@@ -605,7 +605,7 @@ object Form2: TForm2
     Pen.Style = psClear
     Visible = False
   end
-  object ShapePreset13: TShape
+  object Tal2Grosse_Duenne: TShape
     Left = 1216
     Height = 3
     Top = 584
@@ -626,7 +626,7 @@ object Form2: TForm2
     TabOrder = 28
     Visible = False
   end
-  object ShapePreset14: TShape
+  object Grosse_Duene2Met_Schall_Wueste: TShape
     Left = 1432
     Height = 3
     Top = 584
@@ -647,7 +647,7 @@ object Form2: TForm2
     TabOrder = 29
     Visible = False
   end
-  object ShapePreset15: TShape
+  object Augvea2Bruecke: TShape
     Left = 784
     Height = 3
     Top = 488
@@ -668,7 +668,7 @@ object Form2: TForm2
     TabOrder = 30
     Visible = False
   end
-  object ShapePreset16: TShape
+  object Bruecke2Westweg: TShape
     Left = 568
     Height = 3
     Top = 488
@@ -689,7 +689,7 @@ object Form2: TForm2
     TabOrder = 31
     Visible = False
   end
-  object ShapePreset17: TShape
+  object Westweg2Schattenweiden: TShape
     Left = 360
     Height = 3
     Top = 488
@@ -710,7 +710,7 @@ object Form2: TForm2
     TabOrder = 32
     Visible = False
   end
-  object ShapePreset18: TShape
+  object Schattenweiden2Einsame_Herberge: TShape
     Left = 160
     Height = 3
     Top = 488
@@ -731,7 +731,7 @@ object Form2: TForm2
     TabOrder = 33
     Visible = False
   end
-  object VerticalPreset9: TShape
+  object Schattenweiden2Oeder_Morast: TShape
     Left = 312
     Height = 80
     Top = 496
@@ -752,7 +752,7 @@ object Form2: TForm2
     TabOrder = 34
     Visible = False
   end
-  object ShapePreset19: TShape
+  object Oeder_Morast2Graumoor: TShape
     Left = 160
     Height = 3
     Top = 584
@@ -762,7 +762,7 @@ object Form2: TForm2
     Pen.Style = psClear
     Visible = False
   end
-  object VerticalPreset10: TShape
+  object Oeder_Morast2Kleiner_See: TShape
     Left = 312
     Height = 80
     Top = 592
@@ -783,7 +783,7 @@ object Form2: TForm2
     TabOrder = 35
     Visible = False
   end
-  object VerticalPreset11: TShape
+  object Kleiner_See2Goblin_Dorf: TShape
     Left = 312
     Height = 80
     Top = 688
@@ -804,7 +804,7 @@ object Form2: TForm2
     TabOrder = 36
     Visible = False
   end
-  object VerticalPreset12: TShape
+  object Schattenweiden2Feuerschlot: TShape
     Left = 312
     Height = 80
     Top = 400
@@ -825,7 +825,7 @@ object Form2: TForm2
     TabOrder = 37
     Visible = False
   end
-  object VerticalPreset13: TShape
+  object Feuerschlot2Abgrund_des_brennenden_Steins: TShape
     Left = 312
     Height = 80
     Top = 304
@@ -857,7 +857,7 @@ object Form2: TForm2
     TabOrder = 39
     Visible = False
   end
-  object Label1: TLabel
+  object Ueberschrift: TLabel
     Left = 840
     Height = 45
     Top = 24
@@ -866,5 +866,15 @@ object Form2: TForm2
     Font.Height = -33
     ParentColor = False
     ParentFont = False
+  end
+  object Baerenhoehle2Kraehenhort: TShape
+    Left = 1584
+    Height = 80
+    Top = 688
+    Width = 3
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+    Visible = False
   end
 end

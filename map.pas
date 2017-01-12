@@ -14,9 +14,10 @@ type
   { TForm2 }
 
   TForm2 = class(TForm)
+    Baerenhoehle2Kraehenhort: TShape;
     Augvea: TButton;
     Kaserne: TButton;
-    Label1: TLabel;
+    Ueberschrift: TLabel;
     Lagerhalle: TButton;
     Karawane_Pfad: TButton;
     Am_Schnellen_Bach: TButton;
@@ -35,28 +36,28 @@ type
     Abgrund_des_brennenden_Steins: TButton;
     Einsame_Herberge: TButton;
     Schattenweiden: TButton;
-    ShapePreset17: TShape;
-    ShapePreset18: TShape;
-    ShapePreset19: TShape;
-    VerticalPreset10: TShape;
-    VerticalPreset11: TShape;
-    VerticalPreset12: TShape;
-    VerticalPreset13: TShape;
-    VerticalPreset9: TShape;
+    Westweg2Schattenweiden: TShape;
+    Schattenweiden2Einsame_Herberge: TShape;
+    Oeder_Morast2Graumoor: TShape;
+    Oeder_Morast2Kleiner_See: TShape;
+    Kleiner_See2Goblin_Dorf: TShape;
+    Schattenweiden2Feuerschlot: TShape;
+    Feuerschlot2Abgrund_des_brennenden_Steins: TShape;
+    Schattenweiden2Oeder_Morast: TShape;
     Westweg: TButton;
-    ShapePreset13: TShape;
-    ShapePreset14: TShape;
-    ShapePreset15: TShape;
-    ShapePreset16: TShape;
+    Tal2Grosse_Duenne: TShape;
+    Grosse_Duene2Met_Schall_Wueste: TShape;
+    Augvea2Bruecke: TShape;
+    Bruecke2Westweg: TShape;
     Tal: TButton;
-    ShapePreset11: TShape;
-    ShapePreset12: TShape;
+    Traenenwald2Baerenhoehle: TShape;
+    Strasse_in_den_Sueden2Tal: TShape;
     Traenenwald: TButton;
-    ShapePreset10: TShape;
-    ShapePreset8: TShape;
-    ShapePreset9: TShape;
+    Am_Schnellen_Bach2Traenenwald: TShape;
+    Spitzdorf2Der_Grosse_Heuler: TShape;
+    Der_grosse_Heuler2Kraehenhort: TShape;
     Spitzdorf: TButton;
-    ShapePreset7: TShape;
+    Karawane_Pfad2Am_Schnellen_Bach: TShape;
     Strasse_in_den_Sueden: TButton;
     Schlafgemach: TButton;
     Ostweg: TButton;
@@ -68,30 +69,30 @@ type
     Apfelwiese: TButton;
     Oestliche_Huegel: TButton;
     Verlassene_Burg: TButton;
-    VerticalPreset1: TShape;
-    VerticalPreset2: TShape;
-    VerticalPreset3: TShape;
-    VerticalPreset4: TShape;
-    VerticalPreset5: TShape;
-    VerticalPreset6: TShape;
-    VerticalPreset7: TShape;
-    VerticalPreset8: TShape;
-    Wachturm2Kaserne: TShape;
+    Kaserne2Schlafgemach: TShape;
+    Schlafgemach2Lagerhalle: TShape;
+    Augvea2Strasse_in_den_Sueden: TShape;
+    Apfelwiese2Oestliche_Huegel: TShape;
+    Strasse_in_den_Sueden2Karawane_Pfad: TShape;
+    Am_Schnellen_Bach2Spitzdorf: TShape;
+    Kraenhort2Der_Sonnenstich: TShape;
+    Tal2Am_Schnellen_Bach: TShape;
+    Verlassene_Burg2Wachturm: TShape;
     Wachturm: TButton;
-    ShapePreset3: TShape;
-    ShapePreset4: TShape;
-    ShapePreset5: TShape;
-    ShapePreset6: TShape;
+    Grosse_Blumenwiese2Apfelwiese: TShape;
+    Ostweg2Oestliche_Huegel: TShape;
+    Oestliche_Huegel2Verlassene_Burg: TShape;
+    Wachturm2Kaserne: TShape;
     Spinnennest: TButton;
-    ShapePreset2: TShape;
+    Spinnenkammer2Spinnennest: TShape;
     Spinnenkammer: TButton;
-    ShapePresetSenkrecht3: TShape;
+    Hoehle2Spinnenkammer: TShape;
     Waldlichtung: TButton;
-    ShapePresetSenkrecht1: TShape;
-    ShapePresetSenkrecht2: TShape;
+    Hoehleneingang2Hoehle: TShape;
+    Tautrofwald2Waldlichtung: TShape;
     Tautropfwald: TButton;
     Weggabelung: TButton;
-    ShapePreset1: TShape;
+    Waldweg2Grosse_Blumenwiese: TShape;
     Weggabelung2Tautropfwald: TShape;
     Waldweg2Weggabelung: TShape;
     Waldweg: TButton;
@@ -99,6 +100,7 @@ type
     Augvea2Ostweg: TShape;
     Ostweg2Oestliche_Huegel: TShape;
     Augvea2Waldweg: TShape;
+    procedure FormCreate(Sender: TObject);
   private
     { private declarations }
   public
@@ -110,6 +112,13 @@ implementation
 {$R *.lfm}
 uses
     unit1;
+
+{ TForm2 }
+
+procedure TForm2.FormCreate(Sender: TObject);
+begin
+
+end;
 
 { TForm2 }
 
