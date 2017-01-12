@@ -216,7 +216,6 @@ begin
    //RaumUpdate//
    //Die Prozedure RaumUpdate() braucht 6 Pointer und zwar den Raum der zu
    //ändern ist die Räume die in den HimmelsRichtungen um ihn herum liegen
-   //und immoment den Gegner im Raum
    RaumUpdate.RaumUpdate(Augvea,nil,Ostweg,Schlafgemach,Westweg);
    RaumUpdate.RaumUpdate(Schlafgemach,Augvea,nil,nil,nil);
    RaumUpdate.RaumUpdate(Ostweg,nil,Graumoor,nil,Augvea);
@@ -231,9 +230,9 @@ begin
    //Zusätzliches Updates RaumPointer+Schwierigkeit+MD+MDA+MDS(ProzedureRaumwechsel und mTRAum)+Camp+CampPossible
    ZusaetzlicheUpdates(Augvea,'',0,0,0,false);
    ZusaetzlicheUpdates(Schlafgemach,'',0,0,0,true);
-   ZusaetzlicheUpdates(Ostweg,'hard',100,5,50,false);       //Density von Hundert spawnt beim ersten Betreten
-   ZusaetzlicheUpdates(Westweg,'hard',100,5,50,false);      //Immer ein Monster
-   ZusaetzlicheUpdates(Graumoor,'SehrHard',100,2,10,false);
+   ZusaetzlicheUpdates(Ostweg,'test',100,5,50,false);       //Density von Hundert spawnt beim ersten Betreten
+   ZusaetzlicheUpdates(Westweg,'test',100,5,50,false);      //Immer ein Monster
+   ZusaetzlicheUpdates(Graumoor,'test',100,2,10,false);
    //Startwerte//
    AnfangsRaum:= Augvea;
    aktuellerRaum := AnfangsRaum;

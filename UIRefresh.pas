@@ -25,7 +25,7 @@ begin
   If AktuellerRaum.Enemy <> nil then  // <> = is not
      begin
      Form1.LabelGegner.Caption := AktuellerRaum.Enemy.Enemyname;
-     Form1.LabelGegnerHP.Caption:= InttoStr(aktuellerRaum.Enemy.HP) ;
+     Form1.LabelGegnerHP.Caption:= InttoStr(GegnerHP) ;
      end
      //Überprüft ob Gegner vorhanden sind
   else

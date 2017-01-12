@@ -8,6 +8,7 @@ uses
   Classes, SysUtils, mTEnemy, sterben;
 var
   SpielerHP, SpielerRK, SpielerATK: Integer;
+  GegnerHP:Integer;
   WurfSpieler, WurfGegner : Integer;                             //Angelehnt an das Pen&Paper-Kampfsystem//
   IstInKampf: Boolean;
   Gegner:TEnemy;
@@ -27,13 +28,11 @@ else
 begin
     WurfSpieler := random(20) + 1 + SpielerATK;                  //Wurf des Spielers
     WurfGegner:= random(20) + 1 + Gegner.ATK;                    //Wurf des Gegners
-    if SpielerRK < Wurfgegner                                    //Trifft Gegner?
-       then
+    if SpielerRK < Wurfgegner then                               //Trifft Gegner?
          begin
            SpielerHP := SpielerHP - Gegner.ATK;
            if SpielerHp < 1 then
            begin
-           IstInKampf:=false;
            sterben.Sterben();
            end
            else
@@ -46,8 +45,8 @@ begin
     if Gegner.RK < WurfSpieler                                   //Trifft Spieler?
        then
          begin
-           Gegner.HP := Gegner.HP - SpielerATK;
-           if Gegner.Hp < 1 then
+           GegnerHP := GegnerHP - SpielerATK;
+           if GegnerHp < 1 then
            begin
            LetzterGegner:=aktuellerRaum.Enemy;
            aktuellerRaum.Enemy:= nil;

@@ -10,7 +10,7 @@ procedure Monsterspawn();
 
 implementation
 
-uses Unit1,ProzedureRaumwechsel;   //Benötigte Units zum Funktioniern
+uses Unit1,ProzedureRaumwechsel,KampfProzedure;   //Benötigte Units zum Funktioniern
 procedure Monsterspawn();
 var
   Wuerfel:Integer;
@@ -54,12 +54,16 @@ var
            aktuellerRaum.Enemy:=Ork
         else if (Wuerfel > 75) and (Wuerfel <=100) then
              aktuellerRaum.Enemy:=Oger;
-
+      end;
+      if aktuellerRaum.Difficulty='test'                 //Nur Beispiel Werte
+      then begin                                           //zur Demonstration
+      aktuellerRaum.Enemy:=Ork
       end;
    if aktuellerRaum.Difficulty= ('')  then       //Error Überprüfung
-         aktuellerRaum.Enemy:=Goblin;
-   if aktuellerRaum.Difficulty= 'empty'  then
-         aktuellerRaum.Enemy:=Goblin;
+         aktuellerRaum.Enemy:=nil
+   else if aktuellerRaum.Difficulty= 'empty'  then
+         aktuellerRaum.Enemy:=nil
+   else GegnerHP:=aktuellerRaum.Enemy.HP   //GegnerHP Variable aus KampfProzedure
   //Aus mir momentan unerfindlichen Gründen funktionierte ein einfaches or Statment
   //hier nicht, zudem ist es unnötig und dient nur dem Programier Komfort.
   end;
