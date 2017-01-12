@@ -38,6 +38,7 @@ WuerfelErgebnis:Integer;
       aktuellerRaum:=Eingabe;
       //Temporäre Loot aus dem vorherigem Raum wird gelöscht
       tempLoot:=nil;
+      UIRefresh.UIRefresh();//Zweiter UIRefresh  weil Gründe
       //Wahrscheinlichkeit ein Monster zu spawnen
       AktuellerRaum.MD:=AktuellerRaum.MD+ AktuellerRaum.Schrittweite*AktuellerRaum.MDA;
       if AktuellerRaum.MD>=100 then

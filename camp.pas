@@ -11,7 +11,7 @@ procedure Sleep();
 
 implementation
 
-uses Unit1,KampfProzedure,ProzedureRaumwechsel;   //Benötigte Units zum Funktioniern
+uses Unit1,KampfProzedure,ProzedureRaumwechsel,UIRefresh;   //Benötigte Units zum Funktioniern
 procedure camp();
  begin
 if IstInKampf=True then
@@ -25,7 +25,8 @@ else if (aktuellerRaum.camp=false) and (aktuellerRaum.camp_possible=true) and (a
 else if (aktuellerRaum.camp_possible=false) then
     Form1.Memo1.lines.add('Du kannst hier kein Camp bauen')
 else if  (aktuellerRaum.camp=true) then
-   Sleep()
+   Sleep();
+UIRefresh.UIRefresh();
   end;
 procedure Sleep();
 begin
