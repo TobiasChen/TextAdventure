@@ -140,26 +140,6 @@ var
 			TempLoot:=Gigantischer_Knochenmuerber;		
 					
       end;
-	if Gegner.LootType='zerfetzt'
-      then begin
-        if Wuerfel <= 50 then
-            TempLoot:=Drachenzahn
-        else if (Wuerfel > 50) and (Wuerfel <=75) then
-            TempLoot:=Eisenstreitkolben
-        else if (Wuerfel > 65) and (Wuerfel <=100) then
-             TempLoot:=Lederschuhe;
-      end;
-	if Gegner.LootType='Oger_Boss'                  //Nur Beispiel Werte
-      then begin                                           //zur Demonstration
-        if Wuerfel = 1 then
-            TempLoot:=nil
-        else if (Wuerfel > 1) and (Wuerfel <=30) then
-            TempLoot:=Eisenstiefel
-        else if (Wuerfel > 30) and (Wuerfel <=75) then
-            TempLoot:=Orkischer_Hammerzahn
-        else if (Wuerfel > 75) and (Wuerfel <=100) then
-              TempLoot:=Bodenmalmer;
-      end;
 
 	if Gegner.LootType = ('')  then       //Error Überprüfung
          TempLoot:=nil;
