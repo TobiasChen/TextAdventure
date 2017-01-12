@@ -4,11 +4,12 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="8">
+    <Units Count="14">
       <Unit0>
         <Filename Value="project1.lpr"/>
         <IsPartOfProject Value="True"/>
-        <UsageCount Value="20"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="21"/>
       </Unit0>
       <Unit1>
         <Filename Value="unit1.pas"/>
@@ -18,9 +19,11 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="209"/>
-        <CursorPos Y="235"/>
-        <UsageCount Value="20"/>
+        <EditorIndex Value="9"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="61"/>
+        <CursorPos X="73" Y="27"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -28,37 +31,102 @@
         <Filename Value="mtenemy.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="mTEnemy"/>
-        <UsageCount Value="20"/>
+        <EditorIndex Value="6"/>
+        <WindowIndex Value="1"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="kampfprozedure.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="KampfProzedure"/>
-        <UsageCount Value="20"/>
+        <EditorIndex Value="2"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="sterben.pas"/>
         <IsPartOfProject Value="True"/>
-        <UsageCount Value="20"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="1"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="monsterspawn.pas"/>
         <IsPartOfProject Value="True"/>
-        <UsageCount Value="20"/>
+        <EditorIndex Value="7"/>
+        <WindowIndex Value="1"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
       </Unit5>
       <Unit6>
         <Filename Value="mtloot.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="mTLoot"/>
-        <UsageCount Value="20"/>
+        <EditorIndex Value="5"/>
+        <WindowIndex Value="1"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
       </Unit6>
       <Unit7>
         <Filename Value="camp.pas"/>
         <IsPartOfProject Value="True"/>
-        <UsageCount Value="20"/>
+        <EditorIndex Value="1"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
       </Unit7>
+      <Unit8>
+        <Filename Value="map.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form2"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Map"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos X="42" Y="10"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="lootdrop.pas"/>
+        <UnitName Value="LootDrop"/>
+        <EditorIndex Value="8"/>
+        <WindowIndex Value="1"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="mTRaum.pas"/>
+        <EditorIndex Value="4"/>
+        <WindowIndex Value="1"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="prozedureraumwechsel.pas"/>
+        <UnitName Value="ProzedureRaumwechsel"/>
+        <EditorIndex Value="3"/>
+        <WindowIndex Value="1"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="raumupdate.pas"/>
+        <UnitName Value="RaumUpdate"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="1"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="UIRefresh.pas"/>
+        <WindowIndex Value="1"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit13>
     </Units>
-    <JumpHistory Count="3" HistoryIndex="2">
+    <JumpHistory Count="5" HistoryIndex="4">
       <Position1>
         <Filename Value="unit1.pas"/>
       </Position1>
@@ -70,6 +138,13 @@
         <Filename Value="unit1.pas"/>
         <Caret Line="284" Column="12" TopLine="258"/>
       </Position3>
+      <Position4>
+        <Filename Value="map.pas"/>
+      </Position4>
+      <Position5>
+        <Filename Value="map.pas"/>
+        <Caret Line="10" Column="42"/>
+      </Position5>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>
