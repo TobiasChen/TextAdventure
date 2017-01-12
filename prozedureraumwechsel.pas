@@ -39,6 +39,19 @@ WuerfelErgebnis:Integer;
       //Temporäre Loot aus dem vorherigem Raum wird gelöscht
       tempLoot:=nil;
       UIRefresh.UIRefresh();//Zweiter UIRefresh  weil Gründe
+      if aktuellerRaum.Discoverd=false then         //Für die Map
+         begin
+              aktuellerRaum.Discoverd:=true;
+              if aktuellerRaum.StrichNorden <> nil then
+              aktuellerRaum.StrichNorden.visible:=true;
+              if aktuellerRaum.StrichOsten <> nil then
+              aktuellerRaum.StrichOsten.visible:=true;
+              if aktuellerRaum.StrichSueden <> nil then
+              aktuellerRaum.StrichSueden.visible:=true;
+              if aktuellerRaum.StrichWesten <> nil then
+              aktuellerRaum.StrichWesten.visible:=true;
+              aktuellerRaum.Ort.visible:=true;
+         end; 
       //Wahrscheinlichkeit ein Monster zu spawnen
       AktuellerRaum.MD:=AktuellerRaum.MD+ AktuellerRaum.Schrittweite*AktuellerRaum.MDA;
       if AktuellerRaum.MD>=100 then

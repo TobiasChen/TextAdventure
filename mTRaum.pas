@@ -5,7 +5,7 @@ interface
 //--------------------  ggf Uses-Liste einf�gen !  --------------------
 //uses ....;
 uses
-  mTEnemy;
+  StdCtrls,mTEnemy,ExtCtrls;
 
 type
   TRaum = class
@@ -29,11 +29,18 @@ type
     MDS:integer;          //MOnster Density Addition
     Camp:boolean;
     Camp_possible:boolean;
+    Discoverd:boolean;                //Variablen für die Map
+    StrichNorden:TShape;
+    StrichOsten:TShape;
+    StrichSueden:TShape;
+    StrichWesten:TShape;
+    Ort:TButton;
   public //Methoden
     constructor create (RaumN : String; Beschr: String; N: TRaum; O: TRaum; S: TRaum; W: TRaum;
     Gegner: TEnemy;NordLeave:String; EastLeave:String; SuedLeave:String; WestLeave:String;
     Weg:Integer;Schwierigkeit:String;Monster_Density:Integer;MOnster_Density_Addition:Integer;
-    Monster_Density_Subtraction:Integer;Camp_Active:boolean;Camp_pos:boolean);
+    Monster_Density_Subtraction:Integer;Camp_Active:boolean;Camp_pos:boolean;
+    Known:boolean;SN:TShape;SO:TShape;SS:TShape;SW:TShape;Location:TButton);
    end;
 implementation
 
@@ -45,7 +52,8 @@ implementation
 constructor TRaum.create(RaumN : String; Beschr: String; N: TRaum; O: TRaum; S: TRaum; W: TRaum;
     Gegner: TEnemy;NordLeave:String; EastLeave:String; SuedLeave:String; WestLeave:String;
     Weg:Integer;Schwierigkeit:String;Monster_Density:Integer;MOnster_Density_Addition:Integer;
-    Monster_Density_Subtraction:Integer;Camp_Active:boolean;Camp_pos:boolean);
+    Monster_Density_Subtraction:Integer;Camp_Active:boolean;Camp_pos:boolean;
+    Known:boolean;SN:TShape;SO:TShape;SS:TShape;SW:TShape;Location:TButton);
 begin
   inherited create;
   Raumname := RaumN;
@@ -66,6 +74,12 @@ begin
   MDS:=Monster_Density_Subtraction;
   Camp:=Camp_Active;
   Camp_possible:=Camp_pos;
+  Discoverd:=Known;
+  StrichNorden:=SN;
+  StrichOsten:=SO;
+  StrichSueden:=SS;
+  StrichWesten:=SW;
+  Ort:=Location;
 end;
 
 end.

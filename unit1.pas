@@ -57,6 +57,7 @@ type
     procedure Button8Click(Sender: TObject);
     procedure Button9Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure UpdateProcedure();
   private
     { private declarations }
   public
@@ -66,6 +67,11 @@ type
 var
   Form1: TForm1;
   //Räume//
+  Oeder_Morast:TRaum;
+  Apfelwiese:TRaum;
+  Grosse_Duene:Traum;
+  MetSchallWueste:Traum;
+  Kraehenhort:TRaum;
   EmptyPreset:TRaum;
   Spinnennest:TRaum;
   Spinnenkammer:TRaum;
@@ -243,47 +249,47 @@ begin
 
    //Räume//Hier am Besten nur lere Presetes erstellen und sie mit der Funktion RaumUpdate ändern
    //Räume müssen hier deklariert werden, aber zusätzlich in der RaumWechselProzedure eingetragen werden
-   EmptyPreset					:=TRaum.create('An Empty Preset','to quickly create Rooms',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Spinnennest					:=TRaum.create('Spinnennest','An der gesamten Höhlenwand sind Kokons zu sehen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Spinnenkammer				:=TRaum.create('Spinnenkammer','In dieser Höhle wimmelt es von Spinnen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Waldlichtung					:=TRaum.create('Waldlichtung','Die Sonne auf dem Gesicht tut dir gut',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Hoehle						:=TRaum.create('Höhle','Ein modriger Geruch kommt von weiter Innen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Abgrund_des_brennenden_Steins:=TRaum.create('Abgrund des brennenden Steins','Im inneren des Abgrunds fließt der brennende Stein',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Tautropfwald					:=TRaum.create('Tautropfwald','Überall hörst du Wasser von den Bäumen tropfen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Weggabelung					:=TRaum.create('Weggabelung','Der Weg gabelt sich hier nach West und Ost',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Hoehleneingang				:=TRaum.create('Höhleneingang','Beim Anblick dieser dunklen Höhle wird dir etwas mulmig',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Lagerhalle					:=TRaum.create('Lagerhalle','Hier gibt es viele Sachen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Feuerschlot					:=TRaum.create('Feuerschlot','Der heiße Gestank von Schwefel und Asche umgibt dich',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Oeder_Morast 				:=TRaum.create('Öder Morast','Du bist umgeben von Nebel',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Waldweg						:=TRaum.create('Waldweg','Du siehst den Wald und auf der anderen Seite Augvea',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Grosse_Blumenwiese			:=TRaum.create('Große Blumenwiese','Deine Nase wird von verschiedensten Gerüchen betört',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Apfelwiese					:=TRaum.create('Apfelwiese','Die Äpfel der aufgegebenen Baumschule sehen nicht sehr appetitlich aus',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Kaserne						:=TRaum.create('Kaserne','Der Ruheort der Soldaten und Wächter - doch sie fehlen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Schlafgemach					:=TRaum.create('Schlafgemach','Der Besitzer der Burg besaß ein wirklich großes Bett',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Einsame_Herberge				:=TRaum.create('Einsame Herberge','Diese Herberge ist einsam, verlassen, verstaubt und dreckig',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Graumoor						:=TRaum.create('Graumoor','Dir fröstelt es etwas in diesem Morast',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Schattenweiden				:=TRaum.create('Schattenweiden','Die Schattenweiden des Graumoors scheinen überall hinzugreifen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Westweg						:=TRaum.create('Westweg','Auf diesem gut befestigten Weg kommst du gut voran',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Bruecke						:=TRaum.create('Brücke','Unter dir rauscht der Fluss',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Augvea						:=TRaum.create('Augvea','Das rege Treiben der Stadt zeugt von Zivilisation',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Ostweg						:=TRaum.create('Ostweg','Der Weg ist Umgeben von schönem Gelände',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Oestliche_Huegel				:=TRaum.create('Östliche Hügel','Die sanften Hügel machen das Vorankommen beschwerlicher',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Verlassene_Burg				:=TRaum.create('Verlassene Burg','Diese Burg ist mysteriöserweise verlassen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Wachturm						:=TRaum.create('Wachturm','Hier wacht keiner mehr',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Kleiner_See					:=TRaum.create('Kleiner See','Das sanfte Rauschen des Wassers entspannt dich',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Strasse_in_den_Sueden		:=TRaum.create('Straße in den Süden','Diese Straße wird häufig von Händlern verwendet',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Tal							:=TRaum.create('Tal','Die Stille misfällt dir',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Grosse_Duene					:=TRaum.create('Große Düne','Der Sand bildete einen stattlichen Hügel',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   MetSchallWueste				:=TRaum.create('Met´Schall-Wüste','Der Durst befällt dich bei der prallenden Sonne',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Goblinstamm					:=TRaum.create('Goblinstamm','Angespannt bist du bereit für einen Kampf gegen einen Goblin',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Karawane						:=TRaum.create('Karawane','Hier rasten die Händler',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Am_schnellen_Bach			:=TRaum.create('Am schnellen Bach','Aus dem Tränenwald läuft ein Bach in den Fluss',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Traenenwald					:=TRaum.create('Tränenwald','Aus den Tiefen des Waldes hörst du ein gequältes Kind',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Baerenhoehle					:=TRaum.create('Bärenhöhle','In der Höhle siehst du ein kleines Skelett',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Spitzdorf					:=TRaum.create('Spitzdorf','In diesem ruhigen Dorf kann man gut rasten',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Kraehenhort					:=TRaum.create('Krähenhort','Ein unheimlicher Friedhof im Wald - voller Krähen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Der_Grosse_Heuler			:=TRaum.create('Der Große Heuler','In der Rinde dieser großen Eiche erkennst du weinende Gesichter',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Der_Sonnenstich				:=TRaum.create('Der Sonnenstich','Alle 10.000 Jahre soll dieser Berg die Sonne berühren',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   EmptyPreset			:=TRaum.create('An Empty Preset','to quickly create Rooms',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Spinnennest			:=TRaum.create('Spinnennest','An der gesamten Höhlenwand sind Kokons zu sehen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Spinnenkammer		:=TRaum.create('Spinnenkammer','In dieser Höhle wimmelt es von Spinnen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Waldlichtung			:=TRaum.create('Waldlichtung','Die Sonne auf dem Gesicht tut dir gut',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Hoehle			:=TRaum.create('Höhle','Ein modriger Geruch kommt von weiter Innen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Abgrund_des_brennenden_Steins:=TRaum.create('Abgrund des brennenden Steins','Im inneren des Abgrunds fließt der brennende Stein',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Tautropfwald			:=TRaum.create('Tautropfwald','Überall hörst du Wasser von den Bäumen tropfen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Weggabelung			:=TRaum.create('Weggabelung','Der Weg gabelt sich hier nach West und Ost',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Hoehleneingang		:=TRaum.create('Höhleneingang','Beim Anblick dieser dunklen Höhle wird dir etwas mulmig',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Lagerhalle			:=TRaum.create('Lagerhalle','Hier gibt es viele Sachen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Feuerschlot			:=TRaum.create('Feuerschlot','Der heiße Gestank von Schwefel und Asche umgibt dich',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Oeder_Morast 		:=TRaum.create('Öder Morast','Du bist umgeben von Nebel',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Waldweg		        :=TRaum.create('Waldweg','Du siehst den Wald und auf der anderen Seite Augvea',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Grosse_Blumenwiese	        :=TRaum.create('Große Blumenwiese','Deine Nase wird von verschiedensten Gerüchen betört',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Apfelwiese			:=TRaum.create('Apfelwiese','Die Äpfel der aufgegebenen Baumschule sehen nicht sehr appetitlich aus',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Kaserne	                :=TRaum.create('Kaserne','Der Ruheort der Soldaten und Wächter - doch sie fehlen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Schlafgemach			:=TRaum.create('Schlafgemach','Der Besitzer der Burg besaß ein wirklich großes Bett',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Einsame_Herberge	        :=TRaum.create('Einsame Herberge','Diese Herberge ist einsam, verlassen, verstaubt und dreckig',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Graumoor		        :=TRaum.create('Graumoor','Dir fröstelt es etwas in diesem Morast',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Schattenweiden		:=TRaum.create('Schattenweiden','Die Schattenweiden des Graumoors scheinen überall hinzugreifen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Westweg		        :=TRaum.create('Westweg','Auf diesem gut befestigten Weg kommst du gut voran',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Bruecke		        :=TRaum.create('Brücke','Unter dir rauscht der Fluss',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Augvea		        :=TRaum.create('Augvea','Das rege Treiben der Stadt zeugt von Zivilisation',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Ostweg		        :=TRaum.create('Ostweg','Der Weg ist Umgeben von schönem Gelände',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Oestliche_Huegel	        :=TRaum.create('Östliche Hügel','Die sanften Hügel machen das Vorankommen beschwerlicher',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Verlassene_Burg		:=TRaum.create('Verlassene Burg','Diese Burg ist mysteriöserweise verlassen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Wachturm		        :=TRaum.create('Wachturm','Hier wacht keiner mehr',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Kleiner_See			:=TRaum.create('Kleiner See','Das sanfte Rauschen des Wassers entspannt dich',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Strasse_in_den_Sueden        :=TRaum.create('Straße in den Süden','Diese Straße wird häufig von Händlern verwendet',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Tal			        :=TRaum.create('Tal','Die Stille misfällt dir',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Grosse_Duene			:=TRaum.create('Große Düne','Der Sand bildete einen stattlichen Hügel',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   MetSchallWueste		:=TRaum.create('Met´Schall-Wüste','Der Durst befällt dich bei der prallenden Sonne',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Goblinstamm			:=TRaum.create('Goblinstamm','Angespannt bist du bereit für einen Kampf gegen einen Goblin',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Karawane		        :=TRaum.create('Karawane','Hier rasten die Händler',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Am_schnellen_Bach	        :=TRaum.create('Am schnellen Bach','Aus dem Tränenwald läuft ein Bach in den Fluss',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Traenenwald			:=TRaum.create('Tränenwald','Aus den Tiefen des Waldes hörst du ein gequältes Kind',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Baerenhoehle			:=TRaum.create('Bärenhöhle','In der Höhle siehst du ein kleines Skelett',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Spitzdorf		        :=TRaum.create('Spitzdorf','In diesem ruhigen Dorf kann man gut rasten',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Kraehenhort			:=TRaum.create('Krähenhort','Ein unheimlicher Friedhof im Wald - voller Krähen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Der_Grosse_Heuler	        :=TRaum.create('Der Große Heuler','In der Rinde dieser großen Eiche erkennst du weinende Gesichter',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Der_Sonnenstich		:=TRaum.create('Der Sonnenstich','Alle 10.000 Jahre soll dieser Berg die Sonne berühren',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
 
    //RaumUpdate//
    //Die Prozedure RaumUpdate() braucht 6 Pointer und zwar den Raum der zu
@@ -530,6 +536,13 @@ procedure TForm1.Button9Click(Sender: TObject);
 begin
   RaumWechsel(AktuellerRaum.Sueden);
 end;
+procedure TForm1.UpdateProcedure();   //Raum Updates für die Map RaumPointer+4Shapes +Button 
+begin
+  RaumMapUpdate(Augvea,nil,nil,nil,nil,Form2.Augvea);
+  RaumMapUpdate(Schlafgemach,nil,nil,Form2.Augvea2Schlafgemach,nil,Form2.Schlafgemach);
+  RaumMapUpdate(Ostweg,nil,Form2.Ostweg2Oestliche_Huegel, nil, Form2.Augvea2Ostweg, Form2.Ostweg);
+  RaumMapUpdate(Oestliche_Huegel,nil,nil,Form2.Ostweg2Oestliche_Huegel,nil,Form2.Oestliche_Huegel);
 
+end;
 end.
 

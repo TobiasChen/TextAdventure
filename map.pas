@@ -14,25 +14,38 @@ type
   { TForm2 }
 
   TForm2 = class(TForm)
-    Button1: TButton;
-    Button2: TButton;
-    Button3: TButton;
-    Button4: TButton;
+    Augvea: TButton;
+    Schlafgemach: TButton;
+    Ostweg: TButton;
+    Oestliche_Huegel: TButton;
     Augvea2Schlafgemach: TShape;
-    Auvea2Oststrase: TShape;
-    Oststrase2OstMoor: TShape;
+    Augvea2Ostweg: TShape;
+    Ostweg2Oestliche_Huegel: TShape;
+    procedure AugveaClick(Sender: TObject);
+    procedure OstwegClick(Sender: TObject);
   private
     { private declarations }
   public
     { public declarations }
   end;
-
 var
   Form2: TForm2;
-
 implementation
-
 {$R *.lfm}
+uses
+    unit1;
+
+{ TForm2 }
+
+procedure TForm2.OstwegClick(Sender: TObject);
+begin
+
+end;
+
+procedure TForm2.AugveaClick(Sender: TObject);
+begin
+
+end;
 
 end.
 

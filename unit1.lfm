@@ -1,11 +1,11 @@
 object Form1: TForm1
-  Left = -2500
-  Height = 910
-  Top = 65
-  Width = 1405
+  Left = -1688
+  Height = 1027
+  Top = -8
+  Width = 1680
   Caption = 'Form1'
-  ClientHeight = 910
-  ClientWidth = 1405
+  ClientHeight = 1027
+  ClientWidth = 1680
   OnCreate = FormCreate
   LCLVersion = '1.6.2.0'
   object Button1: TButton
