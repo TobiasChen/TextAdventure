@@ -112,7 +112,26 @@ var
   Mieses_Essen: TEnemy;
   Goblin: TEnemy;
   Ork: TEnemy;
-  Oger: TEnemy;
+  Oger: TEnemy;				
+  Goblinhaeuptling: TEnemy;		
+  Wolf: TEnemy;					
+  Spinnenschwarm: TEnemy;		
+  Riesenspinne: TEnemy;			
+  Rolf: TEnemy;					
+  Untoter: TEnemy;				
+  Bewaffneter_Untoter: TEnemy;	
+  Untoter_Ritter: TEnemy;		
+  Fliegendes_Schwert: TEnemy;  	
+  Riesenfledermaus: TEnemy;		
+  Feuerelementar: TEnemy;		
+  Bandit: TEnemy;				
+  Schleim: TEnemy;				
+  Baer: TEnemy;					
+  Skorpione: TEnemy;			
+  Schattenkraehe: TEnemy;		
+  Mumie: TEnemy;				
+  Sumpfhexe: TEnemy;			
+  Der_Gestuerzte_Koenig: TEnemy;
   aktuellerGegner: TEnemy;
   //Helm//
   Kappe:Tloot;
@@ -175,7 +194,7 @@ begin
    Eisenstiefel:=TLoot.create('Eisenstiefel','Schuhe','ein Paar dicker Eisenstiefel','magisch',0,3,0);
    Bodenmalmer:=TLoot.create('Bodenmalmer','Schuhe','die dir aus Geschichten bekannten Bodenmalmer','erlesen',5,5,0);
    //Waffen-Loot//
-   Verroteter_Klumpen:=TLoot.create('Verroteter Klumpen','Waffe','einen modrigen Klumpen, den man zum Zuschlagen verwenden könnte,','verschlissen',0,1,4);
+   Verrotteter_Klumpen:=TLoot.create('Verrotteter Klumpen','Waffe','einen modrigen Klumpen, den man zum Zuschlagen verwenden könnte,','verschlissen',0,1,4);
    Eisenstreitkolben:=TLoot.create('Eisenstreitkolben','Waffe','einen benutzten Eisenstreitkolben','normal',0,2,7);
    Orkischer_Hammerzahn:=TLoot.create('Orkischer Hammerzahn','Waffe','einen für Kriege verwendeten orkischen Hammerzahn','erlesen',0,3,11);
    Gigantischer_Knochenmuerber:=TLoot.create('Gigantischer Knochenmürber','Waffe','einen der mächtigsten Streitkolben, den Gigantischen Knochenmürber,','magisch',0,4,22);
@@ -184,10 +203,43 @@ begin
    Geschmuecktes_Silberschwert:=TLoot.create('Geschmücktes Silberschwert','Waffe','ein hochwertiges Silberschwert voller Verzierungen','erlesen',3,0,11);
    Drachenzahn:=TLoot.create('Drachenzahn','Waffe','einen mächtigen Drachenzahn','magisch',4,0,22);
    //Gegner//
-   Mieses_Essen := TEnemy.create ('Mieses Essen', 'Entspricht der Norm... von der Schule', 5, 5, 1,'zerfetzt');
-   Goblin := TEnemy.create ('Goblin', 'einem kleinen Wesen ,dass erstaunlich flink ist',3, 12, 1,'zerfetzt');
-   Ork := TEnemy.create ('Ork', 'einem Krieger mit Blutunerlaufenen Augen', 10,10, 1,'zerfetzt');
-   Oger := TEnemy.create ('Oger', 'Einem Abkömlinge der Riesen mit einer Keule', 15,6, 2,'Oger_Boss');
+   //Var				:= TEnemy.create('Name','Beschreibung',HP,RK,ATK,'Loot_Type');
+   
+			//Wald und offene Welt//
+   Ork 					:= TEnemy.create('Ork', 'einem Krieger mit Blutunerlaufenen Augen', 11,14,3,'normal');
+   Oger					:= TEnemy.create('Oger', 'einem Abkömmlinge der Riesen mit einer Keule', 15,15, 4,'erlesen');
+   Goblin 				:= TEnemy.create('Goblin', 'einem kleinen Wesen ,dass erstaunlich flink ist,',3, 12, 2,'verschlissennormal');
+   Goblinhaeuptling		:= TEnemy.create('Goblinhäuptling','einem mächtiger erscheinendem Goblin voller Schmuck',20,15,4,'erlesen');
+   Wolf					:= TEnemy.create('Wolf','einem zähnefletschendem Pelzbiest',5,12,2,'verschlissen');
+   Baer					:= TEnemy.create('Bär','einem bösen Bären mit großen Pranken',25,15,5,'normalerlesen');
+   Schattenkraehe		:= TEnemy.create('Schattenkraehe','einem Vogel schwärzer als die Nacht',12,17,3,'verschlissennormal');
+   Bandit				:= TEnemy.create('Bandit','einer Person, die dein Geld will,',10,13,2,'verschlissennormal');
+   
+			//Höhle//
+   Spinnenschwarm		:= TEnemy.create('Spinnenschwarm','unzähligen Spinnen, die es auf dich abgesehen haben,',40,2,1,'verschlissennormal');
+   Riesenspinne			:= TEnemy.create('Riesenspinne','einer gigantischen Spinne, die ihre jungen füttern will,',25,7,5,'erlesenmagisch');
+   Riesenfledermaus		:= TEnemy.create('Riesenfledermaus','einer übergroßen Fledermaus, die dich aus dem Dunkeln überrascht',7,15,2,'normal');
+   
+			//Herberge//
+   Rolf					:= TEnemy.create('Rolf','dem unheimlichen Rolf',15,10,3,'normal');
+   
+			//Rolf//
+   Untoter				:= TEnemy.create('Untoter','einem stinkendem und halb verrottetem Humanoiden',8,9,2,'verschlissennormal');
+   Bewaffneter_Untoter	:= TEnemy.create('Bewaffneter Untoter','einem stinkendem und halb verrottetem Humanoiden mit einer Waffe',8,9,4,'normal');
+   Untoter_Ritter		:= TEnemy.create('Untoter Ritter','einem stinkendem und halb verrottetem Humanoiden in prächtiger Rüstung',25,14,4,'normalerlesen');
+   Fliegendes_Schwert  	:= TEnemy.create('Fliegendes Schwert','einer plötzlich nach dir schlagenden Waffe',5,18,3,'erlesen');
+   Der_Gestuerzte_Koenig:= TEnemy.create('Der Gestürzte König','dem früheren König dieser Lande. Er ist einem Fluch unterlegen und du wirst von ihm bei erblicken',60,20,8,'magisch');
+   
+			//Vulkan//
+   Feuerelementar		:= TEnemy.create('Feuerelementar','sich scheinbar kontrolliert bewegendem, dass nach dir ausschlägt,',45,19,6,'magisch');
+   
+			//Wüste//
+   Skorpione			:= TEnemy.create('Skorpione','einigen kleinen und wirklich giftigen Skorpionen',5,18,8,'verschlissen');	
+   Mumie				:= TEnemy.create('Mumie','einem einbalsamierten Mumienwesen voller magischer Macht',20,16,4,'erlesenmagisch');
+   
+			//Sumpf//
+   Schleim				:= TEnemy.create('Schleim','grünem, alles verdauendem Glibber',17,10,3,'normal');		
+   Sumpfhexe			:= TEnemy.create('Sumpfhexe','einer hässlichen Frau mit warziger Nase und krummer Haltung',22,13,5,'erlesenmagisch');
 
    //Räume//Hier am Besten nur lere Presetes erstellen und sie mit der Funktion RaumUpdate ändern
    //Räume müssen hier deklariert werden, aber zusätzlich in der RaumWechselProzedure eingetragen werden
@@ -284,11 +336,47 @@ begin
    RaumNamenUpdate(Westweg,'','Du betritts die Stadt und findest dich auf dem Marktplatz wieder','','');
    RaumNamenUpdate(Graumoor,'','','','Auf dem Weg aus dem Moor verfolgen dich die Albtraumhaften Bilder die du gesehen hast');
    //Zusätzliches Updates RaumPointer+Schwierigkeit+MD+MDA+MDS(ProzedureRaumwechsel und mTRAum)+Camp+CampPossible
-   ZusaetzlicheUpdates(Augvea,'',0,0,0,false);
-   ZusaetzlicheUpdates(Schlafgemach,'',0,0,0,true);
-   ZusaetzlicheUpdates(Ostweg,'test',100,5,50,false);       //Density von Hundert spawnt beim ersten Betreten
-   ZusaetzlicheUpdates(Westweg,'test',100,5,50,false);      //Immer ein Monster
-   ZusaetzlicheUpdates(Graumoor,'test',100,2,10,false);
+   ZusaetzlicheUpdates(Spinnennest,'Hoehlespinne',0,0,0,false);					
+   ZusaetzlicheUpdates(Spinnenkammer,'Hoehleboss',0,0,0,false);				
+   ZusaetzlicheUpdates(Waldlichtung,'Wald',0,0,0,false);					
+   ZusaetzlicheUpdates(Hoehle,'Hoehle',0,0,0,false);						
+   ZusaetzlicheUpdates(Abgrund_des_brennenden_Steins,'Vulkan',0,0,0,false);
+   ZusaetzlicheUpdates(Tautropfwald,'Waldstark',0,0,0,false);
+   ZusaetzlicheUpdates(Weggabelung,'Wald',0,0,0,false);
+   ZusaetzlicheUpdates(Hoehleneingang,'Hoehle',0,0,0,false);
+   ZusaetzlicheUpdates(Lagerhalle,'Koenig',0,0,0,false);
+   ZusaetzlicheUpdates(Feuerschlot,'Vulkan',0,0,0,false);
+   ZusaetzlicheUpdates(Oeder_Morast,'Sumpf',0,0,0,false);
+   ZusaetzlicheUpdates(Waldweg,'Wald',0,0,0,false);
+   ZusaetzlicheUpdates(Grosse_Blumenwiese,'Offene_Landschaft',0,0,0,false);
+   ZusaetzlicheUpdates(Apfelwiese,'Offene_Landschaft',0,0,0,false);
+   ZusaetzlicheUpdates(Kaserne,'Burgstark',0,0,0,false);
+   ZusaetzlicheUpdates(Schlafgemach,'Burgstark',0,0,0,true);
+   ZusaetzlicheUpdates(Einsame_Herberge,'Herberge',0,0,0,true);
+   ZusaetzlicheUpdates(Graumoor,'Sumpf',0,0,0,false);
+   ZusaetzlicheUpdates(Schattenweiden,'Sumpf',0,0,0,false);
+   ZusaetzlicheUpdates(Westweg,'Weg',0,0,0,false);
+   ZusaetzlicheUpdates(Bruecke,'Weg',0,0,0,false);
+   ZusaetzlicheUpdates(Augvea,'',0,0,0,true);
+   ZusaetzlicheUpdates(Ostweg,'Weg',0,0,0,false);
+   ZusaetzlicheUpdates(Oestliche_Huegel,'Offene_Landschaft',0,0,0,false);
+   ZusaetzlicheUpdates(Verlassene_Burg,'Burg',0,0,0,false);
+   ZusaetzlicheUpdates(Wachturm,'Burg',0,0,0,false);
+   ZusaetzlicheUpdates(Kleiner_See,'Sumpf',0,0,0,false);
+   ZusaetzlicheUpdates(Strasse_in_den_Sueden,'Weg',0,0,0,false);
+   ZusaetzlicheUpdates(Tal,'Offene_Landschaft',0,0,0,false);
+   ZusaetzlicheUpdates(Grosse_Duene,'Wueste',0,0,0,false);
+   ZusaetzlicheUpdates(MetSchallWueste,'Wueste',0,0,0,false);
+   ZusaetzlicheUpdates(Goblinstamm,'Goblinstark',0,0,0,false);
+   ZusaetzlicheUpdates(Karawane,'Weg',0,0,0,false);
+   ZusaetzlicheUpdates(Am_schnellen_Bach,'Offene_Landschaft',0,0,0,false);
+   ZusaetzlicheUpdates(Traenenwald,'Waldstark',0,0,0,false);
+   ZusaetzlicheUpdates(Baerenhoehle,'Baer',0,0,0,false);
+   ZusaetzlicheUpdates(Spitzdorf,'',0,0,0,true);
+   ZusaetzlicheUpdates(Kraehenhort,'Friedhof',0,0,0,false);
+   ZusaetzlicheUpdates(Der_Grosse_Heuler,'Waldstark',0,0,0,false);
+   ZusaetzlicheUpdates(Der_Sonnenstich,'Zufall',0,0,0,false);
+   
    //Startwerte//
    AnfangsRaum:= Augvea;
    aktuellerRaum := AnfangsRaum;
