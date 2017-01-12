@@ -15,6 +15,15 @@ type
 
   TForm2 = class(TForm)
     Augvea: TButton;
+    Augvea1: TButton;
+    Augvea2Ostweg1: TShape;
+    Augvea2Ostweg2: TShape;
+    Augvea2Ostweg3: TShape;
+    Augvea2Ostweg4: TShape;
+    Augvea2Ostweg5: TShape;
+    Augvea2Ostweg6: TShape;
+    Augvea2Ostweg7: TShape;
+    Augvea2Ostweg8: TShape;
     Schlafgemach: TButton;
     Ostweg: TButton;
     Oestliche_Huegel: TButton;

@@ -1,19 +1,21 @@
 object Form2: TForm2
-  Left = -10
-  Height = 1019
-  Top = 108
-  Width = 1648
+  Left = 50
+  Height = 1137
+  Top = 298
+  Width = 1632
   Caption = 'Form2'
-  ClientHeight = 1019
-  ClientWidth = 1648
+  ClientHeight = 0
+  ClientWidth = 0
   LCLVersion = '1.6.2.0'
   object Augvea: TButton
-    Left = 752
-    Height = 25
-    Top = 400
+    Left = 736
+    Height = 28
+    Top = 448
     Width = 160
     Caption = 'Augvea'
+    Font.Height = -16
     OnClick = AugveaClick
+    ParentFont = False
     TabOrder = 0
   end
   object Schlafgemach: TButton
@@ -26,9 +28,9 @@ object Form2: TForm2
     Visible = False
   end
   object Ostweg: TButton
-    Left = 224
+    Left = 1256
     Height = 25
-    Top = 152
+    Top = 384
     Width = 152
     Caption = 'Ostweg'
     OnClick = OstwegClick
@@ -49,13 +51,14 @@ object Form2: TForm2
     Height = 73
     Top = 80
     Width = 9
+    Shape = stSquare
     Visible = False
   end
   object Augvea2Ostweg: TShape
-    Left = 376
-    Height = 13
-    Top = 156
-    Width = 131
+    Left = 891
+    Height = 2
+    Top = 400
+    Width = 100
     Visible = False
   end
   object Ostweg2Oestliche_Huegel: TShape
@@ -63,6 +66,72 @@ object Form2: TForm2
     Height = 10
     Top = 156
     Width = 99
+    Shape = stSquare
+    Visible = False
+  end
+  object Augvea1: TButton
+    Left = 496
+    Height = 25
+    Top = 448
+    Width = 160
+    Caption = 'Augvea1'
+    OnClick = AugveaClick
+    TabOrder = 4
+  end
+  object Augvea2Ostweg1: TShape
+    Left = 919
+    Height = 2
+    Top = 428
+    Width = 100
+    Visible = False
+  end
+  object Augvea2Ostweg2: TShape
+    Left = 947
+    Height = 2
+    Top = 456
+    Width = 100
+    Visible = False
+  end
+  object Augvea2Ostweg3: TShape
+    Left = 975
+    Height = 2
+    Top = 484
+    Width = 100
+    Visible = False
+  end
+  object Augvea2Ostweg4: TShape
+    Left = 1003
+    Height = 2
+    Top = 512
+    Width = 100
+    Visible = False
+  end
+  object Augvea2Ostweg5: TShape
+    Left = 1031
+    Height = 2
+    Top = 540
+    Width = 100
+    Visible = False
+  end
+  object Augvea2Ostweg6: TShape
+    Left = 1059
+    Height = 2
+    Top = 568
+    Width = 100
+    Visible = False
+  end
+  object Augvea2Ostweg7: TShape
+    Left = 1087
+    Height = 2
+    Top = 596
+    Width = 100
+    Visible = False
+  end
+  object Augvea2Ostweg8: TShape
+    Left = 1115
+    Height = 2
+    Top = 624
+    Width = 100
     Visible = False
   end
 end

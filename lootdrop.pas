@@ -18,8 +18,10 @@ var
   Wuerfel:Integer;
  begin
  Wuerfel:=1+Random(100);//Normales Random 100 wäre 0...99
-	if Gegner.LootType='verschlissen'
-      then begin
+ 	if Gegner.LootType = ('')  then       //Error Überprüfung
+         TempLoot:=nil
+	else if Gegner.LootType='verschlissen' then
+        begin
         if Wuerfel <= 20 then
             TempLoot:=Muerbes_Holzschwert
         else if (Wuerfel > 20) and (Wuerfel <=40) then
@@ -29,122 +31,116 @@ var
 		else if (Wuerfel > 60) and (Wuerfel <=80) then
 			TempLoot:=Alte_Latscher
 		else if (Wuerfel > 80) and (Wuerfel <=100) then
-			TempLoot:=Verroteter_Klumpen;
-			
-	if Gegner.LootType='verschlissennormal'
-      then begin
-        if Wuerfel <= 10 then
-            TempLoot:=Muerbes_Holzschwert
-        else if (Wuerfel > 10) and (Wuerfel <=20) then
-			TempLoot:=Kappe
-        else if (Wuerfel > 20) and (Wuerfel <=30) then
-			TempLoot:=Gewand
-		else if (Wuerfel > 30) and (Wuerfel <=40) then
-			TempLoot:=Alte_Latscher
-		else if (Wuerfel > 40) and (Wuerfel <=50) then
-			TempLoot:=Verroteter_Klumpen		
-		else if (Wuerfel > 50) and (Wuerfel <=60) then
-			TempLoot:=Eisenschwert
-        else if (Wuerfel > 60) and (Wuerfel <=70) then
-			TempLoot:=Lederhelm
-		else if (Wuerfel > 70) and (Wuerfel <=80) then
-			TempLoot:=Kettenhemd
-		else if (Wuerfel > 80) and (Wuerfel <=90) then
-			TempLoot:=Lederschuhe
-		else if (Wuerfel > 90) and (Wuerfel <=100) then
-			TempLoot:=Eisenstreitkolben;
-			
-	if Gegner.LootType='normal'
-      then begin
-        if Wuerfel <= 20 then
-            TempLoot:=Eisenschwert
-        else if (Wuerfel > 20) and (Wuerfel <=40) then
-			TempLoot:=Lederhelm
-        else if (Wuerfel > 40) and (Wuerfel <=60) then
-			TempLoot:=Kettenhemd
-		else if (Wuerfel > 60) and (Wuerfel <=80) then
-			TempLoot:=Lederschuhe
-		else if (Wuerfel > 80) and (Wuerfel <=100) then
-			TempLoot:=Eisenstreitkolben;
-			
-	if Gegner.LootType='normalerlesen'
-      then begin
-        if Wuerfel <= 10 then
-            TempLoot:=Eisenschwert
-        else if (Wuerfel > 10) and (Wuerfel <=20) then
-			TempLoot:=Lederhelm
-        else if (Wuerfel > 20) and (Wuerfel <=30) then
-			TempLoot:=Kettenhemd
-		else if (Wuerfel > 30) and (Wuerfel <=40) then
-			TempLoot:=Lederschuhe
-		else if (Wuerfel > 40) and (Wuerfel <=50) then
-			TempLoot:=Eisenstreitkolben		
-		else if (Wuerfel > 50) and (Wuerfel <=60) then
-			TempLoot:=Geschmuecktes_Silberschwert
-        else if (Wuerfel > 60) and (Wuerfel <=70) then
-			TempLoot:=Eisenhelm
-		else if (Wuerfel > 70) and (Wuerfel <=80) then
-			TempLoot:=Stahlruestung
-		else if (Wuerfel > 80) and (Wuerfel <=90) then
-			TempLoot:=Eisenstiefel
-		else if (Wuerfel > 90) and (Wuerfel <=100) then
-			TempLoot:=Orkischer_Hammerzahn;
-			
-	if Gegner.LootType='erlesen'
-      then begin
-        if Wuerfel <= 20 then
-            TempLoot:=Geschmuecktes_Silberschwert
-        else if (Wuerfel > 20) and (Wuerfel <=40) then
-			TempLoot:=Eisenhelm
-        else if (Wuerfel > 40) and (Wuerfel <=60) then
-			TempLoot:=Stahlruestung
-		else if (Wuerfel > 60) and (Wuerfel <=80) then
-			TempLoot:=Eisenstiefel
-		else if (Wuerfel > 80) and (Wuerfel <=100) then
-			TempLoot:=Orkischer_Hammerzahn;
-			
-	if Gegner.LootType='erlesenmagisch'
-      then begin
-        if Wuerfel <= 10 then
-            TempLoot:=Geschmuecktes_Silberschwert
-        else if (Wuerfel > 10) and (Wuerfel <=20) then
-			TempLoot:=Eisenhelm
-        else if (Wuerfel > 20) and (Wuerfel <=30) then
-			TempLoot:=Stahlruestung
-		else if (Wuerfel > 30) and (Wuerfel <=40) then
-			TempLoot:=Eisenstiefel
-		else if (Wuerfel > 40) and (Wuerfel <=50) then
-			TempLoot:=Orkischer_Hammerzahn		
-		else if (Wuerfel > 50) and (Wuerfel <=60) then
-			TempLoot:=Drachenzahn
-        else if (Wuerfel > 60) and (Wuerfel <=70) then
-			TempLoot:=Gnorignums_Schaedelplatte
-		else if (Wuerfel > 70) and (Wuerfel <=80) then
-			TempLoot:=Granitebrows_Stachelpanzer
-		else if (Wuerfel > 80) and (Wuerfel <=90) then
-			TempLoot:=Bodenmalmer
-		else if (Wuerfel > 90) and (Wuerfel <=100) then
-			TempLoot:=Gigantischer_Knochenmuerber;
-
-	if Gegner.LootType='magisch'
-      then begin
-        if Wuerfel <= 20 then
-            TempLoot:=Drachenzahn
-        else if (Wuerfel > 20) and (Wuerfel <=40) then
-			TempLoot:=Gnorignums_Schaedelplatte
-        else if (Wuerfel > 40) and (Wuerfel <=60) then
-			TempLoot:=Granitebrows_Stachelpanzer
-		else if (Wuerfel > 60) and (Wuerfel <=80) then
-			TempLoot:=Bodenmalmer
-		else if (Wuerfel > 80) and (Wuerfel <=100) then
-			TempLoot:=Gigantischer_Knochenmuerber;		
-					
-      end;
-
-	if Gegner.LootType = ('')  then       //Error Überprüfung
-         TempLoot:=nil;
-	if Gegner.LootType= 'empty'  then
-         TempLoot:=nil;
+			TempLoot:=Verrotteter_Klumpen;
+	end
+	else if Gegner.LootType='verschlissennormal' then
+        begin
+             if Wuerfel <= 10 then
+                TempLoot:=Muerbes_Holzschwert
+             else if (Wuerfel > 10) and (Wuerfel <=20) then
+	        TempLoot:=Kappe
+             else if (Wuerfel > 20) and (Wuerfel <=30) then
+		TempLoot:=Gewand
+	     else if (Wuerfel > 30) and (Wuerfel <=40) then
+		TempLoot:=Alte_Latscher
+             else if (Wuerfel > 40) and (Wuerfel <=50) then
+		TempLoot:=Verrotteter_Klumpen
+	     else if (Wuerfel > 50) and (Wuerfel <=60) then
+	         TempLoot:=Eisenschwert
+             else if (Wuerfel > 60) and (Wuerfel <=70) then
+		TempLoot:=Lederhelm
+	     else if (Wuerfel > 70) and (Wuerfel <=80) then
+		TempLoot:=Kettenhemd
+	     else if (Wuerfel > 80) and (Wuerfel <=90) then
+		TempLoot:=Lederschuhe
+	     else if (Wuerfel > 90) and (Wuerfel <=100) then
+		TempLoot:=Eisenstreitkolben;
+        end
+	else if Gegner.LootType='normal' then
+        begin
+             if Wuerfel <= 20 then
+                TempLoot:=Eisenschwert
+             else if (Wuerfel > 20) and (Wuerfel <=40) then
+	        TempLoot:=Lederhelm
+             else if (Wuerfel > 40) and (Wuerfel <=60) then
+		TempLoot:=Kettenhemd
+	     else if (Wuerfel > 60) and (Wuerfel <=80) then
+		TempLoot:=Lederschuhe
+	     else if (Wuerfel > 80) and (Wuerfel <=100) then
+		TempLoot:=Eisenstreitkolben;
+	end
+        else if Gegner.LootType='normalerlesen' then
+        begin
+             if Wuerfel <= 10 then
+                TempLoot:=Eisenschwert
+             else if (Wuerfel > 10) and (Wuerfel <=20) then
+		TempLoot:=Lederhelm
+             else if (Wuerfel > 20) and (Wuerfel <=30) then
+		TempLoot:=Kettenhemd
+             else if (Wuerfel > 30) and (Wuerfel <=40) then
+		TempLoot:=Lederschuhe
+	     else if (Wuerfel > 40) and (Wuerfel <=50) then
+		TempLoot:=Eisenstreitkolben
+	     else if (Wuerfel > 50) and (Wuerfel <=60) then
+		TempLoot:=Geschmuecktes_Silberschwert
+             else if (Wuerfel > 60) and (Wuerfel <=70) then
+		TempLoot:=Eisenhelm
+	     else if (Wuerfel > 70) and (Wuerfel <=80) then
+		TempLoot:=Stahlruestung
+	     else if (Wuerfel > 80) and (Wuerfel <=90) then
+		TempLoot:=Eisenstiefel
+	     else if (Wuerfel > 90) and (Wuerfel <=100) then
+		TempLoot:=Orkischer_Hammerzahn;
+	end		
+        else if Gegner.LootType='erlesen' then
+        begin
+             if Wuerfel <= 20 then
+                TempLoot:=Geschmuecktes_Silberschwert
+             else if (Wuerfel > 20) and (Wuerfel <=40) then
+		TempLoot:=Eisenhelm
+             else if (Wuerfel > 40) and (Wuerfel <=60) then
+		TempLoot:=Stahlruestung
+	     else if (Wuerfel > 60) and (Wuerfel <=80) then
+		TempLoot:=Eisenstiefel
+	     else if (Wuerfel > 80) and (Wuerfel <=100) then
+		TempLoot:=Orkischer_Hammerzahn;
+	end		
+	else if Gegner.LootType='erlesenmagisch' then
+        begin
+             if Wuerfel <= 10 then
+                TempLoot:=Geschmuecktes_Silberschwert
+             else if (Wuerfel > 10) and (Wuerfel <=20) then
+		TempLoot:=Eisenhelm
+             else if (Wuerfel > 20) and (Wuerfel <=30) then
+		TempLoot:=Stahlruestung
+             else if (Wuerfel > 30) and (Wuerfel <=40) then
+	        TempLoot:=Eisenstiefel
+	     else if (Wuerfel > 40) and (Wuerfel <=50) then
+		TempLoot:=Orkischer_Hammerzahn
+	     else if (Wuerfel > 50) and (Wuerfel <=60) then
+		TempLoot:=Drachenzahn
+             else if (Wuerfel > 60) and (Wuerfel <=70) then
+		TempLoot:=Gnorignums_Schaedelplatte
+	     else if (Wuerfel > 70) and (Wuerfel <=80) then
+		TempLoot:=Granitebrows_Stachelpanzer
+	     else if (Wuerfel > 80) and (Wuerfel <=90) then
+		TempLoot:=Bodenmalmer
+	     else if (Wuerfel > 90) and (Wuerfel <=100) then
+		TempLoot:=Gigantischer_Knochenmuerber;
+        end
+	else if Gegner.LootType='magisch' then
+        begin
+             if Wuerfel <= 20 then
+                TempLoot:=Drachenzahn
+             else if (Wuerfel > 20) and (Wuerfel <=40) then
+		TempLoot:=Gnorignums_Schaedelplatte
+             else if (Wuerfel > 40) and (Wuerfel <=60) then
+		TempLoot:=Granitebrows_Stachelpanzer
+	     else if (Wuerfel > 60) and (Wuerfel <=80) then
+		TempLoot:=Bodenmalmer
+	     else if (Wuerfel > 80) and (Wuerfel <=100) then
+		TempLoot:=Gigantischer_Knochenmuerber;
+	end;
 
   //Aus mir momentan unerfindlichen Gründen funktionierte ein einfaches or Statment
   //hier nicht, zudem ist es unnötig und dient nur dem Programier Komfort.
