@@ -6,7 +6,6 @@ object Form2: TForm2
   Caption = 'Form2'
   ClientHeight = 910
   ClientWidth = 1912
-  OnCreate = FormCreate
   LCLVersion = '1.6.2.0'
   object Augvea2Ostweg: TShape
     Left = 1000
@@ -16,6 +15,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Ostweg: TButton
     Left = 1072
@@ -26,6 +26,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 1
+    Visible = False
   end
   object Augvea2Waldweg: TShape
     Left = 936
@@ -35,6 +36,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Augvea: TButton
     Left = 856
@@ -45,6 +47,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 0
+    Visible = False
   end
   object Waldweg: TButton
     Left = 856
@@ -55,6 +58,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 2
+    Visible = False
   end
   object Waldweg2Weggabelung: TShape
     Left = 936
@@ -64,6 +68,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object ShapePreset1: TShape
     Left = 1000
@@ -73,6 +78,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Weggabelung2Tautropfwald: TShape
     Left = 784
@@ -82,6 +88,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Weggabelung: TButton
     Left = 856
@@ -92,6 +99,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 3
+    Visible = False
   end
   object Tautropfwald: TButton
     Left = 640
@@ -102,6 +110,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 4
+    Visible = False
   end
   object Grosse_Blumenwiese: TButton
     Left = 1072
@@ -112,6 +121,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 5
+    Visible = False
   end
   object Grosse_Blumenwiese2Hoehleneingang: TShape
     Left = 1144
@@ -121,6 +131,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Hoehleneingang: TButton
     Left = 1072
@@ -131,6 +142,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 6
+    Visible = False
   end
   object ShapePresetSenkrecht1: TShape
     Left = 1144
@@ -140,6 +152,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object ShapePresetSenkrecht2: TShape
     Left = 720
@@ -149,6 +162,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Waldlichtung: TButton
     Left = 640
@@ -159,6 +173,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 7
+    Visible = False
   end
   object Hoehle: TButton
     Left = 1072
@@ -169,6 +184,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 8
+    Visible = False
   end
   object ShapePresetSenkrecht3: TShape
     Left = 1144
@@ -178,6 +194,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Spinnenkammer: TButton
     Left = 1072
@@ -188,6 +205,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 9
+    Visible = False
   end
   object ShapePreset2: TShape
     Left = 1000
@@ -197,6 +215,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Spinnennest: TButton
     Left = 856
@@ -207,6 +226,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 10
+    Visible = False
   end
   object ShapePreset3: TShape
     Left = 1216
@@ -216,6 +236,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Apfelwiese: TButton
     Left = 1288
@@ -226,6 +247,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 11
+    Visible = False
   end
   object ShapePreset4: TShape
     Left = 1216
@@ -235,6 +257,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Oestliche_Huegel: TButton
     Left = 1288
@@ -245,6 +268,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 12
+    Visible = False
   end
   object ShapePreset5: TShape
     Left = 1432
@@ -254,6 +278,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Verlassene_Burg: TButton
     Left = 1504
@@ -264,6 +289,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 13
+    Visible = False
   end
   object ShapePreset6: TShape
     Left = 1648
@@ -273,16 +299,18 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
-  object Wachtum: TButton
+  object Wachturm: TButton
     Left = 1504
     Height = 28
     Top = 376
     Width = 153
-    Caption = 'Wachtum'
+    Caption = 'Wachturm'
     Font.Height = -16
     ParentFont = False
     TabOrder = 14
+    Visible = False
   end
   object Wachturm2Kaserne: TShape
     Left = 1584
@@ -292,6 +320,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Kaserne: TButton
     Left = 1720
@@ -302,6 +331,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 15
+    Visible = False
   end
   object Schlafgemach: TButton
     Left = 1720
@@ -312,6 +342,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 16
+    Visible = False
   end
   object VerticalPreset1: TShape
     Left = 1800
@@ -321,6 +352,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Lagerhalle: TButton
     Left = 1720
@@ -331,6 +363,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 17
+    Visible = False
   end
   object VerticalPreset2: TShape
     Left = 1800
@@ -340,6 +373,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object VerticalPreset3: TShape
     Left = 936
@@ -349,6 +383,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Strasse_in_den_Sueden: TButton
     Left = 856
@@ -359,6 +394,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 18
+    Visible = False
   end
   object VerticalPreset4: TShape
     Left = 1368
@@ -368,6 +404,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object VerticalPreset5: TShape
     Left = 936
@@ -377,6 +414,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Karawane_Pfad: TButton
     Left = 856
@@ -387,6 +425,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 19
+    Visible = False
   end
   object ShapePreset7: TShape
     Left = 1000
@@ -396,6 +435,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Am_Schnellen_Bach: TButton
     Left = 1072
@@ -406,6 +446,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 20
+    Visible = False
   end
   object Spitzdorf: TButton
     Left = 1072
@@ -416,6 +457,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 21
+    Visible = False
   end
   object VerticalPreset6: TShape
     Left = 1144
@@ -425,6 +467,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object ShapePreset8: TShape
     Left = 1216
@@ -434,6 +477,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Kraehenhort: TButton
     Left = 1504
@@ -444,6 +488,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 22
+    Visible = False
   end
   object ShapePreset9: TShape
     Left = 1432
@@ -453,6 +498,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Der_Grosse_Heuler: TButton
     Left = 1288
@@ -463,6 +509,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 23
+    Visible = False
   end
   object VerticalPreset7: TShape
     Left = 1584
@@ -472,6 +519,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Der_Sonnenstich: TButton
     Left = 1504
@@ -482,6 +530,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 24
+    Visible = False
   end
   object ShapePreset10: TShape
     Left = 1216
@@ -491,6 +540,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Traenenwald: TButton
     Left = 1288
@@ -501,6 +551,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 25
+    Visible = False
   end
   object ShapePreset11: TShape
     Left = 1432
@@ -510,6 +561,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Baerenhoehle: TButton
     Left = 1504
@@ -520,6 +572,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 26
+    Visible = False
   end
   object ShapePreset12: TShape
     Left = 1000
@@ -529,6 +582,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Tal: TButton
     Left = 1072
@@ -539,6 +593,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 27
+    Visible = False
   end
   object VerticalPreset8: TShape
     Left = 1144
@@ -548,6 +603,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object ShapePreset13: TShape
     Left = 1216
@@ -557,6 +613,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Grosse_Duene: TButton
     Left = 1288
@@ -567,6 +624,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 28
+    Visible = False
   end
   object ShapePreset14: TShape
     Left = 1432
@@ -576,6 +634,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Met_Schall_Wueste: TButton
     Left = 1504
@@ -586,6 +645,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 29
+    Visible = False
   end
   object ShapePreset15: TShape
     Left = 784
@@ -595,6 +655,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Bruecke: TButton
     Left = 640
@@ -605,6 +666,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 30
+    Visible = False
   end
   object ShapePreset16: TShape
     Left = 568
@@ -614,6 +676,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Westweg: TButton
     Left = 432
@@ -624,6 +687,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 31
+    Visible = False
   end
   object ShapePreset17: TShape
     Left = 360
@@ -633,6 +697,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Schattenweiden: TButton
     Left = 232
@@ -643,6 +708,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 32
+    Visible = False
   end
   object ShapePreset18: TShape
     Left = 160
@@ -652,6 +718,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Graumoor: TButton
     Left = 16
@@ -662,6 +729,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 33
+    Visible = False
   end
   object VerticalPreset9: TShape
     Left = 312
@@ -671,6 +739,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Oeder_Morast: TButton
     Left = 232
@@ -681,6 +750,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 34
+    Visible = False
   end
   object ShapePreset19: TShape
     Left = 160
@@ -690,6 +760,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object VerticalPreset10: TShape
     Left = 312
@@ -699,6 +770,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Kleiner_See: TButton
     Left = 232
@@ -709,6 +781,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 35
+    Visible = False
   end
   object VerticalPreset11: TShape
     Left = 312
@@ -718,6 +791,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Goblin_Dorf: TButton
     Left = 232
@@ -728,6 +802,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 36
+    Visible = False
   end
   object VerticalPreset12: TShape
     Left = 312
@@ -737,7 +812,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
-    OnChangeBounds = VerticalPreset12ChangeBounds
+    Visible = False
   end
   object Feuerschlot: TButton
     Left = 232
@@ -748,6 +823,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 37
+    Visible = False
   end
   object VerticalPreset13: TShape
     Left = 312
@@ -757,6 +833,7 @@ object Form2: TForm2
     Brush.Color = clBlack
     Pen.Color = clWhite
     Pen.Style = psClear
+    Visible = False
   end
   object Abgrund_des_brennenden_Steins: TButton
     Left = 232
@@ -767,6 +844,7 @@ object Form2: TForm2
     Font.Height = -11
     ParentFont = False
     TabOrder = 38
+    Visible = False
   end
   object Einsame_Herberge: TButton
     Left = 16
@@ -777,6 +855,7 @@ object Form2: TForm2
     Font.Height = -16
     ParentFont = False
     TabOrder = 39
+    Visible = False
   end
   object Label1: TLabel
     Left = 840

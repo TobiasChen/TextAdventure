@@ -580,9 +580,9 @@ begin//RaumName +4 RichtungsPfeile TShape + RaumButton
   RaumMapUpdate(Strasse_in_den_Sueden,nil,nil,nil,nil,Form2.Strasse_in_den_Sueden);
   RaumMapUpdate(Tal,nil,nil,nil,nil,Form2.Tal);
   RaumMapUpdate(Grosse_Duene,nil,nil,nil,nil,Form2.Grosse_Duene);
-  RaumMapUpdate(MetSchallWueste,nil,nil,nil,nil,Form2.MetSchallWueste);
-  RaumMapUpdate(Goblinstamm,nil,nil,nil,nil,Form2.Goblinstamm);
-  RaumMapUpdate(Karawane,nil,nil,nil,nil,Form2.Karawane);
+  RaumMapUpdate(MetSchallWueste,nil,nil,nil,nil,Form2.Met_Schall_Wueste);
+  RaumMapUpdate(Goblinstamm,nil,nil,nil,nil,Form2.Goblin_Dorf);
+  RaumMapUpdate(Karawane,nil,nil,nil,nil,Form2.Karawane_Pfad);
   RaumMapUpdate(Am_schnellen_Bach,nil,nil,nil,nil,Form2.Am_schnellen_Bach);
   RaumMapUpdate(Traenenwald,nil,nil,nil,nil,Form2.Traenenwald);
   RaumMapUpdate(Baerenhoehle,nil,nil,nil,nil,Form2.Baerenhoehle);

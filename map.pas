@@ -77,7 +77,7 @@ type
     VerticalPreset7: TShape;
     VerticalPreset8: TShape;
     Wachturm2Kaserne: TShape;
-    Wachtum: TButton;
+    Wachturm: TButton;
     ShapePreset3: TShape;
     ShapePreset4: TShape;
     ShapePreset5: TShape;
@@ -99,9 +99,6 @@ type
     Augvea2Ostweg: TShape;
     Ostweg2Oestliche_Huegel: TShape;
     Augvea2Waldweg: TShape;
-    procedure FormCreate(Sender: TObject);
-    procedure VerticalPreset12ChangeBounds(Sender: TObject);
-
   private
     { private declarations }
   public
@@ -115,16 +112,6 @@ uses
     unit1;
 
 { TForm2 }
-
-procedure TForm2.FormCreate(Sender: TObject);
-begin
-
-end;
-
-procedure TForm2.VerticalPreset12ChangeBounds(Sender: TObject);
-begin
-
-end;
 
 { TForm2 }
 
