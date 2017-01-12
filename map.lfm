@@ -1,137 +1,791 @@
 object Form2: TForm2
-  Left = 50
-  Height = 1137
-  Top = 298
-  Width = 1632
+  Left = 4
+  Height = 910
+  Top = 122
+  Width = 1912
   Caption = 'Form2'
-  ClientHeight = 0
-  ClientWidth = 0
+  ClientHeight = 910
+  ClientWidth = 1912
+  OnCreate = FormCreate
   LCLVersion = '1.6.2.0'
-  object Augvea: TButton
-    Left = 736
+  object Augvea2Ostweg: TShape
+    Left = 1000
+    Height = 3
+    Top = 488
+    Width = 80
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Ostweg: TButton
+    Left = 1072
     Height = 28
-    Top = 448
-    Width = 160
+    Top = 472
+    Width = 153
+    Caption = 'Ostweg'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 1
+  end
+  object Augvea2Waldweg: TShape
+    Left = 936
+    Height = 80
+    Top = 400
+    Width = 3
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Augvea: TButton
+    Left = 856
+    Height = 28
+    Top = 472
+    Width = 153
     Caption = 'Augvea'
     Font.Height = -16
-    OnClick = AugveaClick
     ParentFont = False
     TabOrder = 0
   end
-  object Schlafgemach: TButton
-    Left = 1232
-    Height = 25
-    Top = 156
-    Width = 128
-    Caption = 'Schlafgemach'
-    TabOrder = 1
-    Visible = False
-  end
-  object Ostweg: TButton
-    Left = 1256
-    Height = 25
-    Top = 384
-    Width = 152
-    Caption = 'Ostweg'
-    OnClick = OstwegClick
+  object Waldweg: TButton
+    Left = 856
+    Height = 28
+    Top = 376
+    Width = 153
+    Caption = 'Waldweg'
+    Font.Height = -16
+    ParentFont = False
     TabOrder = 2
-    Visible = False
   end
-  object Oestliche_Huegel: TButton
-    Left = 32
-    Height = 25
-    Top = 152
-    Width = 96
-    Caption = 'Östliche Hügel'
+  object Waldweg2Weggabelung: TShape
+    Left = 936
+    Height = 80
+    Top = 304
+    Width = 3
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object ShapePreset1: TShape
+    Left = 1000
+    Height = 3
+    Top = 392
+    Width = 80
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Weggabelung2Tautropfwald: TShape
+    Left = 784
+    Height = 3
+    Top = 296
+    Width = 80
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Weggabelung: TButton
+    Left = 856
+    Height = 28
+    Top = 280
+    Width = 153
+    Caption = 'Weggabelung'
+    Font.Height = -16
+    ParentFont = False
     TabOrder = 3
-    Visible = False
   end
-  object Augvea2Schlafgemach: TShape
-    Left = 536
-    Height = 73
-    Top = 80
-    Width = 9
-    Shape = stSquare
-    Visible = False
-  end
-  object Augvea2Ostweg: TShape
-    Left = 891
-    Height = 2
-    Top = 400
-    Width = 100
-    Visible = False
-  end
-  object Ostweg2Oestliche_Huegel: TShape
-    Left = 128
-    Height = 10
-    Top = 156
-    Width = 99
-    Shape = stSquare
-    Visible = False
-  end
-  object Augvea1: TButton
-    Left = 496
-    Height = 25
-    Top = 448
-    Width = 160
-    Caption = 'Augvea1'
-    OnClick = AugveaClick
+  object Tautropfwald: TButton
+    Left = 640
+    Height = 28
+    Top = 280
+    Width = 153
+    Caption = 'Tautropfwald'
+    Font.Height = -16
+    ParentFont = False
     TabOrder = 4
   end
-  object Augvea2Ostweg1: TShape
-    Left = 919
-    Height = 2
-    Top = 428
-    Width = 100
-    Visible = False
+  object Grosse_Blumenwiese: TButton
+    Left = 1072
+    Height = 28
+    Top = 376
+    Width = 153
+    Caption = 'Große Blumenwiese'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 5
   end
-  object Augvea2Ostweg2: TShape
-    Left = 947
-    Height = 2
-    Top = 456
-    Width = 100
-    Visible = False
+  object Grosse_Blumenwiese2Hoehleneingang: TShape
+    Left = 1144
+    Height = 80
+    Top = 304
+    Width = 3
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
   end
-  object Augvea2Ostweg3: TShape
-    Left = 975
-    Height = 2
-    Top = 484
-    Width = 100
-    Visible = False
+  object Hoehleneingang: TButton
+    Left = 1072
+    Height = 28
+    Top = 280
+    Width = 153
+    Caption = 'Hoehleneingang'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 6
   end
-  object Augvea2Ostweg4: TShape
-    Left = 1003
-    Height = 2
-    Top = 512
-    Width = 100
-    Visible = False
+  object ShapePresetSenkrecht1: TShape
+    Left = 1144
+    Height = 80
+    Top = 208
+    Width = 3
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
   end
-  object Augvea2Ostweg5: TShape
-    Left = 1031
-    Height = 2
-    Top = 540
-    Width = 100
-    Visible = False
+  object ShapePresetSenkrecht2: TShape
+    Left = 720
+    Height = 80
+    Top = 208
+    Width = 3
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
   end
-  object Augvea2Ostweg6: TShape
-    Left = 1059
-    Height = 2
+  object Waldlichtung: TButton
+    Left = 640
+    Height = 28
+    Top = 184
+    Width = 153
+    Caption = 'Waldlichtung'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 7
+  end
+  object Hoehle: TButton
+    Left = 1072
+    Height = 28
+    Top = 184
+    Width = 153
+    Caption = 'Hoehle'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 8
+  end
+  object ShapePresetSenkrecht3: TShape
+    Left = 1144
+    Height = 80
+    Top = 112
+    Width = 3
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Spinnenkammer: TButton
+    Left = 1072
+    Height = 28
+    Top = 88
+    Width = 153
+    Caption = 'Spinnenkammer'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 9
+  end
+  object ShapePreset2: TShape
+    Left = 1000
+    Height = 3
+    Top = 104
+    Width = 80
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Spinnennest: TButton
+    Left = 856
+    Height = 28
+    Top = 88
+    Width = 153
+    Caption = 'Spinnennest'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 10
+  end
+  object ShapePreset3: TShape
+    Left = 1216
+    Height = 3
+    Top = 392
+    Width = 80
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Apfelwiese: TButton
+    Left = 1288
+    Height = 28
+    Top = 376
+    Width = 153
+    Caption = 'Apfelwiese'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 11
+  end
+  object ShapePreset4: TShape
+    Left = 1216
+    Height = 3
+    Top = 488
+    Width = 80
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Oestliche_Huegel: TButton
+    Left = 1288
+    Height = 28
+    Top = 472
+    Width = 153
+    Caption = 'Oestliche_Huegel'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 12
+  end
+  object ShapePreset5: TShape
+    Left = 1432
+    Height = 3
+    Top = 488
+    Width = 80
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Verlassene_Burg: TButton
+    Left = 1504
+    Height = 28
+    Top = 472
+    Width = 153
+    Caption = 'Verlassene_Burg'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 13
+  end
+  object ShapePreset6: TShape
+    Left = 1648
+    Height = 3
+    Top = 392
+    Width = 80
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Wachtum: TButton
+    Left = 1504
+    Height = 28
+    Top = 376
+    Width = 153
+    Caption = 'Wachtum'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 14
+  end
+  object Wachturm2Kaserne: TShape
+    Left = 1584
+    Height = 80
+    Top = 400
+    Width = 3
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Kaserne: TButton
+    Left = 1720
+    Height = 28
+    Top = 376
+    Width = 153
+    Caption = 'Kaserne'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 15
+  end
+  object Schlafgemach: TButton
+    Left = 1720
+    Height = 28
+    Top = 280
+    Width = 153
+    Caption = 'Schlafgemach'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 16
+  end
+  object VerticalPreset1: TShape
+    Left = 1800
+    Height = 80
+    Top = 304
+    Width = 3
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Lagerhalle: TButton
+    Left = 1720
+    Height = 28
+    Top = 184
+    Width = 153
+    Caption = 'Lagerhalle'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 17
+  end
+  object VerticalPreset2: TShape
+    Left = 1800
+    Height = 80
+    Top = 208
+    Width = 3
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object VerticalPreset3: TShape
+    Left = 936
+    Height = 80
+    Top = 496
+    Width = 3
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Strasse_in_den_Sueden: TButton
+    Left = 856
+    Height = 28
     Top = 568
-    Width = 100
-    Visible = False
+    Width = 153
+    Caption = 'Strasse_in_den_Sueden'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 18
   end
-  object Augvea2Ostweg7: TShape
-    Left = 1087
-    Height = 2
-    Top = 596
-    Width = 100
-    Visible = False
+  object VerticalPreset4: TShape
+    Left = 1368
+    Height = 80
+    Top = 400
+    Width = 3
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
   end
-  object Augvea2Ostweg8: TShape
-    Left = 1115
-    Height = 2
-    Top = 624
-    Width = 100
-    Visible = False
+  object VerticalPreset5: TShape
+    Left = 936
+    Height = 80
+    Top = 592
+    Width = 3
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Karawane_Pfad: TButton
+    Left = 856
+    Height = 28
+    Top = 664
+    Width = 153
+    Caption = 'Karawane_Pfad'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 19
+  end
+  object ShapePreset7: TShape
+    Left = 1000
+    Height = 3
+    Top = 680
+    Width = 80
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Am_Schnellen_Bach: TButton
+    Left = 1072
+    Height = 28
+    Top = 664
+    Width = 153
+    Caption = 'Am_Schnellen_Bach'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 20
+  end
+  object Spitzdorf: TButton
+    Left = 1072
+    Height = 28
+    Top = 760
+    Width = 153
+    Caption = 'Spitzdorf'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 21
+  end
+  object VerticalPreset6: TShape
+    Left = 1144
+    Height = 80
+    Top = 688
+    Width = 3
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object ShapePreset8: TShape
+    Left = 1216
+    Height = 3
+    Top = 776
+    Width = 80
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Kraehenhort: TButton
+    Left = 1504
+    Height = 28
+    Top = 760
+    Width = 153
+    Caption = 'Kraehenhort'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 22
+  end
+  object ShapePreset9: TShape
+    Left = 1432
+    Height = 3
+    Top = 776
+    Width = 80
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Der_Grosse_Heuler: TButton
+    Left = 1288
+    Height = 28
+    Top = 760
+    Width = 153
+    Caption = 'Der_Grosse_Heuler'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 23
+  end
+  object VerticalPreset7: TShape
+    Left = 1584
+    Height = 80
+    Top = 784
+    Width = 3
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Der_Sonnenstich: TButton
+    Left = 1504
+    Height = 28
+    Top = 856
+    Width = 153
+    Caption = 'Der_Sonnenstich'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 24
+  end
+  object ShapePreset10: TShape
+    Left = 1216
+    Height = 3
+    Top = 680
+    Width = 80
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Traenenwald: TButton
+    Left = 1288
+    Height = 28
+    Top = 664
+    Width = 153
+    Caption = 'Traenenwald'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 25
+  end
+  object ShapePreset11: TShape
+    Left = 1432
+    Height = 3
+    Top = 680
+    Width = 80
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Baerenhoehle: TButton
+    Left = 1504
+    Height = 28
+    Top = 664
+    Width = 153
+    Caption = 'Baerenhoehle'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 26
+  end
+  object ShapePreset12: TShape
+    Left = 1000
+    Height = 3
+    Top = 584
+    Width = 80
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Tal: TButton
+    Left = 1072
+    Height = 28
+    Top = 568
+    Width = 153
+    Caption = 'Tal'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 27
+  end
+  object VerticalPreset8: TShape
+    Left = 1144
+    Height = 80
+    Top = 592
+    Width = 3
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object ShapePreset13: TShape
+    Left = 1216
+    Height = 3
+    Top = 584
+    Width = 80
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Grosse_Duene: TButton
+    Left = 1288
+    Height = 28
+    Top = 568
+    Width = 153
+    Caption = 'Grosse_Duene'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 28
+  end
+  object ShapePreset14: TShape
+    Left = 1432
+    Height = 3
+    Top = 584
+    Width = 80
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Met_Schall_Wueste: TButton
+    Left = 1504
+    Height = 28
+    Top = 568
+    Width = 153
+    Caption = 'Met_Schall_Wueste'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 29
+  end
+  object ShapePreset15: TShape
+    Left = 784
+    Height = 3
+    Top = 488
+    Width = 80
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Bruecke: TButton
+    Left = 640
+    Height = 28
+    Top = 472
+    Width = 153
+    Caption = 'Bruecke'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 30
+  end
+  object ShapePreset16: TShape
+    Left = 568
+    Height = 3
+    Top = 488
+    Width = 80
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Westweg: TButton
+    Left = 432
+    Height = 28
+    Top = 472
+    Width = 153
+    Caption = 'Westweg'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 31
+  end
+  object ShapePreset17: TShape
+    Left = 360
+    Height = 3
+    Top = 488
+    Width = 80
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Schattenweiden: TButton
+    Left = 232
+    Height = 28
+    Top = 472
+    Width = 153
+    Caption = 'Schattenweiden'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 32
+  end
+  object ShapePreset18: TShape
+    Left = 160
+    Height = 3
+    Top = 488
+    Width = 80
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Graumoor: TButton
+    Left = 16
+    Height = 28
+    Top = 568
+    Width = 153
+    Caption = 'Graumoor'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 33
+  end
+  object VerticalPreset9: TShape
+    Left = 312
+    Height = 80
+    Top = 496
+    Width = 3
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Oeder_Morast: TButton
+    Left = 232
+    Height = 28
+    Top = 568
+    Width = 153
+    Caption = 'Oeder_Morast'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 34
+  end
+  object ShapePreset19: TShape
+    Left = 160
+    Height = 3
+    Top = 584
+    Width = 80
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object VerticalPreset10: TShape
+    Left = 312
+    Height = 80
+    Top = 592
+    Width = 3
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Kleiner_See: TButton
+    Left = 232
+    Height = 28
+    Top = 664
+    Width = 153
+    Caption = 'Kleiner_See'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 35
+  end
+  object VerticalPreset11: TShape
+    Left = 312
+    Height = 80
+    Top = 688
+    Width = 3
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Goblin_Dorf: TButton
+    Left = 232
+    Height = 28
+    Top = 760
+    Width = 153
+    Caption = 'Goblin_Dorf'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 36
+  end
+  object VerticalPreset12: TShape
+    Left = 312
+    Height = 80
+    Top = 400
+    Width = 3
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+    OnChangeBounds = VerticalPreset12ChangeBounds
+  end
+  object Feuerschlot: TButton
+    Left = 232
+    Height = 28
+    Top = 376
+    Width = 153
+    Caption = 'Feuerschlot'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 37
+  end
+  object VerticalPreset13: TShape
+    Left = 312
+    Height = 80
+    Top = 304
+    Width = 3
+    Brush.Color = clBlack
+    Pen.Color = clWhite
+    Pen.Style = psClear
+  end
+  object Abgrund_des_brennenden_Steins: TButton
+    Left = 232
+    Height = 28
+    Top = 280
+    Width = 153
+    Caption = 'Abgrund_des_brennenden_Steins'
+    Font.Height = -11
+    ParentFont = False
+    TabOrder = 38
+  end
+  object Einsame_Herberge: TButton
+    Left = 16
+    Height = 28
+    Top = 472
+    Width = 153
+    Caption = 'Einsame_Herberge'
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 39
+  end
+  object Label1: TLabel
+    Left = 840
+    Height = 45
+    Top = 24
+    Width = 462
+    Caption = 'Karte des Umlandes um Augvea'
+    Font.Height = -33
+    ParentColor = False
+    ParentFont = False
   end
 end
