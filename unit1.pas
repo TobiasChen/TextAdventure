@@ -201,27 +201,57 @@ begin
    Oestliche_Huegel				:=TRaum.create('Östliche Hügel','Die sanften Hügel machen das Vorankommen beschwerlicher',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
    Verlassene_Burg				:=TRaum.create('Verlassene Burg','Diese Burg ist mysteriöserweise verlassen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
    Wachturm						:=TRaum.create('Wachturm','Hier wacht keiner mehr',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Kleiner_See					:=TRaum.create('Kleiner See','to quickly create Rooms',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Strasse_in_den_Sueden		:=TRaum.create('Straße in den Süden','to quickly create Rooms',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Tal							:=TRaum.create('Tal','to quickly create Rooms',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Goblinstamm					:=TRaum.create('Goblinstamm','to quickly create Rooms',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Karawane						:=TRaum.create('Karawane','to quickly create Rooms',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Am_schnellen_Bach			:=TRaum.create('Am schnellen Bach','to quickly create Rooms',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Traenenwald					:=TRaum.create('Tränenwald','to quickly create Rooms',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Baerenhoehle					:=TRaum.create('Bärenhöhle','to quickly create Rooms',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Spitzdorf					:=TRaum.create('Spitzdorf','to quickly create Rooms',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Der_Grosse_Heuler			:=TRaum.create('Der Große Heuler','to quickly create Rooms',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
-   Der_Sonnenstich				:=TRaum.create('Der Sonnenstich','to quickly create Rooms',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Kleiner_See					:=TRaum.create('Kleiner See','Das sanfte Rauschen des Wassers entspannt dich',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Strasse_in_den_Sueden		:=TRaum.create('Straße in den Süden','Diese Straße wird häufig von Händlern verwendet',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Tal							:=TRaum.create('Tal','Die Stille misfällt dir',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Goblinstamm					:=TRaum.create('Goblinstamm','Angespannt bist du bereit für einen Kampf gegen einen Goblin',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Karawane						:=TRaum.create('Karawane','Hier rasten die Händler',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Am_schnellen_Bach			:=TRaum.create('Am schnellen Bach','Aus dem Tränenwald läuft ein Bach in den Fluss',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Traenenwald					:=TRaum.create('Tränenwald','Aus den Tiefen des Waldes hörst du ein gequältes Kind',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Baerenhoehle					:=TRaum.create('Bärenhöhle','In der Höhle siehst du ein kleines Skelett',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Spitzdorf					:=TRaum.create('Spitzdorf','In diesem ruhigen Dorf kann man gut rasten',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Der_Grosse_Heuler			:=TRaum.create('Der Große Heuler','In der Rinde dieser großen Eiche erkennst du weinende Gesichter',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
+   Der_Sonnenstich				:=TRaum.create('Der Sonnenstich','Alle 10.000 Jahre soll dieser Berg die Sonne berühren',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false);
 
    //RaumUpdate//
    //Die Prozedure RaumUpdate() braucht 6 Pointer und zwar den Raum der zu
    //ändern ist die Räume die in den HimmelsRichtungen um ihn herum liegen
    //und immoment den Gegner im Raum
-   RaumUpdate.RaumUpdate(Augvea,nil,Ostweg,Schlafgemach,Westweg);
-   RaumUpdate.RaumUpdate(Schlafgemach,Augvea,nil,nil,nil);
-   RaumUpdate.RaumUpdate(Ostweg,nil,Graumoor,nil,Augvea);
-   RaumUpdate.RaumUpdate(Westweg,nil,Augvea,nil,nil);
-   RaumUpdate.RaumUpdate(Graumoor,nil,nil,nil,Ostweg);
+   RaumUpdate.RaumUpdate(Spinnennest,nil,Spinnenkammer,nil,nil);
+   RaumUpdate.RaumUpdate(Spinnenkammer,nil,nil,Hoehle,Spinnennest);
+   RaumUpdate.RaumUpdate(Waldlichtung,nil,nil,Tautropfwald,nil);
+   RaumUpdate.RaumUpdate(Hoehle,Spinnenkammer,nil,Hoehleneingang,nil);
+   RaumUpdate.RaumUpdate(Tautropfwald,Waldlichtung,Weggabelung,nil,nil);
+   RaumUpdate.RaumUpdate(Weggabelung,nil,Hoehleneingang,Waldweg,Tautropfwald);
+   RaumUpdate.RaumUpdate(Hoehleneingang,Hoehle,nil,Grosse_Blumenwiese,Weggabelung);
+   RaumUpdate.RaumUpdate(Lagerhalle,nil,nil,Schlafgemach,nil);
+   RaumUpdate.RaumUpdate(Feuerschlot,nil,Abgrund_des_brennenden_Steins,Graumoor,nil);
+   RaumUpdate.RaumUpdate(Abgrund_des_brennenden_Steins,nil,nil,Schattenweiden,Feuerschlot);
+   RaumUpdate.RaumUpdate(Waldweg,Weggabelung,Grosse_Blumenwiese,Augvea,nil);
+   RaumUpdate.RaumUpdate(Grosse_Blumenwiese,Hoehleneingang,nil,Ostweg,Augvea);
+   RaumUpdate.RaumUpdate(Kaserne,nil,Schlafgemach,Wachturm,nil);
+   RaumUpdate.RaumUpdate(Schlafgemach,Lagerhalle,nil,nil,Kaserne);
+   RaumUpdate.RaumUpdate(Einsame_Herberge,nil,Graumoor,nil,nil);
+   RaumUpdate.RaumUpdate(Graumoor,Feuerschlot,Schattenweiden,Kleiner_See,Einsame_Herberge);
+   RaumUpdate.RaumUpdate(Schattenweiden,Abgrund_des_brennenden_Steins,Westweg,nil,Graumoor);
+   RaumUpdate.RaumUpdate(Westweg,nil,Bruecke,nil,Schattenweiden);
+   RaumUpdate.RaumUpdate(Bruecke,nil,Augvea,nil,Westweg);
+   RaumUpdate.RaumUpdate(Augvea,Waldweg,Ostweg,Strasse_in_den_Sueden,Bruecke);
+   RaumUpdate.RaumUpdate(Ostweg,Grosse_Blumenwiese,Oestliche_Huegel,Tal,Augvea);
+   RaumUpdate.RaumUpdate(Oestliche_Huegel,nil,Verlassene_Burg,nil,Ostweg);
+   RaumUpdate.RaumUpdate(Verlassene_Burg,nil,Wachturm,nil,Oestliche_Huegel);
+   RaumUpdate.RaumUpdate(Wachturm,Kaserne,nil,nil,Verlassene_Burg);
+   RaumUpdate.RaumUpdate(Kleiner_See,Graumoor,nil,Goblinstamm,nil);
+   RaumUpdate.RaumUpdate(Strasse_in_den_Sueden,Augvea,Tal,Karawane,nil);
+   RaumUpdate.RaumUpdate(Tal,Ostweg,nil,Am_schnellen_Bach,Strasse_in_den_Sueden);
+   RaumUpdate.RaumUpdate(Goblinstamm,Kleiner_See,nil,nil,nil);
+   RaumUpdate.RaumUpdate(Karawane,Strasse_in_den_Sueden,Am_schnellen_Bach,nil,nil);
+   RaumUpdate.RaumUpdate(Am_schnellen_Bach,Tal,Traenenwald,Spitzdorf,Karawane);
+   RaumUpdate.RaumUpdate(Traenenwald,nil,Baerenhoehle,nil,Am_schnellen_Bach);
+   RaumUpdate.RaumUpdate(Baerenhoehle,nil,nil,Der_Grosse_Heuler,Traenenwald);
+   RaumUpdate.RaumUpdate(Spitzdorf,Am_schnellen_Bach,nil,nil,nil);
+   RaumUpdate.RaumUpdate(Der_Grosse_Heuler,Baerenhoehle,nil,Der_Sonnenstich,nil);
+   RaumUpdate.RaumUpdate(Der_Sonnenstich,Der_Grosse_Heuler,nil,nil,nil);
    //RaumUpdate Benötigt RaumPointer+AusgangsBeschreibungen
    RaumNamenUpdate(Augvea,'','Du tritts durch die Stadttore und siehst die Oststraße vor dir. In der ferne kannst du das Moor erkennen','Du tritts in die Herberge,hier kannst du die erholen','Du tritts durch die Stadttore und siehst den Weg der sich in die Berge schlängelt');
    RaumNamenUpdate(Schlafgemach,'Du verlässt die Herberge und stehst wieder auf dem Marktplatz','','','');
@@ -236,7 +266,7 @@ begin
    ZusaetzlicheUpdates(Graumoor,'SehrHard',100,2,10,false);
    //Startwerte//
    AnfangsRaum:= Augvea;
-   aktuellerRaum := AnfangsRaum;
+   aktuelleirRaum := AnfangsRaum;
    LabelRaum.caption := AktuellerRaum.Raumname;
    KampfProzedure.IstInKampf := False;
    //Spieler-Start-StatsNR2//
