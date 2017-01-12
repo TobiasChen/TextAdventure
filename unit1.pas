@@ -530,6 +530,12 @@ procedure TForm1.Button9Click(Sender: TObject);
 begin
   RaumWechsel(AktuellerRaum.Sueden);
 end;
+begin
+  RaumMapUpdate(Augvea,nil,nil,nil,nil,Form2.Augvea);
+  RaumMapUpdate(Schlafgemach,nil,nil,nil,nil,Form2.Schlafgemach);
+  RaumMapUpdate(Ostweg,nil,nli, nil, nil, Form2.Ostweg);
+  RaumMapUpdate(Oestliche_Huegel,nil,nil,nli,nil,Form2.Oestliche_Huegel);
 
+end;
 end.
 

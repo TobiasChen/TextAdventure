@@ -1,25 +1,25 @@
 object Form2: TForm2
-  Left = 478
-  Height = 428
-  Top = 134
-  Width = 822
+  Left = -10
+  Height = 1019
+  Top = 108
+  Width = 1648
   Caption = 'Form2'
-  ClientHeight = 428
-  ClientWidth = 822
+  ClientHeight = 1019
+  ClientWidth = 1648
   LCLVersion = '1.6.2.0'
   object Augvea: TButton
-    Left = 504
+    Left = 752
     Height = 25
-    Top = 152
+    Top = 400
     Width = 160
     Caption = 'Augvea'
     OnClick = AugveaClick
     TabOrder = 0
   end
   object Schlafgemach: TButton
-    Left = 496
+    Left = 1232
     Height = 25
-    Top = 56
+    Top = 156
     Width = 128
     Caption = 'Schlafgemach'
     TabOrder = 1
