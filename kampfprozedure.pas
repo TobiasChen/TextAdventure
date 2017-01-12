@@ -15,7 +15,7 @@ var
   LetzterGegner:TEnemy;
 procedure Kampf();
 implementation
-uses Unit1,ProzedureRaumwechsel,LootDrop;                                 //Unit1 muss benutzt werden
+uses Unit1,ProzedureRaumwechsel,LootDrop,UIRefresh;                                 //Unit1 muss benutzt werden
 //------Kampf------//    //Angelehnt an das Pen&Paper-Kampfsystem//
 procedure Kampf();
 begin
@@ -64,6 +64,7 @@ begin
            Form1.Memo1.lines.add('Du hast den Gegner verfehlt!');
          end;
      end;
+     UiRefresh.UiRefresh();
 end;
 
 end.

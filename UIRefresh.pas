@@ -22,6 +22,8 @@ begin
   Form1.Button3.Caption:=SpielerRuestung.Name;
   Form1.Button4.Caption:=SpielerSchuhe.Name;
   Form1.Button5.Caption:=SpielerWaffe.Name;
+  Form1.LabelGegnerHP.Caption:= InttoStr(0) ;
+  Form1.LabelGegner.Caption := ('Kein Gegner');
   If AktuellerRaum.Enemy <> nil then  // <> = is not
      begin
      Form1.LabelGegner.Caption := AktuellerRaum.Enemy.Enemyname;

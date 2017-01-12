@@ -15,10 +15,18 @@ type
 
   TForm1 = class(TForm)
     Button1: TButton;
+    Button10: TButton;
+    Button11: TButton;
+    Button12: TButton;
+    Button13: TButton;
     Button2: TButton;
     Button3: TButton;
     Button4: TButton;
     Button5: TButton;
+    Button6: TButton;
+    Button7: TButton;
+    Button8: TButton;
+    Button9: TButton;
     Edit1: TEdit;
     LabelMDUnverwendet: TLabel;
     MD: TLabel;
@@ -36,11 +44,18 @@ type
     LabelATK: TLabel;
     LabelRaum: TLabel;
     Memo1: TRichMemo;
+    procedure Button10Click(Sender: TObject);
+    procedure Button11Click(Sender: TObject);
+    procedure Button12Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
+    procedure Button8Click(Sender: TObject);
+    procedure Button9Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
     { private declarations }
@@ -309,7 +324,7 @@ begin
  //     RaumWechsel(aktuellerRaum)
  //end
 
- else if uppercase(Eingabe) = 'ZURUECK'
+ else if uppercase(Eingabe) = 'FLIEHEN'
  then
  begin
    aktuellerRaum:=vorherigerRaum;
@@ -326,14 +341,25 @@ begin
  Memo1.lines.add('Schreibe etwas in die Box um mit der Welt zu interagieren');
  Memo1.lines.add('Für Hilfe schreibe ?');
  end;
- //ELSE IF Schleife muss gefixt werden, sodaß bei unerkannter Eingabe die Hilfe angezeigt wird //
- //else
- //Memo1.lines.add('Unbekannte Eingabe');
- //Memo1.lines.add('Liste der Befehle mit : ?');//Hilfe Ausgabe bei unerkannter Eingabe
-
 //RefresUI
 
 UIRefresh.UiRefresh()
+end;
+//REpitirion der FUnktionalität, ist jedoch wesentlich angenehmer zu bedienen.
+procedure TForm1.Button10Click(Sender: TObject);
+begin
+ Kampf()
+end;
+
+procedure TForm1.Button11Click(Sender: TObject);
+begin
+   LootDrop.Pickup();
+end;
+
+procedure TForm1.Button12Click(Sender: TObject);
+begin
+   aktuellerRaum:=vorherigerRaum;
+   IstInKampf:=false;
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);
@@ -354,6 +380,26 @@ end;
 procedure TForm1.Button5Click(Sender: TObject);
 begin
   Memo1.lines.add(SpielerWaffe.Beschreibung)
+end;
+
+procedure TForm1.Button6Click(Sender: TObject);
+begin
+  RaumWechsel(AktuellerRaum.Norden);
+end;
+
+procedure TForm1.Button7Click(Sender: TObject);
+begin
+  RaumWechsel(AktuellerRaum.Westen);
+end;
+
+procedure TForm1.Button8Click(Sender: TObject);
+begin
+   RaumWechsel(AktuellerRaum.Osten);
+end;
+
+procedure TForm1.Button9Click(Sender: TObject);
+begin
+  RaumWechsel(AktuellerRaum.Sueden);
 end;
 
 end.
