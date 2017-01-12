@@ -57,10 +57,47 @@ WuerfelErgebnis:Integer;
       SpielerATK:=SPielerATK +2;    //Bei Betreten eines Raumes mit einem Gegner
       SpielerRK:=SpielerRK +2;      //Wird dem Spieler 2 RK abgezogen
       UIRefresh.UIRefresh();
-
-      Ostweg.Schrittweite:=Ostweg.Schrittweite+1;
-      Westweg.Schrittweite:=Westweg.Schrittweite+1;  //Entsprechend fortührend
-      Graumoor.Schrittweite:=Graumoor.Schrittweite+1;
+      
+	  Spinnennest.Schrittweite:=Spinnennest.Schrittweite+1;				//Entsprechend fortührend	
+	  Spinnenkammer.Schrittweite:=Spinnenkammer.Schrittweite+1;
+	  Waldlichtung.Schrittweite:=Waldlichtung.Schrittweite+1;
+	  Hoehle.Schrittweite:=Hoehle.Schrittweite+1;
+	  Abgrund_des_brennenden_Steins.Schrittweite:=Abgrund_des_brennenden_Steins.Schrittweite+1;
+	  Tautropfwald.Schrittweite:=Tautropfwald.Schrittweite+1;
+	  Weggabelung.Schrittweite:=Weggabelung.Schrittweite+1;
+	  Hoehleneingang.Schrittweite:=Hoehleneingang.Schrittweite+1;
+	  Lagerhalle.Schrittweite:=Lagerhalle.Schrittweite+1;
+	  Feuerschlot.Schrittweite:=Feuerschlot.Schrittweite+1;
+	  Oeder_Morast.Schrittweite:=Oeder_Morast.Schrittweite+1;
+	  Waldweg.Schrittweite:=Waldweg.Schrittweite+1;
+	  Grosse_Blumenwiese.Schrittweite:=Grosse_Blumenwiese.Schrittweite+1;
+	  Apfelwiese.Schrittweite:=Apfelwiese.Schrittweite+1;
+	  Kaserne.Schrittweite:=Kaserne.Schrittweite+1;
+	  Schlafgemach.Schrittweite:=Schlafgemach.Schrittweite+1;
+	  Einsame_Herberge.Schrittweite:=Einsame_Herberge.Schrittweite+1;
+	  Graumoor.Schrittweite:=Graumoor.Schrittweite+1;
+	  Schattenweiden.Schrittweite:=Schattenweiden.Schrittweite+1;
+	  Westweg.Schrittweite:=Westweg.Schrittweite+1;
+	  Bruecke.Schrittweite:=Bruecke.Schrittweite+1;
+	  Augvea.Schrittweite:=Augvea.Schrittweite+1;
+	  Ostweg.Schrittweite:=Ostweg.Schrittweite+1;
+	  Oestliche_Huegel.Schrittweite:=Oestliche_Huegel.Schrittweite+1;
+	  Verlassene_Burg.Schrittweite:=Verlassene_Burg.Schrittweite+1;
+	  Wachturm.Schrittweite:=Wachturm.Schrittweite+1;
+	  Kleiner_See.Schrittweite:=Kleiner_See.Schrittweite+1;
+	  Strasse_in_den_Sueden.Schrittweite:=Strasse_in_den_Sueden.Schrittweite+1;
+	  Tal.Schrittweite:=Tal.Schrittweite+1;
+	  Grosse_Duene.Schrittweite:=Grosse_Duene.Schrittweite+1;
+	  MetSchallWueste.Schrittweite:=MetSchallWueste.Schrittweite+1;
+	  Goblinstamm.Schrittweite:=Goblinstamm.Schrittweite+1;
+	  Karawane.Schrittweite:=Karawane.Schrittweite+1;
+	  Am_schnellen_Bach.Schrittweite:=Am_schnellen_Bach.Schrittweite+1;
+	  Traenenwald.Schrittweite:=Traenenwald.Schrittweite+1;
+	  Baerenhoehle.Schrittweite:=Baerenhoehle.Schrittweite+1;
+	  Spitzdorf.Schrittweite:=Spitzdorf.Schrittweite+1;
+	  Kraehenhort.Schrittweite:=Kraehenhort.Schrittweite+1;
+	  Der_Grosse_Heuler.Schrittweite:=Der_Grosse_Heuler.Schrittweite+1;
+	  Der_Sonnenstich.Schrittweite:=Der_Sonnenstich.Schrittweite+1;
      //Muss hard coded werden
       end;
   end;
