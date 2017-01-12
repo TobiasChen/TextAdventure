@@ -550,12 +550,46 @@ begin
 end;
 procedure UpdateProcedure();
 begin//RaumName +4 RichtungsPfeile TShape + RaumButton
-
-  RaumMapUpdate(Augvea,nil,nil,nil,nil,Form2.Augvea);
+  RaumMapUpdate(Spinnennest,nil,nil,nil,nil,Form2.Spinnennest);
+  RaumMapUpdate(Spinnenkammer,nil,nil,nil,nil,Form2.Spinnenkammer);
+  RaumMapUpdate(Waldlichtung,nil,nil,nil,nil,Form2.Waldlichtung);
+  RaumMapUpdate(Hoehle,nil,nil,nil,nil,Form2.Hoehle);
+  RaumMapUpdate(Abgrund_des_brennenden_Steins,nil,nil,nil,nil,Form2.Abgrund_des_brennenden_Steins);
+  RaumMapUpdate(Tautropfwald,nil,nil,nil,nil,Form2.Tautropfwald);
+  RaumMapUpdate(Weggabelung,nil,nil,nil,nil,Form2.Weggabelung);
+  RaumMapUpdate(Hoehleneingang,nil,nil,nil,nil,Form2.Hoehleneingang);
+  RaumMapUpdate(Lagerhalle,nil,nil,nil,nil,Form2.Lagerhalle);
+  RaumMapUpdate(Feuerschlot,nil,nil,nil,nil,Form2.Feuerschlot);
+  RaumMapUpdate(Oeder_Morast,nil,nil,nil,nil,Form2.Oeder_Morast);
+  RaumMapUpdate(Waldweg,nil,nil,nil,nil,Form2.Waldweg);
+  RaumMapUpdate(Grosse_Blumenwiese,nil,nil,nil,nil,Form2.Grosse_Blumenwiese);
+  RaumMapUpdate(Apfelwiese,nil,nil,nil,nil,Form2.Apfelwiese);
+  RaumMapUpdate(Kaserne,nil,nil,nil,nil,Form2.Kaserne);
   RaumMapUpdate(Schlafgemach,nil,nil,nil,nil,Form2.Schlafgemach);
-  RaumMapUpdate(Ostweg,nil,nil, nil, nil, Form2.Ostweg);
+  RaumMapUpdate(Einsame_Herberge,nil,nil,nil,nil,Form2.Einsame_Herberge);
+  RaumMapUpdate(Graumoor,nil,nil,nil,nil,Form2.Graumoor);
+  RaumMapUpdate(Schattenweiden,nil,nil,nil,nil,Form2.Schattenweiden);
+  RaumMapUpdate(Westweg,nil,nil,nil,nil,Form2.Westweg);
+  RaumMapUpdate(Bruecke,nil,nil,nil,nil,Form2.Bruecke);
+  RaumMapUpdate(Augvea,nil,nil,nil,nil,Form2.Augvea);
+  RaumMapUpdate(Ostweg,nil,nil,nil,nil,Form2.Ostweg);
   RaumMapUpdate(Oestliche_Huegel,nil,nil,nil,nil,Form2.Oestliche_Huegel);
-
+  RaumMapUpdate(Verlassene_Burg,nil,nil,nil,nil,Form2.Verlassene_Burg);
+  RaumMapUpdate(Wachturm,nil,nil,nil,nil,Form2.Wachturm);
+  RaumMapUpdate(Kleiner_See,nil,nil,nil,nil,Form2.Kleiner_See);
+  RaumMapUpdate(Strasse_in_den_Sueden,nil,nil,nil,nil,Form2.Strasse_in_den_Sueden);
+  RaumMapUpdate(Tal,nil,nil,nil,nil,Form2.Tal);
+  RaumMapUpdate(Grosse_Duene,nil,nil,nil,nil,Form2.Grosse_Duene);
+  RaumMapUpdate(MetSchallWueste,nil,nil,nil,nil,Form2.MetSchallWueste);
+  RaumMapUpdate(Goblinstamm,nil,nil,nil,nil,Form2.Goblinstamm);
+  RaumMapUpdate(Karawane,nil,nil,nil,nil,Form2.Karawane);
+  RaumMapUpdate(Am_schnellen_Bach,nil,nil,nil,nil,Form2.Am_schnellen_Bach);
+  RaumMapUpdate(Traenenwald,nil,nil,nil,nil,Form2.Traenenwald);
+  RaumMapUpdate(Baerenhoehle,nil,nil,nil,nil,Form2.Baerenhoehle);
+  RaumMapUpdate(Spitzdorf,nil,nil,nil,nil,Form2.Spitzdorf);
+  RaumMapUpdate(Kraehenhort,nil,nil,nil,nil,Form2.Kraehenhort);
+  RaumMapUpdate(Der_Grosse_Heuler,nil,nil,nil,nil,Form2.Der_Grosse_Heuler);
+  RaumMapUpdate(Der_Sonnenstich,nil,nil,nil,nil,Form2.Der_Sonnenstich);
 end;
 end.
 
