@@ -6,8 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ExtCtrls, RichMemo, mTRaum, MTEnemy, Kampfprozedure, ProzedureRaumWechsel,
-  UIRefresh, mTLoot, LootDrop, RaumUpdate;
+  ExtCtrls;
 
 type
 

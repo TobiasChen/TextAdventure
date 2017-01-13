@@ -5,10 +5,11 @@ unit ProzedureRaumwechsel;
 interface
 
 uses
-  Classes, SysUtils,mTRaum,KampfProzedure;
+  Classes, SysUtils,FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,mTRaum,KampfProzedure;
 var
  aktuellerRaum: TRaum;
  vorherigerRaum: TRaum;
+ repeatcount:integer;
 procedure RaumWechsel(Eingabe:Traum);
 //procedure Hunt();
 implementation
@@ -36,6 +37,11 @@ WuerfelErgebnis:Integer;
       Form1.Memo1.lines.add(aktuellerRaum.WESTENLeave);
       vorherigerRaum:=aktuellerRaum;
       aktuellerRaum:=Eingabe;
+      //changing of the Animation
+      Form1.Character_Picture.Sprite.LoadFromFile(Application.Location+'\SpriteSheets\run.bmp');
+
+         repeatcount:=repeatcount+1;
+      Form1.Character_Picture.AnimRepeat:=0;
       //Temporäre Loot aus dem vorherigem Raum wird gelöscht
       tempLoot:=nil;
       UIRefresh.UIRefresh();//Zweiter UIRefresh  weil Gründe

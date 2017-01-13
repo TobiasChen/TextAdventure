@@ -7,13 +7,14 @@ interface
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
   RichMemo, mTRaum, MTEnemy, Kampfprozedure, ProzedureRaumWechsel, UIRefresh,
-  mTLoot,LootDrop,RaumUpdate,Map;
+  mTLoot,LootDrop,RaumUpdate,Map, BGRASpriteAnimation;
 
 type
 
   { TForm1 }
 
   TForm1 = class(TForm)
+    Character_Picture: TBGRASpriteAnimation;
     Button1: TButton;
     Button10: TButton;
     Button11: TButton;
@@ -403,6 +404,8 @@ begin
    SpielerRuestung:=Gewand;
    SpielerSchuhe:=Alte_Latscher;
    SpielerWaffe:=Verrotteter_Klumpen;
+   //UI Geschichten
+   Character_Picture.Sprite.LoadFromFile(Application.Location+'\SpriteSheets\idle.bmp');
    UIRefresh.UiRefresh();
 end;
 
@@ -463,8 +466,8 @@ begin
  else if uppercase(Eingabe) = 'FLIEHEN'
  then
  begin
-   aktuellerRaum:=vorherigerRaum;
-   IstInKampf:=false;
+ //  aktuellerRaum:=vorherigerRaum;
+ //  IstInKampf:=false;
  end
  //Angreifen//
 
