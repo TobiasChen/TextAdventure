@@ -61,7 +61,6 @@ type
     Strasse_in_den_Sueden: TButton;
     Schlafgemach: TButton;
     Ostweg: TButton;
-    Augvea2Ostweg1: TShape;
     Grosse_Blumenwiese: TButton;
     Hoehleneingang: TButton;
     Grosse_Blumenwiese2Hoehleneingang: TShape;
@@ -98,9 +97,9 @@ type
     Waldweg: TButton;
     Augvea2Schlafgemach: TShape;
     Augvea2Ostweg: TShape;
-    Ostweg2Oestliche_Huegel: TShape;
     Augvea2Waldweg: TShape;
     procedure FormCreate(Sender: TObject);
+    procedure OstwegClick(Sender: TObject);
   private
     { private declarations }
   public
@@ -120,11 +119,9 @@ begin
 
 end;
 
-{ TForm2 }
+procedure TForm2.OstwegClick(Sender: TObject);
+begin
 
-{ TForm2 }
-
-
-
+end;
 end.
 

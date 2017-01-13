@@ -58,7 +58,6 @@ type
     procedure Button8Click(Sender: TObject);
     procedure Button9Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure LabelRaumClick(Sender: TObject);
     procedure UpdateProcedure();
   private
     { private declarations }
@@ -303,40 +302,40 @@ begin
    RaumUpdate.RaumUpdate(Hoehle,Spinnenkammer,nil,Hoehleneingang,nil);
    RaumUpdate.RaumUpdate(Abgrund_des_brennenden_Steins,nil,nil,Feuerschlot,nil);
    RaumUpdate.RaumUpdate(Tautropfwald,Waldlichtung,Weggabelung,nil,nil);
-   RaumUpdate.RaumUpdate(Weggabelung,nil,Hoehleneingang,Waldweg,Tautropfwald);
-   RaumUpdate.RaumUpdate(Hoehleneingang,Hoehle,nil,Grosse_Blumenwiese,Weggabelung);
+   RaumUpdate.RaumUpdate(Weggabelung,nil,nil,Waldweg,Tautropfwald);
+   RaumUpdate.RaumUpdate(Hoehleneingang,Hoehle,nil,Grosse_Blumenwiese,nil);
    RaumUpdate.RaumUpdate(Lagerhalle,nil,nil,Schlafgemach,nil);
-   RaumUpdate.RaumUpdate(Feuerschlot,Abgrund_des_brennenden_Steins,Oeder_Morast,Graumoor,nil);
-   RaumUpdate.RaumUpdate(Oeder_Morast,nil,nil,Schattenweiden,Feuerschlot);
+   RaumUpdate.RaumUpdate(Feuerschlot,Abgrund_des_brennenden_Steins,nil,Schattenweiden,nil);
+   RaumUpdate.RaumUpdate(Oeder_Morast,Schattenweiden,nil,Kleiner_See,Graumoor);
    RaumUpdate.RaumUpdate(Waldweg,Weggabelung,Grosse_Blumenwiese,Augvea,nil);
-   RaumUpdate.RaumUpdate(Grosse_Blumenwiese,Hoehleneingang,Apfelwiese,Ostweg,Augvea);
+   RaumUpdate.RaumUpdate(Grosse_Blumenwiese,Hoehleneingang,Apfelwiese,nil,Waldweg);
    RaumUpdate.RaumUpdate(Apfelwiese,nil,nil,Oestliche_Huegel,Grosse_Blumenwiese);
-   RaumUpdate.RaumUpdate(Kaserne,nil,Schlafgemach,Wachturm,nil);
-   RaumUpdate.RaumUpdate(Schlafgemach,Lagerhalle,nil,nil,Kaserne);
-   RaumUpdate.RaumUpdate(Einsame_Herberge,nil,Graumoor,nil,nil);
-   RaumUpdate.RaumUpdate(Graumoor,Feuerschlot,Schattenweiden,Kleiner_See,Einsame_Herberge);
-   RaumUpdate.RaumUpdate(Schattenweiden,Oeder_Morast,Westweg,nil,Graumoor);
+   RaumUpdate.RaumUpdate(Kaserne,Schlafgemach,nil,nil,Wachturm);
+   RaumUpdate.RaumUpdate(Schlafgemach,Lagerhalle,nil,Kaserne,nil);
+   RaumUpdate.RaumUpdate(Einsame_Herberge,nil,Schattenweiden,nil,nil);
+   RaumUpdate.RaumUpdate(Graumoor,nil,Oeder_Morast,nil,nil);
+   RaumUpdate.RaumUpdate(Schattenweiden,Feuerschlot,Westweg,Oeder_Morast,Einsame_Herberge);
    RaumUpdate.RaumUpdate(Westweg,nil,Bruecke,nil,Schattenweiden);
    RaumUpdate.RaumUpdate(Bruecke,nil,Augvea,nil,Westweg);
    RaumUpdate.RaumUpdate(Augvea,Waldweg,Ostweg,Strasse_in_den_Sueden,Bruecke);
-   RaumUpdate.RaumUpdate(Ostweg,Grosse_Blumenwiese,Oestliche_Huegel,Tal,Augvea);
-   RaumUpdate.RaumUpdate(Oestliche_Huegel,Apfelwiese,Verlassene_Burg,Grosse_Duene,Ostweg);
-   RaumUpdate.RaumUpdate(Verlassene_Burg,nil,Wachturm,MetSchallWueste,Oestliche_Huegel);
-   RaumUpdate.RaumUpdate(Wachturm,Kaserne,nil,nil,Verlassene_Burg);
-   RaumUpdate.RaumUpdate(Kleiner_See,Graumoor,nil,Goblinstamm,nil);
+   RaumUpdate.RaumUpdate(Ostweg,nil,Oestliche_Huegel,nil,Augvea);
+   RaumUpdate.RaumUpdate(Oestliche_Huegel,Apfelwiese,Verlassene_Burg,nil,Ostweg);
+   RaumUpdate.RaumUpdate(Verlassene_Burg,Wachturm,nil,nil,Oestliche_Huegel);
+   RaumUpdate.RaumUpdate(Wachturm,nil,Kaserne,Verlassene_Burg,nil);
+   RaumUpdate.RaumUpdate(Kleiner_See,Oeder_Morast,nil,Goblinstamm,nil);
    RaumUpdate.RaumUpdate(Strasse_in_den_Sueden,Augvea,Tal,Karawane,nil);
-   RaumUpdate.RaumUpdate(Tal,Ostweg,Grosse_Duene,Am_schnellen_Bach,Strasse_in_den_Sueden);
-   RaumUpdate.RaumUpdate(Grosse_Duene,Oestliche_Huegel,MetSchallWueste,Traenenwald,Tal);
-   RaumUpdate.RaumUpdate(MetSchallWueste,Verlassene_Burg,nil,Baerenhoehle,Grosse_Duene);
+   RaumUpdate.RaumUpdate(Tal,nil,Grosse_Duene,Am_schnellen_Bach,Strasse_in_den_Sueden);
+   RaumUpdate.RaumUpdate(Grosse_Duene,nil,MetSchallWueste,nil,Tal);
+   RaumUpdate.RaumUpdate(MetSchallWueste,nil,nil,nil,Grosse_Duene);
    RaumUpdate.RaumUpdate(Goblinstamm,Kleiner_See,nil,nil,nil);
    RaumUpdate.RaumUpdate(Karawane,Strasse_in_den_Sueden,Am_schnellen_Bach,nil,nil);
    RaumUpdate.RaumUpdate(Am_schnellen_Bach,Tal,Traenenwald,Spitzdorf,Karawane);
-   RaumUpdate.RaumUpdate(Traenenwald,Grosse_Duene,Baerenhoehle,Kraehenhort,Am_schnellen_Bach);
-   RaumUpdate.RaumUpdate(Baerenhoehle,MetSchallWueste,nil,Der_Grosse_Heuler,Traenenwald);
-   RaumUpdate.RaumUpdate(Spitzdorf,Am_schnellen_Bach,Kraehenhort,nil,nil);
-   RaumUpdate.RaumUpdate(Kraehenhort,Traenenwald,Der_Grosse_Heuler,nil,Spitzdorf);
-   RaumUpdate.RaumUpdate(Der_Grosse_Heuler,Baerenhoehle,nil,Der_Sonnenstich,Kraehenhort);
-   RaumUpdate.RaumUpdate(Der_Sonnenstich,Der_Grosse_Heuler,nil,nil,nil);
+   RaumUpdate.RaumUpdate(Traenenwald,nil,Baerenhoehle,nil,Am_schnellen_Bach);
+   RaumUpdate.RaumUpdate(Baerenhoehle,nil,nil,Kraehenhort,Traenenwald);
+   RaumUpdate.RaumUpdate(Spitzdorf,Am_schnellen_Bach,Der_grosse_Heuler,nil,nil);
+   RaumUpdate.RaumUpdate(Kraehenhort,Baerenhoehle,nil,Der_Sonnenstich,Der_grosse_Heuler);
+   RaumUpdate.RaumUpdate(Der_Grosse_Heuler,nil,Kraehenhort,nil,Spitzdorf);
+   RaumUpdate.RaumUpdate(Der_Sonnenstich,Kraehenhort,nil,nil,nil);
    //RaumUpdate Benötigt RaumPointer+AusgangsBeschreibungen
    RaumNamenUpdate(Augvea,'','Du tritts durch die Stadttore und siehst die Oststraße vor dir. In der ferne kannst du das Moor erkennen','Du tritts in die Herberge,hier kannst du die erholen','Du tritts durch die Stadttore und siehst den Weg der sich in die Berge schlängelt');
    RaumNamenUpdate(Schlafgemach,'Du verlässt die Herberge und stehst wieder auf dem Marktplatz','','','');
@@ -405,16 +404,6 @@ begin
    SpielerSchuhe:=Alte_Latscher;
    SpielerWaffe:=Verrotteter_Klumpen;
    UIRefresh.UiRefresh();
-end;
-
-procedure TForm1.LabelRaumClick(Sender: TObject);
-begin
-
-end;
-
-procedure TForm1.UpdateProcedure;
-begin
-
 end;
 
 //--------------------------------Der Absolut------------------------------------//
@@ -511,7 +500,7 @@ end;
 
 procedure TForm1.Button13Click(Sender: TObject);
 begin
-   form2.Show;
+   Form2.Show;
    UpdateProcedure();
 end;
 
@@ -554,7 +543,7 @@ procedure TForm1.Button9Click(Sender: TObject);
 begin
   RaumWechsel(AktuellerRaum.Sueden);
 end;
-procedure UpdateProcedure();
+procedure TForm1.UpdateProcedure();
 begin//RaumName +4 RichtungsPfeile TShape + RaumButton
   RaumMapUpdate(Spinnennest,nil,form2.Spinnenkammer2Spinnennest,nil,nil,Form2.Spinnennest);
   RaumMapUpdate(Spinnenkammer,nil,nil,Form2.Hoehle2Spinnenkammer,nil,Form2.Spinnenkammer);
@@ -569,7 +558,7 @@ begin//RaumName +4 RichtungsPfeile TShape + RaumButton
   RaumMapUpdate(Oeder_Morast,Form2.Schattenweiden2Oeder_Morast,nil,nil,nil,Form2.Oeder_Morast);
   RaumMapUpdate(Waldweg,nil,nil,Form2.Augvea2Waldweg,nil,Form2.Waldweg);
   RaumMapUpdate(Grosse_Blumenwiese,nil,nil,nil,Form2.Waldweg2Grosse_Blumenwiese,Form2.Grosse_Blumenwiese);
-  RaumMapUpdate(Apfelwiese,nil,nil,nil,nil,Form2.Apfelwiese);
+  RaumMapUpdate(Apfelwiese,nil,nil,Form2.Apfelwiese2Oestliche_Huegel,Form2.Grosse_Blumenwiese2Apfelwiese,Form2.Apfelwiese);
   RaumMapUpdate(Kaserne,nil,nil,nil,Form2.Wachturm2Kaserne,Form2.Kaserne);
   RaumMapUpdate(Schlafgemach,nil,nil,Form2.Kaserne2Schlafgemach,nil,Form2.Schlafgemach);
   RaumMapUpdate(Einsame_Herberge,nil,nil,nil,Form2.Schattenweiden2Einsame_Herberge,Form2.Einsame_Herberge);
@@ -578,24 +567,24 @@ begin//RaumName +4 RichtungsPfeile TShape + RaumButton
   RaumMapUpdate(Westweg,nil,Form2.Bruecke2Westweg,nil,nil,Form2.Westweg);
   RaumMapUpdate(Bruecke,nil,Form2.Augvea2Bruecke,nil,nil,Form2.Bruecke);
   RaumMapUpdate(Augvea,nil,nil,nil,nil,Form2.Augvea);
-  RaumMapUpdate(Ostweg,nil,nil,nil,Form2.Aug,Form2.Ostweg);
-  RaumMapUpdate(Oestliche_Huegel,nil,nil,nil,nil,Form2.Oestliche_Huegel);
-  RaumMapUpdate(Verlassene_Burg,nil,nil,nil,nil,Form2.Verlassene_Burg);
-  RaumMapUpdate(Wachturm,nil,nil,nil,nil,Form2.Wachturm);
-  RaumMapUpdate(Kleiner_See,nil,nil,nil,nil,Form2.Kleiner_See);
-  RaumMapUpdate(Strasse_in_den_Sueden,nil,nil,nil,nil,Form2.Strasse_in_den_Sueden);
-  RaumMapUpdate(Tal,nil,nil,nil,nil,Form2.Tal);
-  RaumMapUpdate(Grosse_Duene,nil,nil,nil,nil,Form2.Grosse_Duene);
-  RaumMapUpdate(MetSchallWueste,nil,nil,nil,nil,Form2.Met_Schall_Wueste);
-  RaumMapUpdate(Goblinstamm,nil,nil,nil,nil,Form2.Goblin_Dorf);
-  RaumMapUpdate(Karawane,nil,nil,nil,nil,Form2.Karawane_Pfad);
-  RaumMapUpdate(Am_schnellen_Bach,nil,nil,nil,nil,Form2.Am_schnellen_Bach);
-  RaumMapUpdate(Traenenwald,nil,nil,nil,nil,Form2.Traenenwald);
-  RaumMapUpdate(Baerenhoehle,nil,nil,nil,nil,Form2.Baerenhoehle);
-  RaumMapUpdate(Spitzdorf,nil,nil,nil,nil,Form2.Spitzdorf);
-  RaumMapUpdate(Kraehenhort,nil,nil,nil,nil,Form2.Kraehenhort);
-  RaumMapUpdate(Der_Grosse_Heuler,nil,nil,nil,nil,Form2.Der_Grosse_Heuler);
-  RaumMapUpdate(Der_Sonnenstich,nil,nil,nil,nil,Form2.Der_Sonnenstich);
+  RaumMapUpdate(Ostweg,nil,nil,nil,Form2.Augvea2Ostweg,Form2.Ostweg);
+  RaumMapUpdate(Oestliche_Huegel,nil,nil,nil,Form2.Ostweg2Oestliche_Huegel,Form2.Oestliche_Huegel);
+  RaumMapUpdate(Verlassene_Burg,nil,nil,nil,Form2.Oestliche_Huegel2Verlassene_Burg,Form2.Verlassene_Burg);
+  RaumMapUpdate(Wachturm,nil,nil,Form2.Verlassene_Burg2Wachturm,nil,Form2.Wachturm);
+  RaumMapUpdate(Kleiner_See,Form2.Oeder_Morast2Kleiner_See,nil,nil,nil,Form2.Kleiner_See);
+  RaumMapUpdate(Strasse_in_den_Sueden,Form2.Augvea2Strasse_in_den_Sueden,nil,nil,nil,Form2.Strasse_in_den_Sueden);
+  RaumMapUpdate(Tal,nil,nil,nil,Form2.Strasse_in_den_Sueden2Tal,Form2.Tal);
+  RaumMapUpdate(Grosse_Duene,nil,nil,nil,Form2.Tal2Grosse_Duenne,Form2.Grosse_Duene);
+  RaumMapUpdate(MetSchallWueste,nil,nil,nil,Form2.Grosse_Duene2Met_Schall_Wueste,Form2.Met_Schall_Wueste);
+  RaumMapUpdate(Goblinstamm,Form2.Kleiner_See2Goblin_Dorf,nil,nil,nil,Form2.Goblin_Dorf);
+  RaumMapUpdate(Karawane,Form2.Strasse_in_den_Sueden2Karawane_Pfad,nil,nil,nil,Form2.Karawane_Pfad);
+  RaumMapUpdate(Am_schnellen_Bach,Form2.Tal2Am_Schnellen_Bach,nil,nil,Form2.Karawane_Pfad2Am_Schnellen_Bach,Form2.Am_schnellen_Bach);
+  RaumMapUpdate(Traenenwald,nil,nil,nil,Form2.Am_Schnellen_Bach2Traenenwald,Form2.Traenenwald);
+  RaumMapUpdate(Baerenhoehle,nil,nil,Form2.Baerenhoehle2Kraehenhort,Form2.Traenenwald2Baerenhoehle,Form2.Baerenhoehle);
+  RaumMapUpdate(Spitzdorf,Form2.Am_Schnellen_Bach2Spitzdorf,nil,nil,nil,Form2.Spitzdorf);
+  RaumMapUpdate(Kraehenhort,nil,nil,nil,Form2.Der_grosse_Heuler2Kraehenhort,Form2.Kraehenhort);
+  RaumMapUpdate(Der_Grosse_Heuler,nil,nil,nil,Form2.Spitzdorf2Der_Grosse_Heuler,Form2.Der_Grosse_Heuler);
+  RaumMapUpdate(Der_Sonnenstich,Form2.Kraenhort2Der_Sonnenstich,nil,nil,nil,Form2.Der_Sonnenstich);
 end;
 end.
 

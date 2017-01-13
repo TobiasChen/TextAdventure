@@ -1,11 +1,11 @@
 object Form1: TForm1
-  Left = 138
+  Left = 203
   Height = 910
-  Top = 316
+  Top = 144
   Width = 1405
   Caption = 'Form1'
-  ClientHeight = 0
-  ClientWidth = 0
+  ClientHeight = 910
+  ClientWidth = 1405
   OnCreate = FormCreate
   LCLVersion = '1.6.2.0'
   object Button1: TButton
@@ -53,7 +53,6 @@ object Form1: TForm1
     Font.Quality = fqDraft
     ParentColor = False
     ParentFont = False
-    OnClick = LabelRaumClick
   end
   object LabelHPunverwendet: TLabel
     Left = 1096
@@ -334,6 +333,7 @@ object Form1: TForm1
     Height = 32
     Top = 816
     Width = 83
+    Caption = 'Map'
     OnClick = Button13Click
     TabOrder = 14
   end

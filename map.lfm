@@ -1,11 +1,11 @@
 object Form2: TForm2
-  Left = 4
-  Height = 912
-  Top = 122
-  Width = 1912
+  Left = -8
+  Height = 1137
+  Top = -8
+  Width = 1920
   Caption = 'Form2'
-  ClientHeight = 912
-  ClientWidth = 1912
+  ClientHeight = 1137
+  ClientWidth = 1920
   OnCreate = FormCreate
   LCLVersion = '1.6.2.0'
   object Augvea2Ostweg: TShape
@@ -25,6 +25,7 @@ object Form2: TForm2
     Width = 153
     Caption = 'Ostweg'
     Font.Height = -16
+    OnClick = OstwegClick
     ParentFont = False
     TabOrder = 1
     Visible = False
@@ -138,7 +139,7 @@ object Form2: TForm2
     Height = 28
     Top = 280
     Width = 153
-    Caption = 'Hoehleneingang'
+    Caption = 'Höhleneingang'
     Font.Height = -16
     ParentFont = False
     TabOrder = 6
@@ -180,7 +181,7 @@ object Form2: TForm2
     Height = 28
     Top = 184
     Width = 153
-    Caption = 'Hoehle'
+    Caption = 'Kammer'
     Font.Height = -16
     ParentFont = False
     TabOrder = 8
@@ -264,7 +265,7 @@ object Form2: TForm2
     Height = 28
     Top = 472
     Width = 153
-    Caption = 'Oestliche_Huegel'
+    Caption = 'Östliche Hügel'
     Font.Height = -16
     ParentFont = False
     TabOrder = 12
@@ -285,7 +286,7 @@ object Form2: TForm2
     Height = 28
     Top = 472
     Width = 153
-    Caption = 'Verlassene_Burg'
+    Caption = 'Verlassene Burg'
     Font.Height = -16
     ParentFont = False
     TabOrder = 13
@@ -390,7 +391,7 @@ object Form2: TForm2
     Height = 28
     Top = 568
     Width = 153
-    Caption = 'Strasse_in_den_Sueden'
+    Caption = 'Straße in den Süden'
     Font.Height = -16
     ParentFont = False
     TabOrder = 18
@@ -421,7 +422,7 @@ object Form2: TForm2
     Height = 28
     Top = 664
     Width = 153
-    Caption = 'Karawane_Pfad'
+    Caption = 'Karawanen Pfad'
     Font.Height = -16
     ParentFont = False
     TabOrder = 19
@@ -442,7 +443,7 @@ object Form2: TForm2
     Height = 28
     Top = 664
     Width = 153
-    Caption = 'Am_Schnellen_Bach'
+    Caption = 'Am Schnellen Bach'
     Font.Height = -16
     ParentFont = False
     TabOrder = 20
@@ -484,7 +485,7 @@ object Form2: TForm2
     Height = 28
     Top = 760
     Width = 153
-    Caption = 'Kraehenhort'
+    Caption = 'Krähenhort'
     Font.Height = -16
     ParentFont = False
     TabOrder = 22
@@ -505,7 +506,7 @@ object Form2: TForm2
     Height = 28
     Top = 760
     Width = 153
-    Caption = 'Der_Grosse_Heuler'
+    Caption = 'Der Große Heuler'
     Font.Height = -16
     ParentFont = False
     TabOrder = 23
@@ -526,7 +527,7 @@ object Form2: TForm2
     Height = 28
     Top = 856
     Width = 153
-    Caption = 'Der_Sonnenstich'
+    Caption = 'Der Sonnenstich'
     Font.Height = -16
     ParentFont = False
     TabOrder = 24
@@ -568,7 +569,7 @@ object Form2: TForm2
     Height = 28
     Top = 664
     Width = 153
-    Caption = 'Baerenhoehle'
+    Caption = 'Bärenhöle'
     Font.Height = -16
     ParentFont = False
     TabOrder = 26
@@ -620,7 +621,7 @@ object Form2: TForm2
     Height = 28
     Top = 568
     Width = 153
-    Caption = 'Grosse_Duene'
+    Caption = 'Große Düne'
     Font.Height = -16
     ParentFont = False
     TabOrder = 28
@@ -641,7 +642,7 @@ object Form2: TForm2
     Height = 28
     Top = 568
     Width = 153
-    Caption = 'Met_Schall_Wueste'
+    Caption = 'Met''Schall-Wüste'
     Font.Height = -16
     ParentFont = False
     TabOrder = 29
@@ -662,7 +663,7 @@ object Form2: TForm2
     Height = 28
     Top = 472
     Width = 153
-    Caption = 'Bruecke'
+    Caption = 'Brücke'
     Font.Height = -16
     ParentFont = False
     TabOrder = 30
@@ -746,7 +747,7 @@ object Form2: TForm2
     Height = 28
     Top = 568
     Width = 153
-    Caption = 'Oeder_Morast'
+    Caption = 'Öder Morast'
     Font.Height = -16
     ParentFont = False
     TabOrder = 34
@@ -798,7 +799,7 @@ object Form2: TForm2
     Height = 28
     Top = 760
     Width = 153
-    Caption = 'Goblin_Dorf'
+    Caption = 'Goblin Dorf'
     Font.Height = -16
     ParentFont = False
     TabOrder = 36
@@ -840,7 +841,7 @@ object Form2: TForm2
     Height = 28
     Top = 280
     Width = 153
-    Caption = 'Abgrund_des_brennenden_Steins'
+    Caption = 'Abgrund des brennenden Steins'
     Font.Height = -11
     ParentFont = False
     TabOrder = 38
@@ -851,7 +852,7 @@ object Form2: TForm2
     Height = 28
     Top = 472
     Width = 153
-    Caption = 'Einsame_Herberge'
+    Caption = 'Einsame Herberge'
     Font.Height = -16
     ParentFont = False
     TabOrder = 39

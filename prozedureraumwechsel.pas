@@ -50,6 +50,7 @@ WuerfelErgebnis:Integer;
               aktuellerRaum.StrichSueden.visible:=true;
               if aktuellerRaum.StrichWesten <> nil then
               aktuellerRaum.StrichWesten.visible:=true;
+              if aktuellerRaum.Ort <> nil then
               aktuellerRaum.Ort.visible:=true;
          end; 
       //Wahrscheinlichkeit ein Monster zu spawnen
