@@ -131,7 +131,8 @@ var
   Untoter_Ritter: TEnemy;		
   Fliegendes_Schwert: TEnemy;  	
   Riesenfledermaus: TEnemy;		
-  Feuerelementar: TEnemy;		
+  Feuerelementar: TEnemy;	
+  Imp: TEnemy;  
   Bandit: TEnemy;				
   Schleim: TEnemy;				
   Baer: TEnemy;					
@@ -240,6 +241,7 @@ begin
    
 			//Vulkan//
    Feuerelementar		:= TEnemy.create('Feuerelementar','sich scheinbar kontrolliert bewegendem, dass nach dir ausschlägt,',45,19,6,'magisch');
+   Imp				    := TEnemy.create('Imp','einem kleinen Dämonen mit brennenden Augen',25,17,5,'erlesen');
    
 			//Wüste//
    Skorpione			:= TEnemy.create('Skorpione','einigen kleinen und wirklich giftigen Skorpionen',5,18,8,'verschlissen');	
@@ -344,46 +346,46 @@ begin
    RaumNamenUpdate(Westweg,'','Du betritts die Stadt und findest dich auf dem Marktplatz wieder','','');
    RaumNamenUpdate(Graumoor,'','','','Auf dem Weg aus dem Moor verfolgen dich die Albtraumhaften Bilder die du gesehen hast');
    //Zusätzliches Updates RaumPointer+Schwierigkeit+MD+MDA+MDS(ProzedureRaumwechsel und mTRAum)+Camp+CampPossible
-   ZusaetzlicheUpdates(Spinnennest,'Hoehlespinne',0,0,0,false);					
-   ZusaetzlicheUpdates(Spinnenkammer,'Hoehleboss',0,0,0,false);				
-   ZusaetzlicheUpdates(Waldlichtung,'Wald',0,0,0,false);					
-   ZusaetzlicheUpdates(Hoehle,'Hoehle',0,0,0,false);						
-   ZusaetzlicheUpdates(Abgrund_des_brennenden_Steins,'Vulkan',0,0,0,false);
-   ZusaetzlicheUpdates(Tautropfwald,'Waldstark',0,0,0,false);
-   ZusaetzlicheUpdates(Weggabelung,'Wald',0,0,0,false);
-   ZusaetzlicheUpdates(Hoehleneingang,'Hoehle',0,0,0,false);
-   ZusaetzlicheUpdates(Lagerhalle,'Koenig',0,0,0,false);
-   ZusaetzlicheUpdates(Feuerschlot,'Vulkan',0,0,0,false);
-   ZusaetzlicheUpdates(Oeder_Morast,'Sumpf',0,0,0,false);
-   ZusaetzlicheUpdates(Waldweg,'Wald',0,0,0,false);
-   ZusaetzlicheUpdates(Grosse_Blumenwiese,'Offene_Landschaft',0,0,0,false);
-   ZusaetzlicheUpdates(Apfelwiese,'Offene_Landschaft',0,0,0,false);
-   ZusaetzlicheUpdates(Kaserne,'Burgstark',0,0,0,false);
-   ZusaetzlicheUpdates(Schlafgemach,'Burgstark',0,0,0,true);
-   ZusaetzlicheUpdates(Einsame_Herberge,'Herberge',0,0,0,true);
-   ZusaetzlicheUpdates(Graumoor,'Sumpf',0,0,0,false);
-   ZusaetzlicheUpdates(Schattenweiden,'Sumpf',0,0,0,false);
-   ZusaetzlicheUpdates(Westweg,'Weg',0,0,0,false);
-   ZusaetzlicheUpdates(Bruecke,'Weg',0,0,0,false);
+   ZusaetzlicheUpdates(Spinnennest,'Hoehleboss',100,1,80,false);					
+   ZusaetzlicheUpdates(Spinnenkammer,'Hoehlespinne',100,3,40,false);				
+   ZusaetzlicheUpdates(Waldlichtung,'Wald',60,2,35,false);					
+   ZusaetzlicheUpdates(Hoehle,'Hoehle',60,2,40,false);						
+   ZusaetzlicheUpdates(Abgrund_des_brennenden_Steins,'Vulkan',100,5,70,false);
+   ZusaetzlicheUpdates(Tautropfwald,'Waldstark',100,2,80,false);
+   ZusaetzlicheUpdates(Weggabelung,'Wald',40,1,50,false);
+   ZusaetzlicheUpdates(Hoehleneingang,'Hoehle',50,1,40,false);
+   ZusaetzlicheUpdates(Lagerhalle,'Koenig',100,0,100,false);
+   ZusaetzlicheUpdates(Feuerschlot,'Vulkan',100,3,65,false);
+   ZusaetzlicheUpdates(Oeder_Morast,'Sumpf',100,2,40,false);
+   ZusaetzlicheUpdates(Waldweg,'Wald',60,1,60,false);
+   ZusaetzlicheUpdates(Grosse_Blumenwiese,'Offene_Landschaft',30,1,40,false);
+   ZusaetzlicheUpdates(Apfelwiese,'Offene_Landschaft',50,2,55,false);
+   ZusaetzlicheUpdates(Kaserne,'Burgstark',100,4,30,false);
+   ZusaetzlicheUpdates(Schlafgemach,'Burgstark',100,2,80,true);
+   ZusaetzlicheUpdates(Einsame_Herberge,'Herberge',100,0,100,true);
+   ZusaetzlicheUpdates(Graumoor,'Sumpf',70,2,25,false);
+   ZusaetzlicheUpdates(Schattenweiden,'Sumpf',50,1,30,false);
+   ZusaetzlicheUpdates(Westweg,'Weg',30,1,45,false);
+   ZusaetzlicheUpdates(Bruecke,'Weg',10,1,30,false);
    ZusaetzlicheUpdates(Augvea,'',0,0,0,true);
-   ZusaetzlicheUpdates(Ostweg,'test',100,0,0,false);
-   ZusaetzlicheUpdates(Oestliche_Huegel,'Offene_Landschaft',0,0,0,false);
-   ZusaetzlicheUpdates(Verlassene_Burg,'Burg',0,0,0,false);
-   ZusaetzlicheUpdates(Wachturm,'Burg',0,0,0,false);
-   ZusaetzlicheUpdates(Kleiner_See,'Sumpf',0,0,0,false);
-   ZusaetzlicheUpdates(Strasse_in_den_Sueden,'Weg',0,0,0,false);
-   ZusaetzlicheUpdates(Tal,'Offene_Landschaft',0,0,0,false);
-   ZusaetzlicheUpdates(Grosse_Duene,'Wueste',0,0,0,false);
-   ZusaetzlicheUpdates(MetSchallWueste,'Wueste',0,0,0,false);
-   ZusaetzlicheUpdates(Goblinstamm,'Goblinstark',0,0,0,false);
-   ZusaetzlicheUpdates(Karawane,'Weg',0,0,0,false);
-   ZusaetzlicheUpdates(Am_schnellen_Bach,'Offene_Landschaft',0,0,0,false);
-   ZusaetzlicheUpdates(Traenenwald,'Waldstark',0,0,0,false);
-   ZusaetzlicheUpdates(Baerenhoehle,'Baer',0,0,0,false);
+   ZusaetzlicheUpdates(Ostweg,'Weg',30,1,45,false);
+   ZusaetzlicheUpdates(Oestliche_Huegel,'Offene_Landschaft',60,2,40,false);
+   ZusaetzlicheUpdates(Verlassene_Burg,'Burg',60,1,30,false);
+   ZusaetzlicheUpdates(Wachturm,'Burg',100,2,50,false);
+   ZusaetzlicheUpdates(Kleiner_See,'Sumpf',85,3,35,false);
+   ZusaetzlicheUpdates(Strasse_in_den_Sueden,'Weg',55,1,45,false);
+   ZusaetzlicheUpdates(Tal,'Offene_Landschaft',30,1,40,false);
+   ZusaetzlicheUpdates(Grosse_Duene,'Wueste',75,3,80,false);
+   ZusaetzlicheUpdates(MetSchallWueste,'Wueste',100,4,40,false);
+   ZusaetzlicheUpdates(Goblinstamm,'Goblinstark',100,5,40,false);
+   ZusaetzlicheUpdates(Karawane,'Weg',20,2,35,false);
+   ZusaetzlicheUpdates(Am_schnellen_Bach,'Offene_Landschaft',50,2,60,false);
+   ZusaetzlicheUpdates(Traenenwald,'Waldstark',100,2,70,false);
+   ZusaetzlicheUpdates(Baerenhoehle,'Baer',100,2,50,false);
    ZusaetzlicheUpdates(Spitzdorf,'',0,0,0,true);
-   ZusaetzlicheUpdates(Kraehenhort,'Friedhof',0,0,0,false);
-   ZusaetzlicheUpdates(Der_Grosse_Heuler,'Waldstark',0,0,0,false);
-   ZusaetzlicheUpdates(Der_Sonnenstich,'Zufall',0,0,0,false);
+   ZusaetzlicheUpdates(Kraehenhort,'Friedhof',80,2,35,false);
+   ZusaetzlicheUpdates(Der_Grosse_Heuler,'Waldstark',100,3,60,false);
+   ZusaetzlicheUpdates(Der_Sonnenstich,'Zufall',100,0,0,false);
    
    //Startwerte//
    AnfangsRaum:= Augvea;
@@ -426,6 +428,7 @@ begin
      Memo1.lines.add('Zurueck: In die vorherige Richtung gehen');
      Memo1.lines.add('Angreifen: Im Kampf einen Gegner attackieren');
      Memo1.lines.add('Fliehen: Im Kampf zum vorherigen Raum fliehen');
+	 Memo1.lines.add('Pick/Nehmen: Gegenstand aufnehmen');
    end
 
  //Raumwechsel//
@@ -453,7 +456,7 @@ begin
  begin
     RaumWechsel(AktuellerRaum.Westen);
  end
- else if uppercase(Eingabe) = 'PICK'
+ else if (uppercase(Eingabe) = 'PICK') or (uppercase(Eingabe)='NEHMEN')
  then
  begin
     LootDrop.Pickup();

@@ -54,8 +54,10 @@ var
 	 
      if aktuellerRaum.Difficulty='Vulkan' then
      begin
-       if Wuerfel <= 100  then                           
+       if Wuerfel <= 40  then                           
           aktuellerRaum.Enemy:=Feuerelementar;
+		  else if (Wuerfel > 40) and (Wuerfel <=100)   then
+            aktuellerRaum.Enemy:=Imp;
      end;
 	 
      if aktuellerRaum.Difficulty='Sumpf' then
