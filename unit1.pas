@@ -470,7 +470,7 @@ begin
  then
  begin
   Escape()
- end;
+ end
  //Angreifen//
 
  else if (uppercase(Eingabe) = 'ANGREIFEN')

@@ -12,9 +12,9 @@ var
  repeatcount:integer;
  PictureNumber:integer;
 procedure RaumWechsel(Eingabe:Traum);
-Procedure escape();
-Procedure leave();
-Procedure DifficultyUp();
+procedure escape();
+procedure leave();
+procedure DifficultyUp();
 //procedure Hunt();
 implementation
 uses Unit1,UI,Monsterspawn,LootDrop;
@@ -25,22 +25,22 @@ WuerfelErgebnis:Integer;
    if Eingabe = nil  then      //Fehler Ausschluß 
           Form1.Memo1.lines.add('Da ist kein Raum!')
    else
-     if IstInKampf = true  then
+   if IstInKampf = true  then
       begin
           Form1.Memo1.lines.add('Du bist in einem Kampf und kannst nur flüchten oder Angreifen')
-        end
-     else
-     begin
-       Leave();
-      vorherigerRaum:=aktuellerRaum;
-      aktuellerRaum:=Eingabe;
-      //Animation wird abgespielt
-      UI.Animation('Walk',14);
-      //Temporäre Loot aus dem vorherigem Raum wird gelöscht
-      tempLoot:=nil;
-      UI.UIRefresh();//Anzeige dws RaumNamens
-      if aktuellerRaum.Discoverd=false then         //Für die Map
-         begin
+      end
+    else
+        begin
+             Leave();
+             vorherigerRaum:=aktuellerRaum;
+             aktuellerRaum:=Eingabe;
+             //Animation wird abgespielt
+             UI.Animation('Walk',14);
+             //Temporäre Loot aus dem vorherigem Raum wird gelöscht
+             tempLoot:=nil;
+             UI.UIRefresh();//Anzeige dws RaumNamens
+             if aktuellerRaum.Discoverd=false then         //Für die Map
+             begin
               aktuellerRaum.Discoverd:=true;
               if aktuellerRaum.StrichNorden <> nil then
               aktuellerRaum.StrichNorden.visible:=true;
@@ -52,28 +52,32 @@ WuerfelErgebnis:Integer;
               aktuellerRaum.StrichWesten.visible:=true;
               if aktuellerRaum.Ort <> nil then
               aktuellerRaum.Ort.visible:=true;
-         end; 
-      //Wahrscheinlichkeit ein Monster zu spawnen
-      AktuellerRaum.MD:=AktuellerRaum.MD+ AktuellerRaum.Schrittweite*AktuellerRaum.MDA;
-      if AktuellerRaum.MD>=100 then
-        AktuellerRaum.MD:=100;
-      Wuerfelergebnis:= 1+random(100);
-      if WuerfelErgebnis-aktuellerRaum.MD<=0 then
-         Monsterspawn.Monsterspawn();
-      if AktuellerRaum.Enemy <> nil then
-      begin
-      IstInKampf:=true;
-      AktuellerGegner:=AktuellerRaum.Enemy;
-      Form1.Memo1.lines.add('Du wirst von '+aktuellerGegner.Beschreibung+' angegriffen!');
-      SpielerRK:=SPielerRK -2;
-      SpielerATK:=SPielerATK -2;
-      Kampf();                      //Ersatz für das Initative System
-      SpielerATK:=SPielerATK +2;    //Bei Betreten eines Raumes mit einem Gegner
-      SpielerRK:=SpielerRK +2;      //Wird dem Spieler 2 RK abgezogen
-      UI.UIRefresh();
-  DifficultyUp()
-  Procedure DifficultyUp():
-    Begin    
+             end;
+             //Wahrscheinlichkeit ein Monster zu spawnen
+             AktuellerRaum.MD:=AktuellerRaum.MD+ AktuellerRaum.Schrittweite*AktuellerRaum.MDA;
+             if AktuellerRaum.MD>=100 then
+                AktuellerRaum.MD:=100;
+             Wuerfelergebnis:= 1+random(100);
+             if WuerfelErgebnis-aktuellerRaum.MD<=0 then
+                Monsterspawn.Monsterspawn();
+             if AktuellerRaum.Enemy <> nil then
+                begin
+                KampfProzedure.IstInKampf:=true;
+                AktuellerGegner:=AktuellerRaum.Enemy;
+                Form1.Memo1.lines.add('Du wirst von '+aktuellerGegner.Beschreibung+' angegriffen!');
+                SpielerRK:=SPielerRK -2;
+                SpielerATK:=SPielerATK -2;
+                Kampf();                      //Ersatz für das Initative System
+                SpielerATK:=SPielerATK +2;    //Bei Betreten eines Raumes mit einem Gegner
+                SpielerRK:=SpielerRK +2;      //Wird dem Spieler 2 RK abgezogen
+                UI.UIRefresh();
+                DifficultyUp();
+                end;
+        end;
+   end;
+
+procedure DifficultyUp ();
+     Begin
 	  Spinnennest.Schrittweite:=Spinnennest.Schrittweite+1;				//Entsprechend fortührend	
 	  Spinnenkammer.Schrittweite:=Spinnenkammer.Schrittweite+1;
 	  Waldlichtung.Schrittweite:=Waldlichtung.Schrittweite+1;
@@ -118,10 +122,7 @@ WuerfelErgebnis:Integer;
      //Eine Möglichkeit dies zu ändern wäre alle Räume durch Zahlen zu identifizieren
      //und duch eine for i to schleife zu jagen
      End;
-      end;
-  end;
-end;
-Procedure leave():
+Procedure leave();
 Begin
       if uppercase(Unit1.Eingabe) = 'NORDEN' then
       Form1.Memo1.lines.add(aktuellerRaum.NORDENLeave)
@@ -134,15 +135,18 @@ Begin
 End;
 Procedure escape();
   Begin
-     If IstInKamp=false then
-        Memo1.Lines.Add('Du bist nicht im Kampf,zum Raumwechsel nutze die Richtungstasten')
-     Else
-       IstInKampf:=false
-       UI.Animation(Run,10)
+     If KampfProzedure.IstInKampf=false then
+        Form1.Memo1.Lines.Add('Du bist nicht im Kampf,zum Raumwechsel nutze die Richtungstasten')
+     else if KampfProzedure.IstInKampf=true then
+      begin
+       KampfProzedure.IstInKampf:=false;
+       UI.Animation('Run',10);
        aktuellerRaum :=vorherigerRaum;
        AktuellerRaum.Enemy:=nil;
        temploot:=nil;
        DifficultyUp();
+       UI.UIRefresh();
+      end;
   End;
 {procedure Hunt();
 var
