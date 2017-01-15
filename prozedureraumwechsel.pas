@@ -5,15 +5,16 @@ unit ProzedureRaumwechsel;
 interface
 
 uses
-  Classes, SysUtils,FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,mTRaum,KampfProzedure;
+  Classes, SysUtils,mTRaum,KampfProzedure;
 var
  aktuellerRaum: TRaum;
  vorherigerRaum: TRaum;
  repeatcount:integer;
+ PictureNumber:integer;
 procedure RaumWechsel(Eingabe:Traum);
 //procedure Hunt();
 implementation
-uses Unit1,UIRefresh,Monsterspawn,LootDrop;
+uses Unit1,UI,Monsterspawn,LootDrop;
 procedure RaumWechsel(Eingabe:Traum);
 var
 WuerfelErgebnis:Integer;
@@ -37,14 +38,11 @@ WuerfelErgebnis:Integer;
       Form1.Memo1.lines.add(aktuellerRaum.WESTENLeave);
       vorherigerRaum:=aktuellerRaum;
       aktuellerRaum:=Eingabe;
-      //changing of the Animation
-      Form1.Character_Picture.Sprite.LoadFromFile(Application.Location+'\SpriteSheets\run.bmp');
-
-         repeatcount:=repeatcount+1;
-      Form1.Character_Picture.AnimRepeat:=0;
+      //Animation wird abgespielt
+      UI.Animation('Walk',14);
       //Temporäre Loot aus dem vorherigem Raum wird gelöscht
       tempLoot:=nil;
-      UIRefresh.UIRefresh();//Zweiter UIRefresh  weil Gründe
+      UI.UIRefresh();//Zweiter UIRefresh  weil Gründe
       if aktuellerRaum.Discoverd=false then         //Für die Map
          begin
               aktuellerRaum.Discoverd:=true;
@@ -76,7 +74,7 @@ WuerfelErgebnis:Integer;
       Kampf();                      //Ersatz für das Initative System
       SpielerATK:=SPielerATK +2;    //Bei Betreten eines Raumes mit einem Gegner
       SpielerRK:=SpielerRK +2;      //Wird dem Spieler 2 RK abgezogen
-      UIRefresh.UIRefresh();
+      UI.UIRefresh();
       
 	  Spinnennest.Schrittweite:=Spinnennest.Schrittweite+1;				//Entsprechend fortührend	
 	  Spinnenkammer.Schrittweite:=Spinnenkammer.Schrittweite+1;

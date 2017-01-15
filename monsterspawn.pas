@@ -10,7 +10,7 @@ procedure Monsterspawn();
 
 implementation
 
-uses Unit1,ProzedureRaumwechsel,KampfProzedure,UIRefresh;   //Benötigte Units zum Funktioniern
+uses Unit1,ProzedureRaumwechsel,KampfProzedure,UI;   //Benötigte Units zum Funktioniern
 procedure Monsterspawn();
 var
   Wuerfel:Integer;
@@ -215,9 +215,10 @@ var
          aktuellerRaum.Enemy:=nil
    else if aktuellerRaum.Difficulty= 'empty'  then
          aktuellerRaum.Enemy:=nil
-   else GegnerHP:=aktuellerRaum.Enemy.HP;
+   else if aktuellerRaum.Enemy <> nil then
+        GegnerHP:=aktuellerRaum.Enemy.HP;
   //GegnerHP Variable aus KampfProzedure
-  UIRefresh.UIRefresh();
+  UI.UIRefresh();
   end;
 end.
 

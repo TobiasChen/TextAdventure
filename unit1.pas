@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  RichMemo, mTRaum, MTEnemy, Kampfprozedure, ProzedureRaumWechsel, UIRefresh,
+  RichMemo, mTRaum, MTEnemy, Kampfprozedure, ProzedureRaumWechsel, UI,
   mTLoot,LootDrop,RaumUpdate,Map, BGRASpriteAnimation;
 
 type
@@ -214,7 +214,7 @@ begin
    //Var				:= TEnemy.create('Name','Beschreibung',HP,RK,ATK,'Loot_Type');
    
 			//Wald und offene Welt//
-   Ork 					:= TEnemy.create('Ork', 'einem Krieger mit Blutunerlaufenen Augen', 11,14,3,'normal');
+   Ork 					:= TEnemy.create('Ork', 'einem Krieger mit Blutunerlaufenen Augen', 11,14,6,'normal');
    Oger					:= TEnemy.create('Oger', 'einem Abkömmlinge der Riesen mit einer Keule', 15,15, 4,'erlesen');
    Goblin 				:= TEnemy.create('Goblin', 'einem kleinen Wesen ,dass erstaunlich flink ist,',3, 12, 2,'verschlissennormal');
    Goblinhaeuptling		:= TEnemy.create('Goblinhäuptling','einem mächtiger erscheinendem Goblin voller Schmuck',20,15,4,'erlesen');
@@ -366,7 +366,7 @@ begin
    ZusaetzlicheUpdates(Westweg,'Weg',0,0,0,false);
    ZusaetzlicheUpdates(Bruecke,'Weg',0,0,0,false);
    ZusaetzlicheUpdates(Augvea,'',0,0,0,true);
-   ZusaetzlicheUpdates(Ostweg,'Weg',0,0,0,false);
+   ZusaetzlicheUpdates(Ostweg,'test',100,0,0,false);
    ZusaetzlicheUpdates(Oestliche_Huegel,'Offene_Landschaft',0,0,0,false);
    ZusaetzlicheUpdates(Verlassene_Burg,'Burg',0,0,0,false);
    ZusaetzlicheUpdates(Wachturm,'Burg',0,0,0,false);
@@ -404,9 +404,9 @@ begin
    SpielerRuestung:=Gewand;
    SpielerSchuhe:=Alte_Latscher;
    SpielerWaffe:=Verrotteter_Klumpen;
-   //UI Geschichten
-   Character_Picture.Sprite.LoadFromFile(Application.Location+'\SpriteSheets\idle.bmp');
-   UIRefresh.UiRefresh();
+   //UI Default Animation wird geladen
+   Character_Picture.Sprite.LoadFromFile(Application.Location+'\data\SpriteSheets\idle.bmp');
+   UI.UiRefresh();
 end;
 
 //--------------------------------Der Absolut------------------------------------//
@@ -482,7 +482,7 @@ begin
  end;
 //RefresUI
 
-UIRefresh.UiRefresh()
+UI.UiRefresh()
 end;
 //REpitirion der FUnktionalität, ist jedoch wesentlich angenehmer zu bedienen.
 procedure TForm1.Button10Click(Sender: TObject);

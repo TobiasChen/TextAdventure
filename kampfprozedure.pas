@@ -15,7 +15,7 @@ var
   LetzterGegner:TEnemy;
 procedure Kampf();
 implementation
-uses Unit1,ProzedureRaumwechsel,LootDrop,UIRefresh;                                 //Unit1 muss benutzt werden
+uses Unit1,ProzedureRaumwechsel,LootDrop,UI;                                 //Unit1 muss benutzt werden
 //------Kampf------//    //Angelehnt an das Pen&Paper-Kampfsystem//
 procedure Kampf();
 begin
@@ -28,6 +28,7 @@ else
 begin
     WurfSpieler := random(20) + 1 + SpielerATK;                  //Wurf des Spielers
     WurfGegner:= random(20) + 1 + Gegner.ATK;                    //Wurf des Gegners
+    Ui.Animation('Attack',10);
     if SpielerRK < Wurfgegner then                               //Trifft Gegner?
          begin
            SpielerHP := SpielerHP - Gegner.ATK;
@@ -64,7 +65,7 @@ begin
            Form1.Memo1.lines.add('Du hast den Gegner verfehlt!');
          end;
      end;
-     UiRefresh.UiRefresh();
+     Ui.UiRefresh();
 end;
 
 end.

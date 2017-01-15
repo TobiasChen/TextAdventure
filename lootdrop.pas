@@ -12,7 +12,7 @@ procedure LootDrop();
 procedure Pickup();
 implementation
 
-uses Unit1,kampfprozedure,UIRefresh;   //Benötigte Units zum Funktioniern
+uses Unit1,kampfprozedure,UI;   //Benötigte Units zum Funktioniern
 procedure LootDrop();
 var
   Wuerfel:Integer;
@@ -171,7 +171,7 @@ var
         Form1.Memo1.lines.add('Stats:  '+' RK:'+inttostr(SpielerWaffe.RK)+' HP:'+inttostr(SpielerWaffe.HP)+' ATK:'+ inttostr(SpielerWaffe.atk));
         end;
   Form1.Memo1.lines.add('Zum austauschen schreibe "pick"');
-  UIRefresh.UIRefresh();
+  UI.UIRefresh();
   end
   end;
 procedure Pickup();
@@ -205,7 +205,7 @@ begin
      SpielerAtk:=AnfangsATK+SpielerHelm.Atk+SpielerRuestung.ATK+SpielerSchuhe.Atk+SpielerWaffe.Atk;
      SpielerRK:=AnfangsRK+SpielerHelm.RK+SpielerRuestung.RK+SpielerSchuhe.RK+SpielerWaffe.RK;
      MaxHP:=AnfangsHP+SpielerHelm.HP+SpielerRuestung.HP+SpielerSchuhe.HP+SpielerWaffe.HP;
-     UIRefresh.UIRefresh();
+     UI.UIRefresh();
   end;
 end.
 
