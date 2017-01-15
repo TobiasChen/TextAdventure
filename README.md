@@ -1,6 +1,8 @@
 # TextAdventure
-
-A Text Adventure in the Land of Varisia
+The Game got way too big to load it up to moodle(Animations)
+You can download it from:
+	https://github.com/BadAndMad/TextAdventure
+A Text Adventure set in the Land of Varisia
  
 This is a little Text Adventure written in Delphi/Lazarus.
 It is more a fundation and Groundwork as a full Game, but it can easily turnded into one by adding content (Rooms,Monster,Items,Animations)
