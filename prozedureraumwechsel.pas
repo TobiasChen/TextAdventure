@@ -12,6 +12,9 @@ var
  repeatcount:integer;
  PictureNumber:integer;
 procedure RaumWechsel(Eingabe:Traum);
+Procedure escape();
+Procedure leave();
+Procedure DifficultyUp();
 //procedure Hunt();
 implementation
 uses Unit1,UI,Monsterspawn,LootDrop;
@@ -19,30 +22,23 @@ procedure RaumWechsel(Eingabe:Traum);
 var
 WuerfelErgebnis:Integer;
    begin
-   if Eingabe = nil        //Prozedur wird mit Eingabe als Nördlicher Raum übergeben
-   then Form1.Memo1.lines.add('Da ist kein Raum!')
+   if Eingabe = nil  then      //Fehler Ausschluß 
+          Form1.Memo1.lines.add('Da ist kein Raum!')
    else
      if IstInKampf = true  then
-     begin
-     Form1.Memo1.lines.add('Du bist in einem Kampf und kannst nur flüchten oder Angreifen')
-     end
+      begin
+          Form1.Memo1.lines.add('Du bist in einem Kampf und kannst nur flüchten oder Angreifen')
+        end
      else
      begin
-      if uppercase(Unit1.Eingabe) = 'NORDEN' then
-      Form1.Memo1.lines.add(aktuellerRaum.NORDENLeave)
-      else if uppercase(Unit1.Eingabe) = 'OSTEN' then
-      Form1.Memo1.lines.add(aktuellerRaum.OSTENLeave)
-      else if (uppercase(Unit1.Eingabe) = 'SÜDEN') or   (uppercase(Unit1.Eingabe) = 'SUEDEN') then
-      Form1.Memo1.lines.add(aktuellerRaum.SUEDENLeave)
-      else if uppercase(Unit1.Eingabe) = 'WESTEN' then
-      Form1.Memo1.lines.add(aktuellerRaum.WESTENLeave);
+       Leave();
       vorherigerRaum:=aktuellerRaum;
       aktuellerRaum:=Eingabe;
       //Animation wird abgespielt
       UI.Animation('Walk',14);
       //Temporäre Loot aus dem vorherigem Raum wird gelöscht
       tempLoot:=nil;
-      UI.UIRefresh();//Zweiter UIRefresh  weil Gründe
+      UI.UIRefresh();//Anzeige dws RaumNamens
       if aktuellerRaum.Discoverd=false then         //Für die Map
          begin
               aktuellerRaum.Discoverd:=true;
@@ -75,7 +71,9 @@ WuerfelErgebnis:Integer;
       SpielerATK:=SPielerATK +2;    //Bei Betreten eines Raumes mit einem Gegner
       SpielerRK:=SpielerRK +2;      //Wird dem Spieler 2 RK abgezogen
       UI.UIRefresh();
-      
+  DifficultyUp()
+  Procedure DifficultyUp():
+    Begin    
 	  Spinnennest.Schrittweite:=Spinnennest.Schrittweite+1;				//Entsprechend fortührend	
 	  Spinnenkammer.Schrittweite:=Spinnenkammer.Schrittweite+1;
 	  Waldlichtung.Schrittweite:=Waldlichtung.Schrittweite+1;
@@ -116,10 +114,36 @@ WuerfelErgebnis:Integer;
 	  Kraehenhort.Schrittweite:=Kraehenhort.Schrittweite+1;
 	  Der_Grosse_Heuler.Schrittweite:=Der_Grosse_Heuler.Schrittweite+1;
 	  Der_Sonnenstich.Schrittweite:=Der_Sonnenstich.Schrittweite+1;
-     //Muss hard coded werden
+     //Muss leider hard coded werden
+     //Eine Möglichkeit dies zu ändern wäre alle Räume durch Zahlen zu identifizieren
+     //und duch eine for i to schleife zu jagen
+     End;
       end;
   end;
 end;
+Procedure leave():
+Begin
+      if uppercase(Unit1.Eingabe) = 'NORDEN' then
+      Form1.Memo1.lines.add(aktuellerRaum.NORDENLeave)
+      else if uppercase(Unit1.Eingabe) = 'OSTEN' then
+      Form1.Memo1.lines.add(aktuellerRaum.OSTENLeave)
+      else if (uppercase(Unit1.Eingabe) = 'SÜDEN') or   (uppercase(Unit1.Eingabe) = 'SUEDEN') then
+      Form1.Memo1.lines.add(aktuellerRaum.SUEDENLeave)
+      else if uppercase(Unit1.Eingabe) = 'WESTEN' then
+      Form1.Memo1.lines.add(aktuellerRaum.WESTENLeave);
+End;
+Procedure escape();
+  Begin
+     If IstInKamp=false then
+        Memo1.Lines.Add('Du bist nicht im Kampf,zum Raumwechsel nutze die Richtungstasten')
+     Else
+       IstInKampf:=false
+       UI.Animation(Run,10)
+       aktuellerRaum :=vorherigerRaum;
+       AktuellerRaum.Enemy:=nil;
+       temploot:=nil;
+       DifficultyUp();
+  End;
 {procedure Hunt();
 var
  WuerfelErgebnis:Integer;

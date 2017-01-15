@@ -469,9 +469,8 @@ begin
  else if uppercase(Eingabe) = 'FLIEHEN'
  then
  begin
- //  aktuellerRaum:=vorherigerRaum;
- //  IstInKampf:=false;
- end
+  Escape()
+ end;
  //Angreifen//
 
  else if (uppercase(Eingabe) = 'ANGREIFEN')
@@ -500,8 +499,7 @@ end;
 
 procedure TForm1.Button12Click(Sender: TObject);
 begin
-   //aktuellerRaum:=vorherigerRaum;
-   //IstInKampf:=false;
+   Escape();
 end;
 
 procedure TForm1.Button13Click(Sender: TObject);
