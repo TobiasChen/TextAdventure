@@ -21,9 +21,9 @@ procedure sterben();
   SpielerRK:=AnfangsRK;
   SpielerStaerke:=AnfangsStaerke;
   SpielerHelm:=Kappe;
-   SpielerRuestung:=Gewand;
-   SpielerSchuhe:=Alte_Latscher;
-   SpielerWaffe:=Verrotteter_Klumpen;
+  SpielerRuestung:=Gewand;
+  SpielerSchuhe:=Alte_Latscher;
+  SpielerWaffe:=Verrotteter_Klumpen;
   UI.UIRefresh();
   end;
 end.

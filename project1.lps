@@ -18,12 +18,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="6"/>
         <WindowIndex Value="1"/>
         <TopLine Value="331"/>
-        <CursorPos X="40" Y="371"/>
-        <ComponentState Value="1"/>
+        <CursorPos X="142" Y="355"/>
         <UsageCount Value="63"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -51,9 +49,10 @@
       <Unit4>
         <Filename Value="sterben.pas"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="1"/>
-        <CursorPos X="33" Y="22"/>
+        <CursorPos X="3" Y="26"/>
         <UsageCount Value="63"/>
         <Loaded Value="True"/>
       </Unit4>
@@ -168,8 +167,8 @@
       <Unit17>
         <Filename Value="mtweapon.pas"/>
         <UnitName Value="mTWeapon"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
         <CursorPos X="86" Y="14"/>
         <UsageCount Value="12"/>
       </Unit17>
