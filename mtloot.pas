@@ -15,7 +15,7 @@ type
     Tier:String;
     HP : Integer;    //Leben
     RK : Integer;    //Ausweichen
-    SK :Integer;     // Schaden
+    SK :Integer;     //Stärke/Teil Schaden
 //Waffen only
     AW:integer;//Anzahl Würfel
     WS:Integer;//Würfel Seiten(Dx)

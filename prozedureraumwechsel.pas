@@ -31,9 +31,28 @@ WuerfelErgebnis:Integer;
       end
     else
         begin
+             Form1.Memo1.lines.add('test');
              Leave();
              vorherigerRaum:=aktuellerRaum;
              aktuellerRaum:=Eingabe;
+             //Wahrscheinlichkeit ein Monster zu spawnen
+             AktuellerRaum.MD:=AktuellerRaum.MD+ AktuellerRaum.Schrittweite*AktuellerRaum.MDA;
+             if AktuellerRaum.MD>=100 then
+                AktuellerRaum.MD:=100;
+             Wuerfelergebnis:= 1+random(100);
+             if WuerfelErgebnis-aktuellerRaum.MD<=0 then
+                Monsterspawn.Monsterspawn();
+             if AktuellerRaum.Enemy <> nil then
+                begin
+                KampfProzedure.IstInKampf:=true;
+                AktuellerGegner:=AktuellerRaum.Enemy;
+                Form1.Memo1.lines.add('Du wirst von '+aktuellerGegner.Beschreibung+' angegriffen!');
+                SpielerRK:=SPielerRK -2;
+                Kampf();                   //Ersatz für das Initative System
+                SpielerRK:=SpielerRK +2;   //Bei Betreten eines Raumes mit einem Gegner
+                UI.UIRefresh();            //Wird dem Spieler 2 RK abgezogen
+                DifficultyUp();
+                end;
              //Animation wird abgespielt
              UI.UIRefresh;
              UI.Animation('Walk',14);
@@ -54,24 +73,6 @@ WuerfelErgebnis:Integer;
               if aktuellerRaum.Ort <> nil then
               aktuellerRaum.Ort.visible:=true;
              end;
-             //Wahrscheinlichkeit ein Monster zu spawnen
-             AktuellerRaum.MD:=AktuellerRaum.MD+ AktuellerRaum.Schrittweite*AktuellerRaum.MDA;
-             if AktuellerRaum.MD>=100 then
-                AktuellerRaum.MD:=100;
-             Wuerfelergebnis:= 1+random(100);
-             if WuerfelErgebnis-aktuellerRaum.MD<=0 then
-                Monsterspawn.Monsterspawn();
-             if AktuellerRaum.Enemy <> nil then
-                begin
-                KampfProzedure.IstInKampf:=true;
-                AktuellerGegner:=AktuellerRaum.Enemy;
-                Form1.Memo1.lines.add('Du wirst von '+aktuellerGegner.Beschreibung+' angegriffen!');
-                SpielerRK:=SPielerRK -2;
-                Kampf();                   //Ersatz für das Initative System
-                SpielerRK:=SpielerRK +2;   //Bei Betreten eines Raumes mit einem Gegner
-                UI.UIRefresh();            //Wird dem Spieler 2 RK abgezogen
-                DifficultyUp();
-                end;
         end;
    end;
 
