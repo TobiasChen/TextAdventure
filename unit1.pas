@@ -188,8 +188,11 @@ begin
    Memo1.Lines.Clear;
    Memo1.Lines.Add ('Hallo, willkommen im Textadventure');
    Memo1.Lines.Add ('Du kannst dich mit dem Namen der Richtung[Norden/Nord/N] bewegen');
-      Memo1.Lines.Add ('Hilfe findest du mit ?');
-         Memo1.Lines.Add ('Du kannst mit "camp" schlafen und HP regenerieren');
+   Memo1.Lines.Add ('Hilfe findest du mit ?');
+   Memo1.Lines.Add ('Mit der Aktions Taste kannst du Items aufheben und dich in Camps schlafen legen');
+   Memo1.Lines.Add ('Das Schlafen in camps regeneriert deine HP, du kannst aber nur an bestimmten Orten schlafen');
+   Memo1.Lines.Add ('Einer davon ist Augvea und du findest andere an den Enden der Karte');
+   Memo1.Lines.Add ('Du solltest dich also am Anfang nicht zu weit von Augvea entfernen, sondern erst einmal Equipment farmen');
    //Typen sind Helm,Ruestung,Schuhe,Waffe			var:=TLoot.create('Name','Itemtyp','Beschreibung','Klasse',Leben, RK, Stärke, Anzahl Würfel, Würfelseitenzahl, Geschick)
    //Helm-Loot//
    Kappe:=TLoot.create('Kappe','Helm','eine leichte Lederkappe','verschlissen',0,0,0,0,0,0);
@@ -202,7 +205,7 @@ begin
    Stahlruestung:=TLoot.create('Stahlrüstung','Ruestung','eine äußerst widerstandsfähgige Stahlrüstung','erlesen',2,5,0,0,0,0);
    Granitebrows_Stachelpanzer:=TLoot.create('Granitebrows Stachelpanzer','Ruestung','den legendären Stachelpanzer Granitebrows','magisch',5,10,1,0,0,0);
    //Stiefel-Loot//
-   Alte_Latscher:=TLoot.create('Alte_Latscher','Schuhe','ein Paar abgewetzter und vielgetragene Schuhe','verschlissen',0,0,0,0,0,0);
+   Alte_Latscher:=TLoot.create('Alte Latscher','Schuhe','ein Paar abgewetzter und vielgetragene Schuhe','verschlissen',0,0,0,0,0,0);
    Lederschuhe:=TLoot.create('Lederschuhe','Schuhe','ein Paar guter Lederschuhe','normal',0,1,0,0,0,0);
    Eisenstiefel:=TLoot.create('Eisenstiefel','Schuhe','ein Paar dicker Eisenstiefel','magisch',0,3,0,0,0,0);
    Bodenmalmer:=TLoot.create('Bodenmalmer','Schuhe','die dir aus Geschichten bekannten Bodenmalmer','erlesen',5,5,0,0,0,0);
@@ -279,7 +282,7 @@ begin
    Schattenweiden				:=TRaum.create('Schattenweiden','Die Schattenweiden des Graumoors scheinen überall hinzugreifen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
    Westweg						:=TRaum.create('Westweg','Auf diesem gut befestigten Weg kommst du gut voran',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
    Bruecke						:=TRaum.create('Brücke','Unter dir rauscht der Fluss',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
-   Augvea						:=TRaum.create('Augvea','Das rege Treiben der Stadt zeugt von Zivilisation',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Augvea						:=TRaum.create('Augvea','Das rege Treiben der Stadt zeugt von Zivilisation, hier kannst du dich von deinen Abenteuern erholen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
    Ostweg						:=TRaum.create('Ostweg','Der Weg ist Umgeben von schönem Gelände',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
    Oestliche_Huegel				:=TRaum.create('Östliche Hügel','Die sanften Hügel machen das Vorankommen beschwerlicher',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
    Verlassene_Burg				:=TRaum.create('Verlassene Burg','Diese Burg ist mysteriöserweise verlassen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
@@ -443,6 +446,8 @@ end;
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
+  button1.enabled:=false;
+  timer1.Enabled:=true;
  Randomize;
  Eingabe := Edit1.text;
  //Befehlsauflistung: help //
@@ -515,96 +520,95 @@ begin
 //RefresUI
 
 UI.UiRefresh();
-button1.enabled:=false;
-timer1.Enabled:=true;
 end;
 //REpitirion der FUnktionalität, ist jedoch wesentlich angenehmer zu bedienen.
 procedure TForm1.Button10Click(Sender: TObject);
 begin
- Kampf();
- BUtton10.enabled:=false;
- timer1.Enabled:=true;
+  BUtton10.enabled:=false;
+  timer1.Enabled:=true;
+  Kampf();
 end;
 
 procedure TForm1.Button11Click(Sender: TObject);
 begin
+     Button11.enabled:=false;
+     timer1.Enabled:=true;
      If temploot<>nil then
         LootDrop.Pickup()
      Else begin
           camp.camp()
      End;
-     BUtton11.enabled:=false;
-     timer1.Enabled:=true;
 end;
 
 procedure TForm1.Button12Click(Sender: TObject);
 begin
+  Button12.enabled:=false;
+  timer1.Enabled:=true;
    Escape();
-   Button12.enabled:=false;
-   timer1.Enabled:=true;
 end;
 
 procedure TForm1.Button13Click(Sender: TObject);
 begin
-  Form2.Show;
   Button13.enabled:=false;
   timer1.Enabled:=true;
+  Form2.Show;
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);
 begin
-   Memo1.lines.add(SpielerHelm.Beschreibung);
-   Button2.enabled:=false;
-   timer1.Enabled:=true;
+  Button2.enabled:=false;
+  timer1.Enabled:=true;
+  Memo1.lines.add(SpielerHelm.Beschreibung);
 end;
 
 procedure TForm1.Button3Click(Sender: TObject);
 begin
-    Memo1.lines.add(SpielerRuestung.Beschreibung);
     Button3.enabled:=false;
     timer1.Enabled:=true;
+    Memo1.lines.add(SpielerRuestung.Beschreibung);
 end;
 
 procedure TForm1.Button4Click(Sender: TObject);
 begin
-  Memo1.lines.add(SpielerSchuhe.Beschreibung);
-  timer1.Enabled:=true;
   Button4.enabled:=false;
+  timer1.Enabled:=true;
+  Memo1.lines.add(SpielerSchuhe.Beschreibung);
 end;
 
 procedure TForm1.Button5Click(Sender: TObject);
 begin
-  Memo1.lines.add(SpielerWaffe.Beschreibung);
   Button5.enabled:=false;
   timer1.Enabled:=true;
+  Memo1.lines.add(SpielerWaffe.Beschreibung);
 end;
 
 procedure TForm1.Button6Click(Sender: TObject);
 begin
-  RaumWechsel(AktuellerRaum.Norden);
-   Button6.enabled:=false;
-   timer1.Enabled:=true;
+     Button6.enabled:=false;
+     timer1.Enabled:=true;
+     RaumWechsel(AktuellerRaum.Norden);
+
 end;
 
 procedure TForm1.Button7Click(Sender: TObject);
 begin
-  RaumWechsel(AktuellerRaum.Westen);
-  Button7.enabled:=false;
+    Button7.enabled:=false;
   timer1.Enabled:=true;
+  RaumWechsel(AktuellerRaum.Westen);
 end;
 
 procedure TForm1.Button8Click(Sender: TObject);
 begin
+  Button8.enabled:=false;
+  timer1.Enabled:=true;
    RaumWechsel(AktuellerRaum.Osten);
-   Button8.enabled:=false;
-   timer1.Enabled:=true;
 end;
 
 procedure TForm1.Button9Click(Sender: TObject);
 begin
-  RaumWechsel(AktuellerRaum.Sueden);
   Button9.enabled:=false;
   timer1.Enabled:=true;
+  RaumWechsel(AktuellerRaum.Sueden);
 end;
 procedure TForm1.UpdateProcedure();
 begin//RaumName +4 RichtungsPfeile TShape + RaumButton
