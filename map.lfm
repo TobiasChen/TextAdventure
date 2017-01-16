@@ -862,8 +862,8 @@ object Form2: TForm2
     Left = 840
     Height = 45
     Top = 24
-    Width = 462
-    Caption = 'Karte des Umlandes um Augvea'
+    Width = 241
+    Caption = 'Karte von Varisia'
     Font.Height = -33
     ParentColor = False
     ParentFont = False

@@ -6,8 +6,8 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  RichMemo, mTRaum, MTEnemy, Kampfprozedure, ProzedureRaumWechsel, UI,
-  mTLoot,LootDrop,RaumUpdate,Map, BGRASpriteAnimation,camp, mTWeapon;
+  ExtCtrls, RichMemo, mTRaum, MTEnemy, Kampfprozedure, ProzedureRaumWechsel, UI,
+  mTLoot, LootDrop, RaumUpdate, Map, BGRASpriteAnimation, camp;
 
 type
 
@@ -47,6 +47,7 @@ type
     LabelATK: TLabel;
     LabelRaum: TLabel;
     Memo1: TRichMemo;
+    Timer1: TTimer;
     procedure Button10Click(Sender: TObject);
     procedure Button11Click(Sender: TObject);
     procedure Button12Click(Sender: TObject);
@@ -62,6 +63,7 @@ type
     procedure Button9Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Memo1Change(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
     procedure UpdateProcedure();
   private
     { private declarations }
@@ -181,8 +183,6 @@ implementation
 {$R *.lfm}
 
 { TForm1 }
-uses
-  Unit2;
 procedure TForm1.FormCreate(Sender: TObject);
 begin
    Memo1.Lines.Clear;
@@ -396,9 +396,10 @@ begin
    aktuellerRaum := AnfangsRaum;
    LabelRaum.caption := AktuellerRaum.Raumname;
    KampfProzedure.IstInKampf := False;
+   timer1.enabled:=false;
    //Spieler-Start-StatsNR2//
    AnfangsHP:=10;
-   AnfangsRK:=10;
+   AnfangsRK:=14;
    AnfangsStaerke:=3;
    //Spieler-start-stats//
 
@@ -419,6 +420,24 @@ begin
 
 end;
 
+procedure TForm1.Timer1Timer(Sender: TObject);
+begin
+  timer1.enabled:=false;
+  Button1.enabled:=true;
+  Button2.enabled:=true;
+  Button3.enabled:=true;
+  Button4.enabled:=true;
+  Button5.enabled:=true;
+  Button6.enabled:=true;
+  Button7.enabled:=true;
+  Button8.enabled:=true;
+  Button9.enabled:=true;
+  Button10.enabled:=true;
+  Button11.enabled:=true;
+  Button12.enabled:=true;
+  Button13.enabled:=true;
+end;
+
 //--------------------------------Der Absolut------------------------------------//
 //--------------------------------Heilige Button---------------------------------//
 
@@ -426,7 +445,6 @@ procedure TForm1.Button1Click(Sender: TObject);
 begin
  Randomize;
  Eingabe := Edit1.text;
-
  //Befehlsauflistung: help //
  if (uppercase(Eingabe) = 'HELP') or (uppercase(Eingabe) = 'HILFE') or (uppercase(Eingabe) = 'BEFEHLE')  or (Eingabe='?') then
    begin
@@ -496,12 +514,16 @@ begin
  end;
 //RefresUI
 
-UI.UiRefresh()
+UI.UiRefresh();
+button1.enabled:=false;
+timer1.Enabled:=true;
 end;
 //REpitirion der FUnktionalität, ist jedoch wesentlich angenehmer zu bedienen.
 procedure TForm1.Button10Click(Sender: TObject);
 begin
- Kampf()
+ Kampf();
+ BUtton10.enabled:=false;
+ timer1.Enabled:=true;
 end;
 
 procedure TForm1.Button11Click(Sender: TObject);
@@ -511,56 +533,78 @@ begin
      Else begin
           camp.camp()
      End;
+     BUtton11.enabled:=false;
+     timer1.Enabled:=true;
 end;
 
 procedure TForm1.Button12Click(Sender: TObject);
 begin
    Escape();
+   Button12.enabled:=false;
+   timer1.Enabled:=true;
 end;
 
 procedure TForm1.Button13Click(Sender: TObject);
 begin
   Form2.Show;
+  Button13.enabled:=false;
+  timer1.Enabled:=true;
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);
 begin
-   Memo1.lines.add(SpielerHelm.Beschreibung)
+   Memo1.lines.add(SpielerHelm.Beschreibung);
+   Button2.enabled:=false;
+   timer1.Enabled:=true;
 end;
 
 procedure TForm1.Button3Click(Sender: TObject);
 begin
-    Memo1.lines.add(SpielerRuestung.Beschreibung)
+    Memo1.lines.add(SpielerRuestung.Beschreibung);
+    Button3.enabled:=false;
+    timer1.Enabled:=true;
 end;
 
 procedure TForm1.Button4Click(Sender: TObject);
 begin
-  Memo1.lines.add(SpielerSchuhe.Beschreibung)
+  Memo1.lines.add(SpielerSchuhe.Beschreibung);
+  timer1.Enabled:=true;
+  Button4.enabled:=false;
 end;
 
 procedure TForm1.Button5Click(Sender: TObject);
 begin
-  Memo1.lines.add(SpielerWaffe.Beschreibung)
+  Memo1.lines.add(SpielerWaffe.Beschreibung);
+  Button5.enabled:=false;
+  timer1.Enabled:=true;
 end;
 
 procedure TForm1.Button6Click(Sender: TObject);
 begin
   RaumWechsel(AktuellerRaum.Norden);
+   Button6.enabled:=false;
+   timer1.Enabled:=true;
 end;
 
 procedure TForm1.Button7Click(Sender: TObject);
 begin
   RaumWechsel(AktuellerRaum.Westen);
+  Button7.enabled:=false;
+  timer1.Enabled:=true;
 end;
 
 procedure TForm1.Button8Click(Sender: TObject);
 begin
    RaumWechsel(AktuellerRaum.Osten);
+   Button8.enabled:=false;
+   timer1.Enabled:=true;
 end;
 
 procedure TForm1.Button9Click(Sender: TObject);
 begin
   RaumWechsel(AktuellerRaum.Sueden);
+  Button9.enabled:=false;
+  timer1.Enabled:=true;
 end;
 procedure TForm1.UpdateProcedure();
 begin//RaumName +4 RichtungsPfeile TShape + RaumButton
