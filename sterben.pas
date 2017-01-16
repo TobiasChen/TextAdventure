@@ -5,26 +5,18 @@ unit sterben;
 interface
 
 uses
-  Classes, SysUtils;
+  Classes, SysUtils,Forms;
 procedure Sterben();
 
 implementation
 
-uses Unit1,UI,ProzedureRaumwechsel,KampfProzedure;   //Benötigte Units zum Funktioniern
+uses Unit1,UI;   //Benötigte Units zum Funktioniern
 procedure sterben();
  begin
   UI.Animation('Dead',10);
-  IstInKampf:=false;
-  Form1.Memo1.lines.add('Du bist gestorben!');
-  aktuellerRaum:=AnfangsRaum;
-  SpielerHP:=AnfangsHP;
-  SpielerRK:=AnfangsRK;
-  SpielerStaerke:=AnfangsStaerke;
-  SpielerHelm:=Kappe;
-  SpielerRuestung:=Gewand;
-  SpielerSchuhe:=Alte_Latscher;
-  SpielerWaffe:=Verrotteter_Klumpen;
-  UI.UIRefresh();
+  sleep(300);
+  Application.ProcessMessages;
+  Unit1.Form1.close;
   end;
 end.
 

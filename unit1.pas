@@ -29,6 +29,8 @@ type
     Button8: TButton;
     Button9: TButton;
     Edit1: TEdit;
+    LabelGK: TLabel;
+    LabelGKUnverwendet: TLabel;
     LabelMDUnverwendet: TLabel;
     MD: TLabel;
     LabelRaumBeschreibung: TLabel;
@@ -59,6 +61,7 @@ type
     procedure Button8Click(Sender: TObject);
     procedure Button9Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure Memo1Change(Sender: TObject);
     procedure UpdateProcedure();
   private
     { private declarations }
@@ -178,7 +181,8 @@ implementation
 {$R *.lfm}
 
 { TForm1 }
-
+uses
+  Unit2;
 procedure TForm1.FormCreate(Sender: TObject);
 begin
    Memo1.Lines.Clear;
@@ -408,7 +412,11 @@ begin
    SpielerWaffe:=Verrotteter_Klumpen;
    //UI Default Animation wird geladen
    Character_Picture.Sprite.LoadFromFile(Application.Location+'\data\SpriteSheets\idle.bmp');
-   UI.UiRefresh();
+end;
+
+procedure TForm1.Memo1Change(Sender: TObject);
+begin
+
 end;
 
 //--------------------------------Der Absolut------------------------------------//
@@ -512,8 +520,7 @@ end;
 
 procedure TForm1.Button13Click(Sender: TObject);
 begin
-   Form2.Show;
-   UpdateProcedure();
+  Form2.Show;
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);

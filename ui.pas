@@ -5,7 +5,7 @@ unit UI;
 interface
 
 uses
-  Classes, SysUtils,FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls;
+  Classes, SysUtils, Forms;
 procedure UIRefresh();
 procedure Animation(Animation:String;FrameCount:Integer);
 var
@@ -25,6 +25,7 @@ begin
   Form1.Button3.Caption:=SpielerRuestung.Name;
   Form1.Button4.Caption:=SpielerSchuhe.Name;
   Form1.Button5.Caption:=SpielerWaffe.Name;
+  Form1.LabelGk.caption:=InttoStr(SpielerWaffe.GE);
   Form1.LabelGegnerHP.Caption:= InttoStr(0) ;
   Form1.LabelGegner.Caption := ('Kein Gegner');
   If AktuellerRaum.Enemy <> nil then  // <> = is not

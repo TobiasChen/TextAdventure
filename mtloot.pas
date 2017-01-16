@@ -43,7 +43,7 @@ begin
 //Waffen only
   AW:=A_W;
   WS:=W_S;
-  GE:= Geschick;
+  GE:=Geschick;
 end;
 
 end.

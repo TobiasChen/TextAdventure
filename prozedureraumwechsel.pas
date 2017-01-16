@@ -31,7 +31,6 @@ WuerfelErgebnis:Integer;
       end
     else
         begin
-             Form1.Memo1.lines.add('test');
              Leave();
              vorherigerRaum:=aktuellerRaum;
              aktuellerRaum:=Eingabe;

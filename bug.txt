@@ -1,1 +1,11 @@
-Wenn der spieler Animations spammt(besonders Angriffe) werden die Animationen nicht fertig abgespielt.(weniger bug als Design choice)
+
+Bugs:
+	Wenn der spieler Animations spammt(besonders Angriffe) werden die Animationen nicht fertig abgespielt.(weniger bug als Design choice)
+	Verschiedene Bugs, die auf fehlerhafte Timings(und daraus resultierende NullPointer) zurückzuführen sind.
+		Map muss einmal geöffnet werden um korrekt zu tracken
+		
+Fehlender Content:
+	Räumen fehlt die Exit Message, die beim Raumverlassen ausgegbe wird.
+	Form3/Startup Form hat keinerlei Design Überlegungen und besteht nur aus einem Button.
+	Fehlende Startup message
+	BALANCING(spiel macht sehr wenig Spaß, da man die meisten Gegner kaum töten kann.

@@ -1,17 +1,18 @@
-object Form4: TForm4
-  Left = 121
+object Form3: TForm3
+  Left = 779
   Height = 240
-  Top = 385
+  Top = 427
   Width = 320
-  Caption = 'Form4'
+  Caption = 'Form3'
   ClientHeight = 240
   ClientWidth = 320
+  OnCreate = FormCreate
   LCLVersion = '1.6.2.0'
   object Button1: TButton
-    Left = 88
-    Height = 98
+    Left = 80
+    Height = 124
     Top = 48
-    Width = 148
+    Width = 160
     Caption = 'Start the Game'
     OnClick = Button1Click
     TabOrder = 0

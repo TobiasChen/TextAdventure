@@ -5,15 +5,16 @@ unit Unit2;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls;
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,Unit1,Map;
 
 type
 
-  { TForm4 }
+  { TForm3 }
 
-  TForm4 = class(TForm)
+  TForm3 = class(TForm)
     Button1: TButton;
     procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { private declarations }
   public
@@ -21,19 +22,27 @@ type
   end;
 
 var
-  Form4: TForm4;
+  Form3: TForm3;
 
 implementation
-uses
-  Unit1;
+
 {$R *.lfm}
 
-{ TForm4 }
+{ TForm3 }
 
-procedure TForm4.Button1Click(Sender: TObject);
+procedure TForm3.Button1Click(Sender: TObject);
 begin
-  Form1.Show;
-  Form4.hide;
+   Form1:=TForm1.create(Unit2.Form3);
+   Form2:=Tform2.create(Unit1.form1);
+   Form1.UpdateProcedure();
+   Form2.Show;
+   Form2.Hide;
+   Form1.Show;
+end;
+
+procedure TForm3.FormCreate(Sender: TObject);
+begin
+
 end;
 
 end.
