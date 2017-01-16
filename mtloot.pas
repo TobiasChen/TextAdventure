@@ -16,8 +16,12 @@ type
     HP : Integer;    //Leben
     RK : Integer;    //Ausweichen
     SK :Integer;     // Schaden
+//Waffen only
+    AW:integer;//Anzahl Würfel
+    WS:Integer;//Würfel Seiten(Dx)
+    GE:integer;//Geschick
   public //Methoden
-    constructor create (LootN : String;Typus:String; Beschr: String;Grad:String; Health: Integer; RKlasse: Integer;Staerke:Integer);
+    constructor create (LootN : String;Typus:String; Beschr: String;Grad:String; Health: Integer; RKlasse: Integer;Staerke:Integer;A_W:Integer;W_S:Integer; Geschick: Integer);
    end;
 implementation
 
@@ -26,7 +30,7 @@ implementation
 //+---------------------------------------------------------------------
 
 //-------- create (public) ---------------------------------------------
-constructor TLoot.create (LootN : String;Typus:String; Beschr: String;Grad:String; Health: Integer; RKlasse: Integer;Staerke:integer);
+constructor TLoot.create (LootN : String;Typus:String; Beschr: String;Grad:String; Health: Integer; RKlasse: Integer;Staerke:integer;A_W:Integer;W_S:Integer; Geschick: Integer);
 begin
   inherited create;
   Name := LootN;
@@ -35,7 +39,11 @@ begin
   Tier:=Grad;
   HP := Health;
   RK := RKlasse;
-  Sk:=Staerke
+  Sk:=Staerke;
+//Waffen only
+  AW:=A_W;
+  WS:=W_S;
+  GE:= Geschick;
 end;
 
 end.
