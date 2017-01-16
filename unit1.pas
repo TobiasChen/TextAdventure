@@ -186,7 +186,7 @@ begin
    Memo1.Lines.Add ('Du kannst dich mit dem Namen der Richtung[Norden/Nord/N] bewegen');
       Memo1.Lines.Add ('Hilfe findest du mit ?');
          Memo1.Lines.Add ('Du kannst mit "camp" schlafen und HP regenerieren');
-   //Typen sind Helm,Ruestung,Schuhe,Waffe
+   //Typen sind Helm,Ruestung,Schuhe,Waffe			var:=TLoot.create('Name','Itemtyp','Beschreibung','Klasse',Leben, RK, Stärke, Anzahl Würfel, Würfelseitenzahl, Geschick)
    //Helm-Loot//
    Kappe:=TLoot.create('Kappe','Helm','eine leichte Lederkappe','verschlissen',0,0,0,0,0,0);
    Lederhelm:=TLoot.create('Lederhelm','Helm','einen Lederhelm, der etwas Schutz bieten sollte,','normal',0,1,0,0,0,0);
@@ -203,14 +203,14 @@ begin
    Eisenstiefel:=TLoot.create('Eisenstiefel','Schuhe','ein Paar dicker Eisenstiefel','magisch',0,3,0,0,0,0);
    Bodenmalmer:=TLoot.create('Bodenmalmer','Schuhe','die dir aus Geschichten bekannten Bodenmalmer','erlesen',5,5,0,0,0,0);
    //Waffen-Loot//
-   Verrotteter_Klumpen:=Tloot.create('Verrotteter Klumpen','Waffe','einen modrigen Klumpen, den man zum Zuschlagen verwenden könnte,','verschlissen',0,1,4,0,0,0);
-   Eisenstreitkolben:=Tloot.create('Eisenstreitkolben','Waffe','einen benutzten Eisenstreitkolben','normal',0,2,7,0,0,0);
-   Orkischer_Hammerzahn:=Tloot.create('Orkischer Hammerzahn','Waffe','einen für Kriege verwendeten orkischen Hammerzahn','erlesen',0,3,11,0,0,0);
-   Gigantischer_Knochenmuerber:=Tloot.create('Gigantischer Knochenmürber','Waffe','einen der mächtigsten Streitkolben, den Gigantischen Knochenmürber,','magisch',0,4,22,0,0,0);
-   Muerbes_Holzschwert:=Tloot.create('Mürbes Holzschwert','Waffe','ein mürbes Holzschwert, welches vielleicht etwas besser als die Faust ist,','verschlissen',1,0,4,0,0,0);
-   Eisenschwert:=Tloot.create('Eisenschwert','Waffe','ein stumpfes Eisenschwert','normal',2,0,7,0,0,0);
-   Geschmuecktes_Silberschwert:=Tloot.create('Geschmücktes Silberschwert','Waffe','ein hochwertiges Silberschwert voller Verzierungen','erlesen',3,0,11,0,0,0);
-   Drachenzahn:=Tloot.create('Drachenzahn','Waffe','einen mächtigen Drachenzahn','magisch',4,0,22,0,0,0);
+   Verrotteter_Klumpen:=Tloot.create('Verrotteter Klumpen','Waffe','einen modrigen Klumpen, den man zum Zuschlagen verwenden könnte,','verschlissen',0,1,2,1,4,0);
+   Eisenstreitkolben:=Tloot.create('Eisenstreitkolben','Waffe','einen benutzten Eisenstreitkolben','normal',0,2,5,1,6,1);
+   Orkischer_Hammerzahn:=Tloot.create('Orkischer Hammerzahn','Waffe','einen für Kriege verwendeten orkischen Hammerzahn','erlesen',0,3,9,2,6,2);
+   Gigantischer_Knochenmuerber:=Tloot.create('Gigantischer Knochenmürber','Waffe','einen der mächtigsten Streitkolben, den Gigantischen Knochenmürber,','magisch',0,4,11,3,8,3);
+   Muerbes_Holzschwert:=Tloot.create('Mürbes Holzschwert','Waffe','ein mürbes Holzschwert, welches vielleicht etwas besser als die Faust ist,','verschlissen',1,0,0,1,4,1);
+   Eisenschwert:=Tloot.create('Eisenschwert','Waffe','ein stumpfes Eisenschwert','normal',2,0,1,1,6,5);
+   Geschmuecktes_Silberschwert:=Tloot.create('Geschmücktes Silberschwert','Waffe','ein hochwertiges Silberschwert voller Verzierungen','erlesen',3,0,2,2,6,9);
+   Drachenzahn:=Tloot.create('Drachenzahn','Waffe','einen mächtigen Drachenzahn','magisch',4,0,3,3,8,11);
    //Gegner//
    //Var				:= TEnemy.create('Name','Beschreibung',HP,RK,ATK,'Loot_Type');
    
