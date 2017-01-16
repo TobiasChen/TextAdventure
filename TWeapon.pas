@@ -1,4 +1,4 @@
-UNIT mTLoot;
+UNIT mTWeapon;
 
 interface
 
@@ -6,38 +6,37 @@ interface
 //uses ....;
 
 type
-  TLoot = class
+  TWeapon = class
 
   public //Attribute
     Name : String;
     Typ:String;
     Beschreibung : String;
     Tier:String;
-    HP : Integer;
-    RK : Integer;
-    GE : Integer;
-    SK :Integer;
+    AW:integer;//Anzahl Würfel
+    WS:Integer;//Würfel Seiten(Dx)
+    Funk:function;
+    
   public //Methoden
-    constructor create (LootN : String;Typus:String; Beschr: String;Grad:String; Health: Integer; RKlasse: Integer; Geschick: Integer;Stärke:Integer);
+    constructor create (WeaponN : String;Typus:String; Beschr: String;Grad:String;A_W:Integer;W_S:Integer;Func:function);
    end;
 implementation
 
 //+---------------------------------------------------------------------
-//|         TRaum: Methodendefinition
+//|         TWeapon: Methodendefinition
 //+---------------------------------------------------------------------
 
 //-------- create (public) ---------------------------------------------
-constructor TLoot.create (LootN : String;Typus:String; Beschr: String;Grad:String; Health: Integer; RKlasse: Integer; Geschick: Integer;Stärke:integer);
+constructor TWeapon.create (WeaponN : String;Typus:String; Beschr: String;Grad:String; A_W:Integer;W_S:Integer;Func:function);
 begin
   inherited create;
-  Name := LootN;
+  Name := WeaponN;
   Typ:=Typus;
   Beschreibung := Beschr;
   Tier:=Grad;
-  HP := Health;
-  RK := RKlasse;
-  GK:= Geschick;
-  Sk:=Stärke
+  AW:=A_W;
+  WS:=W_S;
+  Funk:=func
 end;
 
 end.

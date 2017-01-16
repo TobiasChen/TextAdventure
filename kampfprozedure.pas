@@ -29,6 +29,7 @@ begin
     WurfSpieler := random(20) + 1 + SpielerATK;                  //Wurf des Spielers
     WurfGegner:= random(20) + 1 + Gegner.ATK;                    //Wurf des Gegners
     Ui.Animation('Attack',10);
+SpielerAngriffsBonus:=    
     if SpielerRK < Wurfgegner then                               //Trifft Gegner?
          begin
            SpielerHP := SpielerHP - Gegner.ATK;

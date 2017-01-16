@@ -1,0 +1,1 @@
+Wenn der spieler Animations spammt(besonders Angriffe) werden die Animationen nicht fertig abgespielt.(weniger bug als Design choice)
