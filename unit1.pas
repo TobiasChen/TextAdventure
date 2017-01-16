@@ -183,7 +183,7 @@ procedure TForm1.FormCreate(Sender: TObject);
 begin
    Memo1.Lines.Clear;
    Memo1.Lines.Add ('Hallo, willkommen im Textadventure');
-   Memo1.Lines.Add ('Du kannst dich mit dem Namen der Richung[Norden/Nord/N] bewegen');
+   Memo1.Lines.Add ('Du kannst dich mit dem Namen der Richtung[Norden/Nord/N] bewegen');
       Memo1.Lines.Add ('Hilfe findest du mit ?');
          Memo1.Lines.Add ('Du kannst mit "camp" schlafen und HP regenerieren');
    //Typen sind Helm,Ruestung,Schuhe,Waffe
