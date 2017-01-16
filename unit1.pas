@@ -464,7 +464,11 @@ begin
  //else if uppercase(Eingabe) = 'HUNT' then
  //begin
  //     RaumWechsel(aktuellerRaum)
- //end
+ end
+ else if uppercase(Eingabe) = 'camp' then
+ begin
+     Camp.camp();
+ end
 
  else if uppercase(Eingabe) = 'FLIEHEN'
  then
@@ -494,7 +498,11 @@ end;
 
 procedure TForm1.Button11Click(Sender: TObject);
 begin
-   LootDrop.Pickup();
+   If temploot<>nil then
+   LootDrop.Pickup()
+   Else begin
+    camp.camp();
+   End;
 end;
 
 procedure TForm1.Button12Click(Sender: TObject);
@@ -505,7 +513,7 @@ end;
 procedure TForm1.Button13Click(Sender: TObject);
 begin
    Form2.Show;
-   UpdateProcedure();
+   UpdateProcedure();
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);
@@ -591,4 +599,3 @@ begin//RaumName +4 RichtungsPfeile TShape + RaumButton
   RaumMapUpdate(Der_Sonnenstich,Form2.Kraenhort2Der_Sonnenstich,nil,nil,nil,Form2.Der_Sonnenstich);
 end;
 end.
-

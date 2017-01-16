@@ -20,6 +20,10 @@ procedure sterben();
   SpielerHP:=AnfangsHP;
   SpielerRK:=AnfangsRK;
   SpielerAtk:=AnfangsAtk;
+  SpielerHelm:=Kappe;
+   SpielerRuestung:=Gewand;
+   SpielerSchuhe:=Alte_Latscher;
+   SpielerWaffe:=Verrotteter_Klumpen;
   UI.UIRefresh();
   end;
 end.
