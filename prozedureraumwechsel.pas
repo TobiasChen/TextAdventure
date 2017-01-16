@@ -35,6 +35,7 @@ WuerfelErgebnis:Integer;
              vorherigerRaum:=aktuellerRaum;
              aktuellerRaum:=Eingabe;
              //Animation wird abgespielt
+             UI.UIRefresh;
              UI.Animation('Walk',14);
              //Temporäre Loot aus dem vorherigem Raum wird gelöscht
              tempLoot:=nil;

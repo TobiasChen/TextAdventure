@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, mTEnemy, sterben;
 var
   SpielerHP, SpielerRK, SpielerStaerke: Integer;
-  GegnerHP:Integer;
+  GegnerHP, Schaden:Integer;
   WurfSpieler, WurfGegner,SpielerAngriffsBonus : Integer;                             //Angelehnt an das Pen&Paper-Kampfsystem//
   IstInKampf: Boolean;
   Gegner:TEnemy;
@@ -44,22 +44,22 @@ begin
          begin
            Form1.Memo1.lines.add('Der Gegner hat dich verfehlt!');
          end;
-    if Gegner.RK < WurfSpieler                                   //Trifft Spieler?
-       then
+    if Gegner.RK <= SpielerAngriffsBonus then
          begin
-           GegnerHP := GegnerHP - SpielerStaerke;
+           Schaden:=(SpielerWaffe.Aw*random(SpielerWaffe.WS));
+           GegnerHP := GegnerHP - Schaden; //Anzahl Wuerfel sind fixed mal Anzahl Seiten der Wuerfel
            if GegnerHp < 1 then
            begin
            LetzterGegner:=aktuellerRaum.Enemy;
            aktuellerRaum.Enemy:= nil;
-           Form1.Memo1.lines.add('Du hast den Gegner mit '+ inttostr(SpielerStaerke) + ' Schaden  getroffen und ihn getötet');
+           Form1.Memo1.lines.add('Du hast den Gegner mit '+ inttostr(Schaden) + ' Schaden  getroffen und ihn getötet');
            IstInKampf:= false;
            Form1.LabelGegnerHP.Caption:=IntToStr(0);
            AktuellerRaum.MD:=AktuellerRaum.MD-AktuellerRaum.MDS;
            LootDrop.LootDrop()  //Fukntion für Loot Generation
            end
            else
-           //Form1.Memo1.lines.add('Du hast den Gegner mit '+ inttostr(SpielerATK) +' Schaden  getroffen!');
+           Form1.Memo1.lines.add('Du hast den Gegner mit '+ inttostr(Schaden) +' Schaden  getroffen!');
          end
        else
          begin
