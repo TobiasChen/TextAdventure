@@ -17,7 +17,7 @@ procedure UIRefresh();
 begin
   Form1.LabelHP.Caption := InttoStr(SpielerHP);
   Form1.LabelRK.Caption := InttoStr(SpielerRK);
-  Form1.LabelATK.Caption := InttoStr(SpielerATK);
+  Form1.LabelATK.Caption := InttoStr(SpielerStaerke);
   Form1.LabelRaum.caption := AktuellerRaum.Raumname;
   Form1.LabelRaumBeschreibung.caption:=AktuellerRaum.Beschreibung;
   Form1.MD.caption:=(inttostr(aktuellerRaum.MD)+'%');

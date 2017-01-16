@@ -149,26 +149,26 @@ var
   else if tempLoot <> nil then
   begin
   Form1.Memo1.lines.add('Du hast '+ tempLoot.Beschreibung+' gefunden');
-  Form1.Memo1.lines.add('Stats:  '+' RK:'+inttostr(tempLoot.RK)+' HP:'+inttostr(tempLoot.HP)+' ATK:'+ inttostr(tempLoot.atk));
+  Form1.Memo1.lines.add('Stats:  '+' Ausweichen: +'+inttostr(tempLoot.RK)+' HP: +'+inttostr(tempLoot.HP)+' Stärke: +'+ inttostr(tempLoot.SK));
   if tempLoot.Typ='Helm' then
         begin
      Form1.Memo1.lines.add('Momentan trägst du '+ SpielerHelm.Beschreibung);
-     Form1.Memo1.lines.add('Stats:  '+' RK:'+inttostr(SpielerHelm.RK)+' HP:'+inttostr(SpielerHelm.HP)+' ATK:'+ inttostr(SpielerHelm.atk));
+     Form1.Memo1.lines.add('Stats:  '+' Ausweichen: +'+inttostr(tempLoot.RK)+' HP: +'+inttostr(tempLoot.HP)+' Stärke: +'+ inttostr(tempLoot.SK));
         end
   else if tempLoot.Typ='Ruestung' then
         begin
         Form1.Memo1.lines.add('Momentan trägst du '+ SpielerRuestung.Beschreibung);
-        Form1.Memo1.lines.add('Stats:  '+' RK:'+inttostr(SpielerRuestung.RK)+' HP:'+inttostr(SpielerRuestung.HP)+' ATK:'+ inttostr(SpielerRuestung.atk))
+        Form1.Memo1.lines.add('Stats:  '+' Ausweichen: +'+inttostr(tempLoot.RK)+' HP: +'+inttostr(tempLoot.HP)+' Stärke: +'+ inttostr(tempLoot.SK))
         end
   else if tempLoot.Typ='Schuhe' then
         begin
         Form1.Memo1.lines.add('Momentan trägst du '+ SpielerSchuhe.Beschreibung);
-        Form1.Memo1.lines.add('Stats:  '+' RK:'+inttostr(SpielerSchuhe.RK)+' HP:'+inttostr(SpielerSchuhe.HP)+' ATK:'+ inttostr(SpielerSchuhe.atk))
+        Form1.Memo1.lines.add('Stats:  '+' Ausweichen: +'+inttostr(tempLoot.RK)+' HP: +'+inttostr(tempLoot.HP)+' Stärke: +'+ inttostr(tempLoot.SK))
         end
   else if tempLoot.Typ='Waffe' then
         begin
-        Form1.Memo1.lines.add('Momentan trägst du '+ SpielerWaffe.Beschreibung);
-        Form1.Memo1.lines.add('Stats:  '+' RK:'+inttostr(SpielerWaffe.RK)+' HP:'+inttostr(SpielerWaffe.HP)+' ATK:'+ inttostr(SpielerWaffe.atk));
+        Form1.Memo1.lines.add('Momentan schwingst du '+ SpielerWaffe.Beschreibung);
+        Form1.Memo1.lines.add('Damit hast du einen Bonus von: +'+inttostr(SpielerWaffe.GE)+'auf Treffsicherheit und machst :'+inttostr(SpielerWaffe.AW)+'D'+ inttostr(SpielerWaffe.WS)+' Schaden');
         end;
   Form1.Memo1.lines.add('Zum austauschen schreibe "pick"');
   UI.UIRefresh();
@@ -202,7 +202,7 @@ begin
          Form1.Memo1.lines.add('Du hast '+SpielerWaffe.Beschreibung+' aufgenommen');
          tempLoot:=nil;
      end;
-     SpielerAtk:=AnfangsATK+SpielerHelm.Atk+SpielerRuestung.ATK+SpielerSchuhe.Atk+SpielerWaffe.Atk;
+     SpielerStaerke:=AnfangsStaerke+SpielerHelm.Sk+SpielerRuestung.SK+SpielerSchuhe.Sk+SpielerWaffe.Sk;
      SpielerRK:=AnfangsRK+SpielerHelm.RK+SpielerRuestung.RK+SpielerSchuhe.RK+SpielerWaffe.RK;
      MaxHP:=AnfangsHP+SpielerHelm.HP+SpielerRuestung.HP+SpielerSchuhe.HP+SpielerWaffe.HP;
      UI.UIRefresh();

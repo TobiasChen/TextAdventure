@@ -66,11 +66,9 @@ WuerfelErgebnis:Integer;
                 AktuellerGegner:=AktuellerRaum.Enemy;
                 Form1.Memo1.lines.add('Du wirst von '+aktuellerGegner.Beschreibung+' angegriffen!');
                 SpielerRK:=SPielerRK -2;
-                SpielerATK:=SPielerATK -2;
-                Kampf();                      //Ersatz für das Initative System
-                SpielerATK:=SPielerATK +2;    //Bei Betreten eines Raumes mit einem Gegner
-                SpielerRK:=SpielerRK +2;      //Wird dem Spieler 2 RK abgezogen
-                UI.UIRefresh();
+                Kampf();                   //Ersatz für das Initative System
+                SpielerRK:=SpielerRK +2;   //Bei Betreten eines Raumes mit einem Gegner
+                UI.UIRefresh();            //Wird dem Spieler 2 RK abgezogen
                 DifficultyUp();
                 end;
         end;

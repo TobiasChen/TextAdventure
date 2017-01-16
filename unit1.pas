@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
   RichMemo, mTRaum, MTEnemy, Kampfprozedure, ProzedureRaumWechsel, UI,
-  mTLoot,LootDrop,RaumUpdate,Map, BGRASpriteAnimation, mTWeapon;
+  mTLoot,LootDrop,RaumUpdate,Map, BGRASpriteAnimation,camp, mTWeapon;
 
 type
 
@@ -114,7 +114,7 @@ var
   AnfangsRaum: TRaum;
   AnfangsHP:Integer;
   AnfangsRK:Integer;
-  AnfangsAtk:Integer;
+  AnfangsStaerke:Integer;
   MaxHP:Integer;
   //Gegner//
   Mieses_Essen: TEnemy;
@@ -188,29 +188,29 @@ begin
          Memo1.Lines.Add ('Du kannst mit "camp" schlafen und HP regenrieren');
    //Typen sind Helm,Ruestung,Schuhe,Waffe
    //Helm-Loot//
-   Kappe:=TLoot.create('Kappe','Helm','eine leichte Lederkappe','verschlissen',0,0,0);
-   Lederhelm:=TLoot.create('Lederhelm','Helm','einen Lederhelm, der etwas Schutz bieten sollte,','normal',0,1,0);
-   Eisenhelm:=TLoot.create('Eisenhelm','Helm','einen gut gebauten Eisenhelm','erlesen',0,3,0);
-   Gnorignums_Schaedelplatte:=TLoot.create('gnorignums schädelplatte','Helm','gnorignums sagenhaften kopfschutz','magisch',5,5,0);
+   Kappe:=TLoot.create('Kappe','Helm','eine leichte Lederkappe','verschlissen',0,0,0,0,0,0);
+   Lederhelm:=TLoot.create('Lederhelm','Helm','einen Lederhelm, der etwas Schutz bieten sollte,','normal',0,1,0,0,0,0);
+   Eisenhelm:=TLoot.create('Eisenhelm','Helm','einen gut gebauten Eisenhelm','erlesen',0,3,0,0,0,0);
+   Gnorignums_Schaedelplatte:=TLoot.create('gnorignums schädelplatte','Helm','gnorignums sagenhaften kopfschutz','magisch',5,5,0,0,0,0);
    //Rüstungs-Loot//
-   Gewand:=TLoot.create('Gewand','Ruestung','ein einfaches Gewand','verschlissen',0,1,0);
-   Kettenhemd:=TLoot.create('Kettenhemd','Ruestung','ein leichtes Kettenhemd','normal',0,3,0);
-   Stahlruestung:=TLoot.create('Stahlrüstung','Ruestung','eine äußerst widerstandsfähgige Stahlrüstung','erlesen',2,5,0);
-   Granitebrows_Stachelpanzer:=TLoot.create('Granitebrows Stachelpanzer','Ruestung','den legendären Stachelpanzer Granitebrows','magisch',5,10,1);
+   Gewand:=TLoot.create('Gewand','Ruestung','ein einfaches Gewand','verschlissen',0,1,0,0,0,0);
+   Kettenhemd:=TLoot.create('Kettenhemd','Ruestung','ein leichtes Kettenhemd','normal',0,3,0,0,0,0);
+   Stahlruestung:=TLoot.create('Stahlrüstung','Ruestung','eine äußerst widerstandsfähgige Stahlrüstung','erlesen',2,5,0,0,0,0);
+   Granitebrows_Stachelpanzer:=TLoot.create('Granitebrows Stachelpanzer','Ruestung','den legendären Stachelpanzer Granitebrows','magisch',5,10,1,0,0,0);
    //Stiefel-Loot//
-   Alte_Latscher:=TLoot.create('Alte_Latscher','Schuhe','ein Paar abgewetzter und vielgetragene Schuhe','verschlissen',0,0,0);
-   Lederschuhe:=TLoot.create('Lederschuhe','Schuhe','ein Paar guter Lederschuhe','normal',0,1,0);
-   Eisenstiefel:=TLoot.create('Eisenstiefel','Schuhe','ein Paar dicker Eisenstiefel','magisch',0,3,0);
-   Bodenmalmer:=TLoot.create('Bodenmalmer','Schuhe','die dir aus Geschichten bekannten Bodenmalmer','erlesen',5,5,0);
+   Alte_Latscher:=TLoot.create('Alte_Latscher','Schuhe','ein Paar abgewetzter und vielgetragene Schuhe','verschlissen',0,0,0,0,0,0);
+   Lederschuhe:=TLoot.create('Lederschuhe','Schuhe','ein Paar guter Lederschuhe','normal',0,1,0,0,0,0);
+   Eisenstiefel:=TLoot.create('Eisenstiefel','Schuhe','ein Paar dicker Eisenstiefel','magisch',0,3,0,0,0,0);
+   Bodenmalmer:=TLoot.create('Bodenmalmer','Schuhe','die dir aus Geschichten bekannten Bodenmalmer','erlesen',5,5,0,0,0,0);
    //Waffen-Loot//
-   Verrotteter_Klumpen:=Tloot.create('Verrotteter Klumpen','Waffe','einen modrigen Klumpen, den man zum Zuschlagen verwenden könnte,','verschlissen',0,1,4);
-   Eisenstreitkolben:=Tloot.create('Eisenstreitkolben','Waffe','einen benutzten Eisenstreitkolben','normal',0,2,7);
-   Orkischer_Hammerzahn:=Tloot.create('Orkischer Hammerzahn','Waffe','einen für Kriege verwendeten orkischen Hammerzahn','erlesen',0,3,11);
-   Gigantischer_Knochenmuerber:=Tloot.create('Gigantischer Knochenmürber','Waffe','einen der mächtigsten Streitkolben, den Gigantischen Knochenmürber,','magisch',0,4,22);
-   Muerbes_Holzschwert:=Tloot.create('Mürbes Holzschwert','Waffe','ein mürbes Holzschwert, welches vielleicht etwas besser als die Faust ist,','verschlissen',1,0,4);
-   Eisenschwert:=Tloot.create('Eisenschwert','Waffe','ein stumpfes Eisenschwert','normal',2,0,7);
-   Geschmuecktes_Silberschwert:=Tloot.create('Geschmücktes Silberschwert','Waffe','ein hochwertiges Silberschwert voller Verzierungen','erlesen',3,0,11);
-   Drachenzahn:=Tloot.create('Drachenzahn','Waffe','einen mächtigen Drachenzahn','magisch',4,0,22);
+   Verrotteter_Klumpen:=Tloot.create('Verrotteter Klumpen','Waffe','einen modrigen Klumpen, den man zum Zuschlagen verwenden könnte,','verschlissen',0,1,4,0,0,0);
+   Eisenstreitkolben:=Tloot.create('Eisenstreitkolben','Waffe','einen benutzten Eisenstreitkolben','normal',0,2,7,0,0,0);
+   Orkischer_Hammerzahn:=Tloot.create('Orkischer Hammerzahn','Waffe','einen für Kriege verwendeten orkischen Hammerzahn','erlesen',0,3,11,0,0,0);
+   Gigantischer_Knochenmuerber:=Tloot.create('Gigantischer Knochenmürber','Waffe','einen der mächtigsten Streitkolben, den Gigantischen Knochenmürber,','magisch',0,4,22,0,0,0);
+   Muerbes_Holzschwert:=Tloot.create('Mürbes Holzschwert','Waffe','ein mürbes Holzschwert, welches vielleicht etwas besser als die Faust ist,','verschlissen',1,0,4,0,0,0);
+   Eisenschwert:=Tloot.create('Eisenschwert','Waffe','ein stumpfes Eisenschwert','normal',2,0,7,0,0,0);
+   Geschmuecktes_Silberschwert:=Tloot.create('Geschmücktes Silberschwert','Waffe','ein hochwertiges Silberschwert voller Verzierungen','erlesen',3,0,11,0,0,0);
+   Drachenzahn:=Tloot.create('Drachenzahn','Waffe','einen mächtigen Drachenzahn','magisch',4,0,22,0,0,0);
    //Gegner//
    //Var				:= TEnemy.create('Name','Beschreibung',HP,RK,ATK,'Loot_Type');
    
@@ -395,12 +395,12 @@ begin
    //Spieler-Start-StatsNR2//
    AnfangsHP:=10;
    AnfangsRK:=10;
-   AnfangsAtk:=3;
+   AnfangsStaerke:=3;
    //Spieler-start-stats//
 
    SpielerHP := AnfangsHP;
    SpielerRK := AnfangsRK;
-   SpielerATK := AnfangsAtk;
+   SpielerStaerke := AnfangsStaerke;
    MaxHP:=AnfangsHP;
    SpielerHelm:=Kappe;
    SpielerRuestung:=Gewand;
@@ -464,10 +464,9 @@ begin
  //else if uppercase(Eingabe) = 'HUNT' then
  //begin
  //     RaumWechsel(aktuellerRaum)
- end
  else if uppercase(Eingabe) = 'camp' then
  begin
-     Camp.camp();
+     camp.camp()
  end
 
  else if uppercase(Eingabe) = 'FLIEHEN'
@@ -498,11 +497,11 @@ end;
 
 procedure TForm1.Button11Click(Sender: TObject);
 begin
-   If temploot<>nil then
-   LootDrop.Pickup()
-   Else begin
-    camp.camp();
-   End;
+     If temploot<>nil then
+        LootDrop.Pickup()
+     Else begin
+          camp.camp()
+     End;
 end;
 
 procedure TForm1.Button12Click(Sender: TObject);
@@ -513,7 +512,7 @@ end;
 procedure TForm1.Button13Click(Sender: TObject);
 begin
    Form2.Show;
-   UpdateProcedure();
+   UpdateProcedure();
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);

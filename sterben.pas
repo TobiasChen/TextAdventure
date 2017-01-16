@@ -19,7 +19,7 @@ procedure sterben();
   aktuellerRaum:=AnfangsRaum;
   SpielerHP:=AnfangsHP;
   SpielerRK:=AnfangsRK;
-  SpielerAtk:=AnfangsAtk;
+  SpielerStaerke:=AnfangsStaerke;
   SpielerHelm:=Kappe;
    SpielerRuestung:=Gewand;
    SpielerSchuhe:=Alte_Latscher;
