@@ -185,7 +185,7 @@ begin
    Memo1.Lines.Add ('Hallo, willkommen im Textadventure');
    Memo1.Lines.Add ('Du kannst dich mit dem Namen der Richung[Norden/Nord/N] bewegen');
       Memo1.Lines.Add ('Hilfe findest du mit ?');
-         Memo1.Lines.Add ('Du kannst mit "camp" schlafen und HP regenrieren');
+         Memo1.Lines.Add ('Du kannst mit "camp" schlafen und HP regenerieren');
    //Typen sind Helm,Ruestung,Schuhe,Waffe
    //Helm-Loot//
    Kappe:=TLoot.create('Kappe','Helm','eine leichte Lederkappe','verschlissen',0,0,0,0,0,0);
@@ -429,6 +429,7 @@ begin
      Memo1.lines.add('Angreifen: Im Kampf einen Gegner attackieren');
      Memo1.lines.add('Fliehen: Im Kampf zum vorherigen Raum fliehen');
 	 Memo1.lines.add('Pick/Nehmen: Gegenstand aufnehmen');
+	 Memo1.lines.add('Camp: Am geeingneten Ort heilen');
    end
 
  //Raumwechsel//
