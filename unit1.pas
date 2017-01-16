@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
   RichMemo, mTRaum, MTEnemy, Kampfprozedure, ProzedureRaumWechsel, UI,
-  mTLoot,LootDrop,RaumUpdate,Map, BGRASpriteAnimation;
+  mTLoot,LootDrop,RaumUpdate,Map, BGRASpriteAnimation, mTWeapon;
 
 type
 
@@ -188,29 +188,29 @@ begin
          Memo1.Lines.Add ('Du kannst mit "camp" schlafen und HP regenrieren');
    //Typen sind Helm,Ruestung,Schuhe,Waffe
    //Helm-Loot//
-   Kappe:=TLoot.create('Kappe','Helm','eine leichte Lederkappe','verschlissen',0,0,0);
-   Lederhelm:=TLoot.create('Lederhelm','Helm','einen Lederhelm, der etwas Schutz bieten sollte,','normal',0,1,0);
-   Eisenhelm:=TLoot.create('Eisenhelm','Helm','einen gut gebauten Eisenhelm','erlesen',0,3,0);
-   Gnorignums_Schaedelplatte:=TLoot.create('gnorignums schädelplatte','Helm','gnorignums sagenhaften kopfschutz','magisch',5,5,0);
+   Kappe:=TWeapon.create('Kappe','Helm','eine leichte Lederkappe','verschlissen',0,0,0,0);
+   Lederhelm:=TWeapon.create('Lederhelm','Helm','einen Lederhelm, der etwas Schutz bieten sollte,','normal',0,1,0,0);
+   Eisenhelm:=TWeapon.create('Eisenhelm','Helm','einen gut gebauten Eisenhelm','erlesen',0,3,0,0);
+   Gnorignums_Schaedelplatte:=TWeapon.create('gnorignums schädelplatte','Helm','gnorignums sagenhaften kopfschutz','magisch',5,5,0,0);
    //Rüstungs-Loot//
-   Gewand:=TLoot.create('Gewand','Ruestung','ein einfaches Gewand','verschlissen',0,1,0);
-   Kettenhemd:=TLoot.create('Kettenhemd','Ruestung','ein leichtes Kettenhemd','normal',0,3,0);
-   Stahlruestung:=TLoot.create('Stahlrüstung','Ruestung','eine äußerst widerstandsfähgige Stahlrüstung','erlesen',2,5,0);
-   Granitebrows_Stachelpanzer:=TLoot.create('Granitebrows Stachelpanzer','Ruestung','den legendären Stachelpanzer Granitebrows','magisch',5,10,1);
+   Gewand:=TWeapon.create('Gewand','Ruestung','ein einfaches Gewand','verschlissen',0,1,0,0);
+   Kettenhemd:=TWeapon.create('Kettenhemd','Ruestung','ein leichtes Kettenhemd','normal',0,3,0,0);
+   Stahlruestung:=TWeapon.create('Stahlrüstung','Ruestung','eine äußerst widerstandsfähgige Stahlrüstung','erlesen',2,5,0,0);
+   Granitebrows_Stachelpanzer:=TWeapon.create('Granitebrows Stachelpanzer','Ruestung','den legendären Stachelpanzer Granitebrows','magisch',5,10,1,0);
    //Stiefel-Loot//
-   Alte_Latscher:=TLoot.create('Alte_Latscher','Schuhe','ein Paar abgewetzter und vielgetragene Schuhe','verschlissen',0,0,0);
-   Lederschuhe:=TLoot.create('Lederschuhe','Schuhe','ein Paar guter Lederschuhe','normal',0,1,0);
-   Eisenstiefel:=TLoot.create('Eisenstiefel','Schuhe','ein Paar dicker Eisenstiefel','magisch',0,3,0);
-   Bodenmalmer:=TLoot.create('Bodenmalmer','Schuhe','die dir aus Geschichten bekannten Bodenmalmer','erlesen',5,5,0);
+   Alte_Latscher:=TWeapon.create('Alte_Latscher','Schuhe','ein Paar abgewetzter und vielgetragene Schuhe','verschlissen',0,0,0,0);
+   Lederschuhe:=TWeapon.create('Lederschuhe','Schuhe','ein Paar guter Lederschuhe','normal',0,1,0,0);
+   Eisenstiefel:=TWeapon.create('Eisenstiefel','Schuhe','ein Paar dicker Eisenstiefel','magisch',0,3,0,0);
+   Bodenmalmer:=TWeapon.create('Bodenmalmer','Schuhe','die dir aus Geschichten bekannten Bodenmalmer','erlesen',5,5,0,0);
    //Waffen-Loot//
-   Verrotteter_Klumpen:=TLoot.create('Verrotteter Klumpen','Waffe','einen modrigen Klumpen, den man zum Zuschlagen verwenden könnte,','verschlissen',0,1,4);
-   Eisenstreitkolben:=TLoot.create('Eisenstreitkolben','Waffe','einen benutzten Eisenstreitkolben','normal',0,2,7);
-   Orkischer_Hammerzahn:=TLoot.create('Orkischer Hammerzahn','Waffe','einen für Kriege verwendeten orkischen Hammerzahn','erlesen',0,3,11);
-   Gigantischer_Knochenmuerber:=TLoot.create('Gigantischer Knochenmürber','Waffe','einen der mächtigsten Streitkolben, den Gigantischen Knochenmürber,','magisch',0,4,22);
-   Muerbes_Holzschwert:=TLoot.create('Mürbes Holzschwert','Waffe','ein mürbes Holzschwert, welches vielleicht etwas besser als die Faust ist,','verschlissen',1,0,4);
-   Eisenschwert:=TLoot.create('Eisenschwert','Waffe','ein stumpfes Eisenschwert','normal',2,0,7);
-   Geschmuecktes_Silberschwert:=TLoot.create('Geschmücktes Silberschwert','Waffe','ein hochwertiges Silberschwert voller Verzierungen','erlesen',3,0,11);
-   Drachenzahn:=TLoot.create('Drachenzahn','Waffe','einen mächtigen Drachenzahn','magisch',4,0,22);
+   Verrotteter_Klumpen:=TWeapon.create('Verrotteter Klumpen','Waffe','einen modrigen Klumpen, den man zum Zuschlagen verwenden könnte,','verschlissen',0,1,4,0);
+   Eisenstreitkolben:=TWeapon.create('Eisenstreitkolben','Waffe','einen benutzten Eisenstreitkolben','normal',0,2,7,0);
+   Orkischer_Hammerzahn:=TWeapon.create('Orkischer Hammerzahn','Waffe','einen für Kriege verwendeten orkischen Hammerzahn','erlesen',0,3,11,0);
+   Gigantischer_Knochenmuerber:=TWeapon.create('Gigantischer Knochenmürber','Waffe','einen der mächtigsten Streitkolben, den Gigantischen Knochenmürber,','magisch',0,4,22,0);
+   Muerbes_Holzschwert:=TWeapon.create('Mürbes Holzschwert','Waffe','ein mürbes Holzschwert, welches vielleicht etwas besser als die Faust ist,','verschlissen',1,0,4,0);
+   Eisenschwert:=TWeapon.create('Eisenschwert','Waffe','ein stumpfes Eisenschwert','normal',2,0,7,0);
+   Geschmuecktes_Silberschwert:=TWeapon.create('Geschmücktes Silberschwert','Waffe','ein hochwertiges Silberschwert voller Verzierungen','erlesen',3,0,11,0);
+   Drachenzahn:=TWeapon.create('Drachenzahn','Waffe','einen mächtigen Drachenzahn','magisch',4,0,22,0);
    //Gegner//
    //Var				:= TEnemy.create('Name','Beschreibung',HP,RK,ATK,'Loot_Type');
    

@@ -11,7 +11,7 @@ This is possible without touching most of the code and there are functions at ha
 
 //Installation
 To Play it you need to install the three packages in the "packages" folder
-You can do this by simply opening the .lpk files,pressing "open as package" and "Use->>Instal"in the following window 
+You can do this by simply opening the bgracontrols.lpk and the bgrabitmappack.lpk files,pressing "open as package" and "Use->>Instal"in the following window 
 To Compile it open the project1.lpi in lazarus and press F9.
 
 

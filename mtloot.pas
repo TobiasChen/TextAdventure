@@ -13,12 +13,11 @@ type
     Typ:String;
     Beschreibung : String;
     Tier:String;
-    HP : Integer;
-    RK : Integer;
-    GE : Integer;
-    SK :Integer;
+    HP : Integer;    //Leben
+    RK : Integer;    //Ausweichen
+    SK :Integer;     // Schaden
   public //Methoden
-    constructor create (LootN : String;Typus:String; Beschr: String;Grad:String; Health: Integer; RKlasse: Integer; Geschick: Integer;Stärke:Integer);
+    constructor create (LootN : String;Typus:String; Beschr: String;Grad:String; Health: Integer; RKlasse: Integer;Staerke:Integer);
    end;
 implementation
 
@@ -27,7 +26,7 @@ implementation
 //+---------------------------------------------------------------------
 
 //-------- create (public) ---------------------------------------------
-constructor TLoot.create (LootN : String;Typus:String; Beschr: String;Grad:String; Health: Integer; RKlasse: Integer; Geschick: Integer;Stärke:integer);
+constructor TLoot.create (LootN : String;Typus:String; Beschr: String;Grad:String; Health: Integer; RKlasse: Integer;Staerke:integer);
 begin
   inherited create;
   Name := LootN;
@@ -36,8 +35,7 @@ begin
   Tier:=Grad;
   HP := Health;
   RK := RKlasse;
-  GK:= Geschick;
-  Sk:=Stärke
+  Sk:=Staerke
 end;
 
 end.
