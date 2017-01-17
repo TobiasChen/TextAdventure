@@ -52,6 +52,8 @@ WuerfelErgebnis:Integer;
                 UI.UIRefresh();            //Wird dem Spieler 2 RK abgezogen
                 DifficultyUp();
                 end;
+             aktuellerRaum.Ort.default:=true;  //WOllte sie hier eigentlich einfärben und habe zuspät festgestellt, dass Button Einfärben unter Windoofs nicht unterstützt wird.
+             vorherigerRaum.Ort.default:=false;
              //Animation wird abgespielt
              UI.UIRefresh;
              UI.Animation('Walk',14);

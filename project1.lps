@@ -10,7 +10,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="4"/>
         <WindowIndex Value="1"/>
-        <UsageCount Value="66"/>
+        <UsageCount Value="67"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -23,11 +23,10 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="501"/>
-        <CursorPos X="24" Y="518"/>
-        <UsageCount Value="66"/>
+        <TopLine Value="169"/>
+        <CursorPos X="129" Y="195"/>
+        <UsageCount Value="67"/>
         <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="mtenemy.pas"/>
@@ -35,7 +34,7 @@
         <UnitName Value="mTEnemy"/>
         <EditorIndex Value="6"/>
         <WindowIndex Value="1"/>
-        <UsageCount Value="66"/>
+        <UsageCount Value="67"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
@@ -46,7 +45,7 @@
         <WindowIndex Value="1"/>
         <TopLine Value="26"/>
         <CursorPos X="4" Y="72"/>
-        <UsageCount Value="66"/>
+        <UsageCount Value="67"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
@@ -55,7 +54,7 @@
         <EditorIndex Value="1"/>
         <WindowIndex Value="1"/>
         <CursorPos X="14" Y="13"/>
-        <UsageCount Value="66"/>
+        <UsageCount Value="67"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
@@ -65,7 +64,7 @@
         <WindowIndex Value="1"/>
         <TopLine Value="106"/>
         <CursorPos X="46" Y="58"/>
-        <UsageCount Value="66"/>
+        <UsageCount Value="67"/>
         <Loaded Value="True"/>
       </Unit5>
       <Unit6>
@@ -75,7 +74,7 @@
         <EditorIndex Value="7"/>
         <WindowIndex Value="1"/>
         <CursorPos X="42"/>
-        <UsageCount Value="66"/>
+        <UsageCount Value="67"/>
         <Loaded Value="True"/>
       </Unit6>
       <Unit7>
@@ -84,7 +83,7 @@
         <EditorIndex Value="5"/>
         <WindowIndex Value="1"/>
         <CursorPos X="3" Y="29"/>
-        <UsageCount Value="66"/>
+        <UsageCount Value="67"/>
         <Loaded Value="True"/>
       </Unit7>
       <Unit8>
@@ -94,13 +93,27 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Map"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
         <TopLine Value="115"/>
         <CursorPos X="26" Y="116"/>
-        <UsageCount Value="66"/>
+        <UsageCount Value="67"/>
       </Unit8>
       <Unit9>
+        <Filename Value="unit2.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form3"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit2"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="1"/>
+        <CursorPos X="4" Y="38"/>
+        <UsageCount Value="24"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit9>
+      <Unit10>
         <Filename Value="lootdrop.pas"/>
         <UnitName Value="LootDrop"/>
         <EditorIndex Value="9"/>
@@ -108,33 +121,33 @@
         <CursorPos X="34" Y="6"/>
         <UsageCount Value="33"/>
         <Loaded Value="True"/>
-      </Unit9>
-      <Unit10>
+      </Unit10>
+      <Unit11>
         <Filename Value="mTRaum.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="7"/>
         <CursorPos X="53" Y="33"/>
         <UsageCount Value="16"/>
-      </Unit10>
-      <Unit11>
+      </Unit11>
+      <Unit12>
         <Filename Value="prozedureraumwechsel.pas"/>
         <UnitName Value="ProzedureRaumwechsel"/>
         <EditorIndex Value="11"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="128"/>
-        <CursorPos X="108" Y="28"/>
+        <TopLine Value="26"/>
+        <CursorPos X="177" Y="55"/>
         <UsageCount Value="33"/>
         <Loaded Value="True"/>
-      </Unit11>
-      <Unit12>
+      </Unit12>
+      <Unit13>
         <Filename Value="raumupdate.pas"/>
         <UnitName Value="RaumUpdate"/>
         <WindowIndex Value="1"/>
         <CursorPos X="95" Y="37"/>
         <UsageCount Value="33"/>
         <Loaded Value="True"/>
-      </Unit12>
-      <Unit13>
+      </Unit13>
+      <Unit14>
         <Filename Value="ui.pas"/>
         <UnitName Value="UI"/>
         <EditorIndex Value="10"/>
@@ -143,64 +156,51 @@
         <CursorPos X="24" Y="28"/>
         <UsageCount Value="33"/>
         <Loaded Value="True"/>
-      </Unit13>
-      <Unit14>
+      </Unit14>
+      <Unit15>
         <Filename Value="..\TextAdventure PTR\map.lfm"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="19"/>
         <UsageCount Value="8"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit14>
-      <Unit15>
+      </Unit15>
+      <Unit16>
         <Filename Value="map.lfm"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="1"/>
         <CursorPos X="49" Y="2"/>
         <UsageCount Value="10"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit15>
-      <Unit16>
+      </Unit16>
+      <Unit17>
         <Filename Value="D:\Lazarus\lcl\include\fpimagebitmap.inc"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="1"/>
         <TopLine Value="111"/>
         <CursorPos X="33" Y="124"/>
         <UsageCount Value="8"/>
-      </Unit16>
-      <Unit17>
+      </Unit17>
+      <Unit18>
         <Filename Value="mtweapon.pas"/>
         <UnitName Value="mTWeapon"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="-1"/>
         <CursorPos X="86" Y="14"/>
         <UsageCount Value="12"/>
-      </Unit17>
-      <Unit18>
+      </Unit18>
+      <Unit19>
         <Filename Value="packages\bgrabitmap\bglcontrols.lpk"/>
         <EditorIndex Value="-1"/>
         <UsageCount Value="10"/>
         <DefaultSyntaxHighlighter Value="XML"/>
-      </Unit18>
-      <Unit19>
+      </Unit19>
+      <Unit20>
         <Filename Value="packages\bgrabitmap\bgraopengl.pas"/>
         <UnitName Value="BGRAOpenGL"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="920"/>
         <CursorPos X="5" Y="947"/>
         <UsageCount Value="10"/>
-      </Unit19>
-      <Unit20>
-        <Filename Value="unit2.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="Form3"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="Unit2"/>
-        <EditorIndex Value="2"/>
-        <WindowIndex Value="1"/>
-        <CursorPos X="4" Y="38"/>
-        <UsageCount Value="23"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit20>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
@@ -306,23 +306,23 @@
       </Position25>
       <Position26>
         <Filename Value="unit1.pas"/>
-        <Caret Line="399" Column="17" TopLine="403"/>
+        <Caret Line="505" Column="24" TopLine="470"/>
       </Position26>
       <Position27>
         <Filename Value="unit1.pas"/>
-        <Caret Line="505" Column="24" TopLine="470"/>
+        <Caret Line="507" Column="24" TopLine="490"/>
       </Position27>
       <Position28>
         <Filename Value="unit1.pas"/>
-        <Caret Line="507" Column="24" TopLine="490"/>
+        <Caret Line="555" Column="10" TopLine="492"/>
       </Position28>
       <Position29>
         <Filename Value="unit1.pas"/>
-        <Caret Line="555" Column="10" TopLine="492"/>
+        <Caret Line="647" Column="100" TopLine="595"/>
       </Position29>
       <Position30>
         <Filename Value="unit1.pas"/>
-        <Caret Line="647" Column="100" TopLine="595"/>
+        <Caret Line="195" Column="128" TopLine="181"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>
