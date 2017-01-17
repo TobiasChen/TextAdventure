@@ -1,4 +1,3 @@
-
 Bugs:
   Animation:
 	Wenn der spieler Animations spammt(besonders Angriffe) werden die Animationen nicht fertig abgespielt.(weniger bug als Design choice)[Durch ButtonCoolDown gefixed]
@@ -23,4 +22,3 @@ Dirty Hacks:
 	Die gesamte Kampfprozedur ist eine einzige lange If Schleife
 	LootDrops benötigen eigentlich die Attribute  AW/WS/GE nicht sondern nur die Waffen, bekommen diese aber, da es das LootSystem enorm vereinfacht.
 	
-

@@ -5,7 +5,7 @@ unit RaumUpdate;
 interface
 
 uses
-  Classes,StdCtrls,ExtCtrls,SysUtils,mTraum,MTenemy;
+  Classes,StdCtrls,ExtCtrls,SysUtils,mTraum;
 procedure RaumUpdate(EigenerRaum:TRAum; Nord:TRAum; Ost:TRAum; Sued:TRAum; West:TRAum);
 procedure RaumNamenUpdate(EigenerRaum:Traum; Nord:String; Ost:String; Sued:String; West:String);
 procedure ZusaetzlicheUpdates(EigenerRaum:TRaum; Schwierigkeit:string; Mo_DE:Integer; Mo_De_Ad:Integer; Mo_De_Sub:Integer; Camp_pos:boolean);

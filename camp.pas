@@ -31,6 +31,7 @@ UI.UIRefresh();
 procedure Sleep();
 begin
    SpielerHP:=MaxHP;
+   Form1.Memo1.lines.add('Du hast gut und lange Geschlafen und deine HP vollständig regeneriert');
   end;
 end.
 

@@ -32,7 +32,12 @@ else
          SpielerAngriffsBonus:=SpielerWaffe.GE+WurfSpieler;
          if Gegner.RK <= SpielerAngriffsBonus then    //trifft Spieler?
             begin
-                 Schaden:=(SpielerWaffe.Aw*(random(SpielerWaffe.WS)+1));
+            If WurfSpieler=20 then
+               begin
+                    Schaden:=(2*(SpielerWaffe.Aw*(random(SpielerWaffe.WS)+1)));
+                    Form1.Memo1.lines.add('CRIT!');
+               end
+            else  Schaden:=(SpielerWaffe.Aw*(random(SpielerWaffe.WS)+1));
                  GegnerHP := GegnerHP - Schaden; //Anzahl Wuerfel sind fixed mal Anzahl Seiten der Wuerfel
                  if GegnerHp < 1 then
                     begin
@@ -73,4 +78,3 @@ else
 end;
 
 end.
-
