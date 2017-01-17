@@ -32,6 +32,8 @@ implementation
 
 procedure TForm3.Button1Click(Sender: TObject);
 begin
+   if Form1<>nil then
+   Form1.free;
    Form1:=TForm1.create(Unit2.Form3);
    Form2:=Tform2.create(Unit1.form1);
    Form1.UpdateProcedure();

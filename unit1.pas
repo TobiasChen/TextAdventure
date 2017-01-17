@@ -178,6 +178,8 @@ var
   SpielerWaffe:TLoot;
   //Implementation
   Eingabe : String;
+  //Memo
+  MemoLength,StringLength:Integer;
 implementation
 
 {$R *.lfm}
@@ -186,13 +188,13 @@ implementation
 procedure TForm1.FormCreate(Sender: TObject);
 begin
    Memo1.Lines.Clear;
-   Memo1.Lines.Add ('Hallo, willkommen im Textadventure');
+   Memo1.Lines.Add ('Hallo, willkommen im Textadventure')
    Memo1.Lines.Add ('Du kannst dich mit dem Namen der Richtung[Norden/Nord/N] bewegen');
    Memo1.Lines.Add ('Hilfe findest du mit ?');
    Memo1.Lines.Add ('Mit der Aktions Taste kannst du Items aufheben und dich in Camps schlafen legen');
    Memo1.Lines.Add ('Das Schlafen in camps regeneriert deine HP, du kannst aber nur an bestimmten Orten schlafen');
    Memo1.Lines.Add ('Einer davon ist Augvea und du findest andere an den Enden der Karte');
-   Memo1.Lines.Add ('Du solltest dich also am Anfang nicht zu weit von Augvea entfernen, sondern erst einmal Equipment farmen');
+   Memo1.Lines.Add ('Du solltest dich also am Anfang nicht zu weit von Augvea entfernen');
    //Typen sind Helm,Ruestung,Schuhe,Waffe			var:=TLoot.create('Name','Itemtyp','Beschreibung','Klasse',Leben, RK, Stärke, Anzahl Würfel, Würfelseitenzahl, Geschick)
    //Helm-Loot//
    Kappe:=TLoot.create('Kappe','Helm','eine leichte Lederkappe','verschlissen',0,0,0,0,0,0);
@@ -282,7 +284,7 @@ begin
    Schattenweiden				:=TRaum.create('Schattenweiden','Die Schattenweiden des Graumoors scheinen überall hinzugreifen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
    Westweg						:=TRaum.create('Westweg','Auf diesem gut befestigten Weg kommst du gut voran',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
    Bruecke						:=TRaum.create('Brücke','Unter dir rauscht der Fluss',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
-   Augvea						:=TRaum.create('Augvea','Das rege Treiben der Stadt zeugt von Zivilisation, hier kannst du dich von deinen Abenteuern erholen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
+   Augvea						:=TRaum.create('Augvea','Das rege Treiben der Stadt zeugt von Zivilisation',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
    Ostweg						:=TRaum.create('Ostweg','Der Weg ist Umgeben von schönem Gelände',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
    Oestliche_Huegel				:=TRaum.create('Östliche Hügel','Die sanften Hügel machen das Vorankommen beschwerlicher',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
    Verlassene_Burg				:=TRaum.create('Verlassene Burg','Diese Burg ist mysteriöserweise verlassen',nil,nil,nil,nil,nil,'','','','',0,'',0,0,0,false,false,false,nil,nil,nil,nil,nil);
@@ -459,8 +461,8 @@ begin
      Memo1.lines.add('Zurueck: In die vorherige Richtung gehen');
      Memo1.lines.add('Angreifen: Im Kampf einen Gegner attackieren');
      Memo1.lines.add('Fliehen: Im Kampf zum vorherigen Raum fliehen');
-	 Memo1.lines.add('Pick/Nehmen: Gegenstand aufnehmen');
-	 Memo1.lines.add('Camp: Am geeingneten Ort heilen');
+     Memo1.lines.add('Pick/Nehmen: Gegenstand aufnehmen');
+     Memo1.lines.add('Camp: Am geeingneten Ort heilen');
    end
 
  //Raumwechsel//

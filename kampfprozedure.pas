@@ -5,7 +5,8 @@ unit KampfProzedure;
 interface
 
 uses
-  Classes, SysUtils, mTEnemy, sterben;
+  Classes, SysUtils, mTEnemy, sterben, Forms, Controls, Graphics,
+  ExtCtrls, RichMemo;
 var
   SpielerHP, SpielerRK, SpielerStaerke: Integer;
   GegnerHP, Schaden:Integer;
@@ -43,14 +44,17 @@ else
                     begin
                          LetzterGegner:=aktuellerRaum.Enemy;
                          aktuellerRaum.Enemy:= nil;
-                         Form1.Memo1.lines.add('Du hast den Gegner mit '+ inttostr(Schaden) + ' Schaden  getroffen und ihn getötet');
                          IstInKampf:= false;
                          Form1.LabelGegnerHP.Caption:=IntToStr(0);
                          AktuellerRaum.MD:=AktuellerRaum.MD-AktuellerRaum.MDS;
+                         if AktuellerRaum.MD<0 then
+                            AktuellerRaum.MD:=0;
                          LootDrop.LootDrop()  //Fukntion für Loot Generation
                     end
                  else
+                 begin
                      Form1.Memo1.lines.add('Du hast den Gegner mit '+ inttostr(Schaden) +' Schaden  getroffen!');
+                     end;
             end
          else
              begin
@@ -66,8 +70,10 @@ else
                                            sterben.Sterben();
                                       end
                                    else
+                                   begin
                                        Form1.Memo1.lines.add('Der Gegner hat dich mit '+ inttostr(Gegner.atk) +' Schaden getroffen');
-                    end
+                                   end
+                         end
                  else
                      begin
                           Form1.Memo1.lines.add('Der Gegner hat dich verfehlt!');

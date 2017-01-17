@@ -148,8 +148,16 @@ var
         Form1.Memo1.lines.add('Der '+ LetzterGegner.Enemyname +' hatte nichts Wertvolles mit sich')
   else if tempLoot <> nil then
   begin
-  Form1.Memo1.lines.add('Du hast '+ tempLoot.Beschreibung+' gefunden');
-  Form1.Memo1.lines.add('Stats:  '+' Ausweichen: +'+inttostr(tempLoot.RK)+' HP: +'+inttostr(tempLoot.HP)+' Stärke: +'+ inttostr(tempLoot.SK));
+       if tempLoot.Typ='Waffe' then
+       begin
+       Form1.Memo1.lines.add('Du hast '+ tempLoot.Beschreibung+' gefunden');
+       Form1.Memo1.lines.add('Damit hättestst du +'+inttostr(SpielerWaffe.GE)+' auf Treffsicherheit und würdest :'+inttostr(SpielerWaffe.AW)+' D'+ inttostr(SpielerWaffe.WS)+' Schaden machen');
+       end
+       else
+       begin
+            Form1.Memo1.lines.add('Du hast '+ tempLoot.Beschreibung+' gefunden');
+            Form1.Memo1.lines.add('Stats:  '+' Ausweichen: +'+inttostr(tempLoot.RK)+' HP: +'+inttostr(tempLoot.HP)+' Stärke: +'+ inttostr(tempLoot.SK));
+       end;
   if tempLoot.Typ='Helm' then
         begin
      Form1.Memo1.lines.add('Momentan trägst du '+ SpielerHelm.Beschreibung);
@@ -168,9 +176,9 @@ var
   else if tempLoot.Typ='Waffe' then
         begin
         Form1.Memo1.lines.add('Momentan schwingst du '+ SpielerWaffe.Beschreibung);
-        Form1.Memo1.lines.add('Damit hast du einen Bonus von: +'+inttostr(SpielerWaffe.GE)+'auf Treffsicherheit und machst :'+inttostr(SpielerWaffe.AW)+'D'+ inttostr(SpielerWaffe.WS)+' Schaden');
+        Form1.Memo1.lines.add('Damit hast du einen Bonus von: +'+inttostr(SpielerWaffe.GE)+' auf Treffsicherheit und machst :'+inttostr(SpielerWaffe.AW)+' D'+ inttostr(SpielerWaffe.WS)+' Schaden');
         end;
-  Form1.Memo1.lines.add('Zum austauschen schreibe "pick"');
+  Form1.Memo1.lines.add('Zum austauschen schreibe "pick" oder Drücke die Aktions Taste');
   UI.UIRefresh();
   end
   end;
