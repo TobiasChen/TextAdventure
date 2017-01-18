@@ -33,7 +33,7 @@ var
 		else if (Wuerfel > 80) and (Wuerfel <=100) then
 			TempLoot:=Verrotteter_Klumpen;
 	end
-	else if Gegner.LootType='verschlissennormal' then
+	else if LetzterGegner.LootType='verschlissennormal' then
         begin
              if Wuerfel <= 10 then
                 TempLoot:=Muerbes_Holzschwert
@@ -56,7 +56,7 @@ var
 	     else if (Wuerfel > 90) and (Wuerfel <=100) then
 		TempLoot:=Eisenstreitkolben;
         end
-	else if Gegner.LootType='normal' then
+	else if LetzterGegner.LootType='normal' then
         begin
              if Wuerfel <= 20 then
                 TempLoot:=Eisenschwert
@@ -69,7 +69,7 @@ var
 	     else if (Wuerfel > 80) and (Wuerfel <=100) then
 		TempLoot:=Eisenstreitkolben;
 	end
-        else if Gegner.LootType='normalerlesen' then
+        else if LetzterGegner.LootType='normalerlesen' then
         begin
              if Wuerfel <= 10 then
                 TempLoot:=Eisenschwert
@@ -92,7 +92,7 @@ var
 	     else if (Wuerfel > 90) and (Wuerfel <=100) then
 		TempLoot:=Orkischer_Hammerzahn;
 	end		
-        else if Gegner.LootType='erlesen' then
+        else if LetzterGegner.LootType='erlesen' then
         begin
              if Wuerfel <= 20 then
                 TempLoot:=Geschmuecktes_Silberschwert
@@ -105,7 +105,7 @@ var
 	     else if (Wuerfel > 80) and (Wuerfel <=100) then
 		TempLoot:=Orkischer_Hammerzahn;
 	end		
-	else if Gegner.LootType='erlesenmagisch' then
+	else if LetzterGegner.LootType='erlesenmagisch' then
         begin
              if Wuerfel <= 10 then
                 TempLoot:=Geschmuecktes_Silberschwert
@@ -128,7 +128,7 @@ var
 	     else if (Wuerfel > 90) and (Wuerfel <=100) then
 		TempLoot:=Gigantischer_Knochenmuerber;
         end
-	else if Gegner.LootType='magisch' then
+	else if LetzterGegner.LootType='magisch' then
         begin
              if Wuerfel <= 20 then
                 TempLoot:=Drachenzahn
