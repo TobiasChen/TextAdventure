@@ -67,7 +67,7 @@ else
                          SpielerHP := SpielerHP - Gegner.ATK;
                                    if SpielerHp < 1 then
                                       begin
-                                           sterben.Sterben();
+                                           sterben.Sterben(600);
                                       end
                                    else
                                    begin

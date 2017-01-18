@@ -6,15 +6,15 @@ interface
 
 uses
   Classes, SysUtils,Forms;
-procedure Sterben();
+procedure Sterben(WaitTime:integer);
 
 implementation
 
 uses Unit1,UI;   //Benötigte Units zum Funktioniern
-procedure sterben();
+procedure sterben(WaitTime:integer);
  begin
   UI.Animation('Dead',10);
-  sleep(300);
+  sleep(WaitTime);
   Application.ProcessMessages;
   Unit1.Form1.close;
   end;

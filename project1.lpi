@@ -42,7 +42,7 @@
         <PackageName Value="LCL"/>
       </Item4>
     </RequiredPackages>
-    <Units Count="10">
+    <Units Count="11">
       <Unit0>
         <Filename Value="project1.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -98,6 +98,11 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit2"/>
       </Unit9>
+      <Unit10>
+        <Filename Value="special.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Special"/>
+      </Unit10>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

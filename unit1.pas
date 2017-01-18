@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
   ExtCtrls, RichMemo, mTRaum, MTEnemy, Kampfprozedure, ProzedureRaumWechsel, UI,
-  mTLoot, LootDrop, RaumUpdate, Map, BGRASpriteAnimation, camp;
+  mTLoot, LootDrop, RaumUpdate, Map, BGRASpriteAnimation, camp,Special;
 
 type
 
@@ -188,7 +188,7 @@ implementation
 procedure TForm1.FormCreate(Sender: TObject);
 begin
    Memo1.Lines.Clear;
-   Memo1.Lines.Add ('Hallo, willkommen im Textadventure')
+   Memo1.Lines.Add ('Hallo, willkommen im Textadventure');
    Memo1.Lines.Add ('Du kannst dich mit dem Namen der Richtung[Norden/Nord/N] bewegen');
    Memo1.Lines.Add ('Hilfe findest du mit ?');
    Memo1.Lines.Add ('Mit der Aktions Taste kannst du Items aufheben und dich in Camps schlafen legen');
@@ -507,6 +507,11 @@ begin
  then
  begin
   Escape()
+ end
+ else if uppercase(Eingabe) = 'JUMP'
+ then
+ begin
+  Special.Jump()
  end
  //Angreifen//
 
