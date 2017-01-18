@@ -20,10 +20,10 @@ var
  Wuerfel:=1+Random(100);//Normales Random 100 wäre 0...99
  	if Gegner.LootType = ('')  then       //Error Überprüfung
          TempLoot:=nil
-	else if Gegner.LootType='verschlissen' then
-        begin
-        if Wuerfel <= 20 then
-            TempLoot:=Muerbes_Holzschwert
+	else if Gegner.LootType='verschlissen' then					//abfrage der Lootklasse
+        begin													
+        if Wuerfel <= 20 then									//Random Drops
+            TempLoot:=Muerbes_Holzschwert						//Hier: 20% Holzschwert, 20% Kappe, 20% Gewand, 20% Alte_Latscher, 20% Verrotteter_Klumpen
         else if (Wuerfel > 20) and (Wuerfel <=40) then
 			TempLoot:=Kappe
         else if (Wuerfel > 40) and (Wuerfel <=60) then
@@ -151,7 +151,7 @@ var
        if tempLoot.Typ='Waffe' then
        begin
        Form1.Memo1.lines.add('Du hast '+ tempLoot.Beschreibung+' gefunden');
-       Form1.Memo1.lines.add('Damit hättestst du +'+inttostr(tempLoot.GE)+' auf Treffsicherheit und würdest :'+inttostr(tempLoot.AW)+' D'+ inttostr(tempLoot.WS)+' Schaden machen');
+	   Form1.Memo1.lines.add('Stats:  '+' Ausweichen: +'+inttostr(tempLoot.RK)+' HP: +'+inttostr(tempLoot.HP)+' Stärke: +'+ inttostr(tempLoot.SK)+' Treffsicherheit: +'+inttostr(tempLoot.GE)+' Schaden:'+inttostr(tempLoot.AW)+' D'+ inttostr(tempLoot.WS))
        end
        else
        begin
