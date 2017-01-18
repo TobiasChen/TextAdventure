@@ -32,6 +32,7 @@ procedure Sleep();
 begin
    SpielerHP:=MaxHP;
    Form1.Memo1.lines.add('Du hast gut und lange Geschlafen und deine HP vollständig regeneriert');
+   DifficultyUP(10);//Über Nacht erhöht sich die Spann Wahrscheinlichkeit um das zehnfache eines Raum Wechsel
   end;
 end.
 
