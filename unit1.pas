@@ -198,18 +198,18 @@ begin
    //Typen sind Helm,Ruestung,Schuhe,Waffe			var:=TLoot.create('Name','Itemtyp','Beschreibung','Klasse',Leben, RK, Stärke, Anzahl Würfel, Würfelseitenzahl, Geschick)
    //Helm-Loot//
    Kappe:=TLoot.create('Kappe','Helm','eine leichte Lederkappe','verschlissen',0,0,0,0,0,0);
-   Lederhelm:=TLoot.create('Lederhelm','Helm','einen Lederhelm, der etwas Schutz bieten sollte,','normal',0,1,0,0,0,0);
-   Eisenhelm:=TLoot.create('Eisenhelm','Helm','einen gut gebauten Eisenhelm','erlesen',0,3,0,0,0,0);
+   Lederhelm:=TLoot.create('Lederhelm','Helm','einen Lederhelm, der etwas Schutz bieten sollte,','normal',1,1,0,0,0,0);
+   Eisenhelm:=TLoot.create('Eisenhelm','Helm','einen gut gebauten Eisenhelm','erlesen',3,3,0,0,0,0);
    Gnorignums_Schaedelplatte:=TLoot.create('gnorignums schädelplatte','Helm','gnorignums sagenhaften kopfschutz','magisch',5,5,0,0,0,0);
    //Rüstungs-Loot//
-   Gewand:=TLoot.create('Gewand','Ruestung','ein einfaches Gewand','verschlissen',0,1,0,0,0,0);
-   Kettenhemd:=TLoot.create('Kettenhemd','Ruestung','ein leichtes Kettenhemd','normal',0,3,0,0,0,0);
-   Stahlruestung:=TLoot.create('Stahlrüstung','Ruestung','eine äußerst widerstandsfähgige Stahlrüstung','erlesen',2,5,0,0,0,0);
-   Granitebrows_Stachelpanzer:=TLoot.create('Granitebrows Stachelpanzer','Ruestung','den legendären Stachelpanzer Granitebrows','magisch',5,10,1,0,0,0);
+   Gewand:=TLoot.create('Gewand','Ruestung','ein einfaches Gewand','verschlissen',1,1,0,0,0,0);
+   Kettenhemd:=TLoot.create('Kettenhemd','Ruestung','ein leichtes Kettenhemd','normal',3,3,0,0,0,0);
+   Stahlruestung:=TLoot.create('Stahlrüstung','Ruestung','eine äußerst widerstandsfähgige Stahlrüstung','erlesen',5,5,0,0,0,0);
+   Granitebrows_Stachelpanzer:=TLoot.create('Granitebrows Stachelpanzer','Ruestung','den legendären Stachelpanzer Granitebrows','magisch',10,10,1,0,0,0);
    //Stiefel-Loot//
    Alte_Latscher:=TLoot.create('Alte Latscher','Schuhe','ein Paar abgewetzter und vielgetragene Schuhe','verschlissen',0,0,0,0,0,0);
-   Lederschuhe:=TLoot.create('Lederschuhe','Schuhe','ein Paar guter Lederschuhe','normal',0,1,0,0,0,0);
-   Eisenstiefel:=TLoot.create('Eisenstiefel','Schuhe','ein Paar dicker Eisenstiefel','magisch',0,3,0,0,0,0);
+   Lederschuhe:=TLoot.create('Lederschuhe','Schuhe','ein Paar guter Lederschuhe','normal',1,1,0,0,0,0);
+   Eisenstiefel:=TLoot.create('Eisenstiefel','Schuhe','ein Paar dicker Eisenstiefel','magisch',3,3,0,0,0,0);
    Bodenmalmer:=TLoot.create('Bodenmalmer','Schuhe','die dir aus Geschichten bekannten Bodenmalmer','erlesen',5,5,0,0,0,0);
    //Waffen-Loot//
    Verrotteter_Klumpen:=Tloot.create('Verrotteter Klumpen','Waffe','einen modrigen Klumpen, den man zum Zuschlagen verwenden könnte,','verschlissen',0,1,2,1,4,0);
