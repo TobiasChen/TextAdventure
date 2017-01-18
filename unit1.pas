@@ -541,8 +541,10 @@ begin
      Button11.enabled:=false;
      timer1.Enabled:=true;
      If temploot<>nil then
+     begin
         LootDrop.Pickup()
-     Else begin
+     end
+     Else if temploot=nil then begin
           camp.camp()
      End;
 end;
