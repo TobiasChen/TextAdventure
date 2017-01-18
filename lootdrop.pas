@@ -151,7 +151,7 @@ var
        if tempLoot.Typ='Waffe' then
        begin
        Form1.Memo1.lines.add('Du hast '+ tempLoot.Beschreibung+' gefunden');
-       Form1.Memo1.lines.add('Damit hättestst du +'+inttostr(SpielerWaffe.GE)+' auf Treffsicherheit und würdest :'+inttostr(SpielerWaffe.AW)+' D'+ inttostr(SpielerWaffe.WS)+' Schaden machen');
+       Form1.Memo1.lines.add('Damit hättestst du +'+inttostr(tempLoot.GE)+' auf Treffsicherheit und würdest :'+inttostr(tempLoot.AW)+' D'+ inttostr(tempLoot.WS)+' Schaden machen');
        end
        else
        begin
@@ -161,17 +161,17 @@ var
   if tempLoot.Typ='Helm' then
         begin
      Form1.Memo1.lines.add('Momentan trägst du '+ SpielerHelm.Beschreibung);
-     Form1.Memo1.lines.add('Stats:  '+' Ausweichen: +'+inttostr(tempLoot.RK)+' HP: +'+inttostr(tempLoot.HP)+' Stärke: +'+ inttostr(tempLoot.SK));
+     Form1.Memo1.lines.add('Stats:  '+' Ausweichen: +'+inttostr(SpielerHelm.RK)+' HP: +'+inttostr(SpielerHelm.HP)+' Stärke: +'+ inttostr(SpielerHelm.SK));
         end
   else if tempLoot.Typ='Ruestung' then
         begin
         Form1.Memo1.lines.add('Momentan trägst du '+ SpielerRuestung.Beschreibung);
-        Form1.Memo1.lines.add('Stats:  '+' Ausweichen: +'+inttostr(tempLoot.RK)+' HP: +'+inttostr(tempLoot.HP)+' Stärke: +'+ inttostr(tempLoot.SK))
+        Form1.Memo1.lines.add('Stats:  '+' Ausweichen: +'+inttostr(SpielerRuestung.RK)+' HP: +'+inttostr(SpielerRuestung.HP)+' Stärke: +'+ inttostr(SpielerRuestung.SK))
         end
   else if tempLoot.Typ='Schuhe' then
         begin
         Form1.Memo1.lines.add('Momentan trägst du '+ SpielerSchuhe.Beschreibung);
-        Form1.Memo1.lines.add('Stats:  '+' Ausweichen: +'+inttostr(tempLoot.RK)+' HP: +'+inttostr(tempLoot.HP)+' Stärke: +'+ inttostr(tempLoot.SK))
+        Form1.Memo1.lines.add('Stats:  '+' Ausweichen: +'+inttostr(SpielerSchuhe.RK)+' HP: +'+inttostr(SpielerSchuhe.HP)+' Stärke: +'+ inttostr(SpielerSchuhe.SK))
         end
   else if tempLoot.Typ='Waffe' then
         begin
