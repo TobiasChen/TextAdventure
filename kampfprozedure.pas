@@ -62,14 +62,14 @@ else
             begin
                  if SpielerRK < Wurfgegner then                               //Trifft Gegner?
                     begin
-                         SpielerHP := SpielerHP - Gegner.ATK;
+                         SpielerHP := SpielerHP - aktuellerRaum.Enemy.ATK;
                                    if SpielerHp < 1 then
                                       begin
                                            sterben.Sterben(600);
                                       end
                                    else
                                    begin
-                                       Form1.Memo1.lines.add('Der Gegner hat dich mit '+ inttostr(Gegner.atk) +' Schaden getroffen');
+                                       Form1.Memo1.lines.add('Der Gegner hat dich mit '+ inttostr(aktuellerRaum.Enemy.atk) +' Schaden getroffen');
                                    end
                          end
                  else
