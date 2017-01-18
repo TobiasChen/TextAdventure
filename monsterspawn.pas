@@ -31,6 +31,12 @@ var
        if Wuerfel <= 100  then                           
           aktuellerRaum.Enemy:=Riesenspinne;
     end;
+	
+	if aktuellerRaum.Difficulty='Koenig' then
+    begin
+       if Wuerfel <= 100  then                           
+          aktuellerRaum.Enemy:=Der_Gestuerzte_Koenig;
+    end;
 	 
     if aktuellerRaum.Difficulty='Wald' then
     begin
