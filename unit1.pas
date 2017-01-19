@@ -192,7 +192,7 @@ begin
    Memo1.Lines.Add ('Du kannst dich mit dem Namen der Richtung[Norden/Nord/N] bewegen');
    Memo1.Lines.Add ('Hilfe findest du mit ?');
    Memo1.Lines.Add ('Mit der Aktions Taste kannst du Items aufheben und dich in Camps schlafen legen');
-   Memo1.Lines.Add ('Das Schlafen in camps regeneriert deine HP, du kannst aber nur an bestimmten Orten schlafen');
+   Memo1.Lines.Add ('Das Schlafen in Camps regeneriert deine HP, du kannst aber nur an bestimmten Orten schlafen');
    Memo1.Lines.Add ('Einer davon ist Augvea und du findest andere an den Enden der Karte');
    Memo1.Lines.Add ('Du solltest dich also am Anfang nicht zu weit von Augvea entfernen');
    //Typen sind Helm,Ruestung,Schuhe,Waffe			var:=TLoot.create('Name','Itemtyp','Beschreibung','Klasse',Leben, RK, Stärke, Anzahl Würfel, Würfelseitenzahl, Geschick)
