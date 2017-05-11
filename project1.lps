@@ -20,9 +20,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="12"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="320"/>
+        <TopLine Value="485"/>
         <CursorPos X="29" Y="532"/>
         <UsageCount Value="79"/>
         <Loaded Value="True"/>
@@ -124,11 +125,9 @@
       <Unit11>
         <Filename Value="lootdrop.pas"/>
         <UnitName Value="LootDrop"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="11"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="5"/>
-        <CursorPos X="24" Y="23"/>
+        <CursorPos X="58" Y="21"/>
         <UsageCount Value="40"/>
         <Loaded Value="True"/>
       </Unit11>
