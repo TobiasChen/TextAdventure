@@ -64,12 +64,6 @@ begin
       form1.label1.caption:=inttostr(nAttribut);
       Eingabe[Nattribut]:=Form2.Eingabefeld.Text;
       Form1.Label1.Caption:=Eingabe[Nattribut];
-//      AngabeTabelle.Caption :=
-      case Unit1.DerzeitigesItemCombobox of
-       0:  AngabeTabelle.Caption := 'Raeume';
-       1:  AngabeTabelle.Caption := 'Raeume';
-       2:  AngabeTabelle.Caption := 'Item';
-      end;
       Zahlattribut.caption := InttoStr(nAttribut);
       AngabeAttribut.Caption := Form1.DBGrid1.Columns[nAttribut].Title.Caption;
     end;
@@ -77,7 +71,7 @@ end;
 
 procedure TForm2.FormCreate(Sender: TObject);
 begin
-  nAttribut := 0;
+  nAttribut := 1;
   Zahlattribute := Form1.DBGrid1.Columns.Count;
   Form1.Label2.caption:=inttostr(Zahlattribute);
   Setlength(Eingabe, Zahlattribute);
