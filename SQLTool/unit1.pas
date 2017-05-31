@@ -105,10 +105,10 @@ begin
         SQLQuery1.SQL.Text := 'DELETE from Raeume WHERE Current_row = '' + Inttostr(DBGrid1.SelectedRows.CurrentRowSelected)''';
       end;
    1: begin
-        SQLQuery1.SQL.Text := 'DELETE from Raeume WHERE Current_row = '' + Inttostr(DBGrid1.SelectedRows.CurrentRowSelected)''';
+        SQLQuery1.SQL.Text := 'DELETE from Monster WHERE Current_row = '' + Inttostr(DBGrid1.SelectedRows.CurrentRowSelected)''';
       end;
    2: begin
-        SQLQuery1.SQL.Text := 'DELETE from Raeume WHERE Current_row = '' + Inttostr(DBGrid1.SelectedRows.CurrentRowSelected)''';
+        SQLQuery1.SQL.Text := 'DELETE from Item WHERE Current_row = '' + Inttostr(DBGrid1.SelectedRows.CurrentRowSelected)''';
       end;
    end;
 end;
