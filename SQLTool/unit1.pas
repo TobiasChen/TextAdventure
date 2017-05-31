@@ -13,6 +13,7 @@ type
   { TForm1 }
 
   TForm1 = class(TForm)
+    Entfernen: TButton;
     Erstellen: TButton;
     ComboBox1: TComboBox;
     DataSource1: TDataSource;
@@ -23,6 +24,7 @@ type
     Label2: TLabel;
     SQLQuery1: TSQLQuery;
     SQLTransaction1: TSQLTransaction;
+    procedure EntfernenClick(Sender: TObject);
     procedure ErstellenClick(Sender: TObject);
     procedure ComboBox1Change(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -94,6 +96,21 @@ begin
    Form2.close;
   Form2 := TForm2.create(Unit2.Form2);
   Form2.show;
+end;
+
+procedure TForm1.EntfernenClick(Sender: TObject);
+begin
+  case Combobox1.Itemindex of
+   0: begin
+        SQLQuery1.SQL.Text := 'DELETE from Raeume WHERE Current_row = '' + Inttostr(DBGrid1.SelectedRows.CurrentRowSelected)''';
+      end;
+   1: begin
+        SQLQuery1.SQL.Text := 'DELETE from Raeume WHERE Current_row = '' + Inttostr(DBGrid1.SelectedRows.CurrentRowSelected)''';
+      end;
+   2: begin
+        SQLQuery1.SQL.Text := 'DELETE from Raeume WHERE Current_row = '' + Inttostr(DBGrid1.SelectedRows.CurrentRowSelected)''';
+      end;
+   end;
 end;
 
 procedure TForm1.SaveChanges;
