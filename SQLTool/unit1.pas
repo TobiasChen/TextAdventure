@@ -29,11 +29,14 @@ type
     procedure SaveChanges;
     { private declarations }
   public
+    DerzeitigesItemCombobox: Integer;
     { public declarations }
   end;
 
 var
   Form1: TForm1;
+  DerzeitigesItemCombobox: Integer;
+  test: string;
 
 implementation
 
@@ -43,6 +46,9 @@ implementation
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
+
+  test := 'test';
+
   if detectwindowsbit.IsWindows64 then  //Loads the correct Bit Version depending on WindowsBits
     SQLiteLibraryName:='x64/sqlite3.dll'
   else
@@ -66,10 +72,20 @@ procedure TForm1.ComboBox1Change(Sender: TObject);
 begin
   SQLQuery1.Close;
   case Combobox1.Itemindex of
-   0: SQLQuery1.SQL.Text:='select * from Raeume';
-   1: SQLQuery1.SQL.Text:='select * from Monster';
-   2: SQLQuery1.SQL.Text:='select * from Item';
+   0: begin
+        SQLQuery1.SQL.Text := 'select * from Raeume';
+        DerzeitigesItemCombobox := 0;
+      end;
+   1: begin
+        SQLQuery1.SQL.Text := 'select * from Monster';
+        DerzeitigesItemCombobox := 1;
+      end;
+   2: begin
+        SQLQuery1.SQL.Text := 'select * from Item';
+        DerzeitigesItemCombobox := 2;
+      end;
    end;
+  Label1.Caption := InttoStr(DerzeitigesItemCombobox);
   DBConnection.Connected:= True;
   SQLTransaction1.Active:=True;
   SQLQuery1.Open;
@@ -77,7 +93,9 @@ begin
 
 procedure TForm1.ErstellenClick(Sender: TObject);
 begin
-  Form2.show
+  Form2.close;
+  Form2 := TForm2.create(Unit2.Form2);
+  Form2.show;
 end;
 
 procedure TForm1.SaveChanges;

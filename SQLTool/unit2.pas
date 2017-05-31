@@ -15,8 +15,10 @@ type
     AngabeTabelle: TLabel;
     AngabeAttribut: TLabel;
     AngabeVarTyp: TLabel;
+    Button1: TButton;
     Speichern: TButton;
     Eingabefeld: TEdit;
+    procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure SpeichernClick(Sender: TObject);
   private
@@ -47,7 +49,11 @@ begin
     begin
 //      nAttribut = nAttribut + 1;
 //      AngabeTabelle.Caption :=
-//      AngabeAttribut.Caption :=
+      case Unit1.DerzeitigesItemCombobox of
+       0:  AngabeTabelle.Caption := 'Raeume';
+       1:  AngabeTabelle.Caption := 'Monster';
+       2:  AngabeTabelle.Caption := 'Item';
+      end;
 //      AngabeVarTyp.Caption :=
     end;
 end;
@@ -56,9 +62,18 @@ procedure TForm2.FormCreate(Sender: TObject);
 begin
   Zahlattribute := Form1.DBGrid1.Columns.Count;
   Setlength(Eingabe, Zahlattribute);
-//  AngabeTabelle.Caption :=
+     case DerzeitigesItemCombobox of
+      0:  AngabeTabelle.Caption := 'Raeume';
+      1:  AngabeTabelle.Caption := 'Monster';
+      2:  AngabeTabelle.Caption := 'Item';
+     end;
 //  AngabeAttribut.Caption :=
   AngabeVarTyp.Caption := InttoStr(Zahlattribute);
+end;
+
+procedure TForm2.Button1Click(Sender: TObject);
+begin
+  AngabeVarTyp.Caption := test;
 end;
 
 end.
