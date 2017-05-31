@@ -42,11 +42,9 @@ uses Unit1;
 procedure TForm2.SpeichernClick(Sender: TObject);
 begin
   Eingabe[nAttribut] := Eingabefeld.text;
-<<<<<<< HEAD
-  if nAttribut = Zahlattribute-1
-=======
+
   if nAttribut = Zahlattribute - 1
->>>>>>> 6b50b1ca4e4134facfc822694131c16355d344b9
+
   then
     begin
       Form1.SQLQuery1.Close;
@@ -63,7 +61,6 @@ begin
   else
     begin
       nAttribut := nAttribut + 1;
-<<<<<<< HEAD
       form1.label1.caption:=inttostr(nAttribut);
       Eingabe[Nattribut]:=Form2.Eingabefeld.Text;
       Form1.Label1.Caption:=Eingabe[Nattribut];
@@ -75,7 +72,6 @@ begin
       end;
 =======
       Zahlattribut.caption := InttoStr(nAttribut);
->>>>>>> 6b50b1ca4e4134facfc822694131c16355d344b9
       AngabeAttribut.Caption := Form1.DBGrid1.Columns[nAttribut].Title.Caption;
     end;
 end;
