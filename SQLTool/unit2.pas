@@ -44,8 +44,11 @@ procedure TForm2.SpeichernClick(Sender: TObject);
 begin
   Eingabe[nAttribut] := Eingabefeld.text;
   if nAttribut = Zahlattribute
-  then Form2.close
-  else
+  then
+    begin
+      Form2.close;
+    end
+  else;
     begin
 //      nAttribut = nAttribut + 1;
 //      AngabeTabelle.Caption :=
@@ -54,20 +57,29 @@ begin
        1:  AngabeTabelle.Caption := 'Monster';
        2:  AngabeTabelle.Caption := 'Item';
       end;
-//      AngabeVarTyp.Caption :=
+      AngabeAttribut.Caption := Form1.DBGrid1.Columns[nAttribut].Title.Caption;
     end;
 end;
 
 procedure TForm2.FormCreate(Sender: TObject);
 begin
+  nAttribut := 1;
   Zahlattribute := Form1.DBGrid1.Columns.Count;
   Setlength(Eingabe, Zahlattribute);
      case DerzeitigesItemCombobox of
-      0:  AngabeTabelle.Caption := 'Raeume';
-      1:  AngabeTabelle.Caption := 'Monster';
-      2:  AngabeTabelle.Caption := 'Item';
+      0:  begin
+            AngabeTabelle.Caption := 'Raeume';
+            AngabeAttribut.Caption := '1';
+          end;
+      1:  begin
+            AngabeTabelle.Caption := 'Monster';
+             AngabeAttribut.Caption := '1';
+          end;
+      2:  begin
+            AngabeTabelle.Caption := 'Item';
+             AngabeAttribut.Caption := '1';
+          end;
      end;
-//  AngabeAttribut.Caption :=
   AngabeVarTyp.Caption := InttoStr(Zahlattribute);
 end;
 
