@@ -73,15 +73,6 @@ object Form2: TForm2
     OnClick = SpeichernClick
     TabOrder = 1
   end
-  object Button1: TButton
-    Left = 248
-    Height = 25
-    Top = 232
-    Width = 75
-    Caption = 'Button1'
-    OnClick = Button1Click
-    TabOrder = 2
-  end
   object Zahlattribut: TLabel
     Left = 376
     Height = 15

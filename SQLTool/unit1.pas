@@ -37,7 +37,6 @@ type
 var
   Form1: TForm1;
   DerzeitigesItemCombobox: Integer;
-  test: string;
 
 implementation
 
@@ -47,9 +46,6 @@ implementation
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
-
-  test := 'test';
-
   if detectwindowsbit.IsWindows64 then  //Loads the correct Bit Version depending on WindowsBits
     SQLiteLibraryName:='x64/sqlite3.dll'
   else

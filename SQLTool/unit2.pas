@@ -15,11 +15,9 @@ type
     AngabeTabelle: TLabel;
     AngabeAttribut: TLabel;
     AngabeVarTyp: TLabel;
-    Button1: TButton;
     Zahlattribut: TLabel;
     Speichern: TButton;
     Eingabefeld: TEdit;
-    procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure SpeichernClick(Sender: TObject);
   private
@@ -53,12 +51,6 @@ begin
     begin
       nAttribut := nAttribut + 1;
       Zahlattribut.caption := InttoStr(nAttribut);
-//      AngabeTabelle.Caption :=
-      case Unit1.DerzeitigesItemCombobox of
-       0:  AngabeTabelle.Caption := 'Raeume';
-       1:  AngabeTabelle.Caption := 'Monster';
-       2:  AngabeTabelle.Caption := 'Item';
-      end;
       AngabeAttribut.Caption := Form1.DBGrid1.Columns[nAttribut].Title.Caption;
     end;
 end;
@@ -72,23 +64,16 @@ begin
      case DerzeitigesItemCombobox of
       0:  begin
             AngabeTabelle.Caption := 'Raeume';
-             AngabeAttribut.Caption := Form1.DBGrid1.Columns[nAttribut].Title.Caption;
           end;
       1:  begin
             AngabeTabelle.Caption := 'Monster';
-              AngabeAttribut.Caption := Form1.DBGrid1.Columns[nAttribut].Title.Caption;
           end;
       2:  begin
             AngabeTabelle.Caption := 'Item';
-              AngabeAttribut.Caption := Form1.DBGrid1.Columns[nAttribut].Title.Caption;
           end;
      end;
+  AngabeAttribut.Caption := Form1.DBGrid1.Columns[nAttribut].Title.Caption;
   AngabeVarTyp.Caption := InttoStr(Zahlattribute);
-end;
-
-procedure TForm2.Button1Click(Sender: TObject);
-begin
-  AngabeVarTyp.Caption := test;
 end;
 
 end.
