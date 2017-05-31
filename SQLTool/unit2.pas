@@ -50,9 +50,9 @@ begin
       Form1.SQLQuery1.Close;
       Form1.SQLQuery1.SQL.Clear;
       case Unit1.DerzeitigesItemCombobox of
-       0:  Form1.SQLQuery1.SQL.Text := 'insert into monster(Enemyname,Beschreibung,HP,RK,ATK,LootType) Values(''s'',''c'',''g'',''t'',''a'',''v'')';
-       1:  Form1.SQLQuery1.SQL.Add('insert into monster (Enemyname,Beschreibung,HP,RK,ATK,LootType) Values(''s'',''c'',''g'',''t'',''a'',''v'')');
-       2:  Form1.SQLQuery1.SQL.Text := 'insert into monster (Enemyname,Beschreibung,HP,RK,ATK,LootType) Values(''s'',''c'',''g'',''t'',''a'',''v'')';
+       0:  Form1.SQLQuery1.SQL.Text := 'insert into Raeume(Name,Typ,Beschreibun,Tier,HP,RK,SK,AW,WS,GE) Values(''a'',''b'',''c'',''d'',''e'',''f'',''g'',''h'',''i'',''j'')';
+       1:  Form1.SQLQuery1.SQL.Add('insert into monster (Enemyname) Values(''Eingabe[0]'')');
+       2:  Form1.SQLQuery1.SQL.Text := 'insert into Item (Raumname,Beschreibung,HP,RK,ATK,LootType) Values(''s'',''c'',''g'',''t'',''a'',''v'')';
     end;
       Form1.SQLQuery1.ExecSQL;
       Form1.SQLTransaction1.CommitRetaining;
@@ -64,12 +64,6 @@ begin
       form1.label1.caption:=inttostr(nAttribut);
       Eingabe[Nattribut]:=Form2.Eingabefeld.Text;
       Form1.Label1.Caption:=Eingabe[Nattribut];
-//      AngabeTabelle.Caption :=
-      case Unit1.DerzeitigesItemCombobox of
-       0:  AngabeTabelle.Caption := 'Raeume';
-       1:  AngabeTabelle.Caption := 'Raeume';
-       2:  AngabeTabelle.Caption := 'Item';
-      end;
       Zahlattribut.caption := InttoStr(nAttribut);
       AngabeAttribut.Caption := Form1.DBGrid1.Columns[nAttribut].Title.Caption;
     end;
@@ -77,7 +71,7 @@ end;
 
 procedure TForm2.FormCreate(Sender: TObject);
 begin
-  nAttribut := 0;
+  nAttribut := 1;
   Zahlattribute := Form1.DBGrid1.Columns.Count;
   Form1.Label2.caption:=inttostr(Zahlattribute);
   Setlength(Eingabe, Zahlattribute);
