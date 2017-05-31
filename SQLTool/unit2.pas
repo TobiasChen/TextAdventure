@@ -43,18 +43,30 @@ uses Unit1;
 procedure TForm2.SpeichernClick(Sender: TObject);
 begin
   Eingabe[nAttribut] := Eingabefeld.text;
-  if nAttribut = Zahlattribute
+  if nAttribut = Zahlattribute-1
   then
     begin
-      Form2.close;
+      Form1.SQLQuery1.Close;
+      Form1.SQLQuery1.SQL.Clear;
+      case Unit1.DerzeitigesItemCombobox of
+       0:  Form1.SQLQuery1.SQL.Text := 'insert into monster(Enemyname,Beschreibung,HP,RK,ATK,LootType) Values(''s'',''c'',''g'',''t'',''a'',''v'')';
+       1:  Form1.SQLQuery1.SQL.Add('insert into monster (Enemyname,Beschreibung,HP,RK,ATK,LootType) Values(''s'',''c'',''g'',''t'',''a'',''v'')');
+       2:  Form1.SQLQuery1.SQL.Text := 'insert into monster (Enemyname,Beschreibung,HP,RK,ATK,LootType) Values(''s'',''c'',''g'',''t'',''a'',''v'')';
+    end;
+      Form1.SQLQuery1.ExecSQL;
+      Form1.SQLTransaction1.CommitRetaining;
+       Form2.close;
     end
-  else;
+  else
     begin
-//      nAttribut = nAttribut + 1;
+      nAttribut := nAttribut + 1;
+      form1.label1.caption:=inttostr(nAttribut);
+      Eingabe[Nattribut]:=Form2.Eingabefeld.Text;
+      Form1.Label1.Caption:=Eingabe[Nattribut];
 //      AngabeTabelle.Caption :=
       case Unit1.DerzeitigesItemCombobox of
        0:  AngabeTabelle.Caption := 'Raeume';
-       1:  AngabeTabelle.Caption := 'Monster';
+       1:  AngabeTabelle.Caption := 'Raeume';
        2:  AngabeTabelle.Caption := 'Item';
       end;
       AngabeAttribut.Caption := Form1.DBGrid1.Columns[nAttribut].Title.Caption;
@@ -63,9 +75,9 @@ end;
 
 procedure TForm2.FormCreate(Sender: TObject);
 begin
-  Form1.Label2.caption:=inttostr(Form1.Combobox1.Itemindex);
-  nAttribut := 1;
+  nAttribut := 0;
   Zahlattribute := Form1.DBGrid1.Columns.Count;
+  Form1.Label2.caption:=inttostr(Zahlattribute);
   Setlength(Eingabe, Zahlattribute);
      case DerzeitigesItemCombobox of
       0:  begin

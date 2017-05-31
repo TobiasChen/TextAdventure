@@ -68,22 +68,24 @@ object Form1: TForm1
     KeepConnection = False
     Transaction = SQLTransaction1
     Options = []
-    left = 32
+    left = 40
+    top = 8
   end
   object SQLQuery1: TSQLQuery
     FieldDefs = <>
     Database = DBConnection
     Options = []
     Params = <>
-    left = 104
+    left = 144
   end
   object SQLTransaction1: TSQLTransaction
     Active = False
     Database = DBConnection
     Options = []
-    left = 64
+    left = 80
   end
   object DataSource1: TDataSource
     DataSet = SQLQuery1
+    left = 328
   end
 end
