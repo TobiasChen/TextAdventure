@@ -70,7 +70,6 @@ begin
        1:  AngabeTabelle.Caption := 'Raeume';
        2:  AngabeTabelle.Caption := 'Item';
       end;
-=======
       Zahlattribut.caption := InttoStr(nAttribut);
       AngabeAttribut.Caption := Form1.DBGrid1.Columns[nAttribut].Title.Caption;
     end;
