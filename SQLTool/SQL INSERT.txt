@@ -1,0 +1,2 @@
+INSERT INTO monster (Enemyname, Beschreibung, HP, RK, ATK, LootType)
+VALUES ('Klaus', 'Sehr fett', 1, 2, 3, 'holz');

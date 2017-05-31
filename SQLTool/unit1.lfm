@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 449
+  Left = 208
   Height = 516
-  Top = 460
+  Top = 272
   Width = 687
   Caption = 'Form1'
   ClientHeight = 516
@@ -21,6 +21,7 @@ object Form1: TForm1
     Height = 184
     Top = 72
     Width = 552
+    AlternateColor = 13993085
     Color = clWindow
     Columns = <>
     DataSource = DataSource1
@@ -60,6 +61,15 @@ object Form1: TForm1
     Width = 34
     Caption = 'Label2'
     ParentColor = False
+  end
+  object Entfernen: TButton
+    Left = 440
+    Height = 25
+    Top = 424
+    Width = 75
+    Caption = 'Entfernen'
+    OnClick = EntfernenClick
+    TabOrder = 4
   end
   object DBConnection: TSQLite3Connection
     Connected = False

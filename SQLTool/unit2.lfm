@@ -10,9 +10,9 @@ object Form2: TForm2
   LCLVersion = '1.6.2.0'
   object AngabeTabelle: TLabel
     Left = 16
-    Height = 37
+    Height = 36
     Top = 16
-    Width = 180
+    Width = 182
     Caption = 'AngabeTabelle'
     Font.CharSet = ANSI_CHARSET
     Font.Height = -27
@@ -24,9 +24,9 @@ object Form2: TForm2
   end
   object AngabeAttribut: TLabel
     Left = 16
-    Height = 37
+    Height = 36
     Top = 64
-    Width = 188
+    Width = 180
     Caption = 'AngabeAttribut'
     Font.CharSet = ANSI_CHARSET
     Font.Height = -27
@@ -38,9 +38,9 @@ object Form2: TForm2
   end
   object AngabeVarTyp: TLabel
     Left = 16
-    Height = 37
+    Height = 36
     Top = 112
-    Width = 178
+    Width = 181
     Caption = 'AngabeVarTyp'
     Font.CharSet = ANSI_CHARSET
     Font.Height = -27
@@ -52,7 +52,7 @@ object Form2: TForm2
   end
   object Eingabefeld: TEdit
     Left = 16
-    Height = 25
+    Height = 26
     Top = 176
     Width = 464
     Font.CharSet = ANSI_CHARSET
@@ -73,13 +73,12 @@ object Form2: TForm2
     OnClick = SpeichernClick
     TabOrder = 1
   end
-  object Button1: TButton
-    Left = 248
-    Height = 25
-    Top = 232
-    Width = 75
-    Caption = 'Button1'
-    OnClick = Button1Click
-    TabOrder = 2
+  object Zahlattribut: TLabel
+    Left = 376
+    Height = 15
+    Top = 24
+    Width = 62
+    Caption = 'Zahlattribut'
+    ParentColor = False
   end
 end

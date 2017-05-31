@@ -15,10 +15,9 @@ type
     AngabeTabelle: TLabel;
     AngabeAttribut: TLabel;
     AngabeVarTyp: TLabel;
-    Button1: TButton;
+    Zahlattribut: TLabel;
     Speichern: TButton;
     Eingabefeld: TEdit;
-    procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure SpeichernClick(Sender: TObject);
   private
@@ -43,7 +42,11 @@ uses Unit1;
 procedure TForm2.SpeichernClick(Sender: TObject);
 begin
   Eingabe[nAttribut] := Eingabefeld.text;
+<<<<<<< HEAD
   if nAttribut = Zahlattribute-1
+=======
+  if nAttribut = Zahlattribute - 1
+>>>>>>> 6b50b1ca4e4134facfc822694131c16355d344b9
   then
     begin
       Form1.SQLQuery1.Close;
@@ -60,6 +63,7 @@ begin
   else
     begin
       nAttribut := nAttribut + 1;
+<<<<<<< HEAD
       form1.label1.caption:=inttostr(nAttribut);
       Eingabe[Nattribut]:=Form2.Eingabefeld.Text;
       Form1.Label1.Caption:=Eingabe[Nattribut];
@@ -69,6 +73,9 @@ begin
        1:  AngabeTabelle.Caption := 'Raeume';
        2:  AngabeTabelle.Caption := 'Item';
       end;
+=======
+      Zahlattribut.caption := InttoStr(nAttribut);
+>>>>>>> 6b50b1ca4e4134facfc822694131c16355d344b9
       AngabeAttribut.Caption := Form1.DBGrid1.Columns[nAttribut].Title.Caption;
     end;
 end;
@@ -82,23 +89,16 @@ begin
      case DerzeitigesItemCombobox of
       0:  begin
             AngabeTabelle.Caption := 'Raeume';
-            AngabeAttribut.Caption := '1';
           end;
       1:  begin
             AngabeTabelle.Caption := 'Monster';
-             AngabeAttribut.Caption := '1';
           end;
       2:  begin
             AngabeTabelle.Caption := 'Item';
-             AngabeAttribut.Caption := '1';
           end;
      end;
+  AngabeAttribut.Caption := Form1.DBGrid1.Columns[nAttribut].Title.Caption;
   AngabeVarTyp.Caption := InttoStr(Zahlattribute);
-end;
-
-procedure TForm2.Button1Click(Sender: TObject);
-begin
-  AngabeVarTyp.Caption := test;
 end;
 
 end.
