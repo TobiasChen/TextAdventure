@@ -1,37 +1,43 @@
 object Form1: TForm1
-  Left = 208
+  Left = 354
   Height = 516
-  Top = 272
+  Top = 206
   Width = 687
   Caption = 'Form1'
   ClientHeight = 516
   ClientWidth = 687
+  Color = clBlack
   OnCreate = FormCreate
   LCLVersion = '1.6.2.0'
   object Label1: TLabel
-    Left = 48
+    Left = 72
     Height = 15
-    Top = 424
+    Top = 434
     Width = 34
     Caption = 'Label1'
+    Color = clWhite
     ParentColor = False
+    Transparent = False
   end
   object DBGrid1: TDBGrid
     Left = 32
     Height = 184
     Top = 72
     Width = 552
-    AlternateColor = 13993085
-    Color = clWindow
+    AlternateColor = 15192749
+    Color = 16119975
     Columns = <>
     DataSource = DataSource1
+    FixedColor = 13282476
+    FixedHotColor = 8079349
     TabOrder = 0
   end
   object ComboBox1: TComboBox
     Left = 136
     Height = 23
-    Top = 424
+    Top = 416
     Width = 100
+    Color = clWhite
     ItemHeight = 15
     OnChange = ComboBox1Change
     TabOrder = 1
@@ -42,32 +48,37 @@ object Form1: TForm1
     Height = 23
     Top = 21
     Width = 80
+    Color = clWhite
     TabOrder = 2
     Text = 'Edit1'
   end
   object Erstellen: TButton
-    Left = 296
+    Left = 264
     Height = 25
-    Top = 424
+    Top = 416
     Width = 75
     Caption = 'Erstellen'
+    Color = clWhite
     OnClick = ErstellenClick
     TabOrder = 3
   end
   object Label2: TLabel
-    Left = 79
+    Left = 72
     Height = 15
-    Top = 343
+    Top = 416
     Width = 34
     Caption = 'Label2'
+    Color = clWhite
     ParentColor = False
+    Transparent = False
   end
   object Entfernen: TButton
-    Left = 440
+    Left = 368
     Height = 25
-    Top = 424
+    Top = 416
     Width = 75
     Caption = 'Entfernen'
+    Color = clWhite
     OnClick = EntfernenClick
     TabOrder = 4
   end

@@ -100,17 +100,21 @@ end;
 
 procedure TForm1.EntfernenClick(Sender: TObject);
 begin
+  SQLQuery1.Close;
+  SQLQuery1.SQL.Clear;
   case Combobox1.Itemindex of
    0: begin
-        SQLQuery1.SQL.Text := 'DELETE from Raeume WHERE Current_row = '' + Inttostr(DBGrid1.SelectedRows.CurrentRowSelected)''';
+        SQLQuery1.SQL.Text := 'DELETE from Raeume WHERE Row_Number() = '' + Inttostr(DBGrid1.SelectedRows.CurrentRowSelected)''';
       end;
    1: begin
-        SQLQuery1.SQL.Text := 'DELETE from Monster WHERE Current_row = '' + Inttostr(DBGrid1.SelectedRows.CurrentRowSelected)''';
+        SQLQuery1.SQL.Text := 'DELETE from Monster WHERE Row_Number() = '' + Inttostr(DBGrid1.SelectedRows.CurrentRowSelected)''';
       end;
    2: begin
-        SQLQuery1.SQL.Text := 'DELETE from Item WHERE Current_row = '' + Inttostr(DBGrid1.SelectedRows.CurrentRowSelected)''';
+        SQLQuery1.SQL.Text := 'DELETE from Item WHERE Row_Number() = '' + Inttostr(DBGrid1.SelectedRows.CurrentRowSelected)''';
       end;
    end;
+  SQLQuery1.ExecSQL;
+  SQLTransaction1.CommitRetaining;
 end;
 
 procedure TForm1.SaveChanges;
