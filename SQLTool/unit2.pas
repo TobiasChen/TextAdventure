@@ -61,7 +61,7 @@ begin
   nAttribut := 1;
   Zahlattribute := Form1.DBGrid1.Columns.Count;
   Setlength(Eingabe, Zahlattribute);
-     case DerzeitigesItemCombobox of
+     case Form1.Combobox1.Itemindex of
       0:  begin
             AngabeTabelle.Caption := 'Raeume';
           end;
