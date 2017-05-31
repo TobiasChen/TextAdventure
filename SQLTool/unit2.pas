@@ -60,6 +60,7 @@ end;
 
 procedure TForm2.FormCreate(Sender: TObject);
 begin
+  Form1.Label2.caption:=inttostr(Form1.Combobox1.Itemindex);
   Zahlattribute := Form1.DBGrid1.Columns.Count;
   Setlength(Eingabe, Zahlattribute);
      case DerzeitigesItemCombobox of

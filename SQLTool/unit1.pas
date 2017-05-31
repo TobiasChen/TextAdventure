@@ -20,6 +20,7 @@ type
     Edit1: TEdit;
     Label1: TLabel;
     DBConnection: TSQLite3Connection;
+    Label2: TLabel;
     SQLQuery1: TSQLQuery;
     SQLTransaction1: TSQLTransaction;
     procedure ErstellenClick(Sender: TObject);
@@ -93,7 +94,8 @@ begin
 
 procedure TForm1.ErstellenClick(Sender: TObject);
 begin
-  Form2.close;
+  if Form2<>nil then
+   Form2.free;
   Form2 := TForm2.create(Unit2.Form2);
   Form2.show;
 end;
