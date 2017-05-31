@@ -16,6 +16,7 @@ type
     AngabeAttribut: TLabel;
     AngabeVarTyp: TLabel;
     Button1: TButton;
+    Zahlattribut: TLabel;
     Speichern: TButton;
     Eingabefeld: TEdit;
     procedure Button1Click(Sender: TObject);
@@ -43,14 +44,15 @@ uses Unit1;
 procedure TForm2.SpeichernClick(Sender: TObject);
 begin
   Eingabe[nAttribut] := Eingabefeld.text;
-  if nAttribut = Zahlattribute
+  if nAttribut = Zahlattribute - 1
   then
     begin
       Form2.close;
     end
-  else;
+  else
     begin
-//      nAttribut = nAttribut + 1;
+      nAttribut := nAttribut + 1;
+      Zahlattribut.caption := InttoStr(nAttribut);
 //      AngabeTabelle.Caption :=
       case Unit1.DerzeitigesItemCombobox of
        0:  AngabeTabelle.Caption := 'Raeume';
@@ -70,15 +72,15 @@ begin
      case DerzeitigesItemCombobox of
       0:  begin
             AngabeTabelle.Caption := 'Raeume';
-            AngabeAttribut.Caption := '1';
+             AngabeAttribut.Caption := Form1.DBGrid1.Columns[nAttribut].Title.Caption;
           end;
       1:  begin
             AngabeTabelle.Caption := 'Monster';
-             AngabeAttribut.Caption := '1';
+              AngabeAttribut.Caption := Form1.DBGrid1.Columns[nAttribut].Title.Caption;
           end;
       2:  begin
             AngabeTabelle.Caption := 'Item';
-             AngabeAttribut.Caption := '1';
+              AngabeAttribut.Caption := Form1.DBGrid1.Columns[nAttribut].Title.Caption;
           end;
      end;
   AngabeVarTyp.Caption := InttoStr(Zahlattribute);
