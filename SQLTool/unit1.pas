@@ -95,7 +95,7 @@ begin
 procedure TForm1.ErstellenClick(Sender: TObject);
 begin
   if Form2<>nil then
-   Form2.free;
+   Form2.close;
   Form2 := TForm2.create(Unit2.Form2);
   Form2.show;
 end;
